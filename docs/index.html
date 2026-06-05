@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="theme-color" content="#0f1117" />
+  <title>LCRA Rainfall</title>
+  <style>
+    :root {
+      --bg:      #0f1117;
+      --surface: #1a1d27;
+      --sur2:    #20243a;
+      --border:  #2a2d3a;
+      --accent:  #3b9ede;
+      --green:   #2ec4b6;
+      --yellow:  #f5c542;
+      --red:     #e05050;
+      --text:    #e8eaf0;
+      --muted:   #8b8fa8;
+      --bar-bg:  #232636;
+      --nav-h:   60px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { height: 100%; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg); color: var(--text); min-height: 100%;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Header ── */
+    header {
+      background: var(--surface); border-bottom: 1px solid var(--border);
+      padding: .9rem 1.25rem;
+      padding-top: calc(.9rem + env(safe-area-inset-top, 0px));
+      display: flex; align-items: center; justify-content: space-between; gap: .75rem;
+      position: sticky; top: 0; z-index: 10;
+    }
+    .logo { display: flex; align-items: center; gap: .6rem; }
+    h1 { font-size: 1.05rem; font-weight: 700; }
+    h1 span { color: var(--accent); }
+    .subtitle { font-size: .7rem; color: var(--muted); margin-top: 1px; }
+    .hdr-right { display: flex; align-items: center; gap: .6rem; flex-shrink: 0; }
+    .refresh-btn {
+      background: none; border: 1px solid var(--border); border-radius: 8px;
+      color: var(--muted); padding: .35rem .55rem; cursor: pointer;
+      font-size: .75rem; display: flex; align-items: center;
+      touch-action: manipulation; -webkit-tap-highlight-color: transparent;
+      transition: border-color .15s, color .15s;
+    }
+    .refresh-btn:active { border-color: var(--accent); color: var(--accent); }
+    .refresh-btn svg { width: 14px; height: 14px; }
+    .refresh-btn.spinning svg { animation: spin .7s linear infinite; }
+    .status { font-size: .72rem; color: var(--muted); text-align: right; line-height: 1.5; }
+    .status b { color: var(--text); }
+    .dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%;
+           background: var(--green); margin-right: 3px; vertical-align: middle; }
+    .dot.err { background: var(--red); }
+
+    /* ── Desktop tabs ── */
+    .top-tabs { display: flex; gap: .5rem; padding: 1.1rem 1.5rem .4rem; max-width: 1400px; margin: 0 auto; }
+    .tab {
+      padding: .42rem 1rem; border-radius: 999px;
+      border: 1px solid var(--border); background: var(--surface); color: var(--muted);
+      font-size: .82rem; cursor: pointer; transition: all .15s;
+      touch-action: manipulation; -webkit-tap-highlight-color: transparent;
+    }
+    .tab:hover { border-color: var(--accent); color: var(--text); }
+    .tab.active { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
+
+    /* ── Main ── */
+    main { padding: 1rem 1.25rem 1.5rem; max-width: 1400px; margin: 0 auto; }
+
+    /* ── Error ── */
+    .err-banner {
+      background: #2a1010; border: 1px solid #7a2020; border-radius: 10px;
+      padding: .9rem 1rem; color: #e07070; font-size: .83rem;
+      margin-bottom: 1.1rem; line-height: 1.65;
+    }
+
+    /* ── Grid ── */
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem; }
+
+    /* ── Cards ── */
+    .card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 14px; overflow: hidden; display: flex; flex-direction: column;
+    }
+    .card-head {
+      padding: .85rem 1.1rem .65rem; border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .loc-name { font-size: 1rem; font-weight: 700; }
+    .badge {
+      font-size: .7rem; color: var(--muted); background: var(--bar-bg);
+      padding: .18rem .55rem; border-radius: 999px; flex-shrink: 0;
+    }
+    .periods { padding: .85rem 1.1rem; display: flex; flex-direction: column; gap: .75rem; flex: 1; }
+    .p-row { display: flex; flex-direction: column; gap: .3rem; }
+    .p-meta { display: flex; justify-content: space-between; align-items: baseline; }
+    .p-label { font-size: .8rem; color: var(--muted); }
+    .p-val { font-size: .95rem; font-weight: 700; }
+    .p-val.zero { color: var(--muted); }
+    .bar { height: 6px; background: var(--bar-bg); border-radius: 999px; overflow: hidden; }
+    .bar-fill { height: 100%; border-radius: 999px; transition: width .6s ease; min-width: 2px; }
+    .bar-fill.g { background: var(--green); }
+    .bar-fill.y { background: var(--yellow); }
+    .bar-fill.r { background: var(--red); }
+    .no-data { padding: .75rem 1.1rem; font-size: .83rem; color: var(--muted); font-style: italic; }
+
+    /* ── Strip ── */
+    .strip { display: grid; grid-template-columns: repeat(3,1fr); border-top: 1px solid var(--border); background: var(--sur2); }
+    .strip-cell { padding: .75rem .5rem; text-align: center; }
+    .strip-cell + .strip-cell { border-left: 1px solid var(--border); }
+    .s-lbl { font-size: .67rem; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; margin-bottom: 4px; }
+    .s-val { font-size: 1.1rem; font-weight: 800; }
+    .s-val.blue  { color: var(--accent); }
+    .s-val.green { color: var(--green); }
+    .s-val.dim   { color: var(--muted); font-weight: 400; }
+
+    /* ── Spinner ── */
+    .spinner { text-align: center; padding: 3.5rem 2rem; color: var(--muted); font-size: .9rem; }
+    .spinner::before {
+      content: ""; display: block; width: 32px; height: 32px;
+      border: 3px solid var(--border); border-top-color: var(--accent);
+      border-radius: 50%; animation: spin .7s linear infinite; margin: 0 auto 1rem;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── Bottom nav (mobile) ── */
+    .bottom-nav {
+      display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 20;
+      height: calc(var(--nav-h) + env(safe-area-inset-bottom, 0px));
+      padding-bottom: env(safe-area-inset-bottom, 0px);
+      background: var(--surface); border-top: 1px solid var(--border);
+    }
+    .bnav-inner { display: flex; height: var(--nav-h); }
+    .bnav-btn {
+      flex: 1; display: flex; flex-direction: column; align-items: center;
+      justify-content: center; gap: 3px; background: none; border: none;
+      color: var(--muted); font-size: .65rem; font-weight: 500;
+      cursor: pointer; touch-action: manipulation; -webkit-tap-highlight-color: transparent;
+      transition: color .15s; padding: 0;
+    }
+    .bnav-btn svg { width: 22px; height: 22px; transition: transform .15s; }
+    .bnav-btn.active { color: var(--accent); }
+    .bnav-btn.active svg { transform: scale(1.1); }
+
+    footer { text-align: center; padding: 1.5rem 1.25rem; color: var(--muted); font-size: .75rem; }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    .swipe-hint { text-align: center; font-size: .72rem; color: var(--muted); padding: .3rem 0 .1rem; opacity: 1; transition: opacity .5s; }
+    .swipe-hint.gone { opacity: 0; pointer-events: none; }
+
+    @media (max-width: 639px) {
+      body { padding-bottom: calc(var(--nav-h) + env(safe-area-inset-bottom,0px)); }
+      .bottom-nav { display: block; }
+      .top-tabs { display: none; }
+      main { padding: .85rem .85rem 1rem; }
+      .grid { grid-template-columns: 1fr; gap: .85rem; }
+      footer { display: none; }
+    }
+    @media (min-width: 640px) {
+      .swipe-hint { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <svg width="28" height="28" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+      <path d="M15 3 C15 3 6 14 6 19 a9 9 0 0 0 18 0 C24 14 15 3 15 3Z" fill="#3b9ede" opacity=".85"/>
+      <path d="M11 21 a5 5 0 0 0 7 0" stroke="#fff" stroke-width="1.2" stroke-linecap="round" fill="none" opacity=".6"/>
+    </svg>
+    <div>
+      <h1>LCRA <span>Rainfall</span></h1>
+      <div class="subtitle">Texas Hill Country</div>
+    </div>
+  </div>
+  <div class="hdr-right">
+    <button class="refresh-btn" id="refreshBtn" onclick="triggerRefresh()" title="Refresh">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <path d="M3 12a9 9 0 0 1 15-6.7L21 8M21 3v5h-5"/>
+        <path d="M21 12a9 9 0 0 1-15 6.7L3 16M3 21v-5h5"/>
+      </svg>
+    </button>
+    <div class="status" id="statusBox">…</div>
+  </div>
+</header>
+
+<div class="top-tabs" id="tabs">
+  <button class="tab" data-view="five_day">3 Most Recent Days</button>
+  <button class="tab" data-view="current">Intraday Periods</button>
+  <button class="tab" data-view="monthly">Monthly / YTD</button>
+</div>
+
+<main>
+  <div id="errBox" style="display:none" class="err-banner"></div>
+  <div class="swipe-hint" id="swipeHint">← swipe to change view →</div>
+  <div id="grid" class="grid"><div class="spinner">Fetching rainfall data…</div></div>
+</main>
+
+<footer>
+  Data: <a href="https://hydromet.lcra.org/" target="_blank" rel="noopener">LCRA HydroMet</a>
+  · Refreshes every 10 min · All values in inches
+</footer>
+
+<nav class="bottom-nav">
+  <div class="bnav-inner">
+    <button class="bnav-btn" data-view="five_day">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="4" width="18" height="17" rx="2"/>
+        <path d="M3 9h18M8 2v4M16 2v4M7 14h2M11 14h2M15 14h2M7 18h2M11 18h2"/>
+      </svg>
+      <span>3 Days</span>
+    </button>
+    <button class="bnav-btn" data-view="current">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+        <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/>
+      </svg>
+      <span>Intraday</span>
+    </button>
+    <button class="bnav-btn" data-view="monthly">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 20V12M9 20V8M14 20V4M19 20v-8M2 20h20"/>
+      </svg>
+      <span>Monthly</span>
+    </button>
+  </div>
+</nav>
+
+<script>
+"use strict";
+
+// ── Config ────────────────────────────────────────────────────────────────
+
+const LOCATIONS = [
+  { id: "dripping_springs", label: "Dripping Springs", search: "dripping springs" },
+  { id: "johnson_city",     label: "Johnson City",     search: "johnson city" },
+  { id: "fredericksburg",   label: "Fredericksburg",   search: "fredericksburg" },
+  { id: "canyon_lake",      label: "Canyon Lake",      search: "canyon lake" },
+  { id: "austin",           label: "Austin",           search: "austin" },
+];
+
+const LCRA_BASE = "https://hydromet.lcra.org/media/";
+const CSV_FILES = { rainfall: "Rainfall.csv", five_day: "Rain5Day.csv", month_year: "RainMonthYear.csv" };
+
+// CORS proxy fallback chain — tried in order until one works
+const PROXIES = [
+  url => url,                                                            // direct (works if LCRA allows CORS)
+  url => `https://corsproxy.io/?${encodeURIComponent(url)}`,
+  url => `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`,
+];
+
+const INTRADAY_COLS = {
+  "Previous 1 hour":   ["previous 1 hour",   "prev 1 hour",   "1 hour"],
+  "Previous 3 hours":  ["previous 3 hours",  "prev 3 hours",  "3 hours"],
+  "Previous 6 hours":  ["previous 6 hours",  "prev 6 hours",  "6 hours"],
+  "Previous 24 hours": ["previous 24 hours", "prev 24 hours", "24 hours"],
+  "Since midnight":    ["since midnight",    "midnight"],
+};
+const FIVE_DAY_COLS = {
+  "Today":       ["today"],
+  "Yesterday":   ["1 day ago", "last24"],
+  "2 Days Ago":  ["2 days ago"],
+  "3 Days Ago":  ["3 days ago"],
+  "4 Days Ago":  ["4 days ago"],
+  "5-Day Total": ["5 day total"],
+};
+const MONTHLY_COLS = {
+  "This Month":   ["this month"],
+  "30-Day Total": ["30 day total"],
+  "This Year":    ["this year"],
+  "Last Year":    ["last year"],
+};
+const VIEW_COL_MAP = { current: INTRADAY_COLS, five_day: FIVE_DAY_COLS, monthly: MONTHLY_COLS };
+
+const VIEWS   = ["five_day", "current", "monthly"];
+const BAR_MAX = { five_day: 4, current: 3, monthly: 20 };
+const REFRESH_MS = 10 * 60 * 1000;
+
+// ── CSV ───────────────────────────────────────────────────────────────────
+
+function parseCSV(text) {
+  const lines = text.trim().split(/\r?\n/);
+  if (lines.length < 2) return [];
+  const hdrs = lines[0].split(",").map(h => h.replace(/"/g,"").trim().toLowerCase());
+  return lines.slice(1).filter(l => l.trim()).map(line => {
+    // Handle quoted commas simply
+    const vals = []; let cur = "", inQ = false;
+    for (const ch of line + ",") {
+      if (ch === '"') { inQ = !inQ; continue; }
+      if (ch === "," && !inQ) { vals.push(cur.trim()); cur = ""; continue; }
+      cur += ch;
+    }
+    return Object.fromEntries(hdrs.map((h, i) => [h, vals[i] ?? ""]));
+  });
+}
+
+async function fetchCSV(filename) {
+  const url = LCRA_BASE + filename;
+  for (const proxy of PROXIES) {
+    try {
+      const resp = await fetch(proxy(url), { cache: "no-cache" });
+      if (resp.ok) {
+        const text = await resp.text();
+        if (text.includes(",")) return parseCSV(text); // sanity check
+      }
+    } catch (_) {}
+  }
+  throw new Error(`Could not fetch ${filename} (all proxies failed)`);
+}
+
+// ── Data processing ───────────────────────────────────────────────────────
+
+function locCol(rows) {
+  if (!rows.length) return null;
+  for (const c of ["location","site name","sitename","name","station"])
+    if (c in rows[0]) return c;
+  return null;
+}
+
+function filterRows(rows, search) {
+  const col = locCol(rows);
+  if (!col) return [];
+  return rows.filter(r => (r[col]||"").toLowerCase().includes(search));
+}
+
+function bestVal(rows, candidates) {
+  for (const c of candidates) {
+    const vals = rows.map(r => parseFloat(r[c])).filter(v => !isNaN(v));
+    if (vals.length) return parseFloat((vals.reduce((a,b)=>a+b,0)/vals.length).toFixed(2));
+  }
+  return null;
+}
+
+function extract(rows, spec) {
+  const out = {};
+  for (const [label, cands] of Object.entries(spec)) {
+    const v = bestVal(rows, cands);
+    if (v !== null) out[label] = v;
+  }
+  return out;
+}
+
+let _data = null;
+
+async function loadData() {
+  const [rain, fday, mon] = await Promise.all([
+    fetchCSV(CSV_FILES.rainfall),
+    fetchCSV(CSV_FILES.five_day),
+    fetchCSV(CSV_FILES.month_year),
+  ]);
+
+  return LOCATIONS.map(loc => {
+    const s = loc.search;
+    const rr = filterRows(rain,  s);
+    const rf = filterRows(fday,  s);
+    const rm = filterRows(mon,   s);
+    return {
+      id:       loc.id,
+      label:    loc.label,
+      stations: Math.max(rr.length, rf.length, rm.length),
+      current:  extract(rr, INTRADAY_COLS),
+      five_day: extract(rf, FIVE_DAY_COLS),
+      monthly:  extract(rm, MONTHLY_COLS),
+    };
+  });
+}
+
+// ── Render ────────────────────────────────────────────────────────────────
+
+let _view = "five_day";
+
+function fmt(v) {
+  if (v == null || isNaN(Number(v))) return "—";
+  return Number(v).toFixed(2) + '"';
+}
+
+function barCls(v, max) {
+  const p = v/max;
+  return p >= 0.7 ? "r" : p >= 0.35 ? "y" : "g";
+}
+
+function periodRows(periods) {
+  const entries = Object.entries(periods || {});
+  if (!entries.length) return '<div class="no-data">No matching stations</div>';
+  const max = BAR_MAX[_view] ?? 4;
+  const visible = _view === "five_day" ? entries.slice(0,3) : entries;
+  return visible.map(([lbl, val]) => {
+    const n = parseFloat(val)||0, pct = Math.min(100,(n/max)*100);
+    return `<div class="p-row">
+      <div class="p-meta">
+        <span class="p-label">${lbl}</span>
+        <span class="p-val${n===0?" zero":""}">${fmt(n)}</span>
+      </div>
+      <div class="bar"><div class="bar-fill ${barCls(n,max)}" style="width:${pct.toFixed(1)}%"></div></div>
+    </div>`;
+  }).join("");
+}
+
+function summaryFor(loc) {
+  const c=loc.current||{}, f=loc.five_day||{}, m=loc.monthly||{};
+  const today = c["Since midnight"]??c["Previous 24 hours"]??f["Today"]??null;
+  const fiveTot = f["5-Day Total"] ?? (() => {
+    const v=["Today","Yesterday","2 Days Ago","3 Days Ago","4 Days Ago"].map(k=>parseFloat(f[k])||0);
+    return v.some(x=>x>0) ? parseFloat(v.reduce((a,b)=>a+b,0).toFixed(2)) : null;
+  })();
+  return { today, fiveTot, month: m["This Month"]??m["30-Day Total"]??null };
+}
+
+function renderCard(loc) {
+  const {today,fiveTot,month} = summaryFor(loc);
+  const badge = loc.stations>0 ? `<span class="badge">${loc.stations} gauge${loc.stations>1?"s":""}</span>` : "";
+  return `<div class="card">
+    <div class="card-head"><span class="loc-name">${loc.label}</span>${badge}</div>
+    <div class="periods">${periodRows(loc[_view]||{})}</div>
+    <div class="strip">
+      <div class="strip-cell"><div class="s-lbl">Today</div><div class="s-val ${today==null?"dim":"blue"}">${fmt(today)}</div></div>
+      <div class="strip-cell"><div class="s-lbl">5-Day</div><div class="s-val ${fiveTot==null?"dim":"green"}">${fmt(fiveTot)}</div></div>
+      <div class="strip-cell"><div class="s-lbl">Month</div><div class="s-val ${month==null?"dim":"blue"}">${fmt(month)}</div></div>
+    </div>
+  </div>`;
+}
+
+function render() {
+  if (!_data) return;
+  document.getElementById("grid").innerHTML = _data.map(renderCard).join("");
+}
+
+// ── View switching ────────────────────────────────────────────────────────
+
+function setView(v) {
+  _view = v;
+  document.querySelectorAll(".tab,.bnav-btn").forEach(el =>
+    el.classList.toggle("active", el.dataset.view === v));
+  render();
+}
+
+document.getElementById("tabs").addEventListener("click", e => {
+  const b = e.target.closest(".tab"); if (b) { setView(b.dataset.view); dismissHint(); }
+});
+document.querySelector(".bottom-nav").addEventListener("click", e => {
+  const b = e.target.closest(".bnav-btn"); if (b) setView(b.dataset.view);
+});
+
+let _sx = null;
+document.addEventListener("touchstart", e => { _sx = e.touches[0].clientX; }, {passive:true});
+document.addEventListener("touchend", e => {
+  if (_sx===null) return;
+  const dx = e.changedTouches[0].clientX - _sx; _sx = null;
+  if (Math.abs(dx) < 50) return;
+  const i = VIEWS.indexOf(_view);
+  if (dx<0 && i<VIEWS.length-1) setView(VIEWS[i+1]);
+  if (dx>0 && i>0)               setView(VIEWS[i-1]);
+  dismissHint();
+}, {passive:true});
+
+function dismissHint() { document.getElementById("swipeHint")?.classList.add("gone"); }
+
+// ── Fetch & refresh ───────────────────────────────────────────────────────
+
+let _loading = false;
+
+async function load() {
+  if (_loading) return;
+  _loading = true;
+  const btn = document.getElementById("refreshBtn");
+  btn.classList.add("spinning");
+
+  try {
+    _data = await loadData();
+    document.getElementById("errBox").style.display = "none";
+    const now = new Date().toLocaleTimeString([], {hour:"2-digit",minute:"2-digit"});
+    document.getElementById("statusBox").innerHTML =
+      `<span class="dot"></span><b>Live</b><br><span style="font-size:.68rem">${now}</span>`;
+    render();
+  } catch(e) {
+    const box = document.getElementById("errBox");
+    box.style.display = "";
+    box.innerHTML = `<strong>Could not load LCRA data.</strong><br>${e.message}<br><br>
+      LCRA's server may be blocking this request. Try refreshing — or check your connection.`;
+    document.getElementById("statusBox").innerHTML =
+      `<span class="dot err"></span><b style="color:var(--red)">Error</b>`;
+    if (!_data) document.getElementById("grid").innerHTML = "";
+  } finally {
+    _loading = false;
+    btn.classList.remove("spinning");
+  }
+}
+
+function triggerRefresh() { load(); }
+
+// ── Init ─────────────────────────────────────────────────────────────────
+
+setView("five_day");
+load();
+setInterval(load, REFRESH_MS);
+setTimeout(dismissHint, 6000);
+</script>
+</body>
+</html>
