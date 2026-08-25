@@ -47,8 +47,11 @@ efficiency, which allows for first-flush diversion, splash and evaporation.
 
 ## Embeddable bar
 
-`docs/rainfall-bar.js` is a standalone strip of the same 48-hour totals, styled
-to match the rainfall monitor in the site header. It shares no code with the
+`docs/rainfall-bar.js` is a standalone panel of the same 48-hour totals, built
+in the site's own visual language: a white card with a gold eyebrow over a heavy
+headline, readings in the stat grid the site uses elsewhere, and the gold
+call-to-action with its arrow nested in a blue box. It reflows 5 → 3 → 2 columns
+so every location stays visible without scrolling. It shares no code with the
 dashboard, so a browser test asserts the two produce identical numbers from the
 same fixture — if one drifts, that test fails.
 

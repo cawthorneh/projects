@@ -32,6 +32,12 @@
   <p>A drop-in replacement for the rainfall strip in the site header. It reads the
   same LCRA Hydromet gauges as the full dashboard and uses the same 48-hour
   definition: yesterday's full-day total plus today's rain since midnight.</p>
+  <p>The design follows the site's own patterns rather than the strip it replaces:
+  a white card with a gold eyebrow over a heavy headline, readings laid out as the
+  stat grid used elsewhere on the site, hairline rules between them, and the gold
+  call-to-action with its arrow nested in a blue box. Gold marks the wettest
+  location — but only when it has actually rained, since highlighting a five-way
+  tie at zero would be noise.</p>
 
   <h2>To embed</h2>
   <p>Paste this into a Webflow <strong>Embed</strong> element (or any raw-HTML block).
@@ -45,9 +51,14 @@
   inside a <code>&lt;script&gt;</code> tag instead — it renders where it is pasted.</p>
 
   <h2>When a gauge has no reading</h2>
-  <p>The cell shows a dash, not <code>0.00"</code>. Zero means it did not rain, which is
-  a different claim from not knowing — and the strip on the site today shows
-  <code>0.00"</code> everywhere, which is what that failure looks like.</p>
+  <p>The cell shows a dash, not <code>0.00"</code>, and the caption says readings are
+  unavailable. Zero means it did not rain, which is a different claim from not
+  knowing — and the strip on the site today shows <code>0.00"</code> everywhere, which
+  is what that failure looks like when the two are conflated.</p>
+
+  <h2>On small screens</h2>
+  <p>The readings reflow to three columns, then two — all five stay visible without
+  scrolling, rather than hiding behind a swipe.</p>
 </div>
 
 <script src="./rainfall-bar.js"></script>

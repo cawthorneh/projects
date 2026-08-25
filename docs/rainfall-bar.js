@@ -1,8 +1,10 @@
 /*!
- * Dripping Rainwater — Rainfall Monitor bar
+ * Dripping Rainwater — Rainfall Monitor
  *
- * A self-contained embeddable strip of 48-hour rainfall totals from LCRA
- * Hydromet. Drop it anywhere on the site:
+ * A self-contained embeddable panel of 48-hour rainfall totals from LCRA
+ * Hydromet, built in the site's own visual language: a white card with a
+ * gold eyebrow, and readings laid out as the stat grid the site already
+ * uses, hairline rules and all.
  *
  *   <div id="drw-rainfall-bar"></div>
  *   <script src="https://cawthorneh.github.io/vibe-coding/rainfall-bar.js"></script>
@@ -11,7 +13,7 @@
  * files, no build step and no external libraries.
  *
  * Options, set on the mount element:
- *   data-dashboard="https://…"   link the header cell to the full dashboard
+ *   data-dashboard="https://…"   show a button through to the full dashboard
  *
  * Numbers come from the same gauges and the same 48-hour definition as the
  * dashboard: yesterday's full-day total plus today's rain since midnight.
@@ -53,57 +55,74 @@
   var COL_YESTERDAY = ["1 day ago", "yesterday", "last24"];
 
   /* ── Styles ─────────────────────────────────────────────────────────── */
-  // Every class is prefixed and every property is set explicitly, so the
-  // host page's stylesheet can't bleed in and this can't leak out.
+  // Brand values sampled from drippingrainwater.com. Every class is prefixed
+  // and every property set explicitly, so the host page's stylesheet can't
+  // bleed in and this can't leak out.
 
   var CSS = [
     // Own the box model rather than inheriting whatever the host page sets.
     '.drwrb,.drwrb *{box-sizing:border-box}',
-    '.drwrb{position:relative;display:block;font-family:inherit;',
-      'background:#F7DE7F;border-radius:14px;overflow:hidden;',
-      'box-shadow:0 1px 2px rgba(32,42,174,.08);max-width:100%}',
-    '.drwrb-scroll{display:flex;align-items:stretch;overflow-x:auto;',
-      'scroll-behavior:smooth;scroll-snap-type:x proximity;',
-      '-webkit-overflow-scrolling:touch;scrollbar-width:none}',
-    '.drwrb-scroll::-webkit-scrollbar{display:none}',
-    '.drwrb-cell{flex:0 0 auto;padding:.85rem 1.4rem;scroll-snap-align:start;',
-      'border-right:1px solid #D0BE84;text-align:center;min-width:8.5rem;',
-      'display:flex;flex-direction:column;justify-content:center;gap:.15rem}',
-    '.drwrb-cell:last-child{border-right:0}',
-    '.drwrb-head{text-align:left;min-width:11rem;text-decoration:none}',
-    'a.drwrb-head:hover .drwrb-title{text-decoration:underline}',
-    '.drwrb-title{color:#202AAE;font-size:.8rem;font-weight:800;',
-      'letter-spacing:.08em;text-transform:uppercase;line-height:1.2}',
-    '.drwrb-sub{color:#5C5D9D;font-size:.72rem;font-weight:500;line-height:1.3}',
-    '.drwrb-sub-short{display:none}',
-    '.drwrb-loc{color:#5C5D9D;font-size:.68rem;font-weight:700;',
-      'letter-spacing:.07em;text-transform:uppercase;line-height:1.2;white-space:nowrap}',
-    '.drwrb-val{color:#202AAE;font-size:1.5rem;font-weight:800;line-height:1.1;',
-      'font-variant-numeric:tabular-nums;letter-spacing:-.02em}',
-    '.drwrb-val.is-empty{color:#8A87B4}',
-    // Arrows sit over a fade so cells scroll under them rather than stopping short.
-    '.drwrb-nav{position:absolute;top:0;bottom:0;width:3.6rem;border:0;padding:0;',
-      'display:none;align-items:center;cursor:pointer;background:none}',
-    '.drwrb-nav[data-show="1"]{display:flex}',
-    '.drwrb-nav-prev{left:0;justify-content:flex-start;',
-      'background:linear-gradient(90deg,#F7DE7F 55%,rgba(247,222,127,0))}',
-    '.drwrb-nav-next{right:0;justify-content:flex-end;',
-      'background:linear-gradient(270deg,#F7DE7F 55%,rgba(247,222,127,0))}',
-    '.drwrb-nav span{display:flex;align-items:center;justify-content:center;',
-      'width:2rem;height:2rem;border-radius:50%;background:#202AAE;color:#fff;',
-      'font-size:1rem;line-height:1;margin:0 .5rem;box-shadow:0 1px 3px rgba(32,42,174,.3)}',
-    '.drwrb-nav:disabled{opacity:0;pointer-events:none}',
-    '.drwrb-nav:focus-visible{outline:3px solid #202AAE;outline-offset:-3px}',
-    '@media (max-width:520px){',
-      '.drwrb-cell{padding:.75rem .9rem;min-width:6.6rem}',
-      '.drwrb-head{min-width:0;max-width:8.2rem}',
-      '.drwrb-title{font-size:.7rem;letter-spacing:.06em}',
-      '.drwrb-sub-full{display:none}',
-      '.drwrb-sub-short{display:inline}',
-      '.drwrb-val{font-size:1.25rem}',
-      '.drwrb-nav{width:2.6rem}',
-      '.drwrb-nav span{width:1.75rem;height:1.75rem;margin:0 .35rem}}',
-    '@media (prefers-reduced-motion:reduce){.drwrb-scroll{scroll-behavior:auto}}'
+    '.drwrb{font-family:inherit;background:#fff;border:1px solid #DFE7F0;',
+      'border-radius:16px;overflow:hidden;max-width:100%;',
+      'box-shadow:0 1px 2px rgba(18,29,35,.05),0 10px 28px rgba(48,102,171,.10)}',
+
+    // Header: gold eyebrow over a heavy headline, as the site's sections open.
+    '.drwrb-top{display:flex;align-items:center;justify-content:space-between;',
+      'gap:1rem;flex-wrap:wrap;padding:1.15rem 1.4rem}',
+    '.drwrb-eyebrow{color:#B8912F;font-size:.7rem;font-weight:800;',
+      'letter-spacing:.16em;text-transform:uppercase;line-height:1.2}',
+    '.drwrb-h{color:#121D23;font-size:1.35rem;font-weight:800;letter-spacing:-.025em;',
+      'line-height:1.15;margin:.3rem 0 0}',
+
+    // The site's CTA: gold pill with the arrow nested in its own blue box.
+    '.drwrb-cta{display:inline-flex;align-items:center;gap:.7rem;text-decoration:none;',
+      'background:#D8B046;color:#3066AB;font-size:.82rem;font-weight:800;',
+      'border-radius:10px;padding:.5rem .5rem .5rem .95rem;white-space:nowrap;',
+      'transition:background .15s}',
+    '.drwrb-cta:hover{background:#C9A23C}',
+    '.drwrb-cta span{display:inline-flex;align-items:center;justify-content:center;',
+      'width:26px;height:26px;border-radius:7px;background:#3066AB;color:#fff;font-size:.9rem}',
+
+    // Rules are drawn per cell rather than as grid gaps over a coloured
+    // ground: five stats never fill a 2- or 3-column row, and that ground
+    // would show through the leftover slot as a stray grey block.
+    '.drwrb-grid{display:grid;grid-template-columns:repeat(5,1fr);background:#fff}',
+    '.drwrb-stat{position:relative;background:#fff;padding:1.05rem 1.1rem;text-align:center}',
+    '.drwrb-stat::before{content:"";position:absolute;top:0;bottom:0;left:0;',
+      'width:1px;background:#DFE7F0}',
+    '.drwrb-stat::after{content:"";position:absolute;left:0;right:0;top:0;',
+      'height:1px;background:#DFE7F0}',
+    // No rule down the outside edge of a row.
+    '.drwrb-stat:nth-child(5n+1)::before{display:none}',
+    '.drwrb-stat.is-top::after{height:3px;background:#D8B046}',
+    '.drwrb-loc{color:#5E6A72;font-size:.68rem;font-weight:700;letter-spacing:.08em;',
+      'text-transform:uppercase;line-height:1.25}',
+    '.drwrb-val{color:#3066AB;font-size:1.85rem;font-weight:800;line-height:1.1;',
+      'letter-spacing:-.035em;font-variant-numeric:tabular-nums;margin-top:.3rem;',
+      'display:flex;align-items:baseline;justify-content:center;gap:.25rem}',
+    '.drwrb-stat.is-top .drwrb-val{color:#B8912F}',
+    '.drwrb-val.is-empty{color:#A7B4BF}',
+    '.drwrb-unit{font-size:.72rem;font-weight:700;color:#5E6A72;letter-spacing:0}',
+
+    '.drwrb-foot{background:#F4F7FA;border-top:1px solid #DFE7F0;',
+      'padding:.75rem 1.4rem;color:#5E6A72;font-size:.74rem;line-height:1.45}',
+    '.drwrb-foot b{color:#121D23;font-weight:700}',
+
+    '@media (max-width:900px){',
+      '.drwrb-grid{grid-template-columns:repeat(3,1fr)}',
+      '.drwrb-stat::before{display:block}',
+      '.drwrb-stat:nth-child(3n+1)::before{display:none}}',
+    '@media (max-width:560px){',
+      '.drwrb-top{padding:1rem 1.1rem;gap:.75rem}',
+      '.drwrb-h{font-size:1.15rem}',
+      '.drwrb-cta{font-size:.78rem;padding:.4rem .4rem .4rem .8rem}',
+      '.drwrb-cta span{width:23px;height:23px}',
+      '.drwrb-grid{grid-template-columns:repeat(2,1fr)}',
+      '.drwrb-stat{padding:.9rem .8rem}',
+      '.drwrb-stat::before{display:block}',
+      '.drwrb-stat:nth-child(2n+1)::before{display:none}',
+      '.drwrb-val{font-size:1.55rem}',
+      '.drwrb-foot{padding:.7rem 1.1rem}}'
   ].join("");
 
   function injectCSS() {
@@ -214,88 +233,74 @@
     });
   }
 
-  // A gauge with no reading shows a dash. Printing 0.00" there would claim
-  // it did not rain, which is a different statement from "we don't know".
-  function fmt(v) { return v === null ? "&ndash;" : v.toFixed(2) + '"'; }
-
-  function render(mount, rows, sub, shortSub) {
+  function render(mount, rows, foot) {
     var dash = mount.getAttribute("data-dashboard");
-    var headTag = dash ? "a" : "div";
-    var headAttr = dash ? ' href="' + esc(dash) + '" class="drwrb-cell drwrb-head"'
-                        : ' class="drwrb-cell drwrb-head"';
 
-    var cells = rows.map(function (r) {
-      var empty = r.total === null ? " is-empty" : "";
-      return '<div class="drwrb-cell">' +
-               '<div class="drwrb-loc">' + esc(r.label) + "</div>" +
-               '<div class="drwrb-val' + empty + '">' + fmt(r.total) + "</div>" +
+    // Gold marks the wettest location, but only when it actually rained —
+    // highlighting a five-way tie at zero would be noise.
+    var vals = rows.map(function (r) { return r.total; })
+                   .filter(function (v) { return v !== null; });
+    var peak = vals.length ? Math.max.apply(null, vals) : null;
+    if (peak !== null && peak <= 0) peak = null;
+
+    var stats = rows.map(function (r) {
+      var top = peak !== null && r.total === peak;
+      // A gauge with no reading shows a dash. Printing 0.00" there would
+      // claim it did not rain, which is a different statement from
+      // "we don't know".
+      var body = r.total === null
+        ? '<div class="drwrb-val is-empty">&ndash;</div>'
+        : '<div class="drwrb-val">' + r.total.toFixed(2) +
+            '<span class="drwrb-unit">in</span></div>';
+      return '<div class="drwrb-stat' + (top ? " is-top" : "") + '">' +
+               '<div class="drwrb-loc">' + esc(r.label) + "</div>" + body +
              "</div>";
     }).join("");
 
+    var cta = dash
+      ? '<a class="drwrb-cta" href="' + esc(dash) + '">Full dashboard <span>&rarr;</span></a>'
+      : "";
+
     mount.innerHTML =
-      '<div class="drwrb">' +
-        '<div class="drwrb-scroll">' +
-          "<" + headTag + headAttr + ">" +
-            '<div class="drwrb-title">Rainfall Monitor</div>' +
-            '<div class="drwrb-sub">' +
-              '<span class="drwrb-sub-full">' + esc(sub) + "</span>" +
-              '<span class="drwrb-sub-short">' + esc(shortSub) + "</span>" +
-            "</div>" +
-          "</" + headTag + ">" +
-          cells +
+      '<section class="drwrb" aria-label="Rainfall, last 48 hours">' +
+        '<div class="drwrb-top">' +
+          "<div>" +
+            '<div class="drwrb-eyebrow">Rainfall Monitor</div>' +
+            '<div class="drwrb-h">Last 48 hours</div>' +
+          "</div>" + cta +
         "</div>" +
-        '<button class="drwrb-nav drwrb-nav-prev" aria-label="Scroll left"><span>&#8249;</span></button>' +
-        '<button class="drwrb-nav drwrb-nav-next" aria-label="Scroll right"><span>&#8250;</span></button>' +
-      "</div>";
-
-    wireNav(mount);
-  }
-
-  function wireNav(mount) {
-    var scroll = mount.querySelector(".drwrb-scroll");
-    var prev = mount.querySelector(".drwrb-nav-prev");
-    var next = mount.querySelector(".drwrb-nav-next");
-    if (!scroll) return;
-
-    function step(dir) {
-      var cell = scroll.querySelector(".drwrb-cell:not(.drwrb-head)");
-      var by = cell ? cell.getBoundingClientRect().width * 2 : scroll.clientWidth * 0.8;
-      scroll.scrollBy({ left: dir * by, behavior: "smooth" });
-    }
-    prev.addEventListener("click", function () { step(-1); });
-    next.addEventListener("click", function () { step(1); });
-
-    function sync() {
-      var over = scroll.scrollWidth - scroll.clientWidth;
-      var show = over > 4 ? "1" : "0";
-      prev.setAttribute("data-show", show);
-      next.setAttribute("data-show", show);
-      prev.disabled = scroll.scrollLeft <= 2;
-      next.disabled = scroll.scrollLeft >= over - 2;
-    }
-    scroll.addEventListener("scroll", sync);
-    window.addEventListener("resize", sync);
-    sync();
+        '<div class="drwrb-grid">' + stats + "</div>" +
+        '<div class="drwrb-foot">' + foot + "</div>" +
+      "</section>";
   }
 
   /* ── Load ───────────────────────────────────────────────────────────── */
 
-  function stamp() {
+  function footLive() {
+    var t = "";
     try {
-      return "Tracking 48 hrs · updated " +
-             new Date().toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
-    } catch (e) { return "Tracking 48 hrs · LCRA"; }
+      t = " · updated " + new Date().toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
+    } catch (e) {}
+    return "Inches of rain, averaged across <b>LCRA Hydromet</b> gauges in each area" +
+           t + ". The 48-hour figure is yesterday's full day plus today since midnight.";
+  }
+
+  function footDown() {
+    return "<b>Live readings unavailable.</b> LCRA Hydromet can't be reached right now — " +
+           "these will fill in automatically once it responds.";
+  }
+
+  function placeholder() {
+    return LOCATIONS.map(function (l) { return { label: l.label, total: null }; });
   }
 
   function load(mount) {
     fetchCSV(FIVE_DAY).then(function (rows) {
-      render(mount, build(rows), stamp(), "48 hrs · LCRA");
+      render(mount, build(rows), footLive());
     }).catch(function () {
-      // Show the locations with dashes rather than hiding: an empty strip
+      // Show the locations with dashes rather than hiding: an empty panel
       // looks broken, and zeros would be a lie.
-      render(mount, LOCATIONS.map(function (l) {
-        return { label: l.label, total: null };
-      }), "Live data unavailable · retrying", "No live data");
+      render(mount, placeholder(), footDown());
     });
   }
 
@@ -304,16 +309,14 @@
     if (!mount) {
       // Fall back to the script tag's own position when there's no container,
       // so an inline paste still renders where it was pasted.
-      var self = SELF;
-      if (!self || !self.parentNode) return;
+      if (!SELF || !SELF.parentNode) return;
       mount = document.createElement("div");
       mount.id = MOUNT_ID;
-      self.parentNode.insertBefore(mount, self);
+      SELF.parentNode.insertBefore(mount, SELF);
     }
     injectCSS();
-    render(mount, LOCATIONS.map(function (l) {
-      return { label: l.label, total: null };
-    }), "Tracking 48 hrs · LCRA", "48 hrs · LCRA");
+    render(mount, placeholder(),
+      "Inches of rain, averaged across <b>LCRA Hydromet</b> gauges in each area. Loading&hellip;");
     load(mount);
     setInterval(function () { load(mount); }, REFRESH_MS);
   }
