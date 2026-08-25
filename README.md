@@ -1,59 +1,85 @@
-# LCRA Rainfall Dashboard
+# Rainfall Watch — Dripping Rainwater
 
-Real-time rainfall dashboard for Texas Hill Country locations, pulling data from [LCRA HydroMet](https://hydromet.lcra.org/).
+48-hour rainfall totals for the Texas Hill Country, pulled live from
+[LCRA Hydromet](https://hydromet.lcra.org/) and branded for
+[Dripping Rainwater](https://www.drippingrainwater.com).
 
-## Locations tracked
+## Locations
 
-| Location | LCRA search pattern |
-|---|---|
-| Dripping Springs | `dripping springs` |
-| Johnson City | `johnson city` |
-| Fredericksburg | `fredericksburg` |
-| Canyon Lake | `canyon lake` |
-| Austin | `austin` |
-
-Data is averaged across all matching LCRA gauges in each area.
-
-## Views
-
-| Tab | Data source | What it shows |
+| Location | County | Gauge match pattern |
 |---|---|---|
-| **3 Most Recent Days** | `Rain5Day.csv` | Today · Yesterday · 2 Days Ago |
-| **Intraday Periods** | `Rainfall.csv` | Prev 1h · 3h · 6h · 24h · Since midnight |
-| **Monthly / YTD** | `RainMonthYear.csv` | This month · 30-day total · Year to date |
+| Dripping Springs | Hays | `dripping springs`, `dripping spr` |
+| Austin | Travis | `austin` |
+| Fredericksburg | Gillespie | `fredericksburg` |
+| Johnson City | Blanco | `johnson city` |
+| Blanco | Blanco | `blanco` (excluding `johnson city`) |
 
-The summary strip at the bottom of each card always shows Today · 5-Day · Month.
+Patterns are case-insensitive substrings tested against the LCRA gauge name.
+Every matching gauge is averaged, and each card lists the gauges it used so a
+bad pattern shows up on screen instead of silently skewing a number.
 
-## Setup
+## What the 48-hour number means
+
+LCRA publishes no rolling 48-hour field. The closest two-day window available
+is **yesterday's full-day total plus today's rain since midnight**, taken from
+`Rain5Day.csv` — so the figure covers between 24 and 48 hours depending on the
+time of day. Each card also shows the rolling **last 24 hours** and **last
+hour** from `Rainfall.csv` for finer resolution.
+
+The gallons estimate assumes 0.6233 gal per ft² per inch at 85% collection
+efficiency, which allows for first-flush diversion, splash and evaporation.
+
+## Running it
+
+The dashboard is a single self-contained file, `docs/index.html`. It needs no
+backend — open it directly, or serve the folder:
+
+```bash
+python3 -m http.server -d docs 8000
+```
+
+It is also deployed to GitHub Pages from `docs/` on every push to `main`
+(see `.github/workflows/pages.yml`).
+
+### Optional Python backend
+
+`app.py` (FastAPI) and `server.py` (stdlib only, for iSH and other no-pip
+environments) serve the same page plus a JSON API:
 
 ```bash
 pip install -r requirements.txt
-uvicorn app:app --reload
+uvicorn app:app --reload      # or: python3 server.py
 ```
-
-Then open **http://localhost:8000**.
-
-> **Note:** LCRA HydroMet uses Cloudflare protection that blocks cloud-provider IP ranges.
-> The app must run from a **residential or office network** to fetch live data.
-> Running locally (your laptop) works fine.
-
-## Adding locations
-
-Edit `locations.py` and add an entry to `LOCATIONS`:
-
-```python
-{"id": "marble_falls", "label": "Marble Falls", "search": "marble falls"},
-```
-
-The `search` string is a case-insensitive substring matched against LCRA station names.
-Use `/api/debug/columns` to inspect raw CSV data and verify column names.
-
-## API endpoints
 
 | Endpoint | Description |
 |---|---|
-| `GET /api/rainfall` | Filtered rainfall data for all configured locations |
-| `GET /api/locations` | List of configured locations |
-| `GET /api/debug/columns` | Raw CSV column names + sample rows (for debugging) |
+| `GET /api/rainfall` | All locations: `last_48h`, intraday, 5-day and monthly views |
+| `GET /api/locations` | The configured location list |
+| `GET /api/debug/columns` | Raw CSV column names and sample rows |
 
-Data is cached for 10 minutes to avoid hammering LCRA's servers.
+Responses are cached for 10 minutes.
+
+## Network note
+
+LCRA sits behind Cloudflare and blocks both cloud-provider IP ranges and
+direct cross-origin browser requests:
+
+- **The static page** relays through public CORS proxies, falling back through
+  several in turn. If they are all down the page says so rather than showing
+  stale or zeroed numbers.
+- **The Python backend** must run from a residential or office network. From a
+  cloud host, LCRA returns `403` and the API reports that plainly.
+
+## Adding a location
+
+Add an entry to `LOCATIONS` in **both** `locations.py` (backend) and the
+`LOCATIONS` array in `docs/index.html` (page):
+
+```python
+{"id": "wimberley", "label": "Wimberley", "county": "Hays Co.",
+ "match": ["wimberley"]},
+```
+
+Use `/api/debug/columns`, or LCRA's
+[gauge list](https://hydromet.lcra.org/Home/GaugeDataList), to confirm gauge
+names.

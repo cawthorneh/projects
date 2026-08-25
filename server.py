@@ -171,7 +171,7 @@ def _build_payload() -> dict:
 # ---------------------------------------------------------------------------
 # HTTP request handler
 # ---------------------------------------------------------------------------
-STATIC_DIR = Path(__file__).parent / "static"
+STATIC_DIR = Path(__file__).parent / "docs"
 
 
 class Handler(BaseHTTPRequestHandler):

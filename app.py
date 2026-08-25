@@ -1,5 +1,5 @@
 """
-LCRA Rainfall Dashboard backend.
+Rainfall Watch backend — Dripping Rainwater.
 
 Fetches three CSV files from LCRA HydroMet and serves filtered data
 for configured Texas locations.
@@ -29,7 +29,7 @@ warnings.filterwarnings("ignore", message="Unverified HTTPS request")
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 logger = logging.getLogger(__name__)
 
-app = FastAPI(title="LCRA Rainfall Dashboard")
+app = FastAPI(title="Dripping Rainwater — Rainfall Watch")
 
 # ---------------------------------------------------------------------------
 # LCRA CSV endpoints
@@ -125,11 +125,18 @@ def _location_col(df: pd.DataFrame) -> str | None:
     return None
 
 
-def _find_rows(df: pd.DataFrame, search: str) -> pd.DataFrame:
+def _find_rows(df: pd.DataFrame, loc: dict) -> pd.DataFrame:
+    """Rows whose station name hits any `match` pattern and no `exclude` pattern."""
     col = _location_col(df)
     if col is None:
         return pd.DataFrame()
-    return df[df[col].str.contains(search, case=False, na=False)]
+    names = df[col].fillna("").str.lower()
+    keep = pd.Series(False, index=df.index)
+    for pat in loc["match"]:
+        keep |= names.str.contains(pat, regex=False)
+    for pat in loc.get("exclude", []):
+        keep &= ~names.str.contains(pat, regex=False)
+    return df[keep]
 
 
 def _best_value(rows: pd.DataFrame, candidates: list[str]):
@@ -188,17 +195,24 @@ async def get_rainfall():
 
     results = []
     for loc in LOCATIONS:
-        search = loc["search"]
-        rows_rain  = _find_rows(df_rain,  search)
-        rows_5day  = _find_rows(df_5day,  search)
-        rows_month = _find_rows(df_month, search)
+        rows_rain  = _find_rows(df_rain,  loc)
+        rows_5day  = _find_rows(df_5day,  loc)
+        rows_month = _find_rows(df_month, loc)
+
+        five_day = _extract(rows_5day, FIVE_DAY_COLS)
+        # LCRA publishes no rolling 48-hour figure, so the closest available
+        # two-day window is yesterday's full day plus today since midnight.
+        today, yday = five_day.get("Today"), five_day.get("Yesterday")
+        last_48h = None if today is None and yday is None else round((today or 0) + (yday or 0), 2)
 
         results.append({
             "id":       loc["id"],
             "label":    loc["label"],
+            "county":   loc.get("county"),
             "stations": int(max(len(rows_rain), len(rows_5day), len(rows_month))),
+            "last_48h": last_48h,
             "current":  _extract(rows_rain,  INTRADAY_COLS),
-            "five_day": _extract(rows_5day,  FIVE_DAY_COLS),
+            "five_day": five_day,
             "monthly":  _extract(rows_month, MONTHLY_COLS),
         })
 
@@ -237,4 +251,4 @@ async def list_locations():
 
 
 # Serve the static dashboard (must be last so API routes take precedence)
-app.mount("/", StaticFiles(directory="static", html=True), name="static")
+app.mount("/", StaticFiles(directory="docs", html=True), name="docs")
