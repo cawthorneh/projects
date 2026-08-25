@@ -25,10 +25,11 @@ Colors are sampled directly from drippingrainwater.com: blue `#3066AB`, gold
 [Figtree](https://fonts.google.com/specimen/Figtree), a close match to the
 site's headings; swap `--font` in `docs/index.html` if the real family differs.
 
-The droplet mark in the header is a **placeholder** built from the brand
-colors. To use the real heron logo, replace the inline `<svg>` in the
-`.logo` block with an `<img>` pointing at the asset (embed it as a data URI
-to keep the page self-contained).
+The header carries the real heron logo, embedded as a base64 PNG data URI so
+the page stays a single self-contained file. It is quantised to 64 colors at
+600px wide (~16KB, visually identical to the source at display size); the
+favicon is the droplet mark cropped from the same asset. To swap in a new
+logo, replace the `src` on `img.logo` and the `href` on `link[rel=icon]`.
 
 ## What the 48-hour number means
 
