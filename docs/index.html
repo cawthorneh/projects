@@ -14,16 +14,19 @@
 /* ─────────────────────────────────────────────────────────────
    Dripping Rainwater brand tokens.
    Blue, gold and sky are sampled from drippingrainwater.com; the
-   logo itself uses only the first two.
+   logo itself uses only the first two. Light-only, like the site —
+   cards separate from the white ground by border and shadow, and the
+   chips inside them carry the one tint.
    ───────────────────────────────────────────────────────────── */
 :root{
+  color-scheme:light;
   --blue:#3066AB;
   --blue-dk:#25507F;
   --gold:#D8B046;
   --gold-dk:#B8912F;
   --sky:#6DABE1;
   --sky-lt:#4CA1E1;
-  --ground:#F4F7FA;
+  --ground:#FFFFFF;
   --surface:#FFFFFF;
   --surface-2:#F4F7FA;
   --border:#DFE7F0;
@@ -35,28 +38,6 @@
   --radius:16px;
   --maxw:1140px;
   --font:"Figtree",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --ground:#0C1826;
-    --surface:#132436;
-    --surface-2:#183047;
-    --border:#22405D;
-    --ink:#EAF1F8;
-    --muted:#93A7BB;
-    --dry:#54697E;
-    --shadow:0 1px 2px rgba(0,0,0,.35), 0 10px 28px rgba(0,0,0,.28);
-  }
-}
-:root[data-theme="dark"]{
-  --ground:#0C1826;
-  --surface:#132436;
-  --surface-2:#183047;
-  --border:#22405D;
-  --ink:#EAF1F8;
-  --muted:#93A7BB;
-  --dry:#54697E;
-  --shadow:0 1px 2px rgba(0,0,0,.35), 0 10px 28px rgba(0,0,0,.28);
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
@@ -158,10 +139,6 @@ main{flex:1;padding:1.6rem 0 2.4rem}
 .skeleton .inches{width:5rem;height:3rem;background:var(--border);color:transparent;border-radius:8px}
 .banner{border-radius:var(--radius);padding:1.05rem 1.2rem;margin-bottom:1.15rem;font-size:.88rem;
         background:#FDF6E6;border:1px solid var(--gold);color:#6B5116}
-:root[data-theme="dark"] .banner{background:#2C2412;border-color:var(--gold-dk);color:#F3E2B6}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]) .banner{background:#2C2412;border-color:var(--gold-dk);color:#F3E2B6}
-}
 .banner b{display:block;margin-bottom:.3rem;font-size:.93rem;font-weight:800}
 .banner code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.85em}
 

@@ -21,7 +21,10 @@ bad pattern shows up on screen instead of silently skewing a number.
 ## Branding
 
 Colors are sampled directly from drippingrainwater.com: blue `#3066AB`, gold
-`#D8B046`, sky `#6DABE1`, ground `#F4F7FA`. Type is
+`#D8B046`, sky `#6DABE1`. The page is light-only, like the site: cards sit on
+a white ground and separate by border and shadow, with `#F4F7FA` tinting the
+chips inside them. `color-scheme: light` stops browsers auto-darkening it.
+Type is
 [Figtree](https://fonts.google.com/specimen/Figtree), a close match to the
 site's headings; swap `--font` in `docs/index.html` if the real family differs.
 
