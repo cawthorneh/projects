@@ -194,7 +194,7 @@
     '.drwt-lead{color:#5E6A72;font-size:.92rem;line-height:1.55;margin:.5rem 0 0;max-width:62ch}',
 
     '.drwt-cols{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);',
-      'gap:1.15rem;align-items:start;margin-top:1.3rem}',
+      'gap:1.15rem;align-items:start;margin-top:1.15rem}',
 
     '.drwt-panel{background:#fff;border:1px solid #DFE7F0;border-radius:16px;padding:1.25rem;',
       'box-shadow:0 1px 2px rgba(18,29,35,.05),0 10px 28px rgba(48,102,171,.10)}',
@@ -218,13 +218,22 @@
     '.drwt-field.is-off{display:none}',
 
     // Headline result: the number the visitor came for.
-    '.drwt-rec{background:#3066AB;color:#fff;border-radius:16px;padding:1.35rem 1.4rem;',
-      'box-shadow:0 10px 28px rgba(48,102,171,.18)}',
+    '.drwt-rec{background:#3066AB;color:#fff;border-radius:16px;padding:1.4rem 1.5rem;',
+      'margin-top:1.3rem;display:grid;grid-template-columns:auto minmax(0,1fr);',
+      'gap:.4rem 2rem;align-items:center;box-shadow:0 10px 28px rgba(48,102,171,.18)}',
+    '.drwt-rec-main{display:flex;flex-direction:column}',
+    // A brief lift when the answer changes, so an adjustment upstairs is
+    // visibly answered rather than silently repainted.
+    '.drwt-rec.is-new{animation:drwt-pop .45s ease}',
+    '@keyframes drwt-pop{0%{transform:scale(.985);box-shadow:0 4px 12px rgba(48,102,171,.14)}',
+      '55%{transform:scale(1.006)}100%{transform:scale(1)}}',
+    '@media (prefers-reduced-motion:reduce){.drwt-rec.is-new{animation:none}}',
+    '.drwt-rec.is-idle{background:#5E6A72}',
     '.drwt-rec-lab{color:#F0DFAE;font-size:.72rem;font-weight:800;letter-spacing:.14em;',
       'text-transform:uppercase}',
     '.drwt-rec-id{font-size:3.1rem;font-weight:800;letter-spacing:-.04em;line-height:1;margin-top:.4rem}',
     '.drwt-rec-range{font-size:1rem;font-weight:700;color:#D8B046;margin-top:.25rem}',
-    '.drwt-rec-note{font-size:.84rem;color:#D6E4F2;margin-top:.7rem;line-height:1.5;max-width:52ch}',
+    '.drwt-rec-note{font-size:.88rem;color:#D6E4F2;line-height:1.55;max-width:56ch}',
     '.drwt-rec.is-short{background:#8A5A12}',
     '.drwt-rec.is-short .drwt-rec-range{color:#F7DE7F}',
     '.drwt-rec.is-short .drwt-rec-note{color:#F5E6C8}',
@@ -279,6 +288,7 @@
       '.drwt-cols{grid-template-columns:1fr}',
       '.drwt-h{font-size:1.35rem}',
       '.drwt-stats{grid-template-columns:1fr}',
+      '.drwt-rec{grid-template-columns:1fr;gap:.7rem;padding:1.2rem 1.25rem}',
       '.drwt-rec-id{font-size:2.6rem}}'
   ].join("");
 
@@ -360,36 +370,41 @@
            esc(label) + "</option>";
   }
 
-  function results(r, v) {
+  // The recommendation is the answer the visitor came for, so it sits above
+  // the inputs rather than below them.
+  function recommendation(r) {
     if (r.annualDemand <= 0) {
-      return '<div class="drwt-rec">' +
+      return '<div class="drwt-rec is-idle"><div class="drwt-rec-main">' +
         '<div class="drwt-rec-lab">Nothing to size yet</div>' +
-        '<div class="drwt-rec-id is-small">Tell us what the water is for</div>' +
+        '<div class="drwt-rec-id is-small">Tell us what the water is for</div></div>' +
         '<div class="drwt-rec-note">With no household use, no irrigated area and no pool, ' +
-        "there's no demand to size a tank against. Add an irrigated area or a pool on the " +
-        "left, or switch to potable use.</div></div>" + fine(v);
+        "there's no demand to size a tank against. Add an irrigated area or a pool, " +
+        "or switch to potable use.</div></div>";
     }
     var short = r.required === null;
     var rec = short
-      ? '<div class="drwt-rec is-short">' +
+      ? '<div class="drwt-rec is-short"><div class="drwt-rec-main">' +
           '<div class="drwt-rec-lab">Catchment is the limit</div>' +
           '<div class="drwt-rec-id is-small">More roof needed</div>' +
-          '<div class="drwt-rec-range">' + gal(-r.balance) + " gal short each year</div>" +
+          '<div class="drwt-rec-range">' + gal(-r.balance) + " gal short each year</div></div>" +
           '<div class="drwt-rec-note">This roof catches less in a year than this property uses, ' +
           "so no tank size can carry it alone — a bigger tank would simply sit empty for longer. " +
           "Adding catchment, trimming irrigation, or planning to draw on your existing supply " +
           "through the dry months all close the gap. Worth a conversation.</div></div>"
-      : '<div class="drwt-rec">' +
+      : '<div class="drwt-rec"><div class="drwt-rec-main">' +
           '<div class="drwt-rec-lab">Recommended tank</div>' +
           '<div class="drwt-rec-id">' + r.tank.label + "</div>" +
-          '<div class="drwt-rec-range">' + r.tank.range + "</div>" +
+          '<div class="drwt-rec-range">' + r.tank.range + "</div></div>" +
           '<div class="drwt-rec-note">This property needs about <b>' + gal(r.required) +
           " gal</b> of storage &mdash; " +
           (r.governedBy === "reserve"
             ? "enough to carry " + r.reserveDays + " days at peak use with no rain at all"
             : "enough to bridge the seasonal gap between what you catch and what you use") +
           ". The " + r.tank.label + " covers that.</div></div>";
+    return rec;
+  }
 
+  function detail(r, v) {
     var balClass = r.balance < 0 ? " class=\"is-neg\"" : "";
     var stats = '<dl class="drwt-stats">' +
       '<div class="drwt-stat"><dt>Rainwater caught / year</dt><dd>' + gal(r.annualSupply) +
@@ -400,7 +415,7 @@
         "</dt><dd" + balClass + ">" + gal(Math.abs(r.balance)) + " <small>gal</small></dd></div>" +
     "</dl>";
 
-    return rec + stats + chart(r) + fine(v);
+    return stats + chart(r) + fine(v);
   }
 
   function fine(v) {
@@ -500,9 +515,32 @@
     };
   }
 
+  var lastRec = null;
+
   function paint(root, v) {
+    var r = calculate(v);
     var out = root.querySelector("#drwt-out");
-    out.innerHTML = results(calculate(v), v);
+    var recBox = root.querySelector("#drwt-rec");
+
+    // Identity of the answer, including the figures quoted in it, so the card
+    // is rebuilt when its content changes and left alone when it doesn't.
+    var key = r.annualDemand <= 0 ? "idle"
+            : r.required === null ? "short|" + Math.round(r.balance)
+            : r.tank.label + "|" + Math.round(r.required);
+
+    // Only rebuild on a real change. A <select> fires input *and* change, so
+    // repainting unconditionally would run twice and the second pass would
+    // discard the element the highlight had just been applied to.
+    if (key !== lastRec) {
+      var first = lastRec === null;
+      recBox.innerHTML = recommendation(r);
+      var card = recBox.firstChild;
+      if (!first && card && card.classList) card.classList.add("is-new");
+      lastRec = key;
+    }
+
+    out.__data = r;
+    out.innerHTML = detail(r, v);
     wireChart(out);
     // Show or hide the conditional fields without rebuilding the form, so
     // focus and caret position survive a keystroke.
@@ -570,6 +608,7 @@
                         "<span>&rarr;</span></a>" : "";
 
     mount.innerHTML = '<section class="drwt">' + head +
+      '<div id="drwt-rec" aria-live="polite"></div>' +
       '<div class="drwt-cols"><div id="drwt-formwrap"></div>' +
       '<div id="drwt-out"></div></div>' + ctaHtml + "</section>";
     mount.querySelector("#drwt-formwrap").innerHTML = form(v);
