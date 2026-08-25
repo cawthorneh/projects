@@ -179,12 +179,26 @@
     return null;
   }
 
+  // A relay that accepts the connection and then stalls would otherwise leave
+  // the component on "Loading…" forever: fetch has no timeout of its own, so
+  // the promise simply never settles and the next relay is never tried.
+  var FETCH_TIMEOUT_MS = 6000;
+
+  function fetchWithTimeout(url) {
+    if (typeof AbortController === "undefined") return fetch(url, { cache: "no-store" });
+    var ctrl = new AbortController();
+    var timer = setTimeout(function () { ctrl.abort(); }, FETCH_TIMEOUT_MS);
+    return fetch(url, { cache: "no-store", signal: ctrl.signal })
+      .then(function (r) { clearTimeout(timer); return r; },
+            function (e) { clearTimeout(timer); throw e; });
+  }
+
   function fetchCSV(file) {
     var url = LCRA_BASE + file, i = 0;
     function attempt() {
       if (i >= PROXIES.length) return Promise.reject(new Error("all sources failed"));
       var proxy = PROXIES[i++];
-      return fetch(proxy(url), { cache: "no-store" })
+      return fetchWithTimeout(proxy(url))
         .then(function (r) { return r.ok ? r.text() : Promise.reject(new Error("HTTP " + r.status)); })
         .then(function (t) {
           var rows = parseCSV(t);

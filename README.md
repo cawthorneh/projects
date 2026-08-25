@@ -56,10 +56,14 @@ dashboard, so a browser test asserts the two produce identical numbers from the
 same fixture — if one drifts, that test fails.
 
 ```html
-<div id="drw-rainfall-bar"
-     data-dashboard="https://cawthorneh.github.io/vibe-coding/"></div>
+<div id="drw-rainfall-bar" data-dashboard="/rainfall"></div>
 <script src="https://cawthorneh.github.io/vibe-coding/rainfall-bar.js"></script>
 ```
+
+`data-dashboard` is the page the strip's **Full dashboard** button opens — put
+the dashboard component on that page and the two are tied together. It defaults
+to a site-relative `/rainfall` so the link works on whatever domain the paste
+lands on; delete the attribute to hide the button.
 
 Paste into a Webflow **Embed** element or any raw-HTML block. No libraries, no
 build step. `data-dashboard` is optional and links the label to the full
@@ -147,6 +151,14 @@ uvicorn app:app --reload      # or: python3 server.py
 | `GET /api/debug/columns` | Raw CSV column names and sample rows |
 
 Responses are cached for 10 minutes.
+
+## Relay timeouts
+
+A browser `fetch` has no timeout of its own, so a relay that accepted the
+connection and then stalled left a component on "Loading…" indefinitely — the
+promise never settled and the next relay was never tried. Each attempt now gets
+six seconds (`FETCH_TIMEOUT_MS`), so every component reaches either numbers or
+dashes. A test hangs every relay and asserts recovery.
 
 ## Network note
 

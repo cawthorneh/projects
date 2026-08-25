@@ -281,12 +281,25 @@ function parseCSV(text){
   });
 }
 
+// A relay that accepts the connection and then stalls would otherwise leave
+// the page on its loading state forever: fetch has no timeout of its own, so
+// the promise never settles and the next relay is never tried.
+const FETCH_TIMEOUT_MS = 6000;
+
+async function fetchWithTimeout(url){
+  if (typeof AbortController === "undefined") return fetch(url, { cache:"no-store" });
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), FETCH_TIMEOUT_MS);
+  try { return await fetch(url, { cache:"no-store", signal: ctrl.signal }); }
+  finally { clearTimeout(timer); }
+}
+
 async function fetchCSV(file){
   const url = LCRA_BASE + file;
   let lastErr = null;
   for (const proxy of PROXIES){
     try {
-      const resp = await fetch(proxy(url), { cache:"no-store" });
+      const resp = await fetchWithTimeout(proxy(url));
       if (!resp.ok){ lastErr = new Error(`HTTP ${resp.status}`); continue; }
       const text = await resp.text();
       const rows = parseCSV(text);
