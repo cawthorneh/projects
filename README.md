@@ -84,6 +84,28 @@ tag early — regenerate them whenever a component changes.
 
 Open `docs/bar-demo.html` to preview the strip against the site's blue.
 
+### Tank sizing calculator
+
+`docs/tank-calculator.js` sizes a tank from roof area and household demand;
+`docs/webflow-embed-calculator.txt` is the paste-ready block, and
+`docs/calculator-demo.html` previews it. `data-cta="URL"` adds a contact button,
+`data-heading="off"` drops the built-in heading.
+
+Every assumption is a named constant at the top of the file — `RAIN_IN`,
+`COLLECTION_EFFICIENCY`, `IRRIGATION_IN`, `POOL_IN`, `GPD`, `TANKS`,
+`RESERVE_DAYS` — so the numbers can be tuned from field experience without
+touching the logic.
+
+**`RESERVE_DAYS` governs most recommendations, and has to.** A monthly balance
+run on *average* rainfall gives every month some rain, so the tank never draws
+down — that model sized a three-person home at 923 gallons. Averages smooth away
+the drought the tank exists to cover. The tank is therefore sized to hold 90 days
+of peak-season use with no inflow, and the monthly balance is kept as a second
+constraint for demand that outruns supply seasonally.
+
+The tank ladder has a gap between DR-1 (ends at 16,000) and DR-2 (starts at
+20,000). A requirement landing in it rounds **up** to DR-2.
+
 ### Keeping the three in step
 
 The page, the strip and the dashboard component each carry their own copy of the

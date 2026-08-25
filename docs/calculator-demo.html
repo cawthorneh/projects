@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tank sizing calculator — embed preview</title>
+<style>
+  :root{color-scheme:light}
+  body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+       background:#fff;color:#121D23}
+  .band{max-width:1140px;margin:0 auto;padding:2.5rem 1.25rem}
+  .note{max-width:760px;margin:0 auto;padding:0 1.25rem 3rem;color:#5E6A72;font-size:.9rem;line-height:1.6}
+  .note h2{color:#121D23;font-size:1.05rem;margin:1.8rem 0 .4rem}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.86em;
+       background:#F4F7FA;border:1px solid #DFE7F0;border-radius:5px;padding:.1em .35em}
+</style>
+</head>
+<body>
+
+<div class="band">
+  <div id="drw-tank-calculator" data-cta="https://www.drippingrainwater.com/contact"></div>
+</div>
+
+<div class="note">
+  <h2>Tuning it</h2>
+  <p>Every assumption is a named constant at the top of <code>tank-calculator.js</code>:
+  <code>RAIN_IN</code> (monthly rainfall), <code>COLLECTION_EFFICIENCY</code>,
+  <code>IRRIGATION_IN</code>, <code>POOL_IN</code>, <code>GPD</code>, <code>TANKS</code>
+  and <code>RESERVE_DAYS</code>. Change a number there and the whole tool follows.</p>
+
+  <h2>What drives the recommendation</h2>
+  <p><code>RESERVE_DAYS</code> is the one to look at first. It is set to 90 — the tank must hold
+  ninety days of peak-season use with no rain at all — and it governs most results. A monthly
+  balance run on average rainfall gives every month some rain, which sizes a family home at
+  under a thousand gallons; averages smooth away the drought a tank exists to cover. The
+  balance is still checked, and takes over when demand outruns supply seasonally.</p>
+
+  <h2>Embedding</h2>
+  <p>Paste <code>webflow-embed-calculator.txt</code> into a Webflow Embed element.
+  <code>data-cta</code> adds the contact button; <code>data-heading="off"</code> drops the
+  built-in heading when the section supplies its own.</p>
+</div>
+
+<script src="./tank-calculator.js"></script>
+</body>
+</html>
