@@ -45,7 +45,7 @@ hour** from `Rainfall.csv` for finer resolution.
 The gallons estimate assumes 0.6233 gal per ft² per inch at 85% collection
 efficiency, which allows for first-flush diversion, splash and evaporation.
 
-## Embeddable bar
+## Embeddable components
 
 `docs/rainfall-bar.js` is a standalone panel of the same 48-hour totals, built
 in the site's own visual language: a white card with a gold eyebrow over a heavy
@@ -66,13 +66,32 @@ build step. `data-dashboard` is optional and links the label to the full
 dashboard. The file can also be pasted inline inside a `<script>` tag, in which
 case it renders at that position and depends on nothing hosted.
 
-`docs/webflow-embed.txt` is the same component wrapped as a single paste-ready
-block for a Webflow **Embed** element — no hosted file needed. It is generated
-from `rainfall-bar.js`, with the `</script>` in that file's own usage comment
-escaped so it can't close the host tag early; regenerate it whenever the
-component changes.
+`docs/rainfall-dashboard.js` is the full card dashboard as a component — the
+same cards as the standalone page, without its logo bar and footer, which would
+duplicate the site's own. Add `data-heading="off"` to the mount when the
+surrounding section supplies its own heading.
 
-Open `docs/bar-demo.html` to preview it against the site's blue.
+```html
+<div id="drw-rainfall-dashboard"></div>
+<script src="https://cawthorneh.github.io/vibe-coding/rainfall-dashboard.js"></script>
+```
+
+`docs/webflow-embed.txt` and `docs/webflow-embed-dashboard.txt` wrap each
+component as a single paste-ready block for a Webflow **Embed** element, with no
+hosted file needed. Both are generated from the component sources, with the
+`</script>` in each file's own usage comment escaped so it can't close the host
+tag early — regenerate them whenever a component changes.
+
+Open `docs/bar-demo.html` to preview the strip against the site's blue.
+
+### Keeping the three in step
+
+The page, the strip and the dashboard component each carry their own copy of the
+data layer, because each has to stay independently pasteable. A browser test
+asserts all three produce identical totals *and* identical breakdowns from the
+same fixture, so drift fails the build rather than reaching the site. If that
+becomes tiresome, the fix is a small build step composing the components from a
+shared source — the outputs must stay self-contained either way.
 
 A gauge with no reading renders a dash, never `0.00"` — zero means it did not
 rain, which is a different claim from having no data.
