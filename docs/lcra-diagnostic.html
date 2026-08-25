@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LCRA relay diagnostic — Dripping Rainwater</title>
+<style>
+  :root{color-scheme:light}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+       background:#fff;color:#121D23;line-height:1.55;padding:2rem 1.25rem}
+  .wrap{max-width:820px;margin:0 auto}
+  h1{font-size:1.5rem;font-weight:800;letter-spacing:-.025em}
+  .lead{color:#5E6A72;font-size:.92rem;margin:.5rem 0 1.4rem;max-width:64ch}
+  button{font:inherit;font-size:.88rem;font-weight:800;color:#3066AB;background:#D8B046;
+         border:0;border-radius:10px;padding:.6rem 1.1rem;cursor:pointer}
+  button:hover{background:#C9A23C}
+  button[disabled]{opacity:.5;cursor:default}
+  .row{border:1px solid #DFE7F0;border-radius:12px;padding:.9rem 1rem;margin-top:.75rem;
+       background:#fff}
+  .row h2{font-size:.9rem;font-weight:800;display:flex;align-items:center;gap:.5rem}
+  .pill{font-size:.68rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;
+        border-radius:99px;padding:.15rem .5rem;color:#fff;background:#5E6A72}
+  .ok{background:#2E7D5B}.bad{background:#A0522D}.wait{background:#3066AB}
+  .row p{font-size:.8rem;color:#5E6A72;margin-top:.35rem;word-break:break-word}
+  .row code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.76rem;
+            background:#F4F7FA;border:1px solid #DFE7F0;border-radius:5px;padding:.05em .3em}
+  pre{background:#0E2233;color:#DCE9F2;border-radius:8px;padding:.6rem .7rem;margin-top:.5rem;
+      overflow-x:auto;font-size:.72rem;max-height:9rem}
+  .verdict{margin-top:1.4rem;border-left:4px solid #D8B046;background:#F4F7FA;
+           border-radius:0 12px 12px 0;padding:1rem 1.15rem;font-size:.88rem}
+  .verdict b{display:block;margin-bottom:.25rem}
+  .muted{color:#5E6A72;font-size:.8rem;margin-top:1.2rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>LCRA relay diagnostic</h1>
+  <p class="lead">The rainfall components read LCRA Hydromet through public CORS relays, and those
+  relays are failing on the live site. This tests each link in the chain <b>from this browser, on
+  this network</b>, and reports exactly what each one does.</p>
+
+  <button id="run">Run the test</button>
+  <div id="out"></div>
+  <div id="verdict"></div>
+
+  <p class="muted">Nothing is sent anywhere. Every request goes straight from this page to LCRA or
+  a relay, exactly as the components do. Opening this from your desktop tests whether the relays
+  are alive at all; putting it on a page of the site tests the same thing from the site's own
+  origin, which is what actually matters if the relays turn out to be fine here.</p>
+</div>
+
+<script>
+"use strict";
+var TARGET = "https://hydromet.lcra.org/media/Rain5Day.csv";
+var TESTS = [
+  { name: "LCRA, no relay",
+    note: "Expected to fail on CORS — browsers aren't allowed to read it directly. A failure here is normal and is the reason relays exist.",
+    url: TARGET },
+  { name: "corsproxy.io",
+    note: "First relay the components try.",
+    url: "https://corsproxy.io/?" + encodeURIComponent(TARGET) },
+  { name: "allorigins",
+    note: "Second relay.",
+    url: "https://api.allorigins.win/raw?url=" + encodeURIComponent(TARGET) },
+  { name: "r.jina.ai",
+    note: "Third relay. Returns a text wrapper rather than raw CSV, so even a success here may not parse.",
+    url: "https://r.jina.ai/" + TARGET }
+];
+
+var TIMEOUT_MS = 12000;
+
+function el(tag, cls, text) {
+  var e = document.createElement(tag);
+  if (cls) e.className = cls;
+  if (text != null) e.textContent = text;
+  return e;
+}
+
+function looksLikeGaugeCsv(text) {
+  var first = (text || "").split(/\r?\n/)[0].toLowerCase();
+  return /,/.test(first) && /(location|site|station|gauge)/.test(first);
+}
+
+async function run() {
+  var btn = document.getElementById("run");
+  btn.disabled = true; btn.textContent = "Testing…";
+  var out = document.getElementById("out");
+  out.innerHTML = "";
+  document.getElementById("verdict").innerHTML = "";
+  var results = [];
+
+  for (var i = 0; i < TESTS.length; i++) {
+    var t = TESTS[i];
+    var row = el("div", "row");
+    var h = el("h2"); h.appendChild(document.createTextNode(t.name));
+    var pill = el("span", "pill wait", "testing"); h.appendChild(pill);
+    row.appendChild(h);
+    row.appendChild(el("p", null, t.note));
+    out.appendChild(row);
+
+    var started = Date.now();
+    var ctrl = new AbortController();
+    var timer = setTimeout(function () { ctrl.abort(); }, TIMEOUT_MS);
+    var verdict = "bad", detail = "", body = "";
+    try {
+      var resp = await fetch(t.url, { cache: "no-store", signal: ctrl.signal });
+      body = await resp.text();
+      detail = "HTTP " + resp.status + " · " + body.length.toLocaleString() + " bytes · " +
+               ((Date.now() - started) / 1000).toFixed(1) + "s";
+      if (!resp.ok) { verdict = "bad"; detail += " — rejected"; }
+      else if (looksLikeGaugeCsv(body)) { verdict = "ok"; detail += " — parses as gauge CSV"; }
+      else { verdict = "bad"; detail += " — responded, but not gauge CSV"; }
+    } catch (e) {
+      detail = (e && e.name === "AbortError")
+        ? "timed out after " + (TIMEOUT_MS / 1000) + "s — accepted the connection and stalled"
+        : "blocked before any response — " + (e && e.message ? e.message : "network or CORS error");
+    }
+    clearTimeout(timer);
+
+    pill.className = "pill " + (verdict === "ok" ? "ok" : "bad");
+    pill.textContent = verdict === "ok" ? "works" : "failed";
+    row.appendChild(el("p", null, detail));
+    if (body) {
+      var pre = el("pre", null, body.slice(0, 400) + (body.length > 400 ? "\n…" : ""));
+      row.appendChild(pre);
+    }
+    results.push({ name: t.name, ok: verdict === "ok", relay: i > 0 });
+  }
+
+  var working = results.filter(function (r) { return r.relay && r.ok; });
+  var v = document.getElementById("verdict");
+  var box = el("div", "verdict");
+  if (working.length) {
+    box.appendChild(el("b", null, "At least one relay works from here."));
+    box.appendChild(el("p", null,
+      "Working: " + working.map(function (r) { return r.name; }).join(", ") +
+      ". If the live site still shows dashes, the problem is specific to the site's origin " +
+      "rather than the relay being down — send me this result and I'll narrow it from there."));
+  } else {
+    box.appendChild(el("b", null, "No relay works from here."));
+    box.appendChild(el("p", null,
+      "Every relay failed, so the components have nothing to read and the dashes on the site are " +
+      "honest. Relaying isn't a viable foundation for this — the fix is to fetch LCRA on a " +
+      "schedule and publish a cached copy the browser reads instead. Send me this result."));
+  }
+  v.appendChild(box);
+  btn.disabled = false; btn.textContent = "Run again";
+}
+
+document.getElementById("run").addEventListener("click", run);
+</script>
+</body>
+</html>
