@@ -18,6 +18,18 @@ Patterns are case-insensitive substrings tested against the LCRA gauge name.
 Every matching gauge is averaged, and each card lists the gauges it used so a
 bad pattern shows up on screen instead of silently skewing a number.
 
+## Branding
+
+Colors are sampled directly from drippingrainwater.com: blue `#3066AB`, gold
+`#D8B046`, sky `#6DABE1`, ground `#F4F7FA`. Type is
+[Figtree](https://fonts.google.com/specimen/Figtree), a close match to the
+site's headings; swap `--font` in `docs/index.html` if the real family differs.
+
+The droplet mark in the header is a **placeholder** built from the brand
+colors. To use the real heron logo, replace the inline `<svg>` in the
+`.logo` block with an `<img>` pointing at the asset (embed it as a data URI
+to keep the page self-contained).
+
 ## What the 48-hour number means
 
 LCRA publishes no rolling 48-hour field. The closest two-day window available

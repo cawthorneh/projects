@@ -5,194 +5,223 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Rainfall Watch · Dripping Rainwater</title>
 <meta name="description" content="48-hour rainfall totals for the Texas Hill Country, from LCRA Hydromet gauges. Brought to you by Dripping Rainwater.">
-<meta name="theme-color" content="#0F2E3D">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>💧</text></svg>">
+<meta name="theme-color" content="#3066AB">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&display=swap">
 <style>
 /* ─────────────────────────────────────────────────────────────
-   Dripping Rainwater — brand tokens
-   Palette is a Hill Country / rainwater reading: deep cistern
-   navy, rain blue, limestone warm neutral.
+   Dripping Rainwater brand tokens.
+   Blue, gold and sky are sampled from drippingrainwater.com; the
+   logo itself uses only the first two.
    ───────────────────────────────────────────────────────────── */
 :root{
-  --deep:#0F2E3D;
-  --deep-2:#16414F;
-  --rain:#2E9CB5;
-  --rain-lt:#4FB3D9;
-  --limestone:#F5F1E8;
-  --bg:#F5F1E8;
+  --blue:#3066AB;
+  --blue-dk:#25507F;
+  --gold:#D8B046;
+  --gold-dk:#B8912F;
+  --sky:#6DABE1;
+  --sky-lt:#4CA1E1;
+  --ground:#F4F7FA;
   --surface:#FFFFFF;
-  --surface-2:#FBF8F2;
-  --border:#E2DACB;
-  --text:#14212B;
-  --muted:#5F7180;
-  --dry:#B9AE99;
-  --shadow:0 1px 2px rgba(15,46,61,.06), 0 8px 24px rgba(15,46,61,.07);
-  --radius:14px;
-  --maxw:1120px;
+  --surface-2:#F4F7FA;
+  --border:#DFE7F0;
+  --ink:#121D23;
+  --muted:#5E6A72;
+  --dry:#A7B4BF;
+  --on-blue:#E9F0F7;
+  --shadow:0 1px 2px rgba(18,29,35,.05), 0 10px 28px rgba(48,102,171,.09);
+  --radius:16px;
+  --maxw:1140px;
+  --font:"Figtree",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
 }
 @media (prefers-color-scheme: dark){
-  :root{
-    --bg:#0B1A22;
-    --surface:#12262F;
-    --surface-2:#17303B;
-    --border:#22414E;
-    --text:#E8F0F3;
-    --muted:#93A9B4;
-    --dry:#4A5F6B;
-    --limestone:#12262F;
-    --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25);
+  :root:not([data-theme="light"]){
+    --ground:#0C1826;
+    --surface:#132436;
+    --surface-2:#183047;
+    --border:#22405D;
+    --ink:#EAF1F8;
+    --muted:#93A7BB;
+    --dry:#54697E;
+    --shadow:0 1px 2px rgba(0,0,0,.35), 0 10px 28px rgba(0,0,0,.28);
   }
 }
+:root[data-theme="dark"]{
+  --ground:#0C1826;
+  --surface:#132436;
+  --surface-2:#183047;
+  --border:#22405D;
+  --ink:#EAF1F8;
+  --muted:#93A7BB;
+  --dry:#54697E;
+  --shadow:0 1px 2px rgba(0,0,0,.35), 0 10px 28px rgba(0,0,0,.28);
+}
+
 *{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-text-size-adjust:100%}
 body{
-  font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-  background:var(--bg);color:var(--text);line-height:1.45;
-  min-height:100vh;display:flex;flex-direction:column;
+  font-family:var(--font);background:var(--ground);color:var(--ink);
+  line-height:1.5;min-height:100vh;display:flex;flex-direction:column;
+  -webkit-font-smoothing:antialiased;
 }
-.wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 clamp(1rem,3vw,1.75rem)}
+.wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 clamp(1rem,4vw,2rem)}
+a{color:var(--blue)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:4px}
 
-/* ── Header ── */
-header{
-  background:linear-gradient(160deg,var(--deep) 0%,var(--deep-2) 100%);
-  color:#EAF4F7;padding-top:env(safe-area-inset-top,0);
-}
-.head-in{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding:1.15rem 0}
-.brand{display:flex;align-items:center;gap:.7rem;min-width:0}
-.brand svg{flex:none}
-.brand-name{font-size:1.12rem;font-weight:700;letter-spacing:-.01em;white-space:nowrap}
-.brand-sub{font-size:.76rem;color:#9FC6D4;letter-spacing:.09em;text-transform:uppercase;font-weight:600}
-.head-right{display:flex;align-items:center;gap:.85rem;flex-wrap:wrap}
-.stamp{font-size:.78rem;color:#9FC6D4;text-align:right;line-height:1.35}
-.stamp b{color:#EAF4F7;font-weight:600}
+/* ── Logo bar: white, as on the site ── */
+.logobar{background:#FFFFFF;border-bottom:1px solid var(--border);padding-top:env(safe-area-inset-top,0)}
+.logobar-in{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.85rem 0}
+.logo{display:flex;align-items:center;gap:.7rem;min-width:0}
+.logo svg{flex:none}
+.wordmark{line-height:.94;letter-spacing:-.012em}
+.wordmark .l1{display:block;font-size:1.16rem;font-weight:900;color:var(--gold);letter-spacing:.005em}
+.wordmark .l2{display:block;font-size:1.16rem;font-weight:900;color:var(--blue)}
+
 button.refresh{
-  font:inherit;font-size:.82rem;font-weight:600;color:#EAF4F7;
-  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);
-  border-radius:9px;padding:.5rem .85rem;cursor:pointer;
-  display:inline-flex;align-items:center;gap:.4rem;transition:background .15s;
+  font:inherit;font-size:.83rem;font-weight:700;color:var(--blue);
+  background:var(--gold);border:none;border-radius:10px;
+  padding:.6rem .55rem .6rem .95rem;cursor:pointer;
+  display:inline-flex;align-items:center;gap:.7rem;white-space:nowrap;
+  transition:background .15s;
 }
-button.refresh:hover{background:rgba(255,255,255,.18)}
-button.refresh[disabled]{opacity:.5;cursor:default}
-button.refresh svg{transition:transform .6s}
-button.refresh.spin svg{transform:rotate(360deg)}
+button.refresh:hover{background:var(--gold-dk)}
+button.refresh[disabled]{opacity:.55;cursor:default}
+/* The site's CTAs nest the arrow in its own box — echoed here. */
+button.refresh .box{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:26px;height:26px;border-radius:7px;background:var(--blue);color:#fff;
+}
+button.refresh.spin .box svg{animation:spin .7s ease}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion: reduce){button.refresh.spin .box svg{animation:none}}
 
-/* ── Intro strip ── */
-.intro{padding:1.4rem 0 .4rem}
-.intro h2{font-size:clamp(1.35rem,4vw,1.75rem);letter-spacing:-.02em;font-weight:700}
-.intro p{color:var(--muted);font-size:.9rem;margin-top:.3rem;max-width:62ch}
+/* ── Hero band ── */
+.hero{background:var(--blue);color:#fff;padding:1.9rem 0 2rem}
+.eyebrow{
+  font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:.55rem;
+}
+.hero h1{font-size:clamp(1.7rem,5.4vw,2.5rem);font-weight:800;letter-spacing:-.028em;
+         line-height:1.08;text-wrap:balance}
+.hero p{color:var(--on-blue);font-size:.95rem;margin-top:.7rem;max-width:64ch}
+.hero p b{color:#fff;font-weight:700}
+.hero a{color:#fff;text-underline-offset:3px}
+.hero .stamp{margin-top:1rem;font-size:.8rem;color:#BFD5EC}
+.hero .stamp b{color:#fff;font-weight:700}
 
-/* ── Grid ── */
-main{flex:1;padding-bottom:2rem}
-.grid{display:grid;gap:1rem;margin-top:1.15rem;grid-template-columns:repeat(auto-fill,minmax(268px,1fr))}
-
+/* ── Cards ── */
+main{flex:1;padding:1.6rem 0 2.4rem}
+.grid{display:grid;gap:1.05rem;grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
 .card{
   background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
-  box-shadow:var(--shadow);padding:1.15rem;display:flex;flex-direction:column;gap:.9rem;
+  box-shadow:var(--shadow);padding:1.25rem;display:flex;flex-direction:column;gap:.95rem;
   position:relative;overflow:hidden;
 }
-.card.wettest{border-color:var(--rain)}
-.card.wettest::before{
-  content:"";position:absolute;inset:0 0 auto 0;height:3px;
-  background:linear-gradient(90deg,var(--rain),var(--rain-lt));
-}
+.card.wettest{border-color:var(--gold)}
+.card.wettest::before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:var(--gold)}
 .card-head{display:flex;align-items:baseline;justify-content:space-between;gap:.6rem}
-.loc{font-size:1.02rem;font-weight:700;letter-spacing:-.01em}
-.county{font-size:.73rem;color:var(--muted);white-space:nowrap}
+.loc{font-size:1.06rem;font-weight:800;letter-spacing:-.018em}
+.county{font-size:.72rem;color:var(--muted);font-weight:600;white-space:nowrap}
 
-.readout{display:flex;align-items:baseline;gap:.4rem}
-.inches{font-size:2.9rem;font-weight:700;letter-spacing:-.035em;line-height:1;font-variant-numeric:tabular-nums}
+.readout{display:flex;align-items:baseline;gap:.45rem}
+.inches{font-size:3rem;font-weight:800;letter-spacing:-.04em;line-height:1;
+        font-variant-numeric:tabular-nums;color:var(--blue)}
 .inches.dry{color:var(--dry)}
-.inches.wet{color:var(--rain)}
-.unit{font-size:.9rem;color:var(--muted);font-weight:600}
+.card.wettest .inches{color:var(--gold-dk)}
+.unit{font-size:.86rem;color:var(--muted);font-weight:700}
 
-.bar{height:7px;border-radius:99px;background:var(--surface-2);border:1px solid var(--border);overflow:hidden}
-.bar span{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--rain),var(--rain-lt));transition:width .5s ease}
+.bar{height:8px;border-radius:99px;background:var(--surface-2);border:1px solid var(--border);overflow:hidden}
+.bar span{display:block;height:100%;border-radius:99px;background:var(--sky);transition:width .5s ease}
+.card.wettest .bar span{background:var(--gold)}
 
-.gallons{
-  font-size:.82rem;color:var(--muted);background:var(--surface-2);
-  border:1px solid var(--border);border-radius:9px;padding:.5rem .65rem;
-}
-.gallons b{color:var(--text);font-weight:700;font-variant-numeric:tabular-nums}
+.gallons{font-size:.82rem;color:var(--muted);background:var(--surface-2);
+         border:1px solid var(--border);border-radius:10px;padding:.55rem .7rem}
+.gallons b{color:var(--ink);font-weight:800;font-variant-numeric:tabular-nums}
 
-.breaks{display:grid;grid-template-columns:repeat(2,1fr);gap:.4rem}
-.brk{background:var(--surface-2);border:1px solid var(--border);border-radius:9px;padding:.45rem .55rem}
-.brk dt{font-size:.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;font-weight:600}
-.brk dd{font-size:.95rem;font-weight:600;font-variant-numeric:tabular-nums;margin-top:.1rem}
+.breaks{display:grid;grid-template-columns:repeat(2,1fr);gap:.45rem}
+.brk{background:var(--surface-2);border:1px solid var(--border);border-radius:10px;padding:.5rem .6rem}
+.brk dt{font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.09em;font-weight:700}
+.brk dd{font-size:.98rem;font-weight:700;font-variant-numeric:tabular-nums;margin-top:.12rem}
 
-.gauges{font-size:.74rem;color:var(--muted);border-top:1px solid var(--border);padding-top:.6rem}
-.gauges summary{cursor:pointer;list-style:none}
+.gauges{font-size:.75rem;color:var(--muted);border-top:1px solid var(--border);padding-top:.65rem}
+.gauges summary{cursor:pointer;list-style:none;font-weight:600}
 .gauges summary::-webkit-details-marker{display:none}
-.gauges summary::before{content:"▸ ";color:var(--rain)}
+.gauges summary::before{content:"▸ ";color:var(--sky-lt)}
 .gauges[open] summary::before{content:"▾ "}
-.gauges ul{margin:.45rem 0 0 .8rem;display:flex;flex-direction:column;gap:.15rem}
+.gauges ul{margin:.5rem 0 0 .85rem;display:flex;flex-direction:column;gap:.2rem}
 .gauges li{list-style:none;font-variant-numeric:tabular-nums}
-.gauges li b{color:var(--text);font-weight:600}
+.gauges li b{color:var(--ink);font-weight:700}
 
-.nodata{
-  font-size:.82rem;color:var(--muted);background:var(--surface-2);
-  border:1px dashed var(--border);border-radius:9px;padding:.7rem;
-}
+.nodata{font-size:.83rem;color:var(--muted);background:var(--surface-2);
+        border:1px dashed var(--border);border-radius:10px;padding:.75rem}
 
 /* ── States ── */
-.skeleton .inches,.skeleton .bar span{background:var(--border);color:transparent;border-radius:6px}
-.skeleton .inches{width:5rem;height:2.9rem}
-.banner{
-  border-radius:var(--radius);padding:1rem 1.15rem;margin-top:1.15rem;font-size:.88rem;
-  background:#FDF3E7;border:1px solid #E8C89A;color:#6B4A1B;
+.skeleton .inches{width:5rem;height:3rem;background:var(--border);color:transparent;border-radius:8px}
+.banner{border-radius:var(--radius);padding:1.05rem 1.2rem;margin-bottom:1.15rem;font-size:.88rem;
+        background:#FDF6E6;border:1px solid var(--gold);color:#6B5116}
+:root[data-theme="dark"] .banner{background:#2C2412;border-color:var(--gold-dk);color:#F3E2B6}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]) .banner{background:#2C2412;border-color:var(--gold-dk);color:#F3E2B6}
 }
-@media (prefers-color-scheme: dark){.banner{background:#2E2313;border-color:#5C4526;color:#F0D8B4}}
-.banner b{display:block;margin-bottom:.25rem;font-size:.92rem}
+.banner b{display:block;margin-bottom:.3rem;font-size:.93rem;font-weight:800}
 .banner code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.85em}
 
 /* ── Footer ── */
-footer{background:var(--deep);color:#9FC6D4;font-size:.8rem;padding:1.5rem 0;margin-top:auto}
-.foot-in{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
-footer a{color:#7FC3DA}
-footer .co{color:#EAF4F7;font-weight:600}
-footer p{margin-top:.2rem;max-width:54ch}
+footer{background:var(--blue);color:var(--on-blue);font-size:.82rem;padding:1.9rem 0;margin-top:auto}
+.foot-in{display:flex;justify-content:space-between;gap:1.4rem;flex-wrap:wrap}
+footer a{color:var(--gold);text-underline-offset:3px}
+footer .co{color:#fff;font-weight:800}
+footer p{margin-top:.25rem;max-width:52ch;color:#BFD5EC}
 </style>
 </head>
 <body>
 
-<header>
-  <div class="wrap head-in">
-    <div class="brand">
-      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M12 2.6c3.4 4.2 6 7.6 6 10.6a6 6 0 1 1-12 0c0-3 2.6-6.4 6-10.6Z"
-              fill="#4FB3D9"/>
-        <path d="M9.4 13.6a2.6 2.6 0 0 0 2.6 2.6" stroke="#0F2E3D" stroke-width="1.4"
-              stroke-linecap="round"/>
+<div class="logobar">
+  <div class="wrap logobar-in">
+    <div class="logo">
+      <svg width="42" height="42" viewBox="0 0 44 44" aria-hidden="true">
+        <path d="M22 3.5c6.6 7.9 11.6 14.2 11.6 20.3a11.6 11.6 0 1 1-23.2 0C10.4 17.7 15.4 11.4 22 3.5Z"
+              fill="#fff" stroke="#3066AB" stroke-width="2.2"/>
+        <path d="M11.2 26.4c2.7 0 2.7 2.2 5.4 2.2s2.7-2.2 5.4-2.2 2.7 2.2 5.4 2.2 2.7-2.2 5.4-2.2"
+              stroke="#D8B046" stroke-width="1.9" stroke-linecap="round" fill="none"/>
+        <path d="M12.4 31.6c2.4 0 2.4 1.9 4.8 1.9s2.4-1.9 4.8-1.9 2.4 1.9 4.8 1.9"
+              stroke="#6DABE1" stroke-width="1.5" stroke-linecap="round" fill="none" opacity=".8"/>
       </svg>
-      <div>
-        <div class="brand-name">Dripping Rainwater</div>
-        <div class="brand-sub">Rainfall Watch</div>
+      <div class="wordmark">
+        <span class="l1">DRIPPING</span>
+        <span class="l2">RAINWATER</span>
       </div>
     </div>
-    <div class="head-right">
-      <div class="stamp" id="stamp">Loading gauge data…</div>
-      <button class="refresh" id="refresh" aria-label="Refresh rainfall data">
+    <button class="refresh" id="refresh" aria-label="Refresh rainfall data">
+      Refresh
+      <span class="box">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-             stroke-width="2.4" stroke-linecap="round">
+             stroke-width="2.6" stroke-linecap="round">
           <path d="M20 11A8 8 0 0 0 6.3 5.8L4 8"/><path d="M4 4v4h4"/>
           <path d="M4 13a8 8 0 0 0 13.7 5.2L20 16"/><path d="M20 20v-4h-4"/>
         </svg>
-        Refresh
-      </button>
-    </div>
+      </span>
+    </button>
   </div>
-</header>
+</div>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Rainfall Watch</div>
+    <h1>Rainfall, last 48 hours</h1>
+    <p>
+      Totals in inches from <a href="https://hydromet.lcra.org/" target="_blank"
+      rel="noopener">LCRA Hydromet</a> gauges, averaged across every gauge in each area.
+      The 48-hour figure is <b>yesterday's full-day total plus today's rain since
+      midnight</b> — the closest two-day window LCRA publishes.
+    </p>
+    <div class="stamp" id="stamp">Loading gauge data…</div>
+  </div>
+</section>
 
 <main>
   <div class="wrap">
-    <section class="intro">
-      <h2>Rainfall, last 48 hours</h2>
-      <p>
-        Totals in inches from <a href="https://hydromet.lcra.org/" target="_blank"
-        rel="noopener">LCRA Hydromet</a> gauges, averaged across every gauge in each area.
-        The 48-hour figure is <b>yesterday's full-day total plus today's rain since midnight</b> —
-        the closest two-day window LCRA publishes.
-      </p>
-    </section>
     <div id="banner"></div>
     <div class="grid" id="grid"></div>
   </div>
@@ -202,13 +231,13 @@ footer p{margin-top:.2rem;max-width:54ch}
   <div class="wrap foot-in">
     <div>
       <span class="co">Dripping Rainwater</span> · Complete rainwater harvesting, roof to tap<br>
-      Serving Hays, Blanco &amp; Travis counties from Dripping Springs, Texas<br>
+      Serving Hays, Blanco, Travis &amp; Comal counties from Dripping Springs, Texas<br>
       <a href="tel:+15128295800">512-829-5800</a> ·
       <a href="mailto:henry@drippingrainwater.com">henry@drippingrainwater.com</a> ·
       <a href="https://www.drippingrainwater.com" target="_blank" rel="noopener">drippingrainwater.com</a>
     </div>
     <div>
-      Data: <a href="https://hydromet.lcra.org/" target="_blank" rel="noopener">LCRA Hydromet</a><br>
+      Data: <a href="https://hydromet.lcra.org/" target="_blank" rel="noopener">LCRA Hydromet</a>
       <p>Gauge readings are provisional and unverified. Not for flood-safety decisions —
       see <a href="https://www.weather.gov/" target="_blank" rel="noopener">NWS</a> for warnings.</p>
     </div>
@@ -412,7 +441,7 @@ function render(data){
       </div>
 
       <div class="readout">
-        <span class="inches ${wet ? "wet" : "dry"}">${fmt(d.total48)}</span>
+        <span class="inches${wet ? "" : " dry"}">${fmt(d.total48)}</span>
         <span class="unit">in / 48 hr</span>
       </div>
 
@@ -468,14 +497,14 @@ async function load(){
     const [fiveDay, intraday] = await Promise.all([fetchCSV(FIVE_DAY), fetchCSV(INTRADAY)]);
     render(build(fiveDay, intraday));
     const now = new Date();
-    stamp.innerHTML = `Updated <b>${now.toLocaleTimeString([], {hour:"numeric", minute:"2-digit"})}</b><br>` +
-                      now.toLocaleDateString([], {weekday:"short", month:"short", day:"numeric"});
+    stamp.innerHTML = `Updated <b>${now.toLocaleTimeString([], {hour:"numeric", minute:"2-digit"})}</b> · ` +
+                      now.toLocaleDateString([], {weekday:"long", month:"long", day:"numeric"});
   } catch (err){
     showError(err.message);
     stamp.textContent = "Data unavailable";
   } finally {
     btn.disabled = false;
-    setTimeout(() => btn.classList.remove("spin"), 600);
+    setTimeout(() => btn.classList.remove("spin"), 700);
   }
 }
 
