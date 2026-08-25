@@ -1,0 +1,339 @@
+<!-- Dripping Rainwater — Rainfall Monitor -------------------------------
+     Paste this whole block into a Webflow Embed element.
+     Self-contained: no libraries, no hosted files, nothing to keep alive.
+     Optional: point data-dashboard at your dashboard URL, or delete the
+     attribute to hide the "Full dashboard" button.
+------------------------------------------------------------------------ -->
+<div id="drw-rainfall-bar" data-dashboard="https://cawthorneh.github.io/vibe-coding/"></div>
+<script>
+/*!
+ * Dripping Rainwater — Rainfall Monitor
+ *
+ * A self-contained embeddable panel of 48-hour rainfall totals from LCRA
+ * Hydromet, built in the site's own visual language: a white card with a
+ * gold eyebrow, and readings laid out as the stat grid the site already
+ * uses, hairline rules and all.
+ *
+ *   <div id="drw-rainfall-bar"></div>
+ *   <script src="https://cawthorneh.github.io/vibe-coding/rainfall-bar.js"><\/script>
+ *
+ * Or paste this whole file inline inside a <script> tag — it needs no other
+ * files, no build step and no external libraries.
+ *
+ * Options, set on the mount element:
+ *   data-dashboard="https://…"   show a button through to the full dashboard
+ *
+ * Numbers come from the same gauges and the same 48-hour definition as the
+ * dashboard: yesterday's full-day total plus today's rain since midnight.
+ */
+(function () {
+  "use strict";
+
+  // Captured now: document.currentScript is null by the time DOMContentLoaded
+  // fires, so an inline paste could not find where it was pasted.
+  var SELF = document.currentScript;
+
+  var MOUNT_ID = "drw-rainfall-bar";
+  var STYLE_ID = "drw-rainfall-bar-css";
+  var REFRESH_MS = 10 * 60 * 1000;
+
+  /* ── Config ─────────────────────────────────────────────────────────── */
+
+  var LOCATIONS = [
+    { label: "Dripping Springs", match: ["dripping springs", "dripping spr"] },
+    { label: "Austin",           match: ["austin"] },
+    { label: "Fredericksburg",   match: ["fredericksburg"] },
+    { label: "Johnson City",     match: ["johnson city"] },
+    { label: "Blanco",           match: ["blanco"], exclude: ["johnson city"] }
+  ];
+
+  var LCRA_BASE = "https://hydromet.lcra.org/media/";
+  var FIVE_DAY  = "Rain5Day.csv";
+
+  // LCRA blocks cross-origin browser reads, so fall back through public CORS
+  // relays. Direct is tried first in case the policy ever loosens.
+  var PROXIES = [
+    function (u) { return u; },
+    function (u) { return "https://corsproxy.io/?" + encodeURIComponent(u); },
+    function (u) { return "https://api.allorigins.win/raw?url=" + encodeURIComponent(u); },
+    function (u) { return "https://r.jina.ai/" + u; }
+  ];
+
+  var COL_TODAY     = ["today"];
+  var COL_YESTERDAY = ["1 day ago", "yesterday", "last24"];
+
+  /* ── Styles ─────────────────────────────────────────────────────────── */
+  // Brand values sampled from drippingrainwater.com. Every class is prefixed
+  // and every property set explicitly, so the host page's stylesheet can't
+  // bleed in and this can't leak out.
+
+  var CSS = [
+    // Own the box model rather than inheriting whatever the host page sets.
+    '.drwrb,.drwrb *{box-sizing:border-box}',
+    '.drwrb{font-family:inherit;background:#fff;border:1px solid #DFE7F0;',
+      'border-radius:16px;overflow:hidden;max-width:100%;',
+      'box-shadow:0 1px 2px rgba(18,29,35,.05),0 10px 28px rgba(48,102,171,.10)}',
+
+    // Header: gold eyebrow over a heavy headline, as the site's sections open.
+    '.drwrb-top{display:flex;align-items:center;justify-content:space-between;',
+      'gap:1rem;flex-wrap:wrap;padding:1.15rem 1.4rem}',
+    '.drwrb-eyebrow{color:#B8912F;font-size:.7rem;font-weight:800;',
+      'letter-spacing:.16em;text-transform:uppercase;line-height:1.2}',
+    '.drwrb-h{color:#121D23;font-size:1.35rem;font-weight:800;letter-spacing:-.025em;',
+      'line-height:1.15;margin:.3rem 0 0}',
+
+    // The site's CTA: gold pill with the arrow nested in its own blue box.
+    '.drwrb-cta{display:inline-flex;align-items:center;gap:.7rem;text-decoration:none;',
+      'background:#D8B046;color:#3066AB;font-size:.82rem;font-weight:800;',
+      'border-radius:10px;padding:.5rem .5rem .5rem .95rem;white-space:nowrap;',
+      'transition:background .15s}',
+    '.drwrb-cta:hover{background:#C9A23C}',
+    '.drwrb-cta span{display:inline-flex;align-items:center;justify-content:center;',
+      'width:26px;height:26px;border-radius:7px;background:#3066AB;color:#fff;font-size:.9rem}',
+
+    // Rules are drawn per cell rather than as grid gaps over a coloured
+    // ground: five stats never fill a 2- or 3-column row, and that ground
+    // would show through the leftover slot as a stray grey block.
+    '.drwrb-grid{display:grid;grid-template-columns:repeat(5,1fr);background:#fff}',
+    '.drwrb-stat{position:relative;background:#fff;padding:1.05rem 1.1rem;text-align:center}',
+    '.drwrb-stat::before{content:"";position:absolute;top:0;bottom:0;left:0;',
+      'width:1px;background:#DFE7F0}',
+    '.drwrb-stat::after{content:"";position:absolute;left:0;right:0;top:0;',
+      'height:1px;background:#DFE7F0}',
+    // No rule down the outside edge of a row.
+    '.drwrb-stat:nth-child(5n+1)::before{display:none}',
+    '.drwrb-stat.is-top::after{height:3px;background:#D8B046}',
+    '.drwrb-loc{color:#5E6A72;font-size:.68rem;font-weight:700;letter-spacing:.08em;',
+      'text-transform:uppercase;line-height:1.25}',
+    '.drwrb-val{color:#3066AB;font-size:1.85rem;font-weight:800;line-height:1.1;',
+      'letter-spacing:-.035em;font-variant-numeric:tabular-nums;margin-top:.3rem;',
+      'display:flex;align-items:baseline;justify-content:center;gap:.25rem}',
+    '.drwrb-stat.is-top .drwrb-val{color:#B8912F}',
+    '.drwrb-val.is-empty{color:#A7B4BF}',
+    '.drwrb-unit{font-size:.72rem;font-weight:700;color:#5E6A72;letter-spacing:0}',
+
+    '.drwrb-foot{background:#F4F7FA;border-top:1px solid #DFE7F0;',
+      'padding:.75rem 1.4rem;color:#5E6A72;font-size:.74rem;line-height:1.45}',
+    '.drwrb-foot b{color:#121D23;font-weight:700}',
+
+    '@media (max-width:900px){',
+      '.drwrb-grid{grid-template-columns:repeat(3,1fr)}',
+      '.drwrb-stat::before{display:block}',
+      '.drwrb-stat:nth-child(3n+1)::before{display:none}}',
+    '@media (max-width:560px){',
+      '.drwrb-top{padding:1rem 1.1rem;gap:.75rem}',
+      '.drwrb-h{font-size:1.15rem}',
+      '.drwrb-cta{font-size:.78rem;padding:.4rem .4rem .4rem .8rem}',
+      '.drwrb-cta span{width:23px;height:23px}',
+      '.drwrb-grid{grid-template-columns:repeat(2,1fr)}',
+      '.drwrb-stat{padding:.9rem .8rem}',
+      '.drwrb-stat::before{display:block}',
+      '.drwrb-stat:nth-child(2n+1)::before{display:none}',
+      '.drwrb-val{font-size:1.55rem}',
+      '.drwrb-foot{padding:.7rem 1.1rem}}'
+  ].join("");
+
+  function injectCSS() {
+    if (document.getElementById(STYLE_ID)) return;
+    var el = document.createElement("style");
+    el.id = STYLE_ID;
+    el.appendChild(document.createTextNode(CSS));
+    document.head.appendChild(el);
+  }
+
+  /* ── CSV ────────────────────────────────────────────────────────────── */
+
+  function parseCSV(text) {
+    var lines = text.replace(/^﻿/, "").trim().split(/\r?\n/);
+    if (lines.length < 2) return [];
+    function split(line) {
+      var out = [], cur = "", q = false;
+      for (var i = 0; i < line.length; i++) {
+        var ch = line[i];
+        if (ch === '"') {
+          if (q && line[i + 1] === '"') { cur += '"'; i++; } else { q = !q; }
+          continue;
+        }
+        if (ch === "," && !q) { out.push(cur.trim()); cur = ""; continue; }
+        cur += ch;
+      }
+      out.push(cur.trim());
+      return out;
+    }
+    var hdrs = split(lines[0]).map(function (h) { return h.toLowerCase(); });
+    return lines.slice(1).filter(function (l) { return l.trim(); }).map(function (l) {
+      var v = split(l), row = {};
+      hdrs.forEach(function (h, i) { row[h] = v[i] == null ? "" : v[i]; });
+      return row;
+    });
+  }
+
+  function locCol(rows) {
+    if (!rows.length) return null;
+    var names = ["location", "site name", "sitename", "name", "station", "gauge"];
+    for (var i = 0; i < names.length; i++) if (names[i] in rows[0]) return names[i];
+    return null;
+  }
+
+  function fetchCSV(file) {
+    var url = LCRA_BASE + file, i = 0;
+    function attempt() {
+      if (i >= PROXIES.length) return Promise.reject(new Error("all sources failed"));
+      var proxy = PROXIES[i++];
+      return fetch(proxy(url), { cache: "no-store" })
+        .then(function (r) { return r.ok ? r.text() : Promise.reject(new Error("HTTP " + r.status)); })
+        .then(function (t) {
+          var rows = parseCSV(t);
+          if (!rows.length || !locCol(rows)) throw new Error("unrecognised response");
+          return rows;
+        })
+        .catch(attempt);
+    }
+    return attempt();
+  }
+
+  /* ── Extraction ─────────────────────────────────────────────────────── */
+
+  function matchRows(rows, loc) {
+    var col = locCol(rows);
+    if (!col) return [];
+    return rows.filter(function (r) {
+      var name = String(r[col] || "").toLowerCase();
+      var hit = loc.match.some(function (m) { return name.indexOf(m) !== -1; });
+      if (!hit) return false;
+      if (loc.exclude && loc.exclude.some(function (x) { return name.indexOf(x) !== -1; })) return false;
+      return true;
+    });
+  }
+
+  // Mean of the first candidate column that carries numeric data.
+  function mean(rows, candidates) {
+    for (var c = 0; c < candidates.length; c++) {
+      var vals = rows.map(function (r) { return parseFloat(r[candidates[c]]); })
+                     .filter(function (v) { return isFinite(v); });
+      if (vals.length) {
+        return vals.reduce(function (a, b) { return a + b; }, 0) / vals.length;
+      }
+    }
+    return null;
+  }
+
+  // LCRA publishes no rolling 48-hour figure, so the closest available
+  // two-day window is yesterday's full day plus today since midnight.
+  function total48(rows) {
+    var t = mean(rows, COL_TODAY);
+    var y = mean(rows, COL_YESTERDAY);
+    if (t === null && y === null) return null;
+    return (t || 0) + (y || 0);
+  }
+
+  function build(fiveDay) {
+    return LOCATIONS.map(function (loc) {
+      return { label: loc.label, total: total48(matchRows(fiveDay, loc)) };
+    });
+  }
+
+  /* ── Render ─────────────────────────────────────────────────────────── */
+
+  function esc(s) {
+    return String(s).replace(/[&<>"]/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
+    });
+  }
+
+  function render(mount, rows, foot) {
+    var dash = mount.getAttribute("data-dashboard");
+
+    // Gold marks the wettest location, but only when it actually rained —
+    // highlighting a five-way tie at zero would be noise.
+    var vals = rows.map(function (r) { return r.total; })
+                   .filter(function (v) { return v !== null; });
+    var peak = vals.length ? Math.max.apply(null, vals) : null;
+    if (peak !== null && peak <= 0) peak = null;
+
+    var stats = rows.map(function (r) {
+      var top = peak !== null && r.total === peak;
+      // A gauge with no reading shows a dash. Printing 0.00" there would
+      // claim it did not rain, which is a different statement from
+      // "we don't know".
+      var body = r.total === null
+        ? '<div class="drwrb-val is-empty">&ndash;</div>'
+        : '<div class="drwrb-val">' + r.total.toFixed(2) +
+            '<span class="drwrb-unit">in</span></div>';
+      return '<div class="drwrb-stat' + (top ? " is-top" : "") + '">' +
+               '<div class="drwrb-loc">' + esc(r.label) + "</div>" + body +
+             "</div>";
+    }).join("");
+
+    var cta = dash
+      ? '<a class="drwrb-cta" href="' + esc(dash) + '">Full dashboard <span>&rarr;</span></a>'
+      : "";
+
+    mount.innerHTML =
+      '<section class="drwrb" aria-label="Rainfall, last 48 hours">' +
+        '<div class="drwrb-top">' +
+          "<div>" +
+            '<div class="drwrb-eyebrow">Rainfall Monitor</div>' +
+            '<div class="drwrb-h">Last 48 hours</div>' +
+          "</div>" + cta +
+        "</div>" +
+        '<div class="drwrb-grid">' + stats + "</div>" +
+        '<div class="drwrb-foot">' + foot + "</div>" +
+      "</section>";
+  }
+
+  /* ── Load ───────────────────────────────────────────────────────────── */
+
+  function footLive() {
+    var t = "";
+    try {
+      t = " · updated " + new Date().toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
+    } catch (e) {}
+    return "Inches of rain, averaged across <b>LCRA Hydromet</b> gauges in each area" +
+           t + ". The 48-hour figure is yesterday's full day plus today since midnight.";
+  }
+
+  function footDown() {
+    return "<b>Live readings unavailable.</b> LCRA Hydromet can't be reached right now — " +
+           "these will fill in automatically once it responds.";
+  }
+
+  function placeholder() {
+    return LOCATIONS.map(function (l) { return { label: l.label, total: null }; });
+  }
+
+  function load(mount) {
+    fetchCSV(FIVE_DAY).then(function (rows) {
+      render(mount, build(rows), footLive());
+    }).catch(function () {
+      // Show the locations with dashes rather than hiding: an empty panel
+      // looks broken, and zeros would be a lie.
+      render(mount, placeholder(), footDown());
+    });
+  }
+
+  function start() {
+    var mount = document.getElementById(MOUNT_ID);
+    if (!mount) {
+      // Fall back to the script tag's own position when there's no container,
+      // so an inline paste still renders where it was pasted.
+      if (!SELF || !SELF.parentNode) return;
+      mount = document.createElement("div");
+      mount.id = MOUNT_ID;
+      SELF.parentNode.insertBefore(mount, SELF);
+    }
+    injectCSS();
+    render(mount, placeholder(),
+      "Inches of rain, averaged across <b>LCRA Hydromet</b> gauges in each area. Loading&hellip;");
+    load(mount);
+    setInterval(function () { load(mount); }, REFRESH_MS);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", start);
+  } else {
+    start();
+  }
+})();
+
+</script>

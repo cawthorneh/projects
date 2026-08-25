@@ -66,6 +66,12 @@ build step. `data-dashboard` is optional and links the label to the full
 dashboard. The file can also be pasted inline inside a `<script>` tag, in which
 case it renders at that position and depends on nothing hosted.
 
+`docs/webflow-embed.txt` is the same component wrapped as a single paste-ready
+block for a Webflow **Embed** element — no hosted file needed. It is generated
+from `rainfall-bar.js`, with the `</script>` in that file's own usage comment
+escaped so it can't close the host tag early; regenerate it whenever the
+component changes.
+
 Open `docs/bar-demo.html` to preview it against the site's blue.
 
 A gauge with no reading renders a dash, never `0.00"` — zero means it did not
