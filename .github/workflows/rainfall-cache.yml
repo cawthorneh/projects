@@ -39,18 +39,34 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if git diff --quiet -- docs/data/rainfall.json; then
-            echo "no change"; exit 0
+
+          # Stage first. `git diff` ignores untracked files, so on the very
+          # first run — when the file is new — it reports no change and the
+          # snapshot is never committed at all.
+          git add -f docs/data/rainfall.json
+          if git diff --cached --quiet -- docs/data/rainfall.json; then
+            echo "identical to the committed copy"; exit 0
           fi
+
           # `generated` moves every run, so compare only the readings —
           # otherwise this commits every half hour whether it rained or not.
-          before=$(git show HEAD:docs/data/rainfall.json 2>/dev/null | jq -S '.locations' 2>/dev/null || echo none)
-          after=$(jq -S '.locations' docs/data/rainfall.json)
+          before=$(git show HEAD:docs/data/rainfall.json 2>/dev/null | jq -Sc '.locations' 2>/dev/null || echo none)
+          after=$(jq -Sc '.locations' docs/data/rainfall.json)
           if [ "$before" = "$after" ]; then
             echo "only the timestamp moved — not committing"
-            git checkout -- docs/data/rainfall.json
+            git reset -q HEAD -- docs/data/rainfall.json
             exit 0
           fi
-          git add docs/data/rainfall.json
+
           git commit -m "Update cached LCRA rainfall [skip ci]"
           git push
+
+      - name: Readings in this snapshot
+        if: always()
+        run: |
+          echo "generated: $(jq -r .generated docs/data/rainfall.json)"
+          echo "columns:   $(jq -c .columns docs/data/rainfall.json)"
+          echo "dated:     $(jq -c .debug.datedColumns docs/data/rainfall.json)"
+          echo
+          jq -r '.locations[] | "  \(.label)|\(.total48)|\(.today)|\(.yesterday)|\(.h24)|\(.matched)|\([.gauges[].name] | join(", "))"' \
+            docs/data/rainfall.json | column -t -s'|'
