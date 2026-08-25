@@ -1,0 +1,56 @@
+# Fetch LCRA server-side and commit a parsed snapshot.
+#
+# The browser can't read LCRA directly (no CORS) and all three public relays
+# the components used are dead. A server can read it fine — the probe showed
+# it returns HTTP 200 to a runner — so the fetch happens here and the site
+# reads a static JSON instead of depending on somebody else's proxy.
+name: Cache LCRA rainfall
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"     # every 30 minutes
+  workflow_dispatch:
+  push:
+    branches: [claude/rainfall-dashboard-dripping-yz5fus]
+    paths:
+      - scripts/build-rainfall-json.mjs
+      - .github/workflows/rainfall-cache.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: rainfall-cache
+  cancel-in-progress: false
+
+jobs:
+  cache:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Fetch and parse
+        run: node scripts/build-rainfall-json.mjs
+
+      - name: Commit if the readings changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- docs/data/rainfall.json; then
+            echo "no change"; exit 0
+          fi
+          # `generated` moves every run, so compare only the readings —
+          # otherwise this commits every half hour whether it rained or not.
+          before=$(git show HEAD:docs/data/rainfall.json 2>/dev/null | jq -S '.locations' 2>/dev/null || echo none)
+          after=$(jq -S '.locations' docs/data/rainfall.json)
+          if [ "$before" = "$after" ]; then
+            echo "only the timestamp moved — not committing"
+            git checkout -- docs/data/rainfall.json
+            exit 0
+          fi
+          git add docs/data/rainfall.json
+          git commit -m "Update cached LCRA rainfall [skip ci]"
+          git push
