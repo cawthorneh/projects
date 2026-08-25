@@ -53,7 +53,10 @@ a{color:var(--blue)}
 
 /* ── Logo bar: white, as on the site ── */
 .logobar{background:#FFFFFF;border-bottom:1px solid var(--border);padding-top:env(safe-area-inset-top,0)}
-.logobar-in{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.85rem 0}
+/* padding-block only — a `padding` shorthand here would reset the
+   horizontal padding .wrap sets, pinning the logo and button to the
+   screen edges. */
+.logobar-in{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.85rem}
 .logo{height:46px;width:auto;flex:none;display:block}
 @media (max-width:430px){.logo{height:38px}}
 
