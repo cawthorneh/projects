@@ -45,6 +45,29 @@ hour** from `Rainfall.csv` for finer resolution.
 The gallons estimate assumes 0.6233 gal per ft² per inch at 85% collection
 efficiency, which allows for first-flush diversion, splash and evaporation.
 
+## Embeddable bar
+
+`docs/rainfall-bar.js` is a standalone strip of the same 48-hour totals, styled
+to match the rainfall monitor in the site header. It shares no code with the
+dashboard, so a browser test asserts the two produce identical numbers from the
+same fixture — if one drifts, that test fails.
+
+```html
+<div id="drw-rainfall-bar"
+     data-dashboard="https://cawthorneh.github.io/vibe-coding/"></div>
+<script src="https://cawthorneh.github.io/vibe-coding/rainfall-bar.js"></script>
+```
+
+Paste into a Webflow **Embed** element or any raw-HTML block. No libraries, no
+build step. `data-dashboard` is optional and links the label to the full
+dashboard. The file can also be pasted inline inside a `<script>` tag, in which
+case it renders at that position and depends on nothing hosted.
+
+Open `docs/bar-demo.html` to preview it against the site's blue.
+
+A gauge with no reading renders a dash, never `0.00"` — zero means it did not
+rain, which is a different claim from having no data.
+
 ## Running it
 
 The dashboard is a single self-contained file, `docs/index.html`. It needs no
