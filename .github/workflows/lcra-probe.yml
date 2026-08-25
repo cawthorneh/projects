@@ -1,0 +1,45 @@
+# Diagnostic: can a cloud runner reach LCRA Hydromet directly?
+#
+# The whole rainfall stack currently relays through public CORS proxies
+# because LCRA doesn't allow cross-origin browser reads. Those relays are
+# failing in production. The fix depends on an unverified claim inherited
+# from an earlier session — that LCRA blocks cloud-provider IP ranges. If
+# that's false, a scheduled job here can fetch the CSVs and publish a cached
+# JSON, and the browser never touches a relay again. If it's true, the cache
+# has to run somewhere else.
+#
+# This answers that question with evidence instead of assumption.
+name: LCRA reachability probe
+
+on:
+  push:
+    branches: [claude/rainfall-dashboard-dripping-yz5fus]
+  workflow_dispatch:
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Probe LCRA and each relay
+        run: |
+          probe () {
+            local label="$1" url="$2"
+            echo "──────────────────────────────────────────────"
+            echo "▸ $label"
+            echo "  $url"
+            code=$(curl -sS -m 25 -o /tmp/body -w '%{http_code}' \
+              -A 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36' \
+              "$url" 2>/tmp/err || true)
+            echo "  HTTP: ${code:-none}   bytes: $(wc -c < /tmp/body 2>/dev/null || echo 0)"
+            [ -s /tmp/err ] && echo "  curl: $(head -c 200 /tmp/err)"
+            echo "  first line: $(head -c 160 /tmp/body 2>/dev/null | head -1)"
+          }
+
+          probe "LCRA direct — Rain5Day.csv"  "https://hydromet.lcra.org/media/Rain5Day.csv"
+          probe "LCRA direct — Rainfall.csv"  "https://hydromet.lcra.org/media/Rainfall.csv"
+          probe "corsproxy.io"                "https://corsproxy.io/?https%3A%2F%2Fhydromet.lcra.org%2Fmedia%2FRain5Day.csv"
+          probe "allorigins"                  "https://api.allorigins.win/raw?url=https%3A%2F%2Fhydromet.lcra.org%2Fmedia%2FRain5Day.csv"
+          probe "r.jina.ai"                   "https://r.jina.ai/https://hydromet.lcra.org/media/Rain5Day.csv"
+
+          echo "──────────────────────────────────────────────"
+          echo "Runner egress IP: $(curl -sS -m 15 https://api.ipify.org || echo unknown)"
