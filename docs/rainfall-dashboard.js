@@ -8,6 +8,10 @@
  *   <div id="drw-rainfall-dashboard"></div>
  *   <script src="https://cawthorneh.github.io/vibe-coding/rainfall-dashboard.js"><\/script>
  *
+ * Readings come from a snapshot built server-side every half hour, not from
+ * LCRA directly — see scripts/build-rainfall-json.mjs. Override its location
+ * with data-source="…" on the mount element.
+ *
  * Or paste this whole file inline inside a script tag — it needs no other
  * files, no build step and no external libraries.
  *
@@ -30,35 +34,56 @@
   var STYLE_ID = "drw-rainfall-dashboard-css";
   var REFRESH_MS = 10 * 60 * 1000;
 
-  /* ── Config ─────────────────────────────────────────────────────────── */
+  // ── Data ────────────────────────────────────────────────────────────
+  // Readings come from a snapshot a scheduled job builds server-side. The
+  // browser used to fetch LCRA through public CORS relays; all three are now
+  // dead (corsproxy.io refuses keyless URLs, allorigins 522s, r.jina.ai sits
+  // behind a Cloudflare challenge) while LCRA answers a server fine. Parsing
+  // lives in scripts/build-rainfall-json.mjs — one implementation, not one
+  // per component.
+  var SOURCE_DEFAULT =
+    "https://raw.githubusercontent.com/cawthorneh/vibe-coding/main/docs/data/rainfall.json";
 
-  var LOCATIONS = [
-    { label: "Dripping Springs", county: "Hays Co.",      match: ["dripping springs", "dripping spr"] },
-    { label: "Austin",           county: "Travis Co.",    match: ["austin"] },
-    { label: "Fredericksburg",   county: "Gillespie Co.", match: ["fredericksburg"] },
-    { label: "Johnson City",     county: "Blanco Co.",    match: ["johnson city"] },
-    { label: "Blanco",           county: "Blanco Co.",    match: ["blanco"], exclude: ["johnson city"] }
-  ];
+  // A browser fetch has no timeout of its own, so a host that accepts the
+  // connection and stalls would leave this loading forever.
+  var FETCH_TIMEOUT_MS = 6000;
+  // Beyond this the snapshot is called out as stale rather than shown as if
+  // it were current.
+  var STALE_AFTER_MS = 3 * 60 * 60 * 1000;
 
-  var LCRA_BASE = "https://hydromet.lcra.org/media/";
-  var FIVE_DAY  = "Rain5Day.csv";
-  var INTRADAY  = "Rainfall.csv";
+  function fetchWithTimeout(url) {
+    if (typeof AbortController === "undefined") return fetch(url, { cache: "no-store" });
+    var ctrl = new AbortController();
+    var timer = setTimeout(function () { ctrl.abort(); }, FETCH_TIMEOUT_MS);
+    return fetch(url, { cache: "no-store", signal: ctrl.signal })
+      .then(function (r) { clearTimeout(timer); return r; },
+            function (e) { clearTimeout(timer); throw e; });
+  }
 
-  // LCRA blocks cross-origin browser reads, so fall back through public CORS
-  // relays. Direct is tried first in case the policy ever loosens.
-  var PROXIES = [
-    function (u) { return u; },
-    function (u) { return "https://corsproxy.io/?" + encodeURIComponent(u); },
-    function (u) { return "https://api.allorigins.win/raw?url=" + encodeURIComponent(u); },
-    function (u) { return "https://r.jina.ai/" + u; }
-  ];
+  function loadSnapshot(mount) {
+    var url = mount.getAttribute("data-source") || SOURCE_DEFAULT;
+    return fetchWithTimeout(url).then(function (r) {
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      return r.json();
+    }).then(function (d) {
+      if (!d || !Array.isArray(d.locations)) throw new Error("unrecognised snapshot");
+      return d;
+    });
+  }
 
-  var COL = {
-    today:     ["today"],
-    yesterday: ["1 day ago", "yesterday", "last24"],
-    h24:       ["previous 24 hours", "prev 24 hours", "24 hours", "last 24 hours"],
-    h1:        ["previous 1 hour", "prev 1 hour", "1 hour"]
-  };
+  function ageOf(snapshot) {
+    var t = Date.parse(snapshot && snapshot.generated);
+    return isFinite(t) ? Date.now() - t : null;
+  }
+
+  function whenText(snapshot) {
+    var t = Date.parse(snapshot && snapshot.generated);
+    if (!isFinite(t)) return "";
+    try {
+      return new Date(t).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
+    } catch (e) { return ""; }
+  }
+
 
   // 1 inch of rain on 1 ft² of roof = 0.6233 gal; 0.85 accounts for
   // first-flush diversion, splash and evaporation losses on a real system.
@@ -145,130 +170,6 @@
     document.head.appendChild(el);
   }
 
-  /* ── CSV ────────────────────────────────────────────────────────────── */
-
-  function parseCSV(text) {
-    var lines = text.replace(/^﻿/, "").trim().split(/\r?\n/);
-    if (lines.length < 2) return [];
-    function split(line) {
-      var out = [], cur = "", q = false;
-      for (var i = 0; i < line.length; i++) {
-        var ch = line[i];
-        if (ch === '"') {
-          if (q && line[i + 1] === '"') { cur += '"'; i++; } else { q = !q; }
-          continue;
-        }
-        if (ch === "," && !q) { out.push(cur.trim()); cur = ""; continue; }
-        cur += ch;
-      }
-      out.push(cur.trim());
-      return out;
-    }
-    var hdrs = split(lines[0]).map(function (h) { return h.toLowerCase(); });
-    return lines.slice(1).filter(function (l) { return l.trim(); }).map(function (l) {
-      var v = split(l), row = {};
-      hdrs.forEach(function (h, i) { row[h] = v[i] == null ? "" : v[i]; });
-      return row;
-    });
-  }
-
-  function locCol(rows) {
-    if (!rows.length) return null;
-    var names = ["location", "site name", "sitename", "name", "station", "gauge"];
-    for (var i = 0; i < names.length; i++) if (names[i] in rows[0]) return names[i];
-    return null;
-  }
-
-  // A relay that accepts the connection and then stalls would otherwise leave
-  // the component on "Loading…" forever: fetch has no timeout of its own, so
-  // the promise simply never settles and the next relay is never tried.
-  var FETCH_TIMEOUT_MS = 6000;
-
-  function fetchWithTimeout(url) {
-    if (typeof AbortController === "undefined") return fetch(url, { cache: "no-store" });
-    var ctrl = new AbortController();
-    var timer = setTimeout(function () { ctrl.abort(); }, FETCH_TIMEOUT_MS);
-    return fetch(url, { cache: "no-store", signal: ctrl.signal })
-      .then(function (r) { clearTimeout(timer); return r; },
-            function (e) { clearTimeout(timer); throw e; });
-  }
-
-  function fetchCSV(file) {
-    var url = LCRA_BASE + file, i = 0;
-    function attempt() {
-      if (i >= PROXIES.length) return Promise.reject(new Error("all sources failed"));
-      var proxy = PROXIES[i++];
-      return fetchWithTimeout(proxy(url))
-        .then(function (r) { return r.ok ? r.text() : Promise.reject(new Error("HTTP " + r.status)); })
-        .then(function (t) {
-          var rows = parseCSV(t);
-          if (!rows.length || !locCol(rows)) throw new Error("unrecognised response");
-          return rows;
-        })
-        .catch(attempt);
-    }
-    return attempt();
-  }
-
-  /* ── Extraction ─────────────────────────────────────────────────────── */
-
-  function matchRows(rows, loc) {
-    var col = locCol(rows);
-    if (!col) return [];
-    return rows.filter(function (r) {
-      var name = String(r[col] || "").toLowerCase();
-      var hit = loc.match.some(function (m) { return name.indexOf(m) !== -1; });
-      if (!hit) return false;
-      if (loc.exclude && loc.exclude.some(function (x) { return name.indexOf(x) !== -1; })) return false;
-      return true;
-    }).map(function (r) {
-      var copy = {};
-      for (var k in r) if (Object.prototype.hasOwnProperty.call(r, k)) copy[k] = r[k];
-      copy.__name = r[col];
-      return copy;
-    });
-  }
-
-  // Mean of the first candidate column that carries numeric data.
-  function mean(rows, candidates) {
-    for (var c = 0; c < candidates.length; c++) {
-      var vals = rows.map(function (r) { return parseFloat(r[candidates[c]]); })
-                     .filter(function (v) { return isFinite(v); });
-      if (vals.length) {
-        return vals.reduce(function (a, b) { return a + b; }, 0) / vals.length;
-      }
-    }
-    return null;
-  }
-
-  function perGauge(rows, candidates) {
-    for (var c = 0; c < candidates.length; c++) {
-      var hits = rows.map(function (r) { return { name: r.__name, v: parseFloat(r[candidates[c]]) }; })
-                     .filter(function (x) { return isFinite(x.v); });
-      if (hits.length) return hits;
-    }
-    return rows.map(function (r) { return { name: r.__name, v: null }; });
-  }
-
-  function build(fiveDay, intraday) {
-    return LOCATIONS.map(function (loc) {
-      var d = matchRows(fiveDay, loc);
-      var i = matchRows(intraday, loc);
-      var today = mean(d, COL.today);
-      var yesterday = mean(d, COL.yesterday);
-      // LCRA publishes no rolling 48-hour figure, so the closest available
-      // two-day window is yesterday's full day plus today since midnight.
-      var total = (today === null && yesterday === null) ? null : (today || 0) + (yesterday || 0);
-      return {
-        label: loc.label, county: loc.county, match: loc.match,
-        total: total, today: today, yesterday: yesterday,
-        h24: mean(i, COL.h24), h1: mean(i, COL.h1),
-        gauges: perGauge(d, COL.today),
-        matched: Math.max(d.length, i.length)
-      };
-    });
-  }
-
   /* ── Render ─────────────────────────────────────────────────────────── */
 
   function esc(s) {
@@ -302,8 +203,8 @@
       return '<article class="drwd-card">' +
         '<div class="drwd-cardhead"><span class="drwd-loc">' + esc(d.label) + "</span>" +
         '<span class="drwd-county">' + esc(d.county) + "</span></div>" +
-        '<div class="drwd-nodata">No LCRA gauge matched <b>' + esc(d.match.join(", ")) + "</b>. " +
-        'The gauge may be offline or renamed &mdash; check the ' +
+        '<div class="drwd-nodata">No LCRA gauge reported for this area. ' +
+        'It may be offline or renamed &mdash; check the ' +
         '<a href="https://hydromet.lcra.org/Home/GaugeDataList" target="_blank" rel="noopener">' +
         "gauge list</a>.</div></article>";
     }
@@ -361,34 +262,58 @@
 
   /* ── Load ───────────────────────────────────────────────────────────── */
 
-  function footLive() {
-    var t = "";
-    try {
-      t = " &middot; updated " +
-          new Date().toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
-    } catch (e) {}
+  function tail() {
+    return " Readings are provisional and unverified &mdash; not for flood-safety " +
+           'decisions, see <a href="https://www.weather.gov/" target="_blank" ' +
+           'rel="noopener">NWS</a> for warnings.';
+  }
+
+  function footLive(snap) {
+    var w = whenText(snap);
     return 'Source: <a href="https://hydromet.lcra.org/" target="_blank" rel="noopener">' +
-           "LCRA Hydromet</a>" + t + ". Readings are provisional and unverified &mdash; " +
-           'not for flood-safety decisions, see <a href="https://www.weather.gov/" ' +
-           'target="_blank" rel="noopener">NWS</a> for warnings.';
+           "LCRA Hydromet</a>" + (w ? " &middot; read at " + w : "") + "." + tail();
+  }
+
+  function footStale(snap) {
+    var w = whenText(snap);
+    return "<b>These readings are behind.</b> The last successful read from LCRA Hydromet was" +
+           (w ? " at " + w : " some time ago") + ", so treat them as out of date." + tail();
   }
 
   function footDown() {
-    return "<b>Live readings unavailable.</b> LCRA Hydromet can't be reached right now &mdash; " +
+    return "<b>Readings unavailable.</b> The rainfall feed can't be reached right now &mdash; " +
            "these will fill in automatically once it responds.";
   }
 
+  // Before the snapshot arrives there are no location names to show, so the
+  // cards render their own frame rather than inventing readings.
+  var PLACEHOLDER = [
+    { label: "Dripping Springs", county: "Hays Co." },
+    { label: "Austin",           county: "Travis Co." },
+    { label: "Fredericksburg",   county: "Gillespie Co." },
+    { label: "Johnson City",     county: "Blanco Co." },
+    { label: "Blanco",           county: "Blanco Co." }
+  ];
+
   function placeholder() {
-    return LOCATIONS.map(function (l) {
-      return { label: l.label, county: l.county, match: l.match, pending: true,
-               total: null, today: null, yesterday: null, h24: null, h1: null,
-               gauges: [], matched: 0 };
+    return PLACEHOLDER.map(function (l) {
+      return { label: l.label, county: l.county, pending: true, total: null,
+               today: null, yesterday: null, h24: null, h1: null, gauges: [], matched: 0 };
     });
   }
 
   function load(mount) {
-    Promise.all([fetchCSV(FIVE_DAY), fetchCSV(INTRADAY)]).then(function (r) {
-      render(mount, build(r[0], r[1]), footLive());
+    loadSnapshot(mount).then(function (snap) {
+      var rows = snap.locations.map(function (l) {
+        return {
+          label: l.label, county: l.county, total: l.total48,
+          today: l.today, yesterday: l.yesterday, h24: l.h24, h1: l.h1,
+          gauges: (l.gauges || []).map(function (g) { return { name: g.name, v: g.today }; }),
+          matched: l.matched
+        };
+      });
+      var age = ageOf(snap);
+      render(mount, rows, age !== null && age > STALE_AFTER_MS ? footStale(snap) : footLive(snap));
     }).catch(function () {
       render(mount, placeholder(), footDown());
     });

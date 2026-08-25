@@ -152,24 +152,54 @@ uvicorn app:app --reload      # or: python3 server.py
 
 Responses are cached for 10 minutes.
 
-## Relay timeouts
+## How the readings get here
 
-A browser `fetch` has no timeout of its own, so a relay that accepted the
-connection and then stalled left a component on "Loading…" indefinitely — the
-promise never settled and the next relay was never tried. Each attempt now gets
-six seconds (`FETCH_TIMEOUT_MS`), so every component reaches either numbers or
-dashes. A test hangs every relay and asserts recovery.
+LCRA doesn't allow cross-origin browser reads, so the browser can't fetch it
+directly. This used to relay through public CORS proxies. All three are now
+dead — corsproxy.io refuses keyless legacy URLs, allorigins returns 522, and
+r.jina.ai sits behind a Cloudflare challenge — which is what put dashes on the
+live site.
 
-## Network note
+LCRA answers a *server* fine: a GitHub runner on an Azure IP gets HTTP 200. (An
+earlier note in this repo claimed LCRA blocks cloud IPs. It does not; the probe
+in `.github/workflows/lcra-probe.yml` disproves it.) So the fetch happens
+server-side:
 
-LCRA sits behind Cloudflare and blocks both cloud-provider IP ranges and
-direct cross-origin browser requests:
+```
+LCRA CSVs → Actions, every 30 min → scripts/build-rainfall-json.mjs
+          → docs/data/rainfall.json → the components read that
+```
 
-- **The static page** relays through public CORS proxies, falling back through
-  several in turn. If they are all down the page says so rather than showing
-  stale or zeroed numbers.
-- **The Python backend** must run from a residential or office network. From a
-  cloud host, LCRA returns `403` and the API reports that plainly.
+Every component reads the snapshot over `data-source` (default:
+`raw.githubusercontent.com/.../docs/data/rainfall.json`). No relays, no
+third-party proxy on the critical path.
+
+**Scheduled workflows only run on the default branch**, so the cache job only
+fires once this is merged to `main`.
+
+### Column discovery
+
+LCRA's real headers are not what you'd guess, and one of them changes daily:
+
+| File | Header |
+|---|---|
+| `Rain5Day.csv` | `Site,Location,Basin,Today,Last24,08/24/2026,08/23/2026,…,Since 08/21/2026` |
+| `Rainfall.csv` | `Site,Location,Date Time,1 Hour,3 Hour,6 Hour,24 Hour,Since Midnight` |
+
+Yesterday is the **most recent dated column**, found at parse time. It is *not*
+`Last24`, which is a rolling window overlapping `Today` — mapping it that way
+double-counted and under-reported a 1.60in two-day total as 1.27in. Note also
+`24 Hour` singular, where earlier code looked for `24 hours` and silently got
+nothing. `scripts/parse.test.mjs` pins all of this against the real header row.
+
+The published JSON carries the headers it saw under `debug`, so a future LCRA
+rename is diagnosable from the file rather than from a silently empty dashboard.
+
+### Staleness
+
+Each component compares `generated` against the clock and says plainly when a
+snapshot is more than three hours old, rather than presenting old readings as
+current. A gauge with no reading renders a dash, never `0.00`.
 
 ## Adding a location
 

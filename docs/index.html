@@ -230,61 +230,25 @@ const LOCATIONS = [
     match:["blanco"], exclude:["johnson city"] },
 ];
 
-const LCRA_BASE = "https://hydromet.lcra.org/media/";
-const FIVE_DAY  = "Rain5Day.csv";
-const INTRADAY  = "Rainfall.csv";
-
-// LCRA blocks cross-origin browser reads, so fall back through public CORS
-// relays. Direct is tried first in case the policy ever loosens.
-const PROXIES = [
-  u => u,
-  u => `https://corsproxy.io/?${encodeURIComponent(u)}`,
-  u => `https://api.allorigins.win/raw?url=${encodeURIComponent(u)}`,
-  u => `https://r.jina.ai/${u}`,
-];
-
-// Column-name candidates — LCRA has renamed these before, so try variants.
-const COL = {
-  today:     ["today"],
-  yesterday: ["1 day ago","yesterday","last24"],
-  h24:       ["previous 24 hours","prev 24 hours","24 hours","last 24 hours"],
-  h6:        ["previous 6 hours","prev 6 hours","6 hours"],
-  h1:        ["previous 1 hour","prev 1 hour","1 hour"],
-  midnight:  ["since midnight","midnight"],
-};
+// ── Data ─────────────────────────────────────────────────────────────────
+// Readings come from a snapshot a scheduled job builds server-side. The page
+// used to fetch LCRA through public CORS relays; all three are now dead
+// (corsproxy.io refuses keyless URLs, allorigins 522s, r.jina.ai sits behind
+// a Cloudflare challenge) while LCRA answers a server fine. Parsing lives in
+// scripts/build-rainfall-json.mjs — one implementation, not one per surface.
+const SOURCE =
+  "https://raw.githubusercontent.com/cawthorneh/vibe-coding/main/docs/data/rainfall.json";
 
 const REFRESH_MS = 10 * 60 * 1000;
+// A browser fetch has no timeout of its own, so a host that accepts the
+// connection and stalls would leave the page loading forever.
+const FETCH_TIMEOUT_MS = 6000;
+// Beyond this the snapshot is called out as stale rather than shown as current.
+const STALE_AFTER_MS = 3 * 60 * 60 * 1000;
+
 // 1 inch of rain on 1 ft² of roof = 0.6233 gal; 0.85 accounts for first-flush
 // diversion, splash and evaporation losses on a real system.
 const GAL_PER_INCH_PER_1000SQFT = 0.6233 * 1000 * 0.85;
-
-/* ── CSV ─────────────────────────────────────────────────────────────── */
-
-function parseCSV(text){
-  const lines = text.replace(/^﻿/,"").trim().split(/\r?\n/);
-  if (lines.length < 2) return [];
-  const split = line => {
-    const out=[]; let cur="", q=false;
-    for (let i=0;i<line.length;i++){
-      const ch=line[i];
-      if (ch === '"'){ if (q && line[i+1]==='"'){cur+='"';i++;} else q=!q; continue; }
-      if (ch === "," && !q){ out.push(cur.trim()); cur=""; continue; }
-      cur+=ch;
-    }
-    out.push(cur.trim());
-    return out;
-  };
-  const hdrs = split(lines[0]).map(h => h.toLowerCase());
-  return lines.slice(1).filter(l => l.trim()).map(l => {
-    const v = split(l);
-    return Object.fromEntries(hdrs.map((h,i) => [h, v[i] ?? ""]));
-  });
-}
-
-// A relay that accepts the connection and then stalls would otherwise leave
-// the page on its loading state forever: fetch has no timeout of its own, so
-// the promise never settles and the next relay is never tried.
-const FETCH_TIMEOUT_MS = 6000;
 
 async function fetchWithTimeout(url){
   if (typeof AbortController === "undefined") return fetch(url, { cache:"no-store" });
@@ -294,81 +258,22 @@ async function fetchWithTimeout(url){
   finally { clearTimeout(timer); }
 }
 
-async function fetchCSV(file){
-  const url = LCRA_BASE + file;
-  let lastErr = null;
-  for (const proxy of PROXIES){
-    try {
-      const resp = await fetchWithTimeout(proxy(url));
-      if (!resp.ok){ lastErr = new Error(`HTTP ${resp.status}`); continue; }
-      const text = await resp.text();
-      const rows = parseCSV(text);
-      if (rows.length && locCol(rows)) return rows;
-      lastErr = new Error("unrecognised response");
-    } catch (e){ lastErr = e; }
-  }
-  throw new Error(`Could not load ${file} — ${lastErr ? lastErr.message : "all sources failed"}`);
+async function loadSnapshot(){
+  const resp = await fetchWithTimeout(SOURCE);
+  if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+  const data = await resp.json();
+  if (!data || !Array.isArray(data.locations)) throw new Error("unrecognised snapshot");
+  return data;
 }
 
-/* ── Extraction ──────────────────────────────────────────────────────── */
-
-function locCol(rows){
-  if (!rows.length) return null;
-  for (const c of ["location","site name","sitename","name","station","gauge"])
-    if (c in rows[0]) return c;
-  return null;
-}
-
-function matchRows(rows, loc){
-  const col = locCol(rows);
-  if (!col) return [];
-  return rows.filter(r => {
-    const name = (r[col] || "").toLowerCase();
-    if (!loc.match.some(m => name.includes(m))) return false;
-    if (loc.exclude && loc.exclude.some(x => name.includes(x))) return false;
-    return true;
-  }).map(r => ({ ...r, __name: r[col] }));
-}
-
-// Mean of the first candidate column that carries numeric data.
-function mean(rows, candidates){
-  for (const c of candidates){
-    const vals = rows.map(r => parseFloat(r[c])).filter(v => Number.isFinite(v));
-    if (vals.length) return vals.reduce((a,b)=>a+b,0) / vals.length;
-  }
-  return null;
-}
-
-function perGauge(rows, candidates){
-  for (const c of candidates){
-    const hits = rows
-      .map(r => ({ name:r.__name, v:parseFloat(r[c]) }))
-      .filter(x => Number.isFinite(x.v));
-    if (hits.length) return hits;
-  }
-  return rows.map(r => ({ name:r.__name, v:null }));
-}
-
-function build(fiveDay, intraday){
-  return LOCATIONS.map(loc => {
-    const d = matchRows(fiveDay, loc);
-    const i = matchRows(intraday, loc);
-
-    const today     = mean(d, COL.today);
-    const yesterday = mean(d, COL.yesterday);
-    const total48   = (today === null && yesterday === null)
-      ? null : (today || 0) + (yesterday || 0);
-
-    return {
-      ...loc,
-      total48, today, yesterday,
-      h24: mean(i, COL.h24),
-      h6:  mean(i, COL.h6),
-      h1:  mean(i, COL.h1),
-      gauges: perGauge(d, COL.today),
-      matched: Math.max(d.length, i.length),
-    };
-  });
+function build(snap){
+  return snap.locations.map(l => ({
+    label: l.label, county: l.county,
+    total48: l.total48, today: l.today, yesterday: l.yesterday,
+    h24: l.h24, h1: l.h1,
+    gauges: (l.gauges || []).map(g => ({ name: g.name, v: g.today })),
+    matched: l.matched,
+  }));
 }
 
 /* ── Render ──────────────────────────────────────────────────────────── */
@@ -400,8 +305,8 @@ function render(data){
       <article class="card">
         <div class="card-head"><span class="loc">${esc(d.label)}</span>
           <span class="county">${esc(d.county)}</span></div>
-        <div class="nodata">No LCRA gauge matched <code>${esc(d.match.join(", "))}</code>.
-          The gauge may be offline or renamed — check the
+        <div class="nodata">No LCRA gauge reported for this area.
+          It may be offline or renamed — check the
           <a href="https://hydromet.lcra.org/Home/GaugeDataList" target="_blank"
              rel="noopener">gauge list</a>.</div>
       </article>`;
@@ -450,13 +355,21 @@ function render(data){
 function showError(msg){
   document.getElementById("banner").innerHTML = `
     <div class="banner">
-      <b>Couldn't reach LCRA Hydromet</b>
+      <b>Couldn't load the rainfall snapshot</b>
       ${esc(msg)}<br><br>
-      LCRA sits behind Cloudflare and doesn't allow direct browser requests, so this page
-      relays through public CORS proxies — those go down from time to time. Try refreshing
-      in a few minutes, or open
+      Readings are published by a scheduled job that reads LCRA every half hour; this page
+      reads that snapshot rather than LCRA directly. Try again shortly, or open
       <a href="https://hydromet.lcra.org/Reports/RainfallSummary" target="_blank"
          rel="noopener">LCRA's own rainfall summary</a>.
+    </div>`;
+}
+
+function showStale(when){
+  document.getElementById("banner").innerHTML = `
+    <div class="banner">
+      <b>These readings are behind</b>
+      The last successful read from LCRA Hydromet was ${esc(when)}. The figures below are
+      real but out of date — the job retries every half hour.
     </div>`;
 }
 
@@ -472,14 +385,22 @@ async function load(){
   if (!grid.children.length) skeletons();
 
   try {
-    const [fiveDay, intraday] = await Promise.all([fetchCSV(FIVE_DAY), fetchCSV(INTRADAY)]);
-    render(build(fiveDay, intraday));
-    const now = new Date();
-    stamp.innerHTML = `Updated <b>${now.toLocaleTimeString([], {hour:"numeric", minute:"2-digit"})}</b> · ` +
-                      now.toLocaleDateString([], {weekday:"long", month:"long", day:"numeric"});
+    const snap = await loadSnapshot();
+    render(build(snap));
+    const read = new Date(snap.generated);
+    const age = Date.now() - read.getTime();
+    const when = `${read.toLocaleTimeString([], {hour:"numeric", minute:"2-digit"})} · ` +
+                 read.toLocaleDateString([], {weekday:"long", month:"long", day:"numeric"});
+    if (age > STALE_AFTER_MS) {
+      stamp.innerHTML = `<b>Behind</b> — last read ${when}`;
+      showStale(when);
+    } else {
+      stamp.innerHTML = `Read at <b>${read.toLocaleTimeString([], {hour:"numeric", minute:"2-digit"})}</b> · ` +
+                        read.toLocaleDateString([], {weekday:"long", month:"long", day:"numeric"});
+    }
   } catch (err){
     showError(err.message);
-    stamp.textContent = "Data unavailable";
+    stamp.textContent = "Readings unavailable";
   } finally {
     btn.disabled = false;
     setTimeout(() => btn.classList.remove("spin"), 700);

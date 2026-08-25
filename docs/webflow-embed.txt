@@ -1,10 +1,13 @@
 <!-- Dripping Rainwater — Rainfall Monitor -------------------------------
      Paste this whole block into a Webflow Embed element.
-     Self-contained: no libraries, no hosted files, nothing to keep alive.
+     Self-contained: no libraries, no build step.
 
-     data-dashboard is the page the "Full dashboard" button opens. It is set
-     to /rainfall below — create that page, put the dashboard embed on it,
-     and publish. Delete the attribute to hide the button entirely.
+     Readings come from a snapshot rebuilt every half hour, not from LCRA
+     directly — the public CORS relays this used to rely on are all dead.
+
+     data-dashboard is the page the "Full dashboard" button opens; delete the
+     attribute to hide the button. data-source overrides where the readings
+     are read from.
 ------------------------------------------------------------------------ -->
 <div id="drw-rainfall-bar" data-dashboard="/rainfall"></div>
 <script>
@@ -18,6 +21,10 @@
  *
  *   <div id="drw-rainfall-bar"></div>
  *   <script src="https://cawthorneh.github.io/vibe-coding/rainfall-bar.js"><\/script>
+ *
+ * Readings come from a snapshot built server-side every half hour, not from
+ * LCRA directly — see scripts/build-rainfall-json.mjs. Override its location
+ * with data-source="…" on the mount element.
  *
  * Or paste this whole file inline inside a <script> tag — it needs no other
  * files, no build step and no external libraries.
@@ -39,30 +46,56 @@
   var STYLE_ID = "drw-rainfall-bar-css";
   var REFRESH_MS = 10 * 60 * 1000;
 
-  /* ── Config ─────────────────────────────────────────────────────────── */
+  // ── Data ────────────────────────────────────────────────────────────
+  // Readings come from a snapshot a scheduled job builds server-side. The
+  // browser used to fetch LCRA through public CORS relays; all three are now
+  // dead (corsproxy.io refuses keyless URLs, allorigins 522s, r.jina.ai sits
+  // behind a Cloudflare challenge) while LCRA answers a server fine. Parsing
+  // lives in scripts/build-rainfall-json.mjs — one implementation, not one
+  // per component.
+  var SOURCE_DEFAULT =
+    "https://raw.githubusercontent.com/cawthorneh/vibe-coding/main/docs/data/rainfall.json";
 
-  var LOCATIONS = [
-    { label: "Dripping Springs", match: ["dripping springs", "dripping spr"] },
-    { label: "Austin",           match: ["austin"] },
-    { label: "Fredericksburg",   match: ["fredericksburg"] },
-    { label: "Johnson City",     match: ["johnson city"] },
-    { label: "Blanco",           match: ["blanco"], exclude: ["johnson city"] }
-  ];
+  // A browser fetch has no timeout of its own, so a host that accepts the
+  // connection and stalls would leave this loading forever.
+  var FETCH_TIMEOUT_MS = 6000;
+  // Beyond this the snapshot is called out as stale rather than shown as if
+  // it were current.
+  var STALE_AFTER_MS = 3 * 60 * 60 * 1000;
 
-  var LCRA_BASE = "https://hydromet.lcra.org/media/";
-  var FIVE_DAY  = "Rain5Day.csv";
+  function fetchWithTimeout(url) {
+    if (typeof AbortController === "undefined") return fetch(url, { cache: "no-store" });
+    var ctrl = new AbortController();
+    var timer = setTimeout(function () { ctrl.abort(); }, FETCH_TIMEOUT_MS);
+    return fetch(url, { cache: "no-store", signal: ctrl.signal })
+      .then(function (r) { clearTimeout(timer); return r; },
+            function (e) { clearTimeout(timer); throw e; });
+  }
 
-  // LCRA blocks cross-origin browser reads, so fall back through public CORS
-  // relays. Direct is tried first in case the policy ever loosens.
-  var PROXIES = [
-    function (u) { return u; },
-    function (u) { return "https://corsproxy.io/?" + encodeURIComponent(u); },
-    function (u) { return "https://api.allorigins.win/raw?url=" + encodeURIComponent(u); },
-    function (u) { return "https://r.jina.ai/" + u; }
-  ];
+  function loadSnapshot(mount) {
+    var url = mount.getAttribute("data-source") || SOURCE_DEFAULT;
+    return fetchWithTimeout(url).then(function (r) {
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      return r.json();
+    }).then(function (d) {
+      if (!d || !Array.isArray(d.locations)) throw new Error("unrecognised snapshot");
+      return d;
+    });
+  }
 
-  var COL_TODAY     = ["today"];
-  var COL_YESTERDAY = ["1 day ago", "yesterday", "last24"];
+  function ageOf(snapshot) {
+    var t = Date.parse(snapshot && snapshot.generated);
+    return isFinite(t) ? Date.now() - t : null;
+  }
+
+  function whenText(snapshot) {
+    var t = Date.parse(snapshot && snapshot.generated);
+    if (!isFinite(t)) return "";
+    try {
+      return new Date(t).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
+    } catch (e) { return ""; }
+  }
+
 
   /* ── Styles ─────────────────────────────────────────────────────────── */
   // Brand values sampled from drippingrainwater.com. Every class is prefixed
@@ -143,112 +176,6 @@
     document.head.appendChild(el);
   }
 
-  /* ── CSV ────────────────────────────────────────────────────────────── */
-
-  function parseCSV(text) {
-    var lines = text.replace(/^﻿/, "").trim().split(/\r?\n/);
-    if (lines.length < 2) return [];
-    function split(line) {
-      var out = [], cur = "", q = false;
-      for (var i = 0; i < line.length; i++) {
-        var ch = line[i];
-        if (ch === '"') {
-          if (q && line[i + 1] === '"') { cur += '"'; i++; } else { q = !q; }
-          continue;
-        }
-        if (ch === "," && !q) { out.push(cur.trim()); cur = ""; continue; }
-        cur += ch;
-      }
-      out.push(cur.trim());
-      return out;
-    }
-    var hdrs = split(lines[0]).map(function (h) { return h.toLowerCase(); });
-    return lines.slice(1).filter(function (l) { return l.trim(); }).map(function (l) {
-      var v = split(l), row = {};
-      hdrs.forEach(function (h, i) { row[h] = v[i] == null ? "" : v[i]; });
-      return row;
-    });
-  }
-
-  function locCol(rows) {
-    if (!rows.length) return null;
-    var names = ["location", "site name", "sitename", "name", "station", "gauge"];
-    for (var i = 0; i < names.length; i++) if (names[i] in rows[0]) return names[i];
-    return null;
-  }
-
-  // A relay that accepts the connection and then stalls would otherwise leave
-  // the component on "Loading…" forever: fetch has no timeout of its own, so
-  // the promise simply never settles and the next relay is never tried.
-  var FETCH_TIMEOUT_MS = 6000;
-
-  function fetchWithTimeout(url) {
-    if (typeof AbortController === "undefined") return fetch(url, { cache: "no-store" });
-    var ctrl = new AbortController();
-    var timer = setTimeout(function () { ctrl.abort(); }, FETCH_TIMEOUT_MS);
-    return fetch(url, { cache: "no-store", signal: ctrl.signal })
-      .then(function (r) { clearTimeout(timer); return r; },
-            function (e) { clearTimeout(timer); throw e; });
-  }
-
-  function fetchCSV(file) {
-    var url = LCRA_BASE + file, i = 0;
-    function attempt() {
-      if (i >= PROXIES.length) return Promise.reject(new Error("all sources failed"));
-      var proxy = PROXIES[i++];
-      return fetchWithTimeout(proxy(url))
-        .then(function (r) { return r.ok ? r.text() : Promise.reject(new Error("HTTP " + r.status)); })
-        .then(function (t) {
-          var rows = parseCSV(t);
-          if (!rows.length || !locCol(rows)) throw new Error("unrecognised response");
-          return rows;
-        })
-        .catch(attempt);
-    }
-    return attempt();
-  }
-
-  /* ── Extraction ─────────────────────────────────────────────────────── */
-
-  function matchRows(rows, loc) {
-    var col = locCol(rows);
-    if (!col) return [];
-    return rows.filter(function (r) {
-      var name = String(r[col] || "").toLowerCase();
-      var hit = loc.match.some(function (m) { return name.indexOf(m) !== -1; });
-      if (!hit) return false;
-      if (loc.exclude && loc.exclude.some(function (x) { return name.indexOf(x) !== -1; })) return false;
-      return true;
-    });
-  }
-
-  // Mean of the first candidate column that carries numeric data.
-  function mean(rows, candidates) {
-    for (var c = 0; c < candidates.length; c++) {
-      var vals = rows.map(function (r) { return parseFloat(r[candidates[c]]); })
-                     .filter(function (v) { return isFinite(v); });
-      if (vals.length) {
-        return vals.reduce(function (a, b) { return a + b; }, 0) / vals.length;
-      }
-    }
-    return null;
-  }
-
-  // LCRA publishes no rolling 48-hour figure, so the closest available
-  // two-day window is yesterday's full day plus today since midnight.
-  function total48(rows) {
-    var t = mean(rows, COL_TODAY);
-    var y = mean(rows, COL_YESTERDAY);
-    if (t === null && y === null) return null;
-    return (t || 0) + (y || 0);
-  }
-
-  function build(fiveDay) {
-    return LOCATIONS.map(function (loc) {
-      return { label: loc.label, total: total48(matchRows(fiveDay, loc)) };
-    });
-  }
-
   /* ── Render ─────────────────────────────────────────────────────────── */
 
   function esc(s) {
@@ -298,29 +225,40 @@
       "</section>";
   }
 
-  /* ── Load ───────────────────────────────────────────────────────────── */
-
-  function footLive() {
-    var t = "";
-    try {
-      t = " · updated " + new Date().toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
-    } catch (e) {}
+  function footLive(snap) {
+    var w = whenText(snap);
     return "Inches of rain, averaged across <b>LCRA Hydromet</b> gauges in each area" +
-           t + ". The 48-hour figure is yesterday's full day plus today since midnight.";
+           (w ? " · read at " + w : "") +
+           ". The 48-hour figure is yesterday's full day plus today since midnight.";
+  }
+
+  function footStale(snap) {
+    var w = whenText(snap);
+    return "<b>These readings are behind.</b> The last successful read from LCRA Hydromet was" +
+           (w ? " at " + w : " some time ago") + ", so treat them as out of date.";
   }
 
   function footDown() {
-    return "<b>Live readings unavailable.</b> LCRA Hydromet can't be reached right now — " +
+    return "<b>Readings unavailable.</b> The rainfall feed can't be reached right now — " +
            "these will fill in automatically once it responds.";
   }
 
+  // Before the snapshot arrives there are no location names to show, so the
+  // strip renders its own frame rather than inventing readings.
+  var PLACEHOLDER_LABELS = ["Dripping Springs", "Austin", "Fredericksburg",
+                            "Johnson City", "Blanco"];
+
   function placeholder() {
-    return LOCATIONS.map(function (l) { return { label: l.label, total: null }; });
+    return PLACEHOLDER_LABELS.map(function (l) { return { label: l, total: null }; });
   }
 
   function load(mount) {
-    fetchCSV(FIVE_DAY).then(function (rows) {
-      render(mount, build(rows), footLive());
+    loadSnapshot(mount).then(function (snap) {
+      var rows = snap.locations.map(function (l) {
+        return { label: l.label, total: l.total48 };
+      });
+      var age = ageOf(snap);
+      render(mount, rows, age !== null && age > STALE_AFTER_MS ? footStale(snap) : footLive(snap));
     }).catch(function () {
       // Show the locations with dashes rather than hiding: an empty panel
       // looks broken, and zeros would be a lie.
