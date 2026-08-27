@@ -1,0 +1,58 @@
+{
+  "generated_at": "2026-08-27T05:00:51+00:00",
+  "window_days": 45,
+  "categories": [
+    {
+      "id": "local",
+      "label": "Local Water News",
+      "short": "Local",
+      "blurb": "Aquifers, drought status, and water supply across the Texas Hill Country.",
+      "count": 0
+    },
+    {
+      "id": "research",
+      "label": "Research",
+      "short": "Research",
+      "blurb": "New science on rainwater harvesting, water quality, and catchment.",
+      "count": 0
+    },
+    {
+      "id": "policy",
+      "label": "Policy & Codes",
+      "short": "Policy",
+      "blurb": "Rainwater law, plumbing codes, rebates, and water regulation.",
+      "count": 0
+    },
+    {
+      "id": "positive",
+      "label": "Good Climate News",
+      "short": "Good News",
+      "blurb": "Restoration, breakthroughs, and progress worth reading about.",
+      "count": 0
+    }
+  ],
+  "counts": {
+    "local": 0,
+    "research": 0,
+    "policy": 0,
+    "positive": 0
+  },
+  "items": [],
+  "sources": [],
+  "stats": {
+    "feeds_total": 26,
+    "feeds_ok": 0,
+    "feeds_failed": 0,
+    "entries_seen": 0,
+    "candidates": 0,
+    "after_dedupe": 0,
+    "published": 0,
+    "rejected": {
+      "score": 0,
+      "stale": 0,
+      "blocked": 0,
+      "off_topic": 0
+    }
+  },
+  "_note": "Placeholder committed with the dashboard. Replaced on the first successful run of fetch_news.py (the 'Refresh water news' workflow)."
+}

@@ -1,0 +1,93 @@
+# Rebuild docs/news.json from the curated feeds in news_sources.py and commit it.
+#
+# No Pages deploy step here on purpose. This repo's Pages site builds from the
+# main branch's docs/ folder, not from an Actions artifact — actions/deploy-pages
+# fails against that configuration, which is why pages.yml has never once gone
+# green. Committing the file is the whole deploy, same as rainfall-cache.yml.
+name: Refresh water news
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"      # every six hours, off the hour
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - fetch_news.py
+      - news_sources.py
+      - .github/workflows/news.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: water-news
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Aggregate feeds
+        run: |
+          set -o pipefail
+          python3 fetch_news.py --out docs/news.json 2>&1 | tee run.log
+
+      - name: Publish the run report
+        if: always()
+        run: |
+          {
+            echo "## Water news refresh"
+            echo
+            echo '```'
+            cat run.log 2>/dev/null || echo "the aggregator produced no output"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Commit the refreshed feed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # Stage first: `git diff` ignores untracked files, so on the run that
+          # first creates the file the check would report no change and the
+          # feed would never be committed at all.
+          git add -f docs/news.json
+          if git diff --cached --quiet -- docs/news.json; then
+            echo "identical to the committed copy"; exit 0
+          fi
+
+          # generated_at moves every run, so compare only the stories —
+          # otherwise this commits every six hours whether the news changed
+          # or not.
+          before=$(git show HEAD:docs/news.json 2>/dev/null | jq -Sc '[.items[].id]' 2>/dev/null || echo none)
+          after=$(jq -Sc '[.items[].id]' docs/news.json)
+          if [ "$before" = "$after" ]; then
+            echo "same stories — only the timestamp moved, not committing"
+            git reset -q HEAD -- docs/news.json
+            exit 0
+          fi
+
+          git commit -m "Refresh water news feed [skip ci]"
+          # A scheduled run and a manual run can race for the ref.
+          for attempt in 1 2 3; do
+            git push && exit 0
+            echo "Push failed (attempt $attempt); rebasing on origin."
+            git pull --rebase origin "${GITHUB_REF_NAME}" || exit 1
+          done
+          exit 1
+
+      - name: Stories in this refresh
+        if: always()
+        run: |
+          echo "generated: $(jq -r .generated_at docs/news.json)"
+          echo "feeds ok:  $(jq -r '.stats.feeds_ok' docs/news.json) / $(jq -r '.stats.feeds_total' docs/news.json)"
+          echo
+          jq -r '.items[] | "  \(.category)|\(.source)|\(.title)"' docs/news.json \
+            | head -25 | column -t -s'|'
