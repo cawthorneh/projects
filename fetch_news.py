@@ -255,20 +255,67 @@ def canonical_url(url: str) -> str:
     return urlunparse((p.scheme.lower(), p.netloc.lower(), path, "", urlencode(q), ""))
 
 
-def dedupe_key(title: str) -> str:
-    """A loose fingerprint: the first 8 meaningful words, normalised."""
+_STOPWORDS = {
+    "the", "a", "an", "of", "in", "on", "to", "for", "and", "is", "at", "as",
+    "by", "with", "from", "that", "this", "it", "its", "be", "are", "was",
+    "were", "will", "would", "has", "have", "had", "new", "after", "over",
+    "into", "amid", "says", "said", "than", "then", "but", "not", "you",
+}
+
+
+def _stem(word: str) -> str:
+    """Crude suffix stripping, enough that 'repairs'/'repair' and
+    'begin'/'beginning' compare equal. Two outlets rewriting the same story
+    almost always differ by exactly this much."""
+    for suffix in ("ing", "ed", "es", "s"):
+        if len(word) - len(suffix) >= 4 and word.endswith(suffix):
+            return word[: -len(suffix)]
+    return word
+
+
+def title_tokens(title: str) -> frozenset[str]:
+    """Significant word stems in a headline, for near-duplicate comparison."""
     s = unicodedata.normalize("NFKD", title.lower())
     s = "".join(c for c in s if not unicodedata.combining(c))
     s = re.sub(r"[^a-z0-9\s]", " ", s)
-    stop = {"the", "a", "an", "of", "in", "on", "to", "for", "and", "is", "at",
-            "as", "by", "with", "from", "that", "this", "it", "its", "be", "are"}
-    words = [w for w in s.split() if w not in stop and len(w) > 2]
-    return " ".join(words[:8])
+    return frozenset(_stem(w) for w in s.split()
+                     if w not in _STOPWORDS and len(w) > 2)
+
+
+# How much two headlines must overlap to count as the same story. The first
+# live run published four separate write-ups of one Barton Springs repair and
+# two of one Delhi ruling, because an exact-prefix key only catches syndicated
+# copies that kept the original wording — staff rewrites sail straight past it.
+#
+# The measure is the overlap coefficient (shared / smaller set) rather than
+# Jaccard, because headline lengths vary a lot for the same story: a wire
+# one-liner and a 14-word local rewrite score badly on Jaccard no matter how
+# completely the short one is contained in the long one.
+DUPLICATE_OVERLAP = 0.6
+MIN_SHARED_TOKENS = 4
+
+
+def is_near_duplicate(tokens: frozenset[str], seen: list[frozenset[str]]) -> bool:
+    if len(tokens) < MIN_SHARED_TOKENS:
+        return False
+    for other in seen:
+        shared = len(tokens & other)
+        if shared < MIN_SHARED_TOKENS:
+            continue
+        smaller = min(len(tokens), len(other))
+        if smaller and shared / smaller >= DUPLICATE_OVERLAP:
+            return True
+    return False
 
 
 def split_google_title(title: str) -> tuple[str, str]:
-    """Google News appends ' - Publisher'. Recover the real publisher name."""
-    m = re.match(r"^(.*?)\s+-\s+([^-]{2,60})$", title.strip())
+    """Google News appends ' - Publisher'. Recover the real publisher name.
+
+    The first group is greedy so the split happens at the LAST ' - ', which is
+    what makes hyphenated mastheads work: "Austin American-Statesman" and
+    "San Antonio Express-News" both used to fall through to the bare hostname.
+    """
+    m = re.match(r"^(.*)\s+-\s+(.{2,60})$", title.strip())
     if m and not m.group(2).endswith((".", "?", "!")):
         return m.group(1).strip(), m.group(2).strip()
     return title.strip(), ""
@@ -328,6 +375,12 @@ def score_item(item: dict, feed: dict) -> tuple[float, dict]:
                for table in cfg.TOPIC_GATE[cat]):
         return OFF_TOPIC, {"off_topic": True}
 
+    # Second gate for buckets where on-topic is not sufficient — policy must
+    # be in a jurisdiction that applies here, research must actually be research.
+    extra = cfg.EXTRA_GATE.get(cat)
+    if extra and not any(_hits(both, getattr(cfg, table))[0] for table in extra):
+        return OFF_TOPIC, {"off_topic": True, "failed_gate": cat}
+
     def tiered(terms, weight):
         t_n, t_found = _hits(title, terms)
         b_n, b_found = _hits(body, terms)
@@ -370,6 +423,13 @@ def score_item(item: dict, feed: dict) -> tuple[float, dict]:
         score += 0.5 * (s_policy + s_research)
 
     score += s_local + s_region
+
+    # Knock back coverage from jurisdictions that don't apply here. A penalty
+    # rather than a block, so a genuinely notable story can still surface.
+    n_foreign, foreign_terms = _hits(both, cfg.NON_US_MARKERS)
+    if n_foreign and not local_terms:
+        score += W["non_us"] * min(n_foreign, 3)
+
     if feed["curated"]:
         score += cfg.CURATED_BONUS
 
@@ -381,6 +441,7 @@ def score_item(item: dict, feed: dict) -> tuple[float, dict]:
         "positive": positive_terms,
         "local": local_terms,
         "region": region_terms,
+        "non_us": foreign_terms,
         "base": round(score, 2),
     }
     return score, detail
@@ -514,15 +575,16 @@ def build(feeds: list[dict], window_days: int, verbose: bool = False) -> dict:
     # ── De-duplicate: same URL, or near-identical headline ─────────────────
     candidates.sort(key=lambda i: i["score"], reverse=True)
     seen_urls: set[str] = set()
-    seen_titles: set[str] = set()
+    seen_titles: list[frozenset[str]] = []
     deduped: list[dict] = []
     for item in candidates:
-        tkey = dedupe_key(item["title"])
-        if item["canonical"] in seen_urls or (tkey and tkey in seen_titles):
+        if item["canonical"] in seen_urls:
+            continue
+        tokens = title_tokens(item["title"])
+        if is_near_duplicate(tokens, seen_titles):
             continue
         seen_urls.add(item["canonical"])
-        if tkey:
-            seen_titles.add(tkey)
+        seen_titles.append(tokens)
         deduped.append(item)
 
     # ── Caps: per source, then per category ────────────────────────────────

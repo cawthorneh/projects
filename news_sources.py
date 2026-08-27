@@ -132,9 +132,12 @@ FEEDS = [
         "site": "https://news.google.com/",
     },
     {
-        "id": "texas_tribune_water",
+        # The /feeds/topics/water/ endpoint returns HTML now, not XML.
+        "id": "gn_texas_tribune_water",
         "name": "The Texas Tribune",
-        "url": "https://www.texastribune.org/feeds/topics/water/",
+        "url": google_news(
+            'site:texastribune.org (water OR drought OR aquifer OR groundwater) when:45d'
+        ),
         "category": "local",
         "scope": "state",
         "weight": 1.8,
@@ -162,13 +165,16 @@ FEEDS = [
         "site": "https://sanantonioreport.org/",
     },
     {
-        "id": "community_impact",
+        # communityimpact.com/feed/ 404s — reached through Google News instead.
+        "id": "gn_community_impact",
         "name": "Community Impact",
-        "url": "https://communityimpact.com/feed/",
+        "url": google_news(
+            'site:communityimpact.com (water OR rainwater OR drought OR aquifer OR well) when:45d'
+        ),
         "category": "local",
         "scope": "local",
-        "weight": 1.0,
-        "curated": False,
+        "weight": 1.2,
+        "curated": True,
         "site": "https://communityimpact.com/",
     },
 
@@ -229,26 +235,6 @@ FEEDS = [
         "curated": False,
         "site": "https://phys.org/",
     },
-    {
-        "id": "mdpi_water",
-        "name": "Water (MDPI)",
-        "url": "https://www.mdpi.com/rss/journal/water",
-        "category": "research",
-        "scope": "global",
-        "weight": 1.0,
-        "curated": True,
-        "site": "https://www.mdpi.com/journal/water",
-    },
-    {
-        "id": "eurekalert_earth",
-        "name": "EurekAlert!",
-        "url": "https://www.eurekalert.org/rss/earth_science.xml",
-        "category": "research",
-        "scope": "global",
-        "weight": 1.1,
-        "curated": False,
-        "site": "https://www.eurekalert.org/",
-    },
 
     # ── Policy ─────────────────────────────────────────────────────────────
     {
@@ -256,7 +242,8 @@ FEEDS = [
         "name": "Rainwater Policy Tracker",
         "url": google_news(
             '"rainwater harvesting" (law OR ordinance OR rebate OR incentive OR code OR '
-            "permit OR tax OR legal) when:60d"
+            'permit OR tax) (Texas OR "United States" OR U.S. OR state OR county OR city) '
+            "-India -Delhi -Pakistan -Bengaluru -Chennai -Mumbai when:60d"
         ),
         "category": "policy",
         "scope": "national",
@@ -282,7 +269,8 @@ FEEDS = [
         "name": "Water Rebates & Incentives",
         "url": google_news(
             '("rain barrel" OR cistern OR "graywater" OR "greywater" OR "water reuse") '
-            "(rebate OR incentive OR program OR ordinance) when:60d"
+            '(rebate OR incentive OR program OR ordinance) (Texas OR "United States" OR U.S.) '
+            "when:60d"
         ),
         "category": "policy",
         "scope": "national",
@@ -291,9 +279,13 @@ FEEDS = [
         "site": "https://news.google.com/",
     },
     {
-        "id": "epa_water_releases",
+        # The EPA newsroom RSS path returns an empty body — via Google News.
+        "id": "gn_epa_water",
         "name": "US EPA",
-        "url": "https://www.epa.gov/newsreleases/search/rss/field-press-office/water",
+        "url": google_news(
+            '(EPA OR "Environmental Protection Agency") (water OR "drinking water" OR '
+            "groundwater) (rule OR standard OR ruling OR enforcement) when:45d"
+        ),
         "category": "policy",
         "scope": "national",
         "weight": 1.3,
@@ -313,14 +305,18 @@ FEEDS = [
 
     # ── Positive climate ───────────────────────────────────────────────────
     {
-        "id": "good_news_network_earth",
-        "name": "Good News Network",
-        "url": "https://www.goodnewsnetwork.org/category/earth/feed/",
+        # goodnewsnetwork.org returns 403 to the runner — via Google News.
+        "id": "gn_good_environment_news",
+        "name": "Good Environmental News",
+        "url": google_news(
+            '(river OR watershed OR wetland OR aquifer OR forest OR species) '
+            "(restored OR restoration OR recovery OR rebound OR revived) when:45d"
+        ),
         "category": "positive",
         "scope": "global",
         "weight": 1.5,
         "curated": True,
-        "site": "https://www.goodnewsnetwork.org/",
+        "site": "https://news.google.com/",
     },
     {
         "id": "reasons_to_be_cheerful",
@@ -331,16 +327,6 @@ FEEDS = [
         "weight": 1.5,
         "curated": False,
         "site": "https://reasonstobecheerful.world/",
-    },
-    {
-        "id": "positive_news_environment",
-        "name": "Positive News",
-        "url": "https://www.positive.news/environment/feed/",
-        "category": "positive",
-        "scope": "global",
-        "weight": 1.4,
-        "curated": True,
-        "site": "https://www.positive.news/",
     },
     {
         "id": "anthropocene",
@@ -398,7 +384,7 @@ WATER_TERMS = [
     "water supply", "water restriction", "water conservation", "watershed",
     "water quality", "water table", "water utility", "water district",
     "stormwater", "graywater", "greywater", "wastewater", "reclaimed water",
-    "water reuse", "desalination", "reservoir", "springs", "spring flow",
+    "water reuse", "desalination", "reservoir", "spring flow",
     "rainfall", "precipitation", "hydrology", "hydromet", "runoff",
     "filtration", "uv disinfection", "potable water", "drinking water",
     "water rate", "water main", "irrigation", "wet weather", "flooding",
@@ -464,6 +450,8 @@ BLOCK_TERMS = [
     "sports roundup", "high school football", "box score", "recruiting",
     "best deals", "coupon", "discount code", "black friday", "gift guide",
     "casino", "sportsbook", "betting odds", "crossword", "sudoku",
+    "daily digest", "news roundup", "weekly roundup", "this week in",
+    "morning briefing", "what to know today",
 ]
 
 # Hill Country place names. A hit here flags the story "Hill Country" on the
@@ -489,6 +477,37 @@ REGION_TERMS = [
     "texas water development board", "groundwater conservation district",
 ]
 
+# US jurisdiction signal. Policy is jurisdictional — an ordinance in Ranchi or
+# a rebate in Saskatchewan tells a Dripping Springs homeowner nothing — so the
+# policy bucket requires one of these. Research does not: science travels.
+US_TERMS = [
+    "united states", "u.s.", "us epa", "epa", "america", "american", "federal",
+    "texas", "california", "arizona", "colorado", "new mexico", "oklahoma",
+    "florida", "georgia", "virginia", "carolina", "oregon", "washington",
+    "nevada", "utah", "kansas", "nebraska", "louisiana", "arkansas",
+    "tennessee", "kentucky", "missouri", "illinois", "ohio", "michigan",
+    "minnesota", "wisconsin", "iowa", "montana", "idaho", "wyoming",
+    "new york", "new jersey", "pennsylvania", "massachusetts", "maryland",
+    "congress", "senate", "state legislature", "governor", "county",
+    "city council", "tceq", "usgs", "noaa", "bureau of reclamation",
+]
+
+# Seen in the first live run: the rainwater-harvesting beat is dominated by
+# Indian and South Asian coverage, which swamped the policy bucket. These knock
+# it back rather than blocking outright, so a genuinely notable story can still
+# surface on the strength of everything else.
+NON_US_MARKERS = [
+    "india", "indian", "delhi", "jal board", "bengaluru", "chennai", "mumbai",
+    "kolkata", "hyderabad", "pune", "ranchi", "tamil nadu", "kerala",
+    "maharashtra", "gujarat", "rajasthan", "karnataka", "uttar pradesh",
+    "crore", "lakh", "municipal corporation", "panchayat",
+    "pakistan", "bangladesh", "sri lanka", "nepal", "indonesia",
+    "philippines", "negros", "malaysia", "vietnam", "thailand",
+    "nigeria", "kenya", "uganda", "ghana", "tanzania", "zimbabwe",
+    "calgary", "saskatchewan", "alberta", "ontario", "manitoba",
+    "united kingdom", "britain", "england", "australia", "new zealand",
+]
+
 # Scoring weights (per hit; title hits are multiplied by TITLE_MULTIPLIER).
 WEIGHTS = {
     "rainwater": 6.0,
@@ -498,6 +517,7 @@ WEIGHTS = {
     "positive": 2.0,
     "local_place": 3.0,
     "region": 1.0,
+    "non_us": -5.0,
     "negative": -2.5,     # applied in the positive bucket only
 }
 
@@ -524,6 +544,16 @@ TOPIC_GATE = {
     "research": ["RAINWATER_TERMS", "WATER_TERMS"],
     "policy":   ["RAINWATER_TERMS", "WATER_TERMS"],
     "positive": ["RAINWATER_TERMS", "WATER_TERMS", "CLIMATE_TERMS"],
+}
+
+# A second gate, applied after TOPIC_GATE, for buckets where being on-topic
+# is not enough. Both come from what the first live run actually published:
+#   policy   — half the bucket was foreign ordinances, useless here.
+#   research — "5 far-flung schools get a rainwater system" is a worthy
+#              project, but it is not research.
+EXTRA_GATE = {
+    "policy":   ["US_TERMS", "LOCAL_PLACES", "REGION_TERMS"],
+    "research": ["RESEARCH_TERMS"],
 }
 
 # Freshness: how far back to look, and how quickly older items sink.
