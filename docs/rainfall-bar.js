@@ -7,7 +7,7 @@
  * uses, hairline rules and all.
  *
  *   <div id="drw-rainfall-bar"></div>
- *   <script src="https://cawthorneh.github.io/vibe-coding/rainfall-bar.js"><\/script>
+ *   <script src="https://cawthorneh.github.io/projects/rainfall-bar.js"><\/script>
  *
  * Readings come from a snapshot built server-side every half hour, not from
  * LCRA directly — see scripts/build-rainfall-json.mjs. Override its location
@@ -41,7 +41,7 @@
   // lives in scripts/build-rainfall-json.mjs — one implementation, not one
   // per component.
   var SOURCE_DEFAULT =
-    "https://raw.githubusercontent.com/cawthorneh/vibe-coding/main/docs/data/rainfall.json";
+    "https://raw.githubusercontent.com/cawthorneh/projects/main/docs/data/rainfall.json";
 
   // A browser fetch has no timeout of its own, so a host that accepts the
   // connection and stalls would leave this loading forever.

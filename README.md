@@ -57,7 +57,7 @@ same fixture — if one drifts, that test fails.
 
 ```html
 <div id="drw-rainfall-bar" data-dashboard="/rainfall"></div>
-<script src="https://cawthorneh.github.io/vibe-coding/rainfall-bar.js"></script>
+<script src="https://cawthorneh.github.io/projects/rainfall-bar.js"></script>
 ```
 
 `data-dashboard` is the page the strip's **Full dashboard** button opens — put
@@ -77,7 +77,7 @@ surrounding section supplies its own heading.
 
 ```html
 <div id="drw-rainfall-dashboard"></div>
-<script src="https://cawthorneh.github.io/vibe-coding/rainfall-dashboard.js"></script>
+<script src="https://cawthorneh.github.io/projects/rainfall-dashboard.js"></script>
 ```
 
 `docs/webflow-embed.txt` and `docs/webflow-embed-dashboard.txt` wrap each

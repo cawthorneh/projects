@@ -1,4 +1,4 @@
-import { build, datedColumns, parseCSV } from '/home/user/vibe-coding/scripts/build-rainfall-json.mjs';
+import { build, datedColumns, parseCSV } from './build-rainfall-json.mjs';
 
 // Headers copied verbatim from the probe's output against the live file.
 const FIVE = `Site,Location,Basin,Today,Last24,08/24/2026,08/23/2026,08/22/2026,08/21/2026,Since 08/21/2026,Five Day Rain (in) Report Date: 2026-08-25 15:46

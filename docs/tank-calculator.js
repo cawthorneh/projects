@@ -8,7 +8,7 @@
  * dry stretch rather than by an annual average that hides it.
  *
  *   <div id="drw-tank-calculator"></div>
- *   <script src="https://cawthorneh.github.io/vibe-coding/tank-calculator.js"><\/script>
+ *   <script src="https://cawthorneh.github.io/projects/tank-calculator.js"><\/script>
  *
  * Or paste this whole file inline inside a script tag — it needs no other
  * files, no build step and no external libraries.
