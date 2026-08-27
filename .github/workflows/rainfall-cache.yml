@@ -11,7 +11,9 @@ on:
     - cron: "*/30 * * * *"     # every 30 minutes
   workflow_dispatch:
   push:
-    branches: [claude/rainfall-dashboard-dripping-yz5fus]
+    # main too, so a merge refreshes the snapshot immediately rather than
+    # leaving it stale until the next half-hour tick.
+    branches: [main, claude/rainfall-dashboard-dripping-yz5fus]
     paths:
       - scripts/build-rainfall-json.mjs
       - .github/workflows/rainfall-cache.yml
