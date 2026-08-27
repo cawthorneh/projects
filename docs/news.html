@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Water News — Dripping Rainwater</title>
+<meta name="description" content="Curated Texas Hill Country water news, rainwater harvesting research and policy, and constructive climate reporting." />
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root { color-scheme: light; }   /* stop browsers auto-darkening it */
+  /* ─────────────────────────────────────────────────────────────────────
+     Dripping Rainwater brand tokens.
+     Override any of these from the embed URL, e.g. ?accent=%232f6fb5
+     ───────────────────────────────────────────────────────────────────── */
+  :root {
+    /* Sampled from drippingrainwater.com, same values the rainfall widget
+       uses — see the Branding section of the README. */
+    --blue:      #3066ab;
+    --blue-700:  #1e4574;
+    --blue-050:  #eef4fb;
+    --sky:       #6dabe1;
+    --gold:      #8a6410;   /* #D8B046 darkened for AA text contrast on white */
+    --gold-050:  #fbf3e2;
+    --ink:       #16233a;
+    --body:      #3c4a61;
+    --muted:     #6b7a90;
+    --line:      #e3e9f1;
+    --bg:        #f5f8fc;
+    --card:      #ffffff;
+
+    --c-local:    #3066ab;
+    --c-research: #17786e;
+    --c-policy:   #9a6b16;
+    --c-positive: #2f7d4f;
+
+    --radius:    14px;
+    --shadow:    0 1px 2px rgba(22,35,58,.05), 0 8px 24px -12px rgba(22,35,58,.14);
+    --shadow-lg: 0 2px 4px rgba(22,35,58,.06), 0 18px 40px -16px rgba(22,35,58,.22);
+    --font: "Figtree", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+            "Helvetica Neue", Arial, sans-serif;
+    --maxw: 1180px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--body);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    padding: 28px 20px 40px;
+  }
+  /* Embedded in an iframe the host page supplies the background and padding. */
+  body.embed { background: transparent; padding: 0 0 8px; }
+
+  .wrap { max-width: var(--maxw); margin: 0 auto; }
+
+  /* ── Header ───────────────────────────────────────────────────────── */
+  .eyebrow {
+    display: flex; align-items: center; gap: 9px;
+    font-size: .72rem; font-weight: 700; letter-spacing: .13em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 10px;
+  }
+  .eyebrow::before {
+    content: ""; width: 7px; height: 7px; border-radius: 50%;
+    background: var(--gold); flex: none;
+  }
+  h1 {
+    font-size: clamp(1.55rem, 3.4vw, 2.25rem);
+    line-height: 1.18; font-weight: 700; color: var(--ink);
+    letter-spacing: -.015em; max-width: 24ch;
+  }
+  .lede {
+    margin-top: 10px; font-size: 1rem; color: var(--muted);
+    max-width: 62ch;
+  }
+  .meta-row {
+    margin-top: 16px; display: flex; flex-wrap: wrap;
+    align-items: center; gap: 8px 16px;
+    font-size: .8rem; color: var(--muted);
+  }
+  .freshness { display: inline-flex; align-items: center; gap: 7px; }
+  .pulse {
+    width: 8px; height: 8px; border-radius: 50%; background: var(--c-positive);
+    box-shadow: 0 0 0 0 rgba(47,125,79,.5); animation: pulse 2.4s infinite; flex: none;
+  }
+  .pulse.stale { background: var(--gold); box-shadow: none; animation: none; }
+  .pulse.off   { background: var(--muted); box-shadow: none; animation: none; }
+  @keyframes pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(47,125,79,.45); }
+    70%  { box-shadow: 0 0 0 7px rgba(47,125,79,0); }
+    100% { box-shadow: 0 0 0 0 rgba(47,125,79,0); }
+  }
+  .refresh {
+    background: none; border: 0; padding: 0; cursor: pointer;
+    font: inherit; font-size: .8rem; color: var(--blue);
+    text-decoration: underline; text-underline-offset: 3px;
+  }
+  .refresh:disabled { color: var(--muted); cursor: default; }
+
+  /* ── Controls ─────────────────────────────────────────────────────── */
+  .controls {
+    margin: 22px 0 6px; display: flex; flex-wrap: wrap;
+    gap: 10px; align-items: center; justify-content: space-between;
+  }
+  .pills { display: flex; flex-wrap: wrap; gap: 8px; }
+  .pill {
+    font: inherit; font-size: .84rem; font-weight: 500;
+    padding: 7px 15px; border-radius: 999px; cursor: pointer;
+    border: 1px solid var(--line); background: var(--card); color: var(--body);
+    transition: border-color .15s, color .15s, background .15s, box-shadow .15s;
+    display: inline-flex; align-items: center; gap: 7px;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .pill:hover { border-color: var(--blue); color: var(--blue-700); }
+  .pill[aria-pressed="true"] {
+    background: var(--blue); border-color: var(--blue); color: #fff; font-weight: 600;
+    box-shadow: 0 4px 12px -4px rgba(47,111,181,.5);
+  }
+  .pill .n {
+    font-size: .72rem; font-variant-numeric: tabular-nums;
+    padding: 1px 7px; border-radius: 999px;
+    background: var(--blue-050); color: var(--blue-700);
+  }
+  .pill[aria-pressed="true"] .n { background: rgba(255,255,255,.22); color: #fff; }
+  .pill:focus-visible, .refresh:focus-visible, .search input:focus-visible,
+  .card a:focus-visible, .source-toggle:focus-visible {
+    outline: 2px solid var(--blue); outline-offset: 2px; border-radius: 6px;
+  }
+
+  .search { position: relative; flex: 0 1 250px; }
+  .search input {
+    font: inherit; font-size: .86rem; width: 100%;
+    padding: 8px 32px 8px 34px; border-radius: 999px;
+    border: 1px solid var(--line); background: var(--card); color: var(--ink);
+  }
+  .search input::placeholder { color: var(--muted); }
+  .search svg {
+    position: absolute; left: 12px; top: 50%; transform: translateY(-50%);
+    width: 14px; height: 14px; color: var(--muted); pointer-events: none;
+  }
+  .search .clear {
+    position: absolute; right: 6px; top: 50%; transform: translateY(-50%);
+    border: 0; background: none; cursor: pointer; color: var(--muted);
+    font-size: 1.1rem; line-height: 1; padding: 4px 6px; display: none;
+  }
+  .search.has-value .clear { display: block; }
+
+  .result-count {
+    font-size: .78rem; color: var(--muted); margin: 14px 0 4px;
+    min-height: 1.2em;
+  }
+
+  /* ── Cards ────────────────────────────────────────────────────────── */
+  .grid {
+    display: grid; gap: 16px; margin-top: 8px;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  }
+  .card {
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: var(--radius); overflow: hidden;
+    display: flex; flex-direction: column; position: relative;
+    box-shadow: var(--shadow);
+    transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
+  }
+  .card::before {
+    content: ""; position: absolute; inset: 0 auto 0 0; width: 3px;
+    background: var(--accent, var(--blue)); opacity: .85;
+  }
+  .card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); border-color: #d3ddea; }
+  .card.featured { grid-column: 1 / -1; }
+  @media (min-width: 760px) {
+    .card.featured { flex-direction: row; align-items: stretch; }
+    .card.featured .thumb { flex: 0 0 40%; max-width: 400px; }
+    .card.featured .card-body { padding: 26px 28px; }
+    .card.featured h2 { font-size: 1.4rem; }
+    .card.featured .summary { font-size: .95rem; -webkit-line-clamp: 4; }
+  }
+
+  .thumb {
+    background: var(--blue-050); overflow: hidden; position: relative;
+    aspect-ratio: 16 / 9;
+  }
+  .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .card-body { padding: 17px 19px 18px; display: flex; flex-direction: column; flex: 1; gap: 9px; }
+
+  .card-top {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 6px 9px;
+    font-size: .71rem; letter-spacing: .04em; text-transform: uppercase;
+    font-weight: 600; color: var(--muted);
+  }
+  .cat {
+    color: var(--accent, var(--blue)); display: inline-flex;
+    align-items: center; gap: 5px;
+  }
+  .cat::before {
+    content: ""; width: 6px; height: 6px; border-radius: 2px;
+    background: var(--accent, var(--blue));
+  }
+  .sep { opacity: .4; }
+  .src { color: var(--muted); text-transform: none; letter-spacing: 0;
+         font-weight: 500; font-size: .76rem; }
+
+  h2 { font-size: 1.03rem; line-height: 1.35; font-weight: 600; letter-spacing: -.005em; }
+  h2 a { color: var(--ink); text-decoration: none; }
+  h2 a::after { content: ""; position: absolute; inset: 0; }   /* whole-card click target */
+  .card:hover h2 a { color: var(--blue-700); }
+
+  .summary {
+    font-size: .875rem; color: var(--body); display: -webkit-box;
+    -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+  }
+
+  .card-foot {
+    margin-top: auto; padding-top: 4px; display: flex;
+    flex-wrap: wrap; align-items: center; gap: 6px;
+  }
+  .tag {
+    font-size: .68rem; font-weight: 600; letter-spacing: .04em;
+    text-transform: uppercase; padding: 3px 9px; border-radius: 999px;
+    background: var(--blue-050); color: var(--blue-700);
+  }
+  .tag.local { background: var(--gold-050); color: var(--gold); }
+  .tag.rainwater { background: #e6f3f1; color: var(--c-research); }
+
+  /* ── States ───────────────────────────────────────────────────────── */
+  .skeleton { pointer-events: none; }
+  .skeleton .bar {
+    height: 11px; border-radius: 6px; margin-bottom: 9px;
+    background: linear-gradient(90deg, #eef2f7 25%, #e2e9f2 37%, #eef2f7 63%);
+    background-size: 400% 100%; animation: shimmer 1.4s ease infinite;
+  }
+  @keyframes shimmer { 0% { background-position: 100% 0; } 100% { background-position: 0 0; } }
+
+  .notice {
+    border-radius: var(--radius); padding: 20px 22px; font-size: .9rem;
+    border: 1px solid var(--line); background: var(--card); color: var(--body);
+    box-shadow: var(--shadow);
+  }
+  .notice h3 { font-size: 1rem; color: var(--ink); margin-bottom: 6px; font-weight: 600; }
+  .notice.error { border-color: #f0d5d5; background: #fdf6f6; }
+  .notice.error h3 { color: #9b3232; }
+  .notice code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: .82em; background: var(--bg); padding: 1px 5px; border-radius: 4px;
+  }
+  .notice button {
+    margin-top: 12px; font: inherit; font-size: .84rem; font-weight: 600;
+    padding: 7px 16px; border-radius: 999px; cursor: pointer;
+    border: 0; background: var(--blue); color: #fff;
+  }
+
+  /* ── Footer ───────────────────────────────────────────────────────── */
+  footer {
+    margin-top: 30px; padding-top: 18px; border-top: 1px solid var(--line);
+    font-size: .78rem; color: var(--muted);
+  }
+  footer a { color: var(--blue); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+  .source-toggle {
+    font: inherit; font-size: .78rem; color: var(--blue); background: none;
+    border: 0; padding: 0; cursor: pointer; text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .source-list {
+    margin-top: 12px; display: grid; gap: 4px 18px;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    font-size: .76rem;
+  }
+  .source-list li { list-style: none; display: flex; align-items: center; gap: 7px; }
+  .source-list .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--c-positive); flex: none; }
+  .source-list .dot.bad { background: #c0574f; }
+  .source-list .dot.warn { background: var(--gold); }
+  [hidden] { display: none !important; }
+
+  @media (max-width: 560px) {
+    body { padding: 20px 16px 32px; }
+    .controls { flex-direction: column; align-items: stretch; }
+    .search { flex: 1 1 auto; }
+    .grid { grid-template-columns: 1fr; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header id="page-header">
+    <p class="eyebrow" id="eyebrow">Water News</p>
+    <h1 id="heading">Hill Country water, rainwater science, and the policy that shapes both.</h1>
+    <p class="lede" id="lede">
+      A curated feed of local water reporting, rainwater&nbsp;harvesting research,
+      regulation worth watching, and climate news that is actually good.
+    </p>
+    <div class="meta-row">
+      <span class="freshness">
+        <span class="pulse off" id="pulse"></span>
+        <span id="updated">Loading stories…</span>
+      </span>
+      <button class="refresh" id="refresh" type="button" disabled>Refresh</button>
+    </div>
+  </header>
+
+  <div class="controls" id="controls" hidden>
+    <div class="pills" id="pills" role="group" aria-label="Filter stories by topic"></div>
+    <div class="search" id="search-wrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+           stroke-linecap="round" aria-hidden="true">
+        <circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path>
+      </svg>
+      <label class="visually-hidden" for="q" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Search stories</label>
+      <input id="q" type="search" placeholder="Search stories…" autocomplete="off" />
+      <button class="clear" id="clear-q" type="button" aria-label="Clear search">&times;</button>
+    </div>
+  </div>
+
+  <p class="result-count" id="count" role="status" aria-live="polite"></p>
+
+  <main id="results" class="grid"></main>
+
+  <footer id="footer" hidden>
+    <span id="foot-text"></span>
+    <button class="source-toggle" id="source-toggle" type="button"
+            aria-expanded="false" aria-controls="source-list">Show sources</button>
+    <ul class="source-list" id="source-list" hidden></ul>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  // ── Configuration from the embed URL ───────────────────────────────────
+  var P = new URLSearchParams(location.search);
+  var CFG = {
+    feed:     P.get("feed") || "news.json",
+    category: P.get("category") || "all",
+    query:    P.get("q") || "",
+    limit:    Math.max(0, parseInt(P.get("limit"), 10) || 0),   // 0 = no limit
+    embed:    P.get("embed") === "1",
+    featured: P.get("featured") !== "0",
+    heading:  P.get("heading"),
+    eyebrow:  P.get("eyebrow"),
+    lede:     P.get("lede"),
+    accent:   P.get("accent"),
+    hideHead: P.get("header") === "0",
+    hideFoot: P.get("footer") === "0",
+    font:     P.get("font")
+  };
+
+  var CAT_COLOR = {
+    local: "var(--c-local)", research: "var(--c-research)",
+    policy: "var(--c-policy)", positive: "var(--c-positive)"
+  };
+
+  var el = function (id) { return document.getElementById(id); };
+  var state = { data: null, category: CFG.category, query: CFG.query };
+
+  // ── Apply embed options ────────────────────────────────────────────────
+  if (CFG.embed) document.body.classList.add("embed");
+  if (CFG.accent) document.documentElement.style.setProperty("--blue", CFG.accent);
+  if (CFG.font) document.documentElement.style.setProperty("--font", CFG.font + ", " +
+    getComputedStyle(document.documentElement).getPropertyValue("--font"));
+  if (CFG.heading) el("heading").textContent = CFG.heading;
+  if (CFG.eyebrow) el("eyebrow").textContent = CFG.eyebrow;
+  if (CFG.lede) el("lede").textContent = CFG.lede;
+  if (CFG.hideHead) el("page-header").hidden = true;
+
+  // ── Helpers ────────────────────────────────────────────────────────────
+  function esc(s) {
+    return String(s == null ? "" : s)
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+  }
+
+  // Only ever emit links we can vouch for. A poisoned feed should not be able
+  // to put a javascript: or data: URL into the page.
+  function safeUrl(u) {
+    try {
+      var parsed = new URL(u, location.href);
+      return (parsed.protocol === "http:" || parsed.protocol === "https:")
+        ? parsed.href : "";
+    } catch (e) { return ""; }
+  }
+
+  function relTime(iso) {
+    if (!iso) return "";
+    var then = new Date(iso);
+    if (isNaN(then)) return "";
+    var mins = Math.round((Date.now() - then.getTime()) / 60000);
+    if (mins < 2) return "just now";
+    if (mins < 60) return mins + "m ago";
+    var hrs = Math.round(mins / 60);
+    if (hrs < 24) return hrs + "h ago";
+    var days = Math.round(hrs / 24);
+    if (days < 8) return days + "d ago";
+    return then.toLocaleDateString(undefined, { month: "short", day: "numeric" });
+  }
+
+  function plural(n, one, many) { return n + " " + (n === 1 ? one : many); }
+
+  // ── Rendering ──────────────────────────────────────────────────────────
+  function cardHTML(item, featured) {
+    var url = safeUrl(item.url);
+    if (!url) return "";
+    var accent = CAT_COLOR[item.category] || "var(--blue)";
+    var cat = (state.data.categories.filter(function (c) { return c.id === item.category; })[0] || {});
+    var img = featured ? safeUrl(item.image) : "";
+    var time = relTime(item.published);
+
+    var tags = [];
+    if (item.local) tags.push('<span class="tag local">Hill Country</span>');
+    if ((item.tags || []).indexOf("rainwater") !== -1)
+      tags.push('<span class="tag rainwater">Rainwater</span>');
+
+    return '' +
+      '<article class="card' + (featured ? " featured" : "") + '" style="--accent:' + accent + '">' +
+        (img ? '<div class="thumb"><img src="' + esc(img) + '" alt="" loading="lazy" ' +
+               'referrerpolicy="no-referrer" onerror="this.parentNode.remove()"></div>' : "") +
+        '<div class="card-body">' +
+          '<div class="card-top">' +
+            '<span class="cat">' + esc(cat.short || item.category) + '</span>' +
+            '<span class="sep">·</span>' +
+            '<span class="src">' + esc(item.source) + '</span>' +
+            (time ? '<span class="sep">·</span><span>' + esc(time) + '</span>' : "") +
+          '</div>' +
+          '<h2><a href="' + esc(url) + '" target="_blank" rel="noopener noreferrer">' +
+            esc(item.title) + '</a></h2>' +
+          (item.summary ? '<p class="summary">' + esc(item.summary) + '</p>' : "") +
+          (tags.length ? '<div class="card-foot">' + tags.join("") + '</div>' : "") +
+        '</div>' +
+      '</article>';
+  }
+
+  function visibleItems() {
+    var q = state.query.trim().toLowerCase();
+    return state.data.items.filter(function (i) {
+      if (state.category !== "all" && i.category !== state.category) return false;
+      if (!q) return true;
+      return (i.title + " " + i.summary + " " + i.source).toLowerCase().indexOf(q) !== -1;
+    });
+  }
+
+  function render() {
+    var items = visibleItems();
+    var shown = CFG.limit ? items.slice(0, CFG.limit) : items;
+    var results = el("results");
+
+    if (!shown.length) {
+      results.className = "";
+      results.innerHTML =
+        '<div class="notice"><h3>Nothing matches yet</h3><p>' +
+        (state.query
+          ? 'No stories mention &ldquo;' + esc(state.query) + '&rdquo; right now. Try a broader term or clear the search.'
+          : 'This topic has no stories in the current window. Check back after the next refresh.') +
+        '</p></div>';
+    } else {
+      results.className = "grid";
+      // The lead story gets the wide treatment — but only in the unfiltered,
+      // unsearched view, where it reads as an editor's pick rather than a
+      // random first result.
+      var useFeatured = CFG.featured && !state.query && shown.length > 2;
+      results.innerHTML = shown.map(function (item, idx) {
+        return cardHTML(item, useFeatured && idx === 0);
+      }).join("");
+    }
+
+    var label = state.category === "all" ? "" : " in " + catLabel(state.category);
+    el("count").textContent =
+      shown.length
+        ? "Showing " + plural(shown.length, "story", "stories") + label +
+          (state.query ? ' matching "' + state.query + '"' : "") + "."
+        : "";
+    postHeight();
+  }
+
+  function catLabel(id) {
+    var c = (state.data.categories || []).filter(function (x) { return x.id === id; })[0];
+    return c ? c.label : id;
+  }
+
+  function renderPills() {
+    var cats = state.data.categories || [];
+    var total = state.data.items.length;
+    var buttons = [{ id: "all", label: "All Stories", count: total }].concat(
+      cats.filter(function (c) { return c.count > 0; })
+          .map(function (c) { return { id: c.id, label: c.label, count: c.count }; })
+    );
+    el("pills").innerHTML = buttons.map(function (b) {
+      return '<button class="pill" type="button" data-cat="' + esc(b.id) + '" ' +
+             'aria-pressed="' + (b.id === state.category) + '">' +
+             esc(b.label) + '<span class="n">' + b.count + '</span></button>';
+    }).join("");
+  }
+
+  function renderChrome() {
+    var d = state.data;
+    var gen = new Date(d.generated_at);
+    var ageHrs = (Date.now() - gen.getTime()) / 3.6e6;
+    var pulse = el("pulse");
+    pulse.className = "pulse" + (ageHrs > 48 ? " stale" : "");
+    el("updated").textContent =
+      "Updated " + relTime(d.generated_at) +
+      " · " + plural(d.items.length, "story", "stories") +
+      " from " + plural(d.stats.feeds_ok, "source", "sources");
+    el("updated").title = gen.toLocaleString();
+
+    if (!CFG.hideFoot) {
+      el("footer").hidden = false;
+      el("foot-text").innerHTML =
+        "Headlines link out to the original publishers. Rebuilt automatically from " +
+        d.stats.feeds_total + " feeds; last run kept " + d.stats.published +
+        " of " + d.stats.entries_seen + " entries. ";
+      var sources = (d.sources || []).slice().sort(function (a, b) {
+        return a.name.localeCompare(b.name);
+      });
+      el("source-list").innerHTML = sources.map(function (s) {
+        var cls = s.status === "ok" ? "" : (s.status === "empty" ? " warn" : " bad");
+        var href = safeUrl(s.site);
+        var name = esc(s.name);
+        return '<li><span class="dot' + cls + '" title="' + esc(s.status) + '"></span>' +
+               (href ? '<a href="' + esc(href) + '" target="_blank" rel="noopener noreferrer">' +
+                       name + '</a>' : name) + '</li>';
+      }).join("");
+    }
+  }
+
+  function showError(title, body) {
+    el("results").className = "";
+    el("results").innerHTML =
+      '<div class="notice error"><h3>' + esc(title) + '</h3><p>' + body + '</p>' +
+      '<button type="button" id="retry">Try again</button></div>';
+    el("updated").textContent = "Could not load stories";
+    el("pulse").className = "pulse off";
+    var retry = el("retry");
+    if (retry) retry.addEventListener("click", function () { load(); });
+    postHeight();
+  }
+
+  function showSkeleton() {
+    el("results").className = "grid";
+    var one = '<article class="card skeleton"><div class="card-body">' +
+              '<div class="bar" style="width:38%"></div>' +
+              '<div class="bar" style="width:92%;height:15px"></div>' +
+              '<div class="bar" style="width:70%;height:15px"></div>' +
+              '<div class="bar" style="width:100%"></div>' +
+              '<div class="bar" style="width:60%"></div></div></article>';
+    el("results").innerHTML = new Array(6).join(one) + one;
+  }
+
+  // ── Iframe auto-height ─────────────────────────────────────────────────
+  var lastHeight = 0;
+  function postHeight() {
+    if (window.parent === window) return;
+    var h = Math.ceil(document.documentElement.getBoundingClientRect().height);
+    if (h && Math.abs(h - lastHeight) > 2) {
+      lastHeight = h;
+      // "*" is safe here: the payload is a height integer and nothing else.
+      window.parent.postMessage({ type: "drw-news-height", height: h }, "*");
+    }
+  }
+
+  // ── Data ───────────────────────────────────────────────────────────────
+  function load() {
+    el("refresh").disabled = true;
+    showSkeleton();
+    var url = CFG.feed + (CFG.feed.indexOf("?") === -1 ? "?" : "&") + "t=" + Date.now();
+
+    fetch(url, { cache: "no-store" })
+      .then(function (r) {
+        if (!r.ok) throw new Error("HTTP " + r.status);
+        return r.json();
+      })
+      .then(function (data) {
+        if (!data || !Array.isArray(data.items)) throw new Error("malformed feed file");
+        state.data = data;
+        el("refresh").disabled = false;
+
+        if (!data.items.length) {
+          el("controls").hidden = true;
+          renderChrome();
+          el("results").className = "";
+          el("results").innerHTML =
+            '<div class="notice"><h3>No stories yet</h3><p>The aggregator has not ' +
+            'completed a successful run. Run <code>python3 fetch_news.py</code> ' +
+            'or trigger the <em>Refresh water news</em> workflow.</p></div>';
+          postHeight();
+          return;
+        }
+
+        el("controls").hidden = false;
+        renderChrome();
+        renderPills();
+        render();
+      })
+      .catch(function (err) {
+        el("refresh").disabled = false;
+        showError(
+          "Couldn't load the news feed",
+          'Tried <code>' + esc(CFG.feed) + '</code> and got: ' + esc(err.message) +
+          '. If this page was just deployed, the feed file may not exist yet.'
+        );
+      });
+  }
+
+  // ── Events ─────────────────────────────────────────────────────────────
+  el("pills").addEventListener("click", function (e) {
+    var btn = e.target.closest("[data-cat]");
+    if (!btn) return;
+    state.category = btn.getAttribute("data-cat");
+    Array.prototype.forEach.call(el("pills").children, function (b) {
+      b.setAttribute("aria-pressed", String(b === btn));
+    });
+    render();
+  });
+
+  var searchTimer;
+  el("q").addEventListener("input", function (e) {
+    var v = e.target.value;
+    el("search-wrap").classList.toggle("has-value", !!v);
+    clearTimeout(searchTimer);
+    searchTimer = setTimeout(function () { state.query = v; render(); }, 160);
+  });
+  el("clear-q").addEventListener("click", function () {
+    el("q").value = "";
+    el("search-wrap").classList.remove("has-value");
+    state.query = "";
+    render();
+    el("q").focus();
+  });
+  el("refresh").addEventListener("click", function () { load(); });
+
+  el("source-toggle").addEventListener("click", function () {
+    var list = el("source-list");
+    var open = list.hidden;
+    list.hidden = !open;
+    this.setAttribute("aria-expanded", String(open));
+    this.textContent = open ? "Hide sources" : "Show sources";
+    postHeight();
+  });
+
+  if (CFG.query) {
+    el("q").value = CFG.query;
+    el("search-wrap").classList.add("has-value");
+  }
+
+  if (window.ResizeObserver) new ResizeObserver(postHeight).observe(document.body);
+  window.addEventListener("load", postHeight);
+  // Parents can ask for the height directly instead of waiting for a change.
+  window.addEventListener("message", function (e) {
+    if (e.data && e.data.type === "drw-news-measure") { lastHeight = 0; postHeight(); }
+  });
+
+  load();
+})();
+</script>
+</body>
+</html>

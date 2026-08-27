@@ -1,0 +1,47 @@
+<!-- Dripping Rainwater — Water News Dashboard ---------------------------
+     Paste this whole block into a Webflow Embed element on the Water News
+     page. Both the iframe and the script must live in the SAME Embed —
+     split across two, the script can run before the iframe exists.
+
+     Unlike the rainfall components this one is an iframe rather than an
+     inline script, because it ships its own layout and type instead of
+     inheriting the host page's. It reports its height back to the parent,
+     so it grows and shrinks with the story count rather than scrolling
+     inside a fixed box.
+
+     Stories are rebuilt every six hours by .github/workflows/news.yml.
+
+     Options — append to the src:
+       embed=1        transparent background, for a white host section.
+                      Leave it off over a colored section, or the headings
+                      lose contrast against it.
+       category=…     open on local | research | policy | positive
+       limit=6        cap the story count (homepage teaser)
+       featured=0     no wide lead card, even grid instead
+       header=0       hide the built-in heading, use Webflow's own
+       footer=0       hide the source list
+       accent=%233066AB   override the primary color (%23 is '#')
+------------------------------------------------------------------------ -->
+<iframe
+  id="drw-water-news"
+  src="https://cawthorneh.github.io/projects/news.html"
+  title="Water news dashboard"
+  loading="lazy"
+  scrolling="no"
+  style="width:100%;border:0;display:block;border-radius:14px;height:1400px"></iframe>
+<script>
+(function () {
+  var frame = document.getElementById("drw-water-news");
+  var origin = "https://cawthorneh.github.io";
+  // The widget posts its own height so the iframe never scrolls internally.
+  window.addEventListener("message", function (e) {
+    if (e.origin !== origin) return;
+    if (!e.data || e.data.type !== "drw-news-height") return;
+    frame.style.height = e.data.height + "px";
+  });
+  // Ask for a height on load, in case the first message was missed.
+  frame.addEventListener("load", function () {
+    frame.contentWindow.postMessage({ type: "drw-news-measure" }, origin);
+  });
+})();
+</script>

@@ -214,3 +214,92 @@ Add an entry to `LOCATIONS` in **both** `locations.py` (backend) and the
 Use `/api/debug/columns`, or LCRA's
 [gauge list](https://hydromet.lcra.org/Home/GaugeDataList), to confirm gauge
 names.
+
+---
+
+## Water news dashboard
+
+A second embeddable widget, for the site's Water News page: a curated,
+self-refreshing news feed covering four things customers actually ask about.
+
+| Bucket | What lands in it |
+|---|---|
+| **Local Water News** | Hill Country aquifers, drought status, well levels, supply news |
+| **Research** | Studies on rainwater harvesting, catchment, filtration, water quality |
+| **Policy & Codes** | Rainwater law, plumbing code, permits, rebates, regulation |
+| **Good Climate News** | Restoration, breakthroughs, progress — the constructive end of climate coverage |
+
+Same shape as the rainfall widget: a scheduled job does the fetching
+server-side and commits a static JSON that the browser reads. Nothing is
+scraped at page load, there is no backend, and it costs nothing to run.
+
+| File | Role |
+|---|---|
+| `news_sources.py` | The whole editorial surface — feeds, keyword tables, thresholds |
+| `fetch_news.py` | Fetch, score, de-duplicate, write `docs/news.json` (stdlib only) |
+| `docs/news.html` | The widget |
+| `docs/news.json` | What the widget reads, rebuilt every six hours |
+| `docs/webflow-embed-news.txt` | The Webflow paste |
+| `.github/workflows/news.yml` | The scheduled refresh |
+
+### Embedding it
+
+Paste `docs/webflow-embed-news.txt` into a Webflow Embed element. Unlike the
+rainfall components this one is an iframe, because it ships its own layout and
+type rather than inheriting the host page's. It reports its height back to the
+parent, so it grows and shrinks with the story count instead of scrolling
+inside a fixed box.
+
+Useful `src` parameters: `embed=1` (transparent background, for a white host
+section), `category=local`, `limit=6`, `featured=0`, `header=0`, `footer=0`,
+`heading=…`, `accent=%233066AB`. A homepage teaser is
+`?embed=1&limit=6&featured=0&header=0&footer=0`.
+
+### Curating it
+
+`news_sources.py` holds the feed list. To follow a topic rather than an outlet,
+use the `google_news()` helper — it builds a Google News RSS URL from a search
+query, which keeps a subject covered as local outlets add, drop, and rename
+their own feeds:
+
+```python
+"url": google_news('"rain barrel" (rebate OR ordinance) Texas when:60d'),
+```
+
+Set `curated: True` only for feeds already on topic. It relaxes the scoring bar
+but never the topic gate, so a trusted outlet's city-council and
+high-school-sports stories still stay out.
+
+### How an item earns its place
+
+1. **Block list** — obituaries, sports, coupons dropped outright.
+2. **Topic gate** — must hit the water vocabulary (or, in the good-news bucket,
+   climate vocabulary). This is what a `curated` feed *cannot* bypass.
+3. **Score** — weighted keyword tiers, title hits worth 3× body hits, a Hill
+   Country place-name boost, a doom penalty in the good-news bucket.
+4. **Recency** — score halves every `HALF_LIFE_DAYS`, so a strong old story
+   loses to a decent fresh one.
+5. **De-duplication** — same URL (tracking parameters stripped) or a
+   near-identical headline; the higher-scoring copy wins.
+6. **Caps** — per source, then per category, then overall.
+
+### Running it
+
+```bash
+python3 fetch_news.py              # rebuild docs/news.json
+python3 fetch_news.py --check      # feed health report, writes nothing
+python3 fetch_news.py --verbose    # show what got rejected on score
+python3 -m http.server 8000 --directory docs   # preview at /news.html
+```
+
+Standard library only — no `pip install`.
+
+### When a feed dies
+
+Feed URLs go stale. Every run posts a per-feed health table to the workflow
+summary, and the widget footer's **Show sources** shows the same thing to the
+reader as a green, amber, or red dot per source. Prune what stays red.
+
+If a run produces zero usable stories the job fails on purpose and leaves the
+previous `news.json` untouched, so a transient network problem can't blank the
+live widget.
