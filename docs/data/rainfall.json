@@ -1,10 +1,10 @@
 {
-  "generated": "2026-08-30T07:07:11.631Z",
+  "generated": "2026-09-01T23:53:47.444Z",
   "source": "https://hydromet.lcra.org/",
   "window": "48h = today so far plus the whole of the previous calendar day",
   "columns": {
     "today": "today",
-    "yesterday": "08/29/2026",
+    "yesterday": "08/31/2026",
     "h24": "24 hour",
     "h1": "1 hour",
     "midnight": "since midnight"
@@ -128,12 +128,12 @@
       "id": "johnson_city",
       "label": "Johnson City",
       "county": "Blanco Co.",
-      "total48": 0,
-      "today": 0,
+      "total48": 0.03,
+      "today": 0.03,
       "yesterday": 0,
-      "h24": 0,
-      "h1": 0,
-      "midnight": 0,
+      "h24": 0.03,
+      "h1": 0.02,
+      "midnight": 0.03,
       "gauges": [
         {
           "name": "North Grape Creek near Johnson City",
@@ -153,7 +153,7 @@
         },
         {
           "name": "Pedernales River near Johnson City",
-          "today": 0
+          "today": 0.27
         },
         {
           "name": "Miller Creek near Johnson City",
@@ -200,12 +200,12 @@
       "Basin",
       "Today",
       "Last24",
+      "08/31/2026",
+      "08/30/2026",
       "08/29/2026",
       "08/28/2026",
-      "08/27/2026",
-      "08/26/2026",
-      "Since 08/26/2026",
-      "Five Day Rain (in) Report Date: 2026-08-30 02:01"
+      "Since 08/28/2026",
+      "Five Day Rain (in) Report Date: 2026-09-01 18:46"
     ],
     "intradayHeaders": [
       "Site",
@@ -216,15 +216,15 @@
       "6 Hour",
       "24 Hour",
       "Since Midnight",
-      "Rainfall (in) Report Date: 2026-08-30 02:01"
+      "Rainfall (in) Report Date: 2026-09-01 18:46"
     ],
     "fiveDayRows": 245,
-    "intradayRows": 245,
+    "intradayRows": 246,
     "datedColumns": [
+      "08/31/2026",
+      "08/30/2026",
       "08/29/2026",
-      "08/28/2026",
-      "08/27/2026",
-      "08/26/2026"
+      "08/28/2026"
     ]
   }
 }
