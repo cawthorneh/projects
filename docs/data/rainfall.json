@@ -1,10 +1,10 @@
 {
-  "generated": "2026-09-03T00:58:35.032Z",
+  "generated": "2026-09-03T05:38:42.331Z",
   "source": "https://hydromet.lcra.org/",
   "window": "48h = today so far plus the whole of the previous calendar day",
   "columns": {
     "today": "today",
-    "yesterday": "09/01/2026",
+    "yesterday": "09/02/2026",
     "h24": "24 hour",
     "h1": "1 hour",
     "midnight": "since midnight"
@@ -15,11 +15,11 @@
       "label": "Dripping Springs",
       "county": "Hays Co.",
       "total48": 0.02,
-      "today": 0.02,
-      "yesterday": 0,
+      "today": 0,
+      "yesterday": 0.02,
       "h24": 0.02,
       "h1": 0,
-      "midnight": 0.02,
+      "midnight": 0,
       "gauges": [
         {
           "name": "Dripping Springs 8 W",
@@ -31,7 +31,7 @@
         },
         {
           "name": "Dripping Springs 5 SSW",
-          "today": 0.05
+          "today": 0
         }
       ],
       "matched": 3
@@ -128,9 +128,9 @@
       "id": "johnson_city",
       "label": "Johnson City",
       "county": "Blanco Co.",
-      "total48": 0.03,
+      "total48": 0,
       "today": 0,
-      "yesterday": 0.03,
+      "yesterday": 0,
       "h24": 0,
       "h1": 0,
       "midnight": 0,
@@ -200,12 +200,12 @@
       "Basin",
       "Today",
       "Last24",
+      "09/02/2026",
       "09/01/2026",
       "08/31/2026",
       "08/30/2026",
-      "08/29/2026",
-      "Since 08/29/2026",
-      "Five Day Rain (in) Report Date: 2026-09-02 19:46"
+      "Since 08/30/2026",
+      "Five Day Rain (in) Report Date: 2026-09-03 00:31"
     ],
     "intradayHeaders": [
       "Site",
@@ -216,15 +216,15 @@
       "6 Hour",
       "24 Hour",
       "Since Midnight",
-      "Rainfall (in) Report Date: 2026-09-02 19:46"
+      "Rainfall (in) Report Date: 2026-09-03 00:31"
     ],
-    "fiveDayRows": 245,
-    "intradayRows": 246,
+    "fiveDayRows": 229,
+    "intradayRows": 230,
     "datedColumns": [
+      "09/02/2026",
       "09/01/2026",
       "08/31/2026",
-      "08/30/2026",
-      "08/29/2026"
+      "08/30/2026"
     ]
   }
 }
