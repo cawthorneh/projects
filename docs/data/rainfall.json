@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-04T06:18:39.721Z",
+  "generated": "2026-09-04T15:52:21.287Z",
   "source": "https://hydromet.lcra.org/",
   "window": "48h = today so far plus the whole of the previous calendar day",
   "columns": {
@@ -40,12 +40,12 @@
       "id": "austin",
       "label": "Austin",
       "county": "Travis Co.",
-      "total48": 0,
-      "today": 0,
+      "total48": 0.02,
+      "today": 0.02,
       "yesterday": 0,
-      "h24": 0,
-      "h1": 0,
-      "midnight": 0,
+      "h24": 0.02,
+      "h1": 0.01,
+      "midnight": 0.02,
       "gauges": [
         {
           "name": "Lake Austin at Quinlan Park",
@@ -69,15 +69,15 @@
         },
         {
           "name": "Colorado River at Austin",
-          "today": 0
+          "today": 0.02
         },
         {
           "name": "Walnut Creek at Webberville Road, Austin",
-          "today": 0
+          "today": 0.02
         },
         {
           "name": "Onion Creek at Hwy 183, Austin",
-          "today": 0
+          "today": 0.08
         }
       ],
       "matched": 8
@@ -107,7 +107,7 @@
         },
         {
           "name": "Fredericksburg 9 SW",
-          "today": 0
+          "today": 0.02
         },
         {
           "name": "Pedernales River near Fredericksburg",
@@ -128,12 +128,12 @@
       "id": "johnson_city",
       "label": "Johnson City",
       "county": "Blanco Co.",
-      "total48": 0,
-      "today": 0,
+      "total48": 0.02,
+      "today": 0.02,
       "yesterday": 0,
-      "h24": 0,
-      "h1": 0,
-      "midnight": 0,
+      "h24": 0.02,
+      "h1": 0.01,
+      "midnight": 0.02,
       "gauges": [
         {
           "name": "North Grape Creek near Johnson City",
@@ -153,15 +153,15 @@
         },
         {
           "name": "Pedernales River near Johnson City",
-          "today": 0
+          "today": 0.01
         },
         {
           "name": "Miller Creek near Johnson City",
-          "today": 0
+          "today": 0.08
         },
         {
           "name": "Johnson City 10 E",
-          "today": 0
+          "today": 0.04
         },
         {
           "name": "Johnson City 9 NNE",
@@ -205,7 +205,7 @@
       "09/01/2026",
       "08/31/2026",
       "Since 08/31/2026",
-      "Five Day Rain (in) Report Date: 2026-09-04 01:16"
+      "Five Day Rain (in) Report Date: 2026-09-04 10:46"
     ],
     "intradayHeaders": [
       "Site",
@@ -216,7 +216,7 @@
       "6 Hour",
       "24 Hour",
       "Since Midnight",
-      "Rainfall (in) Report Date: 2026-09-04 01:16"
+      "Rainfall (in) Report Date: 2026-09-04 10:46"
     ],
     "fiveDayRows": 246,
     "intradayRows": 246,
