@@ -1,10 +1,10 @@
 {
-  "generated": "2026-09-05T01:15:42.639Z",
+  "generated": "2026-09-05T06:07:14.929Z",
   "source": "https://hydromet.lcra.org/",
   "window": "48h = today so far plus the whole of the previous calendar day",
   "columns": {
     "today": "today",
-    "yesterday": "09/03/2026",
+    "yesterday": "09/04/2026",
     "h24": "24 hour",
     "h1": "1 hour",
     "midnight": "since midnight"
@@ -23,7 +23,7 @@
       "gauges": [
         {
           "name": "Dripping Springs 8 W",
-          "today": 0.01
+          "today": 0
         },
         {
           "name": "Dripping Springs 4 NNE",
@@ -41,11 +41,11 @@
       "label": "Austin",
       "county": "Travis Co.",
       "total48": 0.03,
-      "today": 0.03,
-      "yesterday": 0,
+      "today": 0,
+      "yesterday": 0.03,
       "h24": 0.03,
       "h1": 0,
-      "midnight": 0.03,
+      "midnight": 0,
       "gauges": [
         {
           "name": "Lake Austin at Quinlan Park",
@@ -69,15 +69,15 @@
         },
         {
           "name": "Colorado River at Austin",
-          "today": 0.03
+          "today": 0
         },
         {
           "name": "Walnut Creek at Webberville Road, Austin",
-          "today": 0.11
+          "today": 0
         },
         {
           "name": "Onion Creek at Hwy 183, Austin",
-          "today": 0.08
+          "today": 0
         }
       ],
       "matched": 8
@@ -87,11 +87,11 @@
       "label": "Fredericksburg",
       "county": "Gillespie Co.",
       "total48": 0.01,
-      "today": 0.01,
-      "yesterday": 0,
+      "today": 0,
+      "yesterday": 0.01,
       "h24": 0.01,
       "h1": 0,
-      "midnight": 0.01,
+      "midnight": 0,
       "gauges": [
         {
           "name": "Fredericksburg 12 NW",
@@ -103,11 +103,11 @@
         },
         {
           "name": "Fredericksburg 10 WSW",
-          "today": 0.04
+          "today": 0
         },
         {
           "name": "Fredericksburg 9 SW",
-          "today": 0.02
+          "today": 0
         },
         {
           "name": "Pedernales River near Fredericksburg",
@@ -129,19 +129,19 @@
       "label": "Johnson City",
       "county": "Blanco Co.",
       "total48": 0.13,
-      "today": 0.13,
-      "yesterday": 0,
+      "today": 0,
+      "yesterday": 0.13,
       "h24": 0.13,
       "h1": 0,
-      "midnight": 0.13,
+      "midnight": 0,
       "gauges": [
         {
           "name": "North Grape Creek near Johnson City",
-          "today": 0.41
+          "today": 0
         },
         {
           "name": "Johnson City 10 NNW",
-          "today": 0.01
+          "today": 0
         },
         {
           "name": "Johnson City 4 NNW",
@@ -153,19 +153,19 @@
         },
         {
           "name": "Pedernales River near Johnson City",
-          "today": 0.02
+          "today": 0
         },
         {
           "name": "Miller Creek near Johnson City",
-          "today": 0.08
+          "today": 0
         },
         {
           "name": "Johnson City 10 E",
-          "today": 0.04
+          "today": 0
         },
         {
           "name": "Johnson City 9 NNE",
-          "today": 0.44
+          "today": 0
         }
       ],
       "matched": 8
@@ -175,11 +175,11 @@
       "label": "Blanco",
       "county": "Blanco Co.",
       "total48": 0.01,
-      "today": 0.01,
-      "yesterday": 0,
+      "today": 0,
+      "yesterday": 0.01,
       "h24": 0.01,
       "h1": 0,
-      "midnight": 0.01,
+      "midnight": 0,
       "gauges": [
         {
           "name": "Blanco 13 WNW",
@@ -187,7 +187,7 @@
         },
         {
           "name": "Blanco 5 NNE",
-          "today": 0.01
+          "today": 0
         }
       ],
       "matched": 2
@@ -200,12 +200,12 @@
       "Basin",
       "Today",
       "Last24",
+      "09/04/2026",
       "09/03/2026",
       "09/02/2026",
       "09/01/2026",
-      "08/31/2026",
-      "Since 08/31/2026",
-      "Five Day Rain (in) Report Date: 2026-09-04 20:01"
+      "Since 09/01/2026",
+      "Five Day Rain (in) Report Date: 2026-09-05 01:01"
     ],
     "intradayHeaders": [
       "Site",
@@ -216,15 +216,15 @@
       "6 Hour",
       "24 Hour",
       "Since Midnight",
-      "Rainfall (in) Report Date: 2026-09-04 20:01"
+      "Rainfall (in) Report Date: 2026-09-05 01:01"
     ],
-    "fiveDayRows": 246,
+    "fiveDayRows": 245,
     "intradayRows": 245,
     "datedColumns": [
+      "09/04/2026",
       "09/03/2026",
       "09/02/2026",
-      "09/01/2026",
-      "08/31/2026"
+      "09/01/2026"
     ]
   }
 }
