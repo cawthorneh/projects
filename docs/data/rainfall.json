@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-09T10:00:09.590Z",
+  "generated": "2026-09-09T23:25:56.183Z",
   "source": "https://hydromet.lcra.org/",
   "window": "48h = today so far plus the whole of the previous calendar day",
   "columns": {
@@ -40,12 +40,12 @@
       "id": "austin",
       "label": "Austin",
       "county": "Travis Co.",
-      "total48": 0,
-      "today": 0,
+      "total48": 0.01,
+      "today": 0.01,
       "yesterday": 0,
-      "h24": 0,
+      "h24": 0.01,
       "h1": 0,
-      "midnight": 0,
+      "midnight": 0.01,
       "gauges": [
         {
           "name": "Lake Austin at Quinlan Park",
@@ -73,7 +73,7 @@
         },
         {
           "name": "Walnut Creek at Webberville Road, Austin",
-          "today": 0
+          "today": 0.05
         },
         {
           "name": "Onion Creek at Hwy 183, Austin",
@@ -86,7 +86,7 @@
       "id": "fredericksburg",
       "label": "Fredericksburg",
       "county": "Gillespie Co.",
-      "total48": 0,
+      "total48": 0.01,
       "today": 0,
       "yesterday": 0,
       "h24": 0,
@@ -99,7 +99,7 @@
         },
         {
           "name": "Fredericksburg 10 NNE",
-          "today": 0
+          "today": 0.01
         },
         {
           "name": "Fredericksburg 10 WSW",
@@ -111,7 +111,7 @@
         },
         {
           "name": "Pedernales River near Fredericksburg",
-          "today": 0
+          "today": 0.02
         },
         {
           "name": "Fredericksburg 5 N",
@@ -205,7 +205,7 @@
       "09/06/2026",
       "09/05/2026",
       "Since 09/05/2026",
-      "Five Day Rain (in) Report Date: 2026-09-09 04:46"
+      "Five Day Rain (in) Report Date: 2026-09-09 18:16"
     ],
     "intradayHeaders": [
       "Site",
@@ -216,7 +216,7 @@
       "6 Hour",
       "24 Hour",
       "Since Midnight",
-      "Rainfall (in) Report Date: 2026-09-09 04:46"
+      "Rainfall (in) Report Date: 2026-09-09 18:16"
     ],
     "fiveDayRows": 246,
     "intradayRows": 246,
