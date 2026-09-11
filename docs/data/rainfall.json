@@ -1,10 +1,10 @@
 {
-  "generated": "2026-09-10T23:46:16.386Z",
+  "generated": "2026-09-11T08:13:54.137Z",
   "source": "https://hydromet.lcra.org/",
   "window": "48h = today so far plus the whole of the previous calendar day",
   "columns": {
     "today": "today",
-    "yesterday": "09/09/2026",
+    "yesterday": "09/10/2026",
     "h24": "24 hour",
     "h1": "1 hour",
     "midnight": "since midnight"
@@ -40,9 +40,9 @@
       "id": "austin",
       "label": "Austin",
       "county": "Travis Co.",
-      "total48": 0.01,
+      "total48": 0,
       "today": 0,
-      "yesterday": 0.01,
+      "yesterday": 0,
       "h24": 0,
       "h1": 0,
       "midnight": 0,
@@ -200,12 +200,12 @@
       "Basin",
       "Today",
       "Last24",
+      "09/10/2026",
       "09/09/2026",
       "09/08/2026",
       "09/07/2026",
-      "09/06/2026",
-      "Since 09/06/2026",
-      "Five Day Rain (in) Report Date: 2026-09-10 18:31"
+      "Since 09/07/2026",
+      "Five Day Rain (in) Report Date: 2026-09-11 03:01"
     ],
     "intradayHeaders": [
       "Site",
@@ -216,15 +216,15 @@
       "6 Hour",
       "24 Hour",
       "Since Midnight",
-      "Rainfall (in) Report Date: 2026-09-10 18:31"
+      "Rainfall (in) Report Date: 2026-09-11 03:01"
     ],
     "fiveDayRows": 246,
-    "intradayRows": 241,
+    "intradayRows": 246,
     "datedColumns": [
+      "09/10/2026",
       "09/09/2026",
       "09/08/2026",
-      "09/07/2026",
-      "09/06/2026"
+      "09/07/2026"
     ]
   }
 }
