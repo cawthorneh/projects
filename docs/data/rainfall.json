@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-11T21:52:32.367Z",
+  "generated": "2026-09-11T23:54:32.281Z",
   "source": "https://hydromet.lcra.org/",
   "window": "48h = today so far plus the whole of the previous calendar day",
   "columns": {
@@ -14,12 +14,12 @@
       "id": "dripping_springs",
       "label": "Dripping Springs",
       "county": "Hays Co.",
-      "total48": 0,
-      "today": 0,
+      "total48": 0.06,
+      "today": 0.06,
       "yesterday": 0,
-      "h24": 0,
+      "h24": 0.06,
       "h1": 0,
-      "midnight": 0,
+      "midnight": 0.06,
       "gauges": [
         {
           "name": "Dripping Springs 8 W",
@@ -27,7 +27,7 @@
         },
         {
           "name": "Dripping Springs 4 NNE",
-          "today": 0
+          "today": 0.17
         },
         {
           "name": "Dripping Springs 5 SSW",
@@ -86,12 +86,12 @@
       "id": "fredericksburg",
       "label": "Fredericksburg",
       "county": "Gillespie Co.",
-      "total48": 0.04,
-      "today": 0.04,
+      "total48": 0.05,
+      "today": 0.05,
       "yesterday": 0,
-      "h24": 0.04,
-      "h1": 0.04,
-      "midnight": 0.04,
+      "h24": 0.05,
+      "h1": 0,
+      "midnight": 0.05,
       "gauges": [
         {
           "name": "Fredericksburg 12 NW",
@@ -107,7 +107,7 @@
         },
         {
           "name": "Fredericksburg 9 SW",
-          "today": 0
+          "today": 0.09
         },
         {
           "name": "Pedernales River near Fredericksburg",
@@ -115,7 +115,7 @@
         },
         {
           "name": "Fredericksburg 5 N",
-          "today": 0
+          "today": 0.02
         },
         {
           "name": "Fredericksburg 10 SSE",
@@ -128,28 +128,28 @@
       "id": "johnson_city",
       "label": "Johnson City",
       "county": "Blanco Co.",
-      "total48": 0.46,
-      "today": 0.46,
+      "total48": 0.5,
+      "today": 0.5,
       "yesterday": 0,
-      "h24": 0.46,
-      "h1": 0.24,
-      "midnight": 0.46,
+      "h24": 0.5,
+      "h1": 0.01,
+      "midnight": 0.5,
       "gauges": [
         {
           "name": "North Grape Creek near Johnson City",
-          "today": 0.75
+          "today": 0.87
         },
         {
           "name": "Johnson City 10 NNW",
-          "today": 0.45
+          "today": 0.48
         },
         {
           "name": "Johnson City 4 NNW",
-          "today": 0.24
+          "today": 0.25
         },
         {
           "name": "Johnson City 5 SSW",
-          "today": 0.03
+          "today": 0.11
         },
         {
           "name": "Pedernales River near Johnson City",
@@ -161,7 +161,7 @@
         },
         {
           "name": "Johnson City 10 E",
-          "today": 0.33
+          "today": 0.36
         },
         {
           "name": "Johnson City 9 NNE",
@@ -174,20 +174,20 @@
       "id": "blanco",
       "label": "Blanco",
       "county": "Blanco Co.",
-      "total48": 0.05,
-      "today": 0.05,
+      "total48": 0.45,
+      "today": 0.45,
       "yesterday": 0,
-      "h24": 0.05,
-      "h1": 0.05,
-      "midnight": 0.05,
+      "h24": 0.45,
+      "h1": 0.02,
+      "midnight": 0.45,
       "gauges": [
         {
           "name": "Blanco 13 WNW",
-          "today": 0
+          "today": 0.79
         },
         {
           "name": "Blanco 5 NNE",
-          "today": 0.09
+          "today": 0.1
         }
       ],
       "matched": 2
@@ -205,7 +205,7 @@
       "09/08/2026",
       "09/07/2026",
       "Since 09/07/2026",
-      "Five Day Rain (in) Report Date: 2026-09-11 16:46"
+      "Five Day Rain (in) Report Date: 2026-09-11 18:46"
     ],
     "intradayHeaders": [
       "Site",
@@ -216,10 +216,10 @@
       "6 Hour",
       "24 Hour",
       "Since Midnight",
-      "Rainfall (in) Report Date: 2026-09-11 16:46"
+      "Rainfall (in) Report Date: 2026-09-11 18:46"
     ],
     "fiveDayRows": 246,
-    "intradayRows": 246,
+    "intradayRows": 245,
     "datedColumns": [
       "09/10/2026",
       "09/09/2026",
