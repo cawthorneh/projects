@@ -1,10 +1,10 @@
 {
-  "generated": "2026-09-13T18:04:42.827Z",
+  "generated": "2026-09-14T06:47:03.874Z",
   "source": "https://hydromet.lcra.org/",
   "window": "48h = today so far plus the whole of the previous calendar day",
   "columns": {
     "today": "today",
-    "yesterday": "09/12/2026",
+    "yesterday": "09/13/2026",
     "h24": "24 hour",
     "h1": "1 hour",
     "midnight": "since midnight"
@@ -174,9 +174,9 @@
       "id": "blanco",
       "label": "Blanco",
       "county": "Blanco Co.",
-      "total48": 0.01,
+      "total48": 0,
       "today": 0,
-      "yesterday": 0.01,
+      "yesterday": 0,
       "h24": 0,
       "h1": 0,
       "midnight": 0,
@@ -200,12 +200,12 @@
       "Basin",
       "Today",
       "Last24",
+      "09/13/2026",
       "09/12/2026",
       "09/11/2026",
       "09/10/2026",
-      "09/09/2026",
-      "Since 09/09/2026",
-      "Five Day Rain (in) Report Date: 2026-09-13 13:01"
+      "Since 09/10/2026",
+      "Five Day Rain (in) Report Date: 2026-09-14 01:31"
     ],
     "intradayHeaders": [
       "Site",
@@ -216,15 +216,15 @@
       "6 Hour",
       "24 Hour",
       "Since Midnight",
-      "Rainfall (in) Report Date: 2026-09-13 13:01"
+      "Rainfall (in) Report Date: 2026-09-14 01:31"
     ],
-    "fiveDayRows": 245,
-    "intradayRows": 244,
+    "fiveDayRows": 244,
+    "intradayRows": 239,
     "datedColumns": [
+      "09/13/2026",
       "09/12/2026",
       "09/11/2026",
-      "09/10/2026",
-      "09/09/2026"
+      "09/10/2026"
     ]
   }
 }
