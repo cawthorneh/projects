@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-18T16:22:01+00:00",
+  "generated_at": "2026-09-18T20:52:32+00:00",
   "window_days": 45,
   "categories": [
     {
@@ -7,14 +7,14 @@
       "label": "Local Water News",
       "short": "Local",
       "blurb": "Aquifers, drought status, and water supply across the Texas Hill Country.",
-      "count": 29
+      "count": 30
     },
     {
       "id": "research",
       "label": "Research",
       "short": "Research",
       "blurb": "New science on rainwater harvesting, water quality, and catchment.",
-      "count": 17
+      "count": 18
     },
     {
       "id": "policy",
@@ -32,12 +32,42 @@
     }
   ],
   "counts": {
-    "local": 29,
-    "research": 17,
+    "local": 30,
+    "research": 18,
     "policy": 11,
     "positive": 14
   },
   "items": [
+    {
+      "id": "gn_rainwater_research:685b423a23",
+      "title": "Rooftop rainwater sprinkler systems could help cool warming cities, study says",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNeUtPd0FKaExZUnREUXdSbzU3eDQ2VGF0a3ZPZDBjelQycUJoWWR3b3dzbzJqN0U2eUVaQnFKVFRUVGl5UDBrX3l6cEV6bzRZeklzeUdHXzh4WWpqVl9lc3QxQUZ4UGMyYXZscmIzOW1pWFcyQzRJbExCR0xsTGppZDA3blVpTW1MdlZQdU5tbVNJdHF6VlpzRVFyRVlMYzQ1NDNCa0ZoVm9nOWtKZnF6VzBR0gG3AUFVX3lxTE5LUVk3c1BSdzVCLXYwc1FhMV9BOC12a0FHMTAyQmVOSG9wYmZhSjltRXJXLUhYZS1UblNMSTdVd0ZxQTlGaXBCdF9idmRJR3F5WXBRVDJ0aGRxcm9HX1pOOTZPZ1JzRVBWOHdsVEtmUG9XaGlkVlFNQjU2SWIzUkVGQ1BmY2lBSkhDcGs3UTBiSTVMbE9nN2FIUkZnaTFzcS1UTnVUMDdHSEZldXNERUNnZlBIa083MA?oc=5",
+      "canonical": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNeUtPd0FKaExZUnREUXdSbzU3eDQ2VGF0a3ZPZDBjelQycUJoWWR3b3dzbzJqN0U2eUVaQnFKVFRUVGl5UDBrX3l6cEV6bzRZeklzeUdHXzh4WWpqVl9lc3QxQUZ4UGMyYXZscmIzOW1pWFcyQzRJbExCR0xsTGppZDA3blVpTW1MdlZQdU5tbVNJdHF6VlpzRVFyRVlMYzQ1NDNCa0ZoVm9nOWtKZnF6VzBR0gG3AUFVX3lxTE5LUVk3c1BSdzVCLXYwc1FhMV9BOC12a0FHMTAyQmVOSG9wYmZhSjltRXJXLUhYZS1UblNMSTdVd0ZxQTlGaXBCdF9idmRJR3F5WXBRVDJ0aGRxcm9HX1pOOTZPZ1JzRVBWOHdsVEtmUG9XaGlkVlFNQjU2SWIzUkVGQ1BmY2lBSkhDcGs3UTBiSTVMbE9nN2FIUkZnaTFzcS1UTnVUMDdHSEZldXNERUNnZlBIa083MA?oc=5",
+      "source": "Mongabay",
+      "source_id": "gn_rainwater_research",
+      "source_site": "https://news.google.com/",
+      "category": "research",
+      "scope": "global",
+      "summary": "",
+      "author": "",
+      "image": "",
+      "published": "2026-09-18T14:29:53+00:00",
+      "published_ts": 1789741793,
+      "local": false,
+      "tags": [
+        "rainwater"
+      ],
+      "score": 35.24,
+      "raw_score": 35.9,
+      "matched": {
+        "rainwater": [
+          "rainwater"
+        ],
+        "research": [
+          "study"
+        ]
+      }
+    },
     {
       "id": "gn_water_quality_research:859278faac",
       "title": "Texas State University project will launch floating wetlands in Lake Kyle to improve water quality",
@@ -57,7 +87,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 31.23,
+      "score": 30.83,
       "raw_score": 35.4,
       "matched": {
         "water": [
@@ -93,7 +123,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 29.08,
+      "score": 28.7,
       "raw_score": 29.6,
       "matched": {
         "water": [
@@ -128,7 +158,7 @@
         "policy",
         "research"
       ],
-      "score": 28.12,
+      "score": 27.75,
       "raw_score": 31.9,
       "matched": {
         "water": [
@@ -165,7 +195,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 27.7,
+      "score": 27.34,
       "raw_score": 29.6,
       "matched": {
         "water": [
@@ -184,12 +214,12 @@
       "title": "Kyle council approves decrease in water utility rates for 6 Creeks residents | San Marcos - Buda - Kyle",
       "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOeDgwTTF6OUplLS05X2d0M3I2czlva1F6bkRnT1M0ekVyZzItNkNyRkMwTzd0U2l2NXdwLWdYOVpLWFNNakh0bDY0QWJ2TkR0SmJ3SnR3SG9NMVEySGlfNGpTUmgzQTZESUtYaFdjdnl0SXlOa3pma3Fpc08xTzFwN0t1bFJEVkJCNENJNWVpcWlka2lzVGJxQ0RjMnFib3pqWERSVWJsWnExSno5TVJqMGhIWFYzV0FLRGVTWFFtN1pBWUFIX2JLcnRNVVl0MUZzVGdN?oc=5",
       "canonical": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOeDgwTTF6OUplLS05X2d0M3I2czlva1F6bkRnT1M0ekVyZzItNkNyRkMwTzd0U2l2NXdwLWdYOVpLWFNNakh0bDY0QWJ2TkR0SmJ3SnR3SG9NMVEySGlfNGpTUmgzQTZESUtYaFdjdnl0SXlOa3pma3Fpc08xTzFwN0t1bFJEVkJCNENJNWVpcWlka2lzVGJxQ0RjMnFib3pqWERSVWJsWnExSno5TVJqMGhIWFYzV0FLRGVTWFFtN1pBWUFIX2JLcnRNVVl0MUZzVGdN?oc=5",
-      "source": "Community Impact Newspaper",
+      "source": "communityimpact.com",
       "source_id": "gn_community_impact",
       "source_site": "https://communityimpact.com/",
       "category": "local",
       "scope": "local",
-      "summary": "Kyle council approves decrease in water utility rates for 6 Creeks residents | San Marcos - Buda - Kyle Community Impact Newspaper",
+      "summary": "Kyle council approves decrease in water utility rates for 6 Creeks residents | San Marcos - Buda - Kyle communityimpact.com",
       "author": "",
       "image": "",
       "published": "2026-09-18T04:43:46+00:00",
@@ -198,7 +228,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 24.37,
+      "score": 24.05,
       "raw_score": 25.2,
       "matched": {
         "water": [
@@ -216,7 +246,7 @@
       "title": "New Kyle drought plan increases permitted irrigation",
       "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQV3VDYkN5NmdpM21obkJvN0RmUTRUT0F3TG9WLU1CeGtrUGgxX2w2Vm1ncW84OVNsVmFBTWhFTlJPQUo5OWg4WjZBdG1SRlFIaGpVcTR1dEtsTHRqeHM5LUo0dHFhQTBBMFZPZTFxSllZVW8yZnczVDMwR0MwaTZHVm0tOWFUd3ZoOWd1UlBZRkRSUzZNS19JVDlQQUNYLUdMaHVYX1M4V0FQblNWMzcwZUVVVQ?oc=5",
       "canonical": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQV3VDYkN5NmdpM21obkJvN0RmUTRUT0F3TG9WLU1CeGtrUGgxX2w2Vm1ncW84OVNsVmFBTWhFTlJPQUo5OWg4WjZBdG1SRlFIaGpVcTR1dEtsTHRqeHM5LUo0dHFhQTBBMFZPZTFxSllZVW8yZnczVDMwR0MwaTZHVm0tOWFUd3ZoOWd1UlBZRkRSUzZNS19JVDlQQUNYLUdMaHVYX1M4V0FQblNWMzcwZUVVVQ?oc=5",
-      "source": "Community Impact Newspaper",
+      "source": "communityimpact.com",
       "source_id": "gn_community_impact",
       "source_site": "https://communityimpact.com/",
       "category": "local",
@@ -230,7 +260,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 22.72,
+      "score": 22.42,
       "raw_score": 29.2,
       "matched": {
         "water": [
@@ -259,7 +289,7 @@
       "published_ts": 1789674710,
       "local": false,
       "tags": [],
-      "score": 22.05,
+      "score": 21.77,
       "raw_score": 23.4,
       "matched": {
         "water": [
@@ -268,34 +298,6 @@
         ],
         "research": [
           "university"
-        ]
-      }
-    },
-    {
-      "id": "gn_water_quality_research:c3cd48ebee",
-      "title": "ELWIND Study To Model Currents And Water Quality At Estonian Wind Farm",
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQd3M4SVN2TTFyRlRfZzdLeG9mWnZiMTZZamxxX1ZaT2E3ZWw1a1Z2c2NYcElFa0lhb19tQnY4NDhHckR6a2M1aGI5T0hEUGV2V0VOVVNPSzdKSm1tUkd6OVd5WTJ3Ymh6bHd3bXdscDBKN3l4bVFsR0dJSkhZUnJfOTYzVlZLbGZtamN2UEVuZ0FVcnNCWGlFQ3RIV0o1UTBqTVU2X3pvek0?oc=5",
-      "canonical": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQd3M4SVN2TTFyRlRfZzdLeG9mWnZiMTZZamxxX1ZaT2E3ZWw1a1Z2c2NYcElFa0lhb19tQnY4NDhHckR6a2M1aGI5T0hEUGV2V0VOVVNPSzdKSm1tUkd6OVd5WTJ3Ymh6bHd3bXdscDBKN3l4bVFsR0dJSkhZUnJfOTYzVlZLbGZtamN2UEVuZ0FVcnNCWGlFQ3RIV0o1UTBqTVU2X3pvek0?oc=5",
-      "source": "Ocean News & Technology",
-      "source_id": "gn_water_quality_research",
-      "source_site": "https://news.google.com/",
-      "category": "research",
-      "scope": "global",
-      "summary": "",
-      "author": "",
-      "image": "",
-      "published": "2026-09-18T14:28:51+00:00",
-      "published_ts": 1789741731,
-      "local": false,
-      "tags": [],
-      "score": 19.29,
-      "raw_score": 19.4,
-      "matched": {
-        "water": [
-          "water quality"
-        ],
-        "research": [
-          "study"
         ]
       }
     },
@@ -316,7 +318,7 @@
       "published_ts": 1789669440,
       "local": false,
       "tags": [],
-      "score": 18.21,
+      "score": 17.97,
       "raw_score": 19.4,
       "matched": {
         "water": [
@@ -344,7 +346,7 @@
       "published_ts": 1789668778,
       "local": false,
       "tags": [],
-      "score": 18.2,
+      "score": 17.96,
       "raw_score": 19.4,
       "matched": {
         "water": [
@@ -372,7 +374,7 @@
       "published_ts": 1789526906,
       "local": false,
       "tags": [],
-      "score": 18.0,
+      "score": 17.77,
       "raw_score": 21.5,
       "matched": {
         "water": [
@@ -400,7 +402,7 @@
       "published_ts": 1789645500,
       "local": false,
       "tags": [],
-      "score": 17.86,
+      "score": 17.63,
       "raw_score": 19.4,
       "matched": {
         "water": [
@@ -408,6 +410,34 @@
         ],
         "research": [
           "study"
+        ]
+      }
+    },
+    {
+      "id": "gn_water_quality_research:fffad0f400",
+      "title": "Scientists Finally Figured Out How Much Groundwater There Is Under the US and It Is Enough to Fill the Great Lakes 13 Times Over",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQYzQ0V3hmcGl0UnVMRnU2SE01eFZVSEM5WkVMa3ZzbGE4RDBqWndNOV83MGRteWVNUXZ6cFRrUTVBejVoT2JWcS1yd0lIMWhVRHNIQjh6SGpaU1pCSmdtMUZGdlBoVEgwUU53V1BrU3FLRlhSWk8xbzNoWTVwY1VUTA?oc=5",
+      "canonical": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQYzQ0V3hmcGl0UnVMRnU2SE01eFZVSEM5WkVMa3ZzbGE4RDBqWndNOV83MGRteWVNUXZ6cFRrUTVBejVoT2JWcS1yd0lIMWhVRHNIQjh6SGpaU1pCSmdtMUZGdlBoVEgwUU53V1BrU3FLRlhSWk8xbzNoWTVwY1VUTA?oc=5",
+      "source": "ZME Science",
+      "source_id": "gn_water_quality_research",
+      "source_site": "https://news.google.com/",
+      "category": "research",
+      "scope": "global",
+      "summary": "Scientists Finally Figured Out How Much Groundwater There Is Under the US and It Is Enough to Fill the Great Lakes 13 Times Over ZME Science",
+      "author": "",
+      "image": "",
+      "published": "2026-09-17T10:30:59+00:00",
+      "published_ts": 1789641059,
+      "local": false,
+      "tags": [],
+      "score": 17.57,
+      "raw_score": 19.4,
+      "matched": {
+        "water": [
+          "groundwater"
+        ],
+        "research": [
+          "scientists"
         ]
       }
     },
@@ -430,7 +460,7 @@
       "tags": [
         "rainwater"
       ],
-      "score": 17.52,
+      "score": 17.3,
       "raw_score": 30.9,
       "matched": {
         "rainwater": [
@@ -464,7 +494,7 @@
       "tags": [
         "policy"
       ],
-      "score": 17.52,
+      "score": 17.29,
       "raw_score": 21.5,
       "matched": {
         "water": [
@@ -483,7 +513,7 @@
       "title": "Drought stress causing some Texas trees to enter dormancy early",
       "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxONnRHVW5XWDFjeFZTTW1tM29rT1hSU3IyTUZrLTdTV1FYWTc4MDRfc2M1Rlg0NXZYQkF3MklCeU5jcG02N2ZGYnBUMmFfSzUtd1JNcGZsWlpDdU9rVExtUFpZdlJjZ1ZScWg0VE1ockNYcVRpaTJXVjd6NkhYZFBPVlQ1UE10LVE4S09KUEs4UFMxUQ?oc=5",
       "canonical": "https://news.google.com/rss/articles/CBMikgFBVV95cUxONnRHVW5XWDFjeFZTTW1tM29rT1hSU3IyTUZrLTdTV1FYWTc4MDRfc2M1Rlg0NXZYQkF3MklCeU5jcG02N2ZGYnBUMmFfSzUtd1JNcGZsWlpDdU9rVExtUFpZdlJjZ1ZScWg0VE1ockNYcVRpaTJXVjd6NkhYZFBPVlQ1UE10LVE4S09KUEs4UFMxUQ?oc=5",
-      "source": "tfsweb.tamu.edu",
+      "source": "Texas A&M Forest Service",
       "source_id": "gn_ctx_drought",
       "source_site": "https://news.google.com/",
       "category": "local",
@@ -497,7 +527,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 16.54,
+      "score": 16.32,
       "raw_score": 17.6,
       "matched": {
         "water": [
@@ -528,7 +558,7 @@
         "hill-country",
         "research"
       ],
-      "score": 16.01,
+      "score": 15.8,
       "raw_score": 32.7,
       "matched": {
         "water": [
@@ -553,7 +583,7 @@
       "title": "Schuylkill River Restoration Fund Awards More Than $190,000 for Watershed Projects in Berks",
       "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPdHpkOTlVVlhtajlZTXRJUHhkMXkwdXVEN21SWFB6aXM0RVgxT0VFRVl2bDFvcV9XRkt1VHptY3B4SDN4cFZBcU12V1p5Ti0xM093aWlQSDcwNnNsdWFFclh1VjFhcFBWTEREZFB0ekVYZTNPZXZpRzJtS3ZPZVJxNWtsVGRYWnMwQUZzRjNjSUZRMTUxd1lSYzNhdmlVNEs3UGphcDNjOGFoekpzQVNpblVMMktGSGgtUGY3YkdlUQ?oc=5",
       "canonical": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPdHpkOTlVVlhtajlZTXRJUHhkMXkwdXVEN21SWFB6aXM0RVgxT0VFRVl2bDFvcV9XRkt1VHptY3B4SDN4cFZBcU12V1p5Ti0xM093aWlQSDcwNnNsdWFFclh1VjFhcFBWTEREZFB0ekVYZTNPZXZpRzJtS3ZPZVJxNWtsVGRYWnMwQUZzRjNjSUZRMTUxd1lSYzNhdmlVNEs3UGphcDNjOGFoekpzQVNpblVMMktGSGgtUGY3YkdlUQ?oc=5",
-      "source": "bctv.org",
+      "source": "Berks Community Television",
       "source_id": "gn_good_environment_news",
       "source_site": "https://news.google.com/",
       "category": "positive",
@@ -565,7 +595,7 @@
       "published_ts": 1789380170,
       "local": false,
       "tags": [],
-      "score": 16.0,
+      "score": 15.79,
       "raw_score": 21.5,
       "matched": {
         "water": [
@@ -581,7 +611,7 @@
       "title": "DRBC Staff Helps Celebrate Water Quality Improvement Projects in the Schuylkill River Watershed",
       "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5fTFBpY1lFdGpzTjlTMFVoRk5KRDZULVZUaDlYeDIwSk4zV3hkTG0xRWVNRWIyR1MwVHJMU0xYSDFpdzVVNlRzUS1jSmZoUnphWE52Sm81cHVFX2ZYVEpCUm53RXVOVzFIWE9Cd1RfMlVzUllnc0hmV0dsNnU?oc=5",
       "canonical": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5fTFBpY1lFdGpzTjlTMFVoRk5KRDZULVZUaDlYeDIwSk4zV3hkTG0xRWVNRWIyR1MwVHJMU0xYSDFpdzVVNlRzUS1jSmZoUnphWE52Sm81cHVFX2ZYVEpCUm53RXVOVzFIWE9Cd1RfMlVzUllnc0hmV0dsNnU?oc=5",
-      "source": "nj.gov",
+      "source": "NJ.gov",
       "source_id": "gn_good_environment_news",
       "source_site": "https://news.google.com/",
       "category": "positive",
@@ -593,7 +623,7 @@
       "published_ts": 1789148954,
       "local": false,
       "tags": [],
-      "score": 15.76,
+      "score": 15.56,
       "raw_score": 25.5,
       "matched": {
         "water": [
@@ -606,16 +636,42 @@
       }
     },
     {
+      "id": "gn_good_environment_news:b27d970eb6",
+      "title": "It Takes a Village to Clean a River: Habitat restoration and mussel recovery on the Paint Rock",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOZUlQQjdjN1BYUWVaLTd2c3J4U1ZhMUpaeGRyaW1MT0FUNVFUTFhyUG4yemt1UlZPNnRobjhham03a1k3RzlISXVXTFZpak1teS1BZTk2UkYyQWVfT3pFYmhJTjh2SU1Xbk81cjFZWTN5T0R2TFlBQklXMTlfcmJlUlhtNkl5ZFdVdEpHVS0yN3FITlVEUVFaM3ItLS1uOU1iSlAxMkVXUjMxMXhEd1ltYk94d3UtTzVqekVZ?oc=5",
+      "canonical": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOZUlQQjdjN1BYUWVaLTd2c3J4U1ZhMUpaeGRyaW1MT0FUNVFUTFhyUG4yemt1UlZPNnRobjhham03a1k3RzlISXVXTFZpak1teS1BZTk2UkYyQWVfT3pFYmhJTjh2SU1Xbk81cjFZWTN5T0R2TFlBQklXMTlfcmJlUlhtNkl5ZFdVdEpHVS0yN3FITlVEUVFaM3ItLS1uOU1iSlAxMkVXUjMxMXhEd1ltYk94d3UtTzVqekVZ?oc=5",
+      "source": "outdooralabama.com",
+      "source_id": "gn_good_environment_news",
+      "source_site": "https://news.google.com/",
+      "category": "positive",
+      "scope": "global",
+      "summary": "",
+      "author": "",
+      "image": "",
+      "published": "2026-09-18T19:30:00+00:00",
+      "published_ts": 1789759800,
+      "local": false,
+      "tags": [],
+      "score": 15.44,
+      "raw_score": 15.5,
+      "matched": {
+        "positive": [
+          "recovery",
+          "restoration"
+        ]
+      }
+    },
+    {
       "id": "gn_community_impact:634e4213ec",
       "title": "Bellaire City Council awards first installment of bonds from water, wastewater works referendum",
       "url": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxPT2djbE1MUHc0YnoxdUlMSFRvcnAzcGxXZjNDX3FuWEc4YnduaUFOcDVnREVtWGVUcTFNckd6SE9zd29tbHZoRHFuRWpNVEN6UmlWWVh5WjBJbE1qQlp2REdqVHZnXzNMZDdzYm1lakJKUlZucndBQkprNF9FblpzTDI4QkRFRHQtTkV3Umd6S0xfTDdOeVAyUFJaSEVmLUg4Y3c2OVZITVNNTnZNRDIwWEZPOEJaRWhfNy1WZUtlYmtCMy1DenN5SV9DTTR6TF9JTlU4T0ZWNFlLc1dDVFoyNUxGcFpRZEhKSk9sYUp3XzZSa2d3YVNCOGVWMlNnQQ?oc=5",
       "canonical": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxPT2djbE1MUHc0YnoxdUlMSFRvcnAzcGxXZjNDX3FuWEc4YnduaUFOcDVnREVtWGVUcTFNckd6SE9zd29tbHZoRHFuRWpNVEN6UmlWWVh5WjBJbE1qQlp2REdqVHZnXzNMZDdzYm1lakJKUlZucndBQkprNF9FblpzTDI4QkRFRHQtTkV3Umd6S0xfTDdOeVAyUFJaSEVmLUg4Y3c2OVZITVNNTnZNRDIwWEZPOEJaRWhfNy1WZUtlYmtCMy1DenN5SV9DTTR6TF9JTlU4T0ZWNFlLc1dDVFoyNUxGcFpRZEhKSk9sYUp3XzZSa2d3YVNCOGVWMlNnQQ?oc=5",
-      "source": "Community Impact Newspaper",
+      "source": "communityimpact.com",
       "source_id": "gn_community_impact",
       "source_site": "https://communityimpact.com/",
       "category": "local",
       "scope": "local",
-      "summary": "Bellaire City Council awards first installment of bonds from water, wastewater works referendum Community Impact Newspaper",
+      "summary": "",
       "author": "",
       "image": "",
       "published": "2026-09-17T01:17:27+00:00",
@@ -625,7 +681,7 @@
         "hill-country",
         "policy"
       ],
-      "score": 14.47,
+      "score": 14.28,
       "raw_score": 16.2,
       "matched": {
         "water": [
@@ -641,7 +697,7 @@
       "title": "Humble City Council approves water rate increase",
       "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPYzlpcWY4dlBPSTlzSERHQWZLSGtnQVFLSEd2Y0E2UmhuOTZjMUI1c3NzM1RvOXVtX0FkRXBmLUt0R1FmU29Tc1MxYTBQaTVqRi1wWExKM2t1SnZhazBZNzhCdkZDWGxiUENabXJQdEhzaEpIVmF2UGxpcnpCYWtTckRvTGpLTklLanJOLTF3ZXk4M2g4c3Nqb0hiZ0MyTGk2bDU4ckFWWEJscXRJdVVQaVJmVWhQaGht?oc=5",
       "canonical": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPYzlpcWY4dlBPSTlzSERHQWZLSGtnQVFLSEd2Y0E2UmhuOTZjMUI1c3NzM1RvOXVtX0FkRXBmLUt0R1FmU29Tc1MxYTBQaTVqRi1wWExKM2t1SnZhazBZNzhCdkZDWGxiUENabXJQdEhzaEpIVmF2UGxpcnpCYWtTckRvTGpLTklLanJOLTF3ZXk4M2g4c3Nqb0hiZ0MyTGk2bDU4ckFWWEJscXRJdVVQaVJmVWhQaGht?oc=5",
-      "source": "Community Impact Newspaper",
+      "source": "communityimpact.com",
       "source_id": "gn_community_impact",
       "source_site": "https://communityimpact.com/",
       "category": "local",
@@ -656,7 +712,7 @@
         "hill-country",
         "policy"
       ],
-      "score": 13.47,
+      "score": 13.3,
       "raw_score": 16.2,
       "matched": {
         "water": [
@@ -684,7 +740,7 @@
       "published_ts": 1789663227,
       "local": false,
       "tags": [],
-      "score": 13.26,
+      "score": 13.09,
       "raw_score": 14.2,
       "matched": {
         "water": [
@@ -714,7 +770,7 @@
       "published_ts": 1789542000,
       "local": false,
       "tags": [],
-      "score": 13.13,
+      "score": 12.96,
       "raw_score": 15.5,
       "matched": {
         "positive": [
@@ -740,7 +796,7 @@
       "published_ts": 1789731601,
       "local": false,
       "tags": [],
-      "score": 13.02,
+      "score": 12.85,
       "raw_score": 13.2,
       "matched": {
         "water": [
@@ -750,33 +806,6 @@
         "research": [
           "researchers",
           "study"
-        ]
-      }
-    },
-    {
-      "id": "gn_ctx_drought:d6407018f2",
-      "title": "The world’s water cycle is swinging wildly between drought and flood",
-      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNMGxKZVdLNThmVnFoblpReEFiSExQeG1RZjR5M1BxcFRJa0NYT2tJcjhfZHRNbW1RcGFDWDRwV0stVzFxWUlqaGJRem5lRnVqOVJVUGpKM0JOYlB0Q2JDTGpkQjJWeVZmY0hfcUFwV005NWJuT3A1aVdCcGd6Vy1nbG1TY2JFN1Roem9LS1REdWw?oc=5",
-      "canonical": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNMGxKZVdLNThmVnFoblpReEFiSExQeG1RZjR5M1BxcFRJa0NYT2tJcjhfZHRNbW1RcGFDWDRwV0stVzFxWUlqaGJRem5lRnVqOVJVUGpKM0JOYlB0Q2JDTGpkQjJWeVZmY0hfcUFwV005NWJuT3A1aVdCcGd6Vy1nbG1TY2JFN1Roem9LS1REdWw?oc=5",
-      "source": "Straight Arrow",
-      "source_id": "gn_ctx_drought",
-      "source_site": "https://news.google.com/",
-      "category": "local",
-      "scope": "local",
-      "summary": "",
-      "author": "",
-      "image": "",
-      "published": "2026-09-17T22:14:30+00:00",
-      "published_ts": 1789683270,
-      "local": true,
-      "tags": [
-        "hill-country"
-      ],
-      "score": 12.91,
-      "raw_score": 13.6,
-      "matched": {
-        "water": [
-          "drought"
         ]
       }
     },
@@ -797,7 +826,7 @@
       "published_ts": 1789558457,
       "local": false,
       "tags": [],
-      "score": 12.88,
+      "score": 12.71,
       "raw_score": 15.0,
       "matched": {
         "water": [
@@ -825,7 +854,7 @@
       "published_ts": 1789657210,
       "local": false,
       "tags": [],
-      "score": 12.83,
+      "score": 12.66,
       "raw_score": 13.8,
       "matched": {
         "water": [
@@ -838,7 +867,7 @@
       "title": "Keller officials approve $111.88M budget, increases to tax, water, wastewater rates",
       "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxQVi1TLWpRVnVkY29Wa0l4OWNRN2V1RU5LSEM1ME13ZGdOOTBHSmRPNTZlV1BYOUxOcF94VG5pQUZHWURfNUFpdk9mUl9KMm10RjlpZXNudXBsdDh6Mldwc21BMGpndUU0eE1zU0h3c19hVVVDbnFVa1IxbzBpVlp5UkNyLWJ2eUQxWGZZajNrMHYwLWJYMHFyMUNaTE9qV0J6R1VlREt0cktYeEtJdE05YW9pMHRvTDZLeGoyQzhHNVF0VkpFSWVFc3N4ekRMY3c2VU15X1Y2dXdKWGVxOEtSeXpHS3ZDTWFVSGJn?oc=5",
       "canonical": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxQVi1TLWpRVnVkY29Wa0l4OWNRN2V1RU5LSEM1ME13ZGdOOTBHSmRPNTZlV1BYOUxOcF94VG5pQUZHWURfNUFpdk9mUl9KMm10RjlpZXNudXBsdDh6Mldwc21BMGpndUU0eE1zU0h3c19hVVVDbnFVa1IxbzBpVlp5UkNyLWJ2eUQxWGZZajNrMHYwLWJYMHFyMUNaTE9qV0J6R1VlREt0cktYeEtJdE05YW9pMHRvTDZLeGoyQzhHNVF0VkpFSWVFc3N4ekRMY3c2VU15X1Y2dXdKWGVxOEtSeXpHS3ZDTWFVSGJn?oc=5",
-      "source": "Community Impact Newspaper",
+      "source": "communityimpact.com",
       "source_id": "gn_community_impact",
       "source_site": "https://communityimpact.com/",
       "category": "local",
@@ -852,7 +881,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 12.7,
+      "score": 12.53,
       "raw_score": 13.2,
       "matched": {
         "water": [
@@ -861,27 +890,29 @@
       }
     },
     {
-      "id": "gn_good_environment_news:b0d7902498",
-      "title": "Dutch Gap restoration to revive wetlands, prairies and savannas",
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPVndGc3ZmYzNpYnBuZzFHNTNHaHdHaHZkN2hfeWVhWmdzbWZiWHg3aGVLbTIwTVBja21zeGpGN0pKYm5BMXlDVTcybWRxdENFeEZoMDNlOTA2X1JtUFN4UTQ4VWNPMzdTWWE5RnNPX3V6YVdrVmJrYko1TUhzMTRreXlSeTR4QUJ4eElrMUJJcXdLZkhpc2JLYUtVS3ZOczFjTHZ0TGgyQVV2TGUwOHdqSEVLY21MOVJWZmszRA?oc=5",
-      "canonical": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPVndGc3ZmYzNpYnBuZzFHNTNHaHdHaHZkN2hfeWVhWmdzbWZiWHg3aGVLbTIwTVBja21zeGpGN0pKYm5BMXlDVTcybWRxdENFeEZoMDNlOTA2X1JtUFN4UTQ4VWNPMzdTWWE5RnNPX3V6YVdrVmJrYko1TUhzMTRreXlSeTR4QUJ4eElrMUJJcXdLZkhpc2JLYUtVS3ZOczFjTHZ0TGgyQVV2TGUwOHdqSEVLY21MOVJWZmszRA?oc=5",
-      "source": "Shaw Local",
-      "source_id": "gn_good_environment_news",
+      "id": "gn_aquifers:b0acb8e50b",
+      "title": "Groundwater district approves new budget and tax rate",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPSXhwUVRHLTJuU0ZYMFg5QnZod1hCbEYxX1hrcnZ1UlNWbUJyMEpVZjBsTDBneUxkUDRCbFVrbmFWZndzZVVyOWlNMXVkaFgwQURWYW1uMTVqQmowSVhrQXNYZDlsOGdraEpObnlhcDUwZF9SNm55YmdzQ19LcnZ5b3ZKc2VCak04YlhfNmZCM2VkeFUzM2c?oc=5",
+      "canonical": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPSXhwUVRHLTJuU0ZYMFg5QnZod1hCbEYxX1hrcnZ1UlNWbUJyMEpVZjBsTDBneUxkUDRCbFVrbmFWZndzZVVyOWlNMXVkaFgwQURWYW1uMTVqQmowSVhrQXNYZDlsOGdraEpObnlhcDUwZF9SNm55YmdzQ19LcnZ5b3ZKc2VCak04YlhfNmZCM2VkeFUzM2c?oc=5",
+      "source": "DailyTrib.com",
+      "source_id": "gn_aquifers",
       "source_site": "https://news.google.com/",
-      "category": "positive",
-      "scope": "global",
+      "category": "local",
+      "scope": "local",
       "summary": "",
       "author": "",
       "image": "",
-      "published": "2026-09-17T19:17:52+00:00",
-      "published_ts": 1789672672,
-      "local": false,
-      "tags": [],
-      "score": 12.7,
-      "raw_score": 13.5,
+      "published": "2026-09-16T17:19:53+00:00",
+      "published_ts": 1789579193,
+      "local": true,
+      "tags": [
+        "hill-country"
+      ],
+      "score": 11.81,
+      "raw_score": 13.7,
       "matched": {
-        "positive": [
-          "restoration"
+        "water": [
+          "groundwater"
         ]
       }
     },
@@ -905,7 +936,7 @@
         "hill-country",
         "research"
       ],
-      "score": 11.86,
+      "score": 11.7,
       "raw_score": 36.7,
       "matched": {
         "water": [
@@ -945,7 +976,7 @@
       "tags": [
         "research"
       ],
-      "score": 11.83,
+      "score": 11.68,
       "raw_score": 19.3,
       "matched": {
         "water": [
@@ -967,7 +998,7 @@
       "title": "Celina water conservation measures continue during unusually dry summer",
       "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOdDNxcHQ0ckNxS2x4bjhKTDlCejJrOHhrRWJTbUxucV9uckRPWW1LTkdCTFo3WEpLRzFWMjdlVmhlb3pzdUlXTzVqY1Q2RHhNd1ZkRTRPZklLS3JhcUxSUU56SHprRm4wYmNfR09UdC1LSWpvdUZpNHNER0Mxa1NERkFPekpwTXVyUHV1QmIyWEtmZUVUY3VKaGxxSW9jTWNwNmN3VkYzTFJPeVBRTURuaXNfNHhkTjlzZDVfdVUyc3ZXWk5R?oc=5",
       "canonical": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOdDNxcHQ0ckNxS2x4bjhKTDlCejJrOHhrRWJTbUxucV9uckRPWW1LTkdCTFo3WEpLRzFWMjdlVmhlb3pzdUlXTzVqY1Q2RHhNd1ZkRTRPZklLS3JhcUxSUU56SHprRm4wYmNfR09UdC1LSWpvdUZpNHNER0Mxa1NERkFPekpwTXVyUHV1QmIyWEtmZUVUY3VKaGxxSW9jTWNwNmN3VkYzTFJPeVBRTURuaXNfNHhkTjlzZDVfdVUyc3ZXWk5R?oc=5",
-      "source": "Community Impact Newspaper",
+      "source": "communityimpact.com",
       "source_id": "gn_community_impact",
       "source_site": "https://communityimpact.com/",
       "category": "local",
@@ -981,7 +1012,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 11.77,
+      "score": 11.62,
       "raw_score": 13.2,
       "matched": {
         "water": [
@@ -1006,7 +1037,7 @@
       "published_ts": 1789569890,
       "local": false,
       "tags": [],
-      "score": 11.7,
+      "score": 11.55,
       "raw_score": 13.5,
       "matched": {
         "water": [
@@ -1022,7 +1053,7 @@
       "title": "Rainwater harvesting could cut home overheating, study finds",
       "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOYjBOYkdMMlVvaFBmOUJabEJIaWhZYkNzem5yQ01kbVhsWjFEaVREakRIWHFBQmdramRYeGFPMUExUEtmSzllb1FPbXAtNG5sbkJRRi1xN296b1BacktXU2ZNWFJ6UFZqcGdCWWRjS3p6T0VIWmxjTWUyRG5pRFF2cWtEcjlsM2FvVjZYZUFmMWlqeFU?oc=5",
       "canonical": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOYjBOYkdMMlVvaFBmOUJabEJIaWhZYkNzem5yQ01kbVhsWjFEaVREakRIWHFBQmdramRYeGFPMUExUEtmSzllb1FPbXAtNG5sbkJRRi1xN296b1BacktXU2ZNWFJ6UFZqcGdCWWRjS3p6T0VIWmxjTWUyRG5pRFF2cWtEcjlsM2FvVjZYZUFmMWlqeFU?oc=5",
-      "source": "housingdigital.co.uk",
+      "source": "Housing Digital",
       "source_id": "gn_rainwater_research",
       "source_site": "https://news.google.com/",
       "category": "research",
@@ -1036,7 +1067,7 @@
       "tags": [
         "rainwater"
       ],
-      "score": 11.54,
+      "score": 11.39,
       "raw_score": 35.9,
       "matched": {
         "rainwater": [
@@ -1067,7 +1098,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 10.73,
+      "score": 10.6,
       "raw_score": 17.8,
       "matched": {
         "water": [
@@ -1095,7 +1126,7 @@
       "published_ts": 1789665604,
       "local": false,
       "tags": [],
-      "score": 9.08,
+      "score": 8.96,
       "raw_score": 9.7,
       "matched": {
         "water": [
@@ -1126,7 +1157,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 8.26,
+      "score": 8.15,
       "raw_score": 13.6,
       "matched": {
         "water": [
@@ -1135,11 +1166,11 @@
       }
     },
     {
-      "id": "gn_aquifers:dba076a127",
-      "title": "Why does East Texas need a groundwater conservation district? An East Texas judge weighs in",
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOOUh6WW1rSWNndlRrQjNKaE9ONnhKbWFLckNrbEp0SzVqaGo3cHhkeGVSMW5LemQwUVVRTzlrU2JuRTdnUE5ONGh6emFDa0xVdzNnQjhwQkRsVGd4ZXVweWhfUWtIUi1kcmFkU2RmTnlRazVYNGYya0VoeFRES0RmS0hTNW1FU1RHOUpQS0NLbldjNU9mYlJsYlA0NlVSak1MQlFZQ05yTjhWT2pDSE5BeU94eGg4NlY0TjY4U19LMGlnWEk?oc=5",
-      "canonical": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOOUh6WW1rSWNndlRrQjNKaE9ONnhKbWFLckNrbEp0SzVqaGo3cHhkeGVSMW5LemQwUVVRTzlrU2JuRTdnUE5ONGh6emFDa0xVdzNnQjhwQkRsVGd4ZXVweWhfUWtIUi1kcmFkU2RmTnlRazVYNGYya0VoeFRES0RmS0hTNW1FU1RHOUpQS0NLbldjNU9mYlJsYlA0NlVSak1MQlFZQ05yTjhWT2pDSE5BeU94eGg4NlY0TjY4U19LMGlnWEk?oc=5",
-      "source": "Tyler Morning Telegraph",
+      "id": "gn_aquifers:2e309ee433",
+      "title": "Why does East Texas need a groundwater conservation district? Gregg County judge weighs in",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQUV84VHVJQjJnQm5QUU9fRmpJSkpoa3lKa3c3UDJYaW1LQzRDRGxjY1lGYnRxOHlfU3o2dFNRd3cyVnZZS2dIMGVOa08tSjVWdzcxSTNwc1ZCcGVaYllNdWEzWERPOFpzTDZzYmFRemRnYVFpQ2ZjUDJIVXZUalNXZnpSSE1lMkdiWTZRS1Y5cTA0cW1xVjVMNnEzUTFWNzFld2ZTTGROc0VCWk1rMG1qQTNUMDIzbEMzWHBJQ21rNHVuZXAtMlU5bTln?oc=5",
+      "canonical": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQUV84VHVJQjJnQm5QUU9fRmpJSkpoa3lKa3c3UDJYaW1LQzRDRGxjY1lGYnRxOHlfU3o2dFNRd3cyVnZZS2dIMGVOa08tSjVWdzcxSTNwc1ZCcGVaYllNdWEzWERPOFpzTDZzYmFRemRnYVFpQ2ZjUDJIVXZUalNXZnpSSE1lMkdiWTZRS1Y5cTA0cW1xVjVMNnEzUTFWNzFld2ZTTGROc0VCWk1rMG1qQTNUMDIzbEMzWHBJQ21rNHVuZXAtMlU5bTln?oc=5",
+      "source": "The Henderson News",
       "source_id": "gn_aquifers",
       "source_site": "https://news.google.com/",
       "category": "local",
@@ -1147,14 +1178,14 @@
       "summary": "",
       "author": "",
       "image": "",
-      "published": "2026-09-04T10:50:29+00:00",
-      "published_ts": 1788519029,
+      "published": "2026-09-04T17:58:07+00:00",
+      "published_ts": 1788544687,
       "local": true,
       "tags": [
         "hill-country",
         "policy"
       ],
-      "score": 7.72,
+      "score": 7.78,
       "raw_score": 20.7,
       "matched": {
         "water": [
@@ -1188,7 +1219,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 7.56,
+      "score": 7.46,
       "raw_score": 13.6,
       "matched": {
         "water": [
@@ -1213,7 +1244,7 @@
       "published_ts": 1788460879,
       "local": false,
       "tags": [],
-      "score": 6.87,
+      "score": 6.78,
       "raw_score": 19.3,
       "matched": {
         "water": [
@@ -1243,7 +1274,7 @@
       "tags": [
         "research"
       ],
-      "score": 6.73,
+      "score": 6.64,
       "raw_score": 7.3,
       "matched": {
         "water": [
@@ -1273,7 +1304,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 6.72,
+      "score": 6.63,
       "raw_score": 13.8,
       "matched": {
         "water": [
@@ -1298,7 +1329,7 @@
       "published_ts": 1788505200,
       "local": false,
       "tags": [],
-      "score": 6.56,
+      "score": 6.48,
       "raw_score": 17.8,
       "matched": {
         "water": [
@@ -1314,7 +1345,7 @@
       "title": "Wastewater expansion in the works for the city of Dripping Springs",
       "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOY0hhc1lWSUx6aVJLOGlJSi1QbEdyZUctcjl6c0ZKMjdQeXVQaXlmX3pQWjBaamtkRlJiNDBPRU1SSGU1NngyVkZOdGRUTVl0c19QclhjSmhTUjNmc0NjZkR5VkRjLWVLTEV3RDByRzdKcmNGR2R6Mk8xYmVrS0tKbXJQZ3A3cUUyVG9qWk94N1VfNHQ4Q0RSUUdYSHdtbW5yU2hNTWthdEQxN3lsWlRGQy1YT2Z0NVhmbnpXcjNWSUdsRzVyZWpQZUdEd0MzN195SWw2VDVUZFdXcGg0enlZ?oc=5",
       "canonical": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOY0hhc1lWSUx6aVJLOGlJSi1QbEdyZUctcjl6c0ZKMjdQeXVQaXlmX3pQWjBaamtkRlJiNDBPRU1SSGU1NngyVkZOdGRUTVl0c19QclhjSmhTUjNmc0NjZkR5VkRjLWVLTEV3RDByRzdKcmNGR2R6Mk8xYmVrS0tKbXJQZ3A3cUUyVG9qWk94N1VfNHQ4Q0RSUUdYSHdtbW5yU2hNTWthdEQxN3lsWlRGQy1YT2Z0NVhmbnpXcjNWSUdsRzVyZWpQZUdEd0MzN195SWw2VDVUZFdXcGg0enlZ?oc=5",
-      "source": "Community Impact Newspaper",
+      "source": "communityimpact.com",
       "source_id": "gn_hays_blanco",
       "source_site": "https://news.google.com/",
       "category": "local",
@@ -1328,7 +1359,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 5.88,
+      "score": 5.8,
       "raw_score": 25.9,
       "matched": {
         "water": [
@@ -1336,6 +1367,36 @@
         ],
         "local": [
           "dripping springs"
+        ]
+      }
+    },
+    {
+      "id": "gn_ctx_drought:162a747bd3",
+      "title": "Water crisis in western Travis County",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPOGI3SWl2XzRoUTkzN24zVjJqbWd0OHBRVk16RFJOR04xemFnUlB4eTZwZ0RUTEtSV2VkUGd5V0ZjSkNmSEstZG96UjV5TTVLWTNXbWEwX29WaldEaFRzczY2VEY0SWNhS01mZjctQ2FaYkVoa1hPcFRQcEQ4SmFpd1FrT1JzS3BUNmhF?oc=5",
+      "canonical": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPOGI3SWl2XzRoUTkzN24zVjJqbWd0OHBRVk16RFJOR04xemFnUlB4eTZwZ0RUTEtSV2VkUGd5V0ZjSkNmSEstZG96UjV5TTVLWTNXbWEwX29WaldEaFRzczY2VEY0SWNhS01mZjctQ2FaYkVoa1hPcFRQcEQ4SmFpd1FrT1JzS3BUNmhF?oc=5",
+      "source": "Axios",
+      "source_id": "gn_ctx_drought",
+      "source_site": "https://news.google.com/",
+      "category": "local",
+      "scope": "local",
+      "summary": "",
+      "author": "",
+      "image": "",
+      "published": "2026-08-28T07:00:00+00:00",
+      "published_ts": 1787900400,
+      "local": true,
+      "tags": [
+        "hill-country"
+      ],
+      "score": 5.74,
+      "raw_score": 25.6,
+      "matched": {
+        "water": [
+          "water crisis"
+        ],
+        "local": [
+          "travis county"
         ]
       }
     },
@@ -1356,7 +1417,7 @@
       "published_ts": 1788246000,
       "local": false,
       "tags": [],
-      "score": 5.33,
+      "score": 5.26,
       "raw_score": 17.8,
       "matched": {
         "water": [
@@ -1384,7 +1445,7 @@
       "published_ts": 1788159600,
       "local": false,
       "tags": [],
-      "score": 4.98,
+      "score": 4.91,
       "raw_score": 17.8,
       "matched": {
         "water": [
@@ -1400,7 +1461,7 @@
       "title": "North Carolina joins push for microplastics testing in drinking water",
       "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNZkw4bHFfczA2ZHdERlVnbUo5SjJiaDZrT0thR1JIVkxiR00zWG92cW1jc2YzWXJaa0JiMS04dzhtNHFxLVJVTjNBVW9MeklmTm1FVDR4UHY0TERDd1lOVVlOQjBXclpscDRYSTFaWWlkR2JWMXU5YkotT1pqNkRpRU9mRHU2azcyWVZFZER2TE9EVUl6TFVyWWRPNXdPTUZkdTVhV0V6b1dXUGpja1lLbmZWWThmMjly?oc=5",
       "canonical": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNZkw4bHFfczA2ZHdERlVnbUo5SjJiaDZrT0thR1JIVkxiR00zWG92cW1jc2YzWXJaa0JiMS04dzhtNHFxLVJVTjNBVW9MeklmTm1FVDR4UHY0TERDd1lOVVlOQjBXclpscDRYSTFaWWlkR2JWMXU5YkotT1pqNkRpRU9mRHU2azcyWVZFZER2TE9EVUl6TFVyWWRPNXdPTUZkdTVhV0V6b1dXUGpja1lLbmZWWThmMjly?oc=5",
-      "source": "wral.com",
+      "source": "WRAL",
       "source_id": "gn_epa_water",
       "source_site": "https://www.epa.gov/newsreleases",
       "category": "policy",
@@ -1412,7 +1473,7 @@
       "published_ts": 1788418800,
       "local": false,
       "tags": [],
-      "score": 4.58,
+      "score": 4.52,
       "raw_score": 13.3,
       "matched": {
         "water": [
@@ -1439,7 +1500,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 4.44,
+      "score": 4.38,
       "raw_score": 25.8,
       "matched": {
         "water": [
@@ -1451,10 +1512,10 @@
       }
     },
     {
-      "id": "gn_hill_country_water:bafb7a07b2",
+      "id": "gn_hill_country_water:a7e8aa0748",
       "title": "The Drought Divide: Same summer, two very different moisture stories",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxONURkdGM0UWd1Nng3MXBjaGZZbmJTT0ZzZnhoR2lUcFlzZzUtTkpISVNSMVJkcjlXVUhfaWVUSEdtQ2pMVWROaHY0YWMxMURTQ2tqMWdTLXNyUzdsVlEzalpnSWpXdmtZV0twbFRDYVBaSWpiZS1id2Vyc1h4aXpBVVIya2JhajNZb0pUd0VXQ1NITnRCVkJ5S1hMdmNUV2NUNDFSbkVn?oc=5",
-      "canonical": "https://news.google.com/rss/articles/CBMipgFBVV95cUxONURkdGM0UWd1Nng3MXBjaGZZbmJTT0ZzZnhoR2lUcFlzZzUtTkpISVNSMVJkcjlXVUhfaWVUSEdtQ2pMVWROaHY0YWMxMURTQ2tqMWdTLXNyUzdsVlEzalpnSWpXdmtZV0twbFRDYVBaSWpiZS1id2Vyc1h4aXpBVVIya2JhajNZb0pUd0VXQ1NITnRCVkJ5S1hMdmNUV2NUNDFSbkVn?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOVktsOS1mMm01SXdYV1NnYWNkYjZTY0N2YUFTQ2RWaWNkZ3lHUHNNbkpmRDJlc3ZHaHhMUnJoYlhxcEF2QjJJVE9DZWNrelV6blBoT2VVQlNYaElFbjBzNkl3T1JzajN6VURGZGlXN2JYU3JkM2FrajV5SDlmcGNjWkJKTHM3aVB5ZlpqWmcxbVc3Z2VNcURnMnRiVGYwMEhDZmFXTnVUVUR2cHc?oc=5",
+      "canonical": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOVktsOS1mMm01SXdYV1NnYWNkYjZTY0N2YUFTQ2RWaWNkZ3lHUHNNbkpmRDJlc3ZHaHhMUnJoYlhxcEF2QjJJVE9DZWNrelV6blBoT2VVQlNYaElFbjBzNkl3T1JzajN6VURGZGlXN2JYU3JkM2FrajV5SDlmcGNjWkJKTHM3aVB5ZlpqWmcxbVc3Z2VNcURnMnRiVGYwMEhDZmFXTnVUVUR2cHc?oc=5",
       "source": "KABB",
       "source_id": "gn_hill_country_water",
       "source_site": "https://news.google.com/",
@@ -1469,7 +1530,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 4.43,
+      "score": 4.37,
       "raw_score": 13.8,
       "matched": {
         "water": [
@@ -1494,7 +1555,7 @@
       "published_ts": 1787888909,
       "local": false,
       "tags": [],
-      "score": 4.27,
+      "score": 4.22,
       "raw_score": 19.0,
       "matched": {
         "water": [
@@ -1504,42 +1565,6 @@
           "findings",
           "researchers",
           "scientists"
-        ]
-      }
-    },
-    {
-      "id": "gn_texas_water_policy:f661334095",
-      "title": "Dry creeks not sewer ditches. TCEQ must protect our drinking water.",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxONFA5dzV6by03QVh0RWNHTzA3QWlHVTBTNzJiWEhOR2FMQWxUUmtucS1vN2o5VmFYU3ZUMlpPV29mc2FpLUxOTFpFNnRmSmpsZEE3a05mNkFXdWFmMHpCd2FWYVBab0JoZ01EUXExTHdUX3FDaVgydTdyclJ5NmZrbWhja3B3M1FhRFRjWlR0YTJBNVEzclBqUkpZU2xiVUZ0Z2EyZDNBYzJObl9S?oc=5",
-      "canonical": "https://news.google.com/rss/articles/CBMirAFBVV95cUxONFA5dzV6by03QVh0RWNHTzA3QWlHVTBTNzJiWEhOR2FMQWxUUmtucS1vN2o5VmFYU3ZUMlpPV29mc2FpLUxOTFpFNnRmSmpsZEE3a05mNkFXdWFmMHpCd2FWYVBab0JoZ01EUXExTHdUX3FDaVgydTdyclJ5NmZrbWhja3B3M1FhRFRjWlR0YTJBNVEzclBqUkpZU2xiVUZ0Z2EyZDNBYzJObl9S?oc=5",
-      "source": "San Antonio Express-News",
-      "source_id": "gn_texas_water_policy",
-      "source_site": "https://news.google.com/",
-      "category": "policy",
-      "scope": "state",
-      "summary": "",
-      "author": "",
-      "image": "",
-      "published": "2026-08-18T07:00:00+00:00",
-      "published_ts": 1787036400,
-      "local": true,
-      "tags": [
-        "hill-country"
-      ],
-      "score": 4.06,
-      "raw_score": 35.8,
-      "matched": {
-        "water": [
-          "drinking water"
-        ],
-        "policy": [
-          "tceq"
-        ],
-        "local": [
-          "san antonio"
-        ],
-        "region": [
-          "tceq"
         ]
       }
     },
@@ -1560,7 +1585,7 @@
       "published_ts": 1787839200,
       "local": false,
       "tags": [],
-      "score": 3.76,
+      "score": 3.71,
       "raw_score": 17.4,
       "matched": {
         "water": [
@@ -1579,7 +1604,7 @@
       "title": "'They're coming after our water': Texas counties push for groundwater protections amid commercial use",
       "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOUFpFZVNoUzl5TDUxOFZqRWZYWjJ5R05iaHZXQkxwTFNLeWVHSl9UU1hveFVoeFhXcWV1UUxqYWppTnBuZFFVWnRjQ3d6OHpBQ19peFE2ZTR5MUZXX3piTEU1VHkxWEpmRzdiQTNPSzVoRjJ3MFBWNDU5OEZsQTBka2VCbi0ySDY2VV9SaXQwNmYyMXc?oc=5",
       "canonical": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOUFpFZVNoUzl5TDUxOFZqRWZYWjJ5R05iaHZXQkxwTFNLeWVHSl9UU1hveFVoeFhXcWV1UUxqYWppTnBuZFFVWnRjQ3d6OHpBQ19peFE2ZTR5MUZXX3piTEU1VHkxWEpmRzdiQTNPSzVoRjJ3MFBWNDU5OEZsQTBka2VCbi0ySDY2VV9SaXQwNmYyMXc?oc=5",
-      "source": "thecooldown.com",
+      "source": "The Cool Down",
       "source_id": "gn_aquifers",
       "source_site": "https://news.google.com/",
       "category": "local",
@@ -1593,7 +1618,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 3.5,
+      "score": 3.45,
       "raw_score": 17.7,
       "matched": {
         "water": [
@@ -1624,7 +1649,7 @@
         "rainwater",
         "hill-country"
       ],
-      "score": 3.2,
+      "score": 3.16,
       "raw_score": 45.8,
       "matched": {
         "rainwater": [
@@ -1636,6 +1661,42 @@
         ],
         "region": [
           "texas"
+        ]
+      }
+    },
+    {
+      "id": "gn_texas_water_policy:133dd69e6f",
+      "title": "Rep. Carrie Isaac Asks TCEQ to Consider More Environmental Protection for Canyon Lake Watershed",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNWGNNc2hnSWlPMFRhVW5rRGZWVWxQS0F1LUtldDNPOUNVblFoVXFmMGpjeC1HTHd3UEdQU2VwbjZfQndaTjV6LTdXajREaUxCMFoyX3AwQVNQTHl4S0hqSS00SHN4dkROT091SUxTQWdFLWdsRjJHVGRhZ2E2bGNhSmtQcHJyVlN2UjVGcllmWlRCcjVKb3BlNTdfUjh6SnNfRXRlQjBGWXYwV0Q0ZHg1dGRxVTVjNW1EeHdGXw?oc=5",
+      "canonical": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNWGNNc2hnSWlPMFRhVW5rRGZWVWxQS0F1LUtldDNPOUNVblFoVXFmMGpjeC1HTHd3UEdQU2VwbjZfQndaTjV6LTdXajREaUxCMFoyX3AwQVNQTHl4S0hqSS00SHN4dkROT091SUxTQWdFLWdsRjJHVGRhZ2E2bGNhSmtQcHJyVlN2UjVGcllmWlRCcjVKb3BlNTdfUjh6SnNfRXRlQjBGWXYwV0Q0ZHg1dGRxVTVjNW1EeHdGXw?oc=5",
+      "source": "My Canyon Lake",
+      "source_id": "gn_texas_water_policy",
+      "source_site": "https://news.google.com/",
+      "category": "policy",
+      "scope": "state",
+      "summary": "",
+      "author": "",
+      "image": "",
+      "published": "2026-08-13T07:00:00+00:00",
+      "published_ts": 1786604400,
+      "local": true,
+      "tags": [
+        "hill-country"
+      ],
+      "score": 2.84,
+      "raw_score": 35.8,
+      "matched": {
+        "water": [
+          "watershed"
+        ],
+        "policy": [
+          "tceq"
+        ],
+        "local": [
+          "canyon lake"
+        ],
+        "region": [
+          "tceq"
         ]
       }
     },
@@ -1656,7 +1717,7 @@
       "published_ts": 1787338992,
       "local": false,
       "tags": [],
-      "score": 2.79,
+      "score": 2.76,
       "raw_score": 19.3,
       "matched": {
         "water": [
@@ -1686,7 +1747,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 2.73,
+      "score": 2.7,
       "raw_score": 25.8,
       "matched": {
         "water": [
@@ -1695,6 +1756,40 @@
         "local": [
           "canyon lake",
           "new braunfels"
+        ]
+      }
+    },
+    {
+      "id": "gn_aquifers:5c895eb531",
+      "title": "Lone Star Groundwater Conservation District invites community to free 2026 Symposium celebrating 25 years of protecting the county’s groundwater",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9IUTJZUE1zS1ZERk9yN1lrc1pIdEdyNTVTSE5DWnpJSDNGSkJqY0JReGpUTXVuV0xHNVNLeFBxel9tdmxlVENqMEhaY0xCQllJeG9KMXltTjBXOGRKclBreFlXNXVRQ1l0Q2l3?oc=5",
+      "canonical": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9IUTJZUE1zS1ZERk9yN1lrc1pIdEdyNTVTSE5DWnpJSDNGSkJqY0JReGpUTXVuV0xHNVNLeFBxel9tdmxlVENqMEhaY0xCQllJeG9KMXltTjBXOGRKclBreFlXNXVRQ1l0Q2l3?oc=5",
+      "source": "Woodlands Online",
+      "source_id": "gn_aquifers",
+      "source_site": "https://news.google.com/",
+      "category": "local",
+      "scope": "local",
+      "summary": "Lone Star Groundwater Conservation District invites community to free 2026 Symposium celebrating 25 years of protecting the county’s groundwater Woodlands Online",
+      "author": "",
+      "image": "",
+      "published": "2026-08-20T07:00:00+00:00",
+      "published_ts": 1787209200,
+      "local": true,
+      "tags": [
+        "hill-country",
+        "policy"
+      ],
+      "score": 2.66,
+      "raw_score": 20.7,
+      "matched": {
+        "water": [
+          "groundwater"
+        ],
+        "policy": [
+          "conservation district"
+        ],
+        "region": [
+          "groundwater conservation district"
         ]
       }
     },
@@ -1715,45 +1810,11 @@
       "published_ts": 1789476420,
       "local": false,
       "tags": [],
-      "score": 2.57,
+      "score": 2.54,
       "raw_score": 3.2,
       "matched": {
         "positive": [
           "victory"
-        ]
-      }
-    },
-    {
-      "id": "gn_aquifers:35a04ea0a5",
-      "title": "Second Water Meeting Set: Officials to hold groundwater conservation district informational meeting",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNZ3ByYUNZYUFkRXBlWGstaGtLRjkwOElkNkVpTjdBN3B4ZjI5TEdoY3FKVHVJT3lQUnhVdVZzZFA5VWlaTGNqZ0dqTDRCMWxKVktqWHB2TXFpbDVNaXVBMU1zaTNvN2Q0Y0poLU9fQXpFZFZvRU9DVEQtenhyOVBhaGJUazFQMDRTY3puT18xRW1BbjMzclR1dWw1eDNoWU5HcHJHZDFB?oc=5",
-      "canonical": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNZ3ByYUNZYUFkRXBlWGstaGtLRjkwOElkNkVpTjdBN3B4ZjI5TEdoY3FKVHVJT3lQUnhVdVZzZFA5VWlaTGNqZ0dqTDRCMWxKVktqWHB2TXFpbDVNaXVBMU1zaTNvN2Q0Y0poLU9fQXpFZFZvRU9DVEQtenhyOVBhaGJUazFQMDRTY3puT18xRW1BbjMzclR1dWw1eDNoWU5HcHJHZDFB?oc=5",
-      "source": "grahamleader.com",
-      "source_id": "gn_aquifers",
-      "source_site": "https://news.google.com/",
-      "category": "local",
-      "scope": "local",
-      "summary": "",
-      "author": "",
-      "image": "",
-      "published": "2026-08-19T07:00:00+00:00",
-      "published_ts": 1787122800,
-      "local": true,
-      "tags": [
-        "hill-country",
-        "policy"
-      ],
-      "score": 2.52,
-      "raw_score": 20.7,
-      "matched": {
-        "water": [
-          "groundwater"
-        ],
-        "policy": [
-          "conservation district"
-        ],
-        "region": [
-          "groundwater conservation district"
         ]
       }
     },
@@ -1774,7 +1835,7 @@
       "published_ts": 1788426360,
       "local": false,
       "tags": [],
-      "score": 2.49,
+      "score": 2.46,
       "raw_score": 7.2,
       "matched": {
         "positive": [
@@ -1787,12 +1848,12 @@
       "title": "Tokyo used rooftop rainwater and AI-powered spraying to fight extreme urban heat; study finds potential to",
       "url": "https://news.google.com/rss/articles/CBMigwNBVV95cUxNdEdCUk1BYlBlemh6bXdXS0JGY05SaFIyN2RHcTkxYy1qUmZ5cHp2LUxma1c0dE01QWJCR0x0Y2RST1g4dkRXcjI3UlBXTUEyQlladkxHM2tzbXFhWUwydEVrWERjU1lIUjR6dnJYTHFsajYwN3ZlQ1FRenBva2QyWmsxUWVJRUQxcWpUR1piNU8zVHZ3M0YwcTlhSUNxUm5WMVNWbHMxRXlXZ3FvQkxHamZ0TlBUUWFpUkFwenFIdWJNZUVSR3JyZDgyUVYwTkI3VS16bmFNZ2o1MVNRWHZNN1k1VHNBTVQzMnpuVWF4aFZJTEFqNnBJeXdET2gtaUI4WGdnOFBUZDhXdzRnWnVqNi1rLXFlZm9XczgyTEFpbHJlRm1wR0J5dnRQT0lXZ2hidnFRdFlCbWFHbGVHZFptcFFHVzV5RmJ2ZDY2Qm1pc2ZMWksxY3dyTlJoUjZRcm5RUERZYnRUTmVaZVhMeXpCOV9najU5VUMxS0RkMGRsdHduQmvSAYgDQVVfeXFMTWY1eTJKaTNUcmkwU2lHTFdrYmdKN3hVbTBwOXR2VG0zMm42RHRKMnhmY1U1NlU5aGRSQUFVRVRWb0NQN1l3ZG5Ud09iNTVVWGNZcV9tY1ZJNl9pVUEzeDF6QVgzamJtMnYwTjVoNGMxbWpwTlFKN01jYWt6NF9fdUJtQTY3bVp1VjVtQUdNaERoU1lqUnFtVk9KSWVYclUyQjROVWUzWlRwWWFqZm41c3VwLWVUWDFXNVlQQXZHWnVlbG9NdTNXSDVlY3JodVc4dEZnX3A4WjRucjVybXkzTFpBNUw1MHVLZ25OazBpZEpKcTRyMDkxTVM4UzZfd3lRLXlqbXlqQUZ6STdsRUx0ZWFUeHAzc2V6UVZvemFCRUt0OXpPZy03d0s0aXVuQU1tLUl1SVlCWnRtSTkxWS1pQVNibWdialFNbEUteGctaDlsM1V0QWJvUVNCTE50QnM3VjhQdHNvcGtWdUhoQjI3d1FGNG4zQnQyYnh1WlExZmlsVzVFQVBnZ3M?oc=5",
       "canonical": "https://news.google.com/rss/articles/CBMigwNBVV95cUxNdEdCUk1BYlBlemh6bXdXS0JGY05SaFIyN2RHcTkxYy1qUmZ5cHp2LUxma1c0dE01QWJCR0x0Y2RST1g4dkRXcjI3UlBXTUEyQlladkxHM2tzbXFhWUwydEVrWERjU1lIUjR6dnJYTHFsajYwN3ZlQ1FRenBva2QyWmsxUWVJRUQxcWpUR1piNU8zVHZ3M0YwcTlhSUNxUm5WMVNWbHMxRXlXZ3FvQkxHamZ0TlBUUWFpUkFwenFIdWJNZUVSR3JyZDgyUVYwTkI3VS16bmFNZ2o1MVNRWHZNN1k1VHNBTVQzMnpuVWF4aFZJTEFqNnBJeXdET2gtaUI4WGdnOFBUZDhXdzRnWnVqNi1rLXFlZm9XczgyTEFpbHJlRm1wR0J5dnRQT0lXZ2hidnFRdFlCbWFHbGVHZFptcFFHVzV5RmJ2ZDY2Qm1pc2ZMWksxY3dyTlJoUjZRcm5RUERZYnRUTmVaZVhMeXpCOV9najU5VUMxS0RkMGRsdHduQmvSAYgDQVVfeXFMTWY1eTJKaTNUcmkwU2lHTFdrYmdKN3hVbTBwOXR2VG0zMm42RHRKMnhmY1U1NlU5aGRSQUFVRVRWb0NQN1l3ZG5Ud09iNTVVWGNZcV9tY1ZJNl9pVUEzeDF6QVgzamJtMnYwTjVoNGMxbWpwTlFKN01jYWt6NF9fdUJtQTY3bVp1VjVtQUdNaERoU1lqUnFtVk9KSWVYclUyQjROVWUzWlRwWWFqZm41c3VwLWVUWDFXNVlQQXZHWnVlbG9NdTNXSDVlY3JodVc4dEZnX3A4WjRucjVybXkzTFpBNUw1MHVLZ25OazBpZEpKcTRyMDkxTVM4UzZfd3lRLXlqbXlqQUZ6STdsRUx0ZWFUeHAzc2V6UVZvemFCRUt0OXpPZy03d0s0aXVuQU1tLUl1SVlCWnRtSTkxWS1pQVNibWdialFNbEUteGctaDlsM1V0QWJvUVNCTE50QnM3VjhQdHNvcGtWdUhoQjI3d1FGNG4zQnQyYnh1WlExZmlsVzVFQVBnZ3M?oc=5",
-      "source": "The Economic Times",
+      "source": "economictimes.com",
       "source_id": "gn_rainwater_research",
       "source_site": "https://news.google.com/",
       "category": "research",
       "scope": "global",
-      "summary": "Tokyo used rooftop rainwater and AI-powered spraying to fight extreme urban heat; study finds potential to The Economic Times",
+      "summary": "Tokyo used rooftop rainwater and AI-powered spraying to fight extreme urban heat; study finds potential to economictimes.com",
       "author": "",
       "image": "",
       "published": "2026-08-10T07:00:00+00:00",
@@ -1801,7 +1862,7 @@
       "tags": [
         "rainwater"
       ],
-      "score": 2.34,
+      "score": 2.31,
       "raw_score": 35.9,
       "matched": {
         "rainwater": [
@@ -1831,7 +1892,7 @@
       "tags": [
         "rainwater"
       ],
-      "score": 2.22,
+      "score": 2.19,
       "raw_score": 41.9,
       "matched": {
         "rainwater": [
@@ -1864,7 +1925,7 @@
       "published_ts": 1787217661,
       "local": false,
       "tags": [],
-      "score": 1.97,
+      "score": 1.94,
       "raw_score": 15.0,
       "matched": {
         "water": [
@@ -1892,7 +1953,7 @@
       "published_ts": 1788872436,
       "local": false,
       "tags": [],
-      "score": 1.63,
+      "score": 1.61,
       "raw_score": 3.3,
       "matched": {
         "positive": [
@@ -1917,7 +1978,7 @@
       "published_ts": 1788768015,
       "local": false,
       "tags": [],
-      "score": 1.59,
+      "score": 1.57,
       "raw_score": 3.5,
       "matched": {
         "water": [
@@ -1944,7 +2005,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 1.58,
+      "score": 1.56,
       "raw_score": 29.9,
       "matched": {
         "water": [
@@ -1975,7 +2036,7 @@
       "published_ts": 1787227620,
       "local": false,
       "tags": [],
-      "score": 0.98,
+      "score": 0.97,
       "raw_score": 7.4,
       "matched": {
         "water": [
@@ -2002,7 +2063,7 @@
       "tags": [
         "research"
       ],
-      "score": 0.9,
+      "score": 0.88,
       "raw_score": 13.4,
       "matched": {
         "water": [
@@ -2035,7 +2096,7 @@
       "tags": [
         "research"
       ],
-      "score": 0.88,
+      "score": 0.87,
       "raw_score": 7.2,
       "matched": {
         "research": [
@@ -2063,7 +2124,7 @@
       "published_ts": 1786540980,
       "local": false,
       "tags": [],
-      "score": 0.7,
+      "score": 0.69,
       "raw_score": 9.2,
       "matched": {
         "water": [
@@ -2090,7 +2151,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 0.64,
+      "score": 0.63,
       "raw_score": 13.9,
       "matched": {
         "water": [
@@ -2142,7 +2203,7 @@
       "tags": [
         "research"
       ],
-      "score": 0.29,
+      "score": 0.28,
       "raw_score": 3.3,
       "matched": {
         "research": [
@@ -2167,7 +2228,7 @@
       "http_status": 200,
       "item_count": 72,
       "error": null,
-      "ms": 571
+      "ms": 516
     },
     {
       "id": "gn_hays_blanco",
@@ -2180,7 +2241,7 @@
       "http_status": 200,
       "item_count": 68,
       "error": null,
-      "ms": 942
+      "ms": 615
     },
     {
       "id": "gn_aquifers",
@@ -2191,9 +2252,9 @@
       "scope": "local",
       "status": "ok",
       "http_status": 200,
-      "item_count": 31,
+      "item_count": 43,
       "error": null,
-      "ms": 476
+      "ms": 479
     },
     {
       "id": "gn_ctx_drought",
@@ -2204,9 +2265,9 @@
       "scope": "local",
       "status": "ok",
       "http_status": 200,
-      "item_count": 59,
+      "item_count": 62,
       "error": null,
-      "ms": 600
+      "ms": 547
     },
     {
       "id": "gn_texas_tribune_water",
@@ -2217,9 +2278,9 @@
       "scope": "state",
       "status": "ok",
       "http_status": 200,
-      "item_count": 79,
+      "item_count": 71,
       "error": null,
-      "ms": 498
+      "ms": 435
     },
     {
       "id": "austin_monitor",
@@ -2232,7 +2293,7 @@
       "http_status": 200,
       "item_count": 12,
       "error": null,
-      "ms": 463
+      "ms": 471
     },
     {
       "id": "san_antonio_report",
@@ -2245,7 +2306,7 @@
       "http_status": 200,
       "item_count": 10,
       "error": null,
-      "ms": 379
+      "ms": 202
     },
     {
       "id": "gn_community_impact",
@@ -2258,7 +2319,7 @@
       "http_status": 200,
       "item_count": 100,
       "error": null,
-      "ms": 622
+      "ms": 592
     },
     {
       "id": "gn_rainwater_research",
@@ -2269,9 +2330,9 @@
       "scope": "global",
       "status": "ok",
       "http_status": 200,
-      "item_count": 49,
+      "item_count": 48,
       "error": null,
-      "ms": 489
+      "ms": 417
     },
     {
       "id": "gn_water_quality_research",
@@ -2284,7 +2345,7 @@
       "http_status": 200,
       "item_count": 100,
       "error": null,
-      "ms": 630
+      "ms": 711
     },
     {
       "id": "sciencedaily_water",
@@ -2297,7 +2358,7 @@
       "http_status": 200,
       "item_count": 60,
       "error": null,
-      "ms": 150
+      "ms": 272
     },
     {
       "id": "sciencedaily_drought",
@@ -2310,7 +2371,7 @@
       "http_status": 200,
       "item_count": 60,
       "error": null,
-      "ms": 140
+      "ms": 270
     },
     {
       "id": "phys_org_environment",
@@ -2323,7 +2384,7 @@
       "http_status": 200,
       "item_count": 30,
       "error": null,
-      "ms": 255
+      "ms": 227
     },
     {
       "id": "gn_rainwater_policy",
@@ -2336,7 +2397,7 @@
       "http_status": 200,
       "item_count": 48,
       "error": null,
-      "ms": 458
+      "ms": 536
     },
     {
       "id": "gn_texas_water_policy",
@@ -2349,7 +2410,7 @@
       "http_status": 200,
       "item_count": 43,
       "error": null,
-      "ms": 810
+      "ms": 427
     },
     {
       "id": "gn_water_rebates",
@@ -2362,7 +2423,7 @@
       "http_status": 200,
       "item_count": 9,
       "error": null,
-      "ms": 419
+      "ms": 390
     },
     {
       "id": "gn_epa_water",
@@ -2373,9 +2434,9 @@
       "scope": "national",
       "status": "ok",
       "http_status": 200,
-      "item_count": 39,
+      "item_count": 36,
       "error": null,
-      "ms": 1075
+      "ms": 560
     },
     {
       "id": "circle_of_blue",
@@ -2388,7 +2449,7 @@
       "http_status": 200,
       "item_count": 12,
       "error": null,
-      "ms": 363
+      "ms": 189
     },
     {
       "id": "gn_good_environment_news",
@@ -2401,7 +2462,7 @@
       "http_status": 200,
       "item_count": 100,
       "error": null,
-      "ms": 655
+      "ms": 665
     },
     {
       "id": "reasons_to_be_cheerful",
@@ -2414,7 +2475,7 @@
       "http_status": 200,
       "item_count": 10,
       "error": null,
-      "ms": 307
+      "ms": 148
     },
     {
       "id": "anthropocene",
@@ -2427,7 +2488,7 @@
       "http_status": 200,
       "item_count": 30,
       "error": null,
-      "ms": 1518
+      "ms": 236
     },
     {
       "id": "yale_e360",
@@ -2440,7 +2501,7 @@
       "http_status": 200,
       "item_count": 100,
       "error": null,
-      "ms": 500
+      "ms": 304
     },
     {
       "id": "grist",
@@ -2453,22 +2514,22 @@
       "http_status": 200,
       "item_count": 20,
       "error": null,
-      "ms": 199
+      "ms": 179
     }
   ],
   "stats": {
     "feeds_total": 23,
     "feeds_ok": 23,
     "feeds_failed": 0,
-    "entries_seen": 1141,
+    "entries_seen": 1144,
     "candidates": 178,
-    "after_dedupe": 151,
-    "published": 71,
+    "after_dedupe": 152,
+    "published": 73,
     "rejected": {
-      "score": 36,
-      "stale": 247,
-      "blocked": 20,
-      "off_topic": 660
+      "score": 37,
+      "stale": 246,
+      "blocked": 21,
+      "off_topic": 662
     }
   }
 }
