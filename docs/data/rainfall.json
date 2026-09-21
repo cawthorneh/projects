@@ -1,10 +1,10 @@
 {
-  "generated": "2026-09-16T20:23:24.433Z",
+  "generated": "2026-09-21T01:22:38.474Z",
   "source": "https://hydromet.lcra.org/",
   "window": "48h = today so far plus the whole of the previous calendar day",
   "columns": {
     "today": "today",
-    "yesterday": "09/15/2026",
+    "yesterday": "09/19/2026",
     "h24": "24 hour",
     "h1": "1 hour",
     "midnight": "since midnight"
@@ -86,40 +86,40 @@
       "id": "fredericksburg",
       "label": "Fredericksburg",
       "county": "Gillespie Co.",
-      "total48": 0,
-      "today": 0,
+      "total48": 0.47,
+      "today": 0.47,
       "yesterday": 0,
-      "h24": 0,
-      "h1": 0,
-      "midnight": 0,
+      "h24": 0.47,
+      "h1": 0.32,
+      "midnight": 0.47,
       "gauges": [
         {
           "name": "Fredericksburg 12 NW",
-          "today": 0
+          "today": 0.66
         },
         {
           "name": "Fredericksburg 10 NNE",
-          "today": 0
+          "today": 0.96
         },
         {
           "name": "Fredericksburg 10 WSW",
-          "today": 0
+          "today": 0.25
         },
         {
           "name": "Fredericksburg 9 SW",
-          "today": 0
+          "today": 0.41
         },
         {
           "name": "Pedernales River near Fredericksburg",
-          "today": 0
+          "today": 0.63
         },
         {
           "name": "Fredericksburg 5 N",
-          "today": 0
+          "today": 0.25
         },
         {
           "name": "Fredericksburg 10 SSE",
-          "today": 0
+          "today": 0.15
         }
       ],
       "matched": 7
@@ -128,16 +128,16 @@
       "id": "johnson_city",
       "label": "Johnson City",
       "county": "Blanco Co.",
-      "total48": 0,
-      "today": 0,
+      "total48": 0.01,
+      "today": 0.01,
       "yesterday": 0,
-      "h24": 0,
-      "h1": 0,
-      "midnight": 0,
+      "h24": 0.01,
+      "h1": 0.01,
+      "midnight": 0.01,
       "gauges": [
         {
           "name": "North Grape Creek near Johnson City",
-          "today": 0
+          "today": 0.06
         },
         {
           "name": "Johnson City 10 NNW",
@@ -145,7 +145,7 @@
         },
         {
           "name": "Johnson City 4 NNW",
-          "today": 0
+          "today": 0.01
         },
         {
           "name": "Johnson City 5 SSW",
@@ -200,12 +200,12 @@
       "Basin",
       "Today",
       "Last24",
-      "09/15/2026",
-      "09/14/2026",
-      "09/13/2026",
-      "09/12/2026",
-      "Since 09/12/2026",
-      "Five Day Rain (in) Report Date: 2026-09-16 15:16"
+      "09/19/2026",
+      "09/18/2026",
+      "09/17/2026",
+      "09/16/2026",
+      "Since 09/16/2026",
+      "Five Day Rain (in) Report Date: 2026-09-20 20:16"
     ],
     "intradayHeaders": [
       "Site",
@@ -216,15 +216,15 @@
       "6 Hour",
       "24 Hour",
       "Since Midnight",
-      "Rainfall (in) Report Date: 2026-09-16 15:16"
+      "Rainfall (in) Report Date: 2026-09-20 20:16"
     ],
-    "fiveDayRows": 245,
+    "fiveDayRows": 246,
     "intradayRows": 246,
     "datedColumns": [
-      "09/15/2026",
-      "09/14/2026",
-      "09/13/2026",
-      "09/12/2026"
+      "09/19/2026",
+      "09/18/2026",
+      "09/17/2026",
+      "09/16/2026"
     ]
   }
 }
