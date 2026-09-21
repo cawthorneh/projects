@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-21T19:06:07.439Z",
+  "generated": "2026-09-21T22:43:49.882Z",
   "source": "https://hydromet.lcra.org/",
   "window": "48h = today so far plus the whole of the previous calendar day",
   "columns": {
@@ -14,16 +14,16 @@
       "id": "dripping_springs",
       "label": "Dripping Springs",
       "county": "Hays Co.",
-      "total48": 0,
-      "today": 0,
+      "total48": 0.07,
+      "today": 0.07,
       "yesterday": 0,
-      "h24": 0,
+      "h24": 0.07,
       "h1": 0,
-      "midnight": 0,
+      "midnight": 0.07,
       "gauges": [
         {
           "name": "Dripping Springs 8 W",
-          "today": 0
+          "today": 0.22
         },
         {
           "name": "Dripping Springs 4 NNE",
@@ -132,7 +132,7 @@
       "today": 0.03,
       "yesterday": 0.16,
       "h24": 0.2,
-      "h1": 0.03,
+      "h1": 0,
       "midnight": 0.03,
       "gauges": [
         {
@@ -149,7 +149,7 @@
         },
         {
           "name": "Johnson City 5 SSW",
-          "today": 0.04
+          "today": 0.05
         },
         {
           "name": "Pedernales River near Johnson City",
@@ -174,12 +174,12 @@
       "id": "blanco",
       "label": "Blanco",
       "county": "Blanco Co.",
-      "total48": 0.09,
-      "today": 0,
+      "total48": 0.14,
+      "today": 0.06,
       "yesterday": 0.09,
-      "h24": 0.09,
-      "h1": 0,
-      "midnight": 0,
+      "h24": 0.14,
+      "h1": 0.03,
+      "midnight": 0.06,
       "gauges": [
         {
           "name": "Blanco 13 WNW",
@@ -187,7 +187,7 @@
         },
         {
           "name": "Blanco 5 NNE",
-          "today": 0
+          "today": 0.11
         }
       ],
       "matched": 2
@@ -205,7 +205,7 @@
       "09/18/2026",
       "09/17/2026",
       "Since 09/17/2026",
-      "Five Day Rain (in) Report Date: 2026-09-21 14:01"
+      "Five Day Rain (in) Report Date: 2026-09-21 17:31"
     ],
     "intradayHeaders": [
       "Site",
@@ -216,10 +216,10 @@
       "6 Hour",
       "24 Hour",
       "Since Midnight",
-      "Rainfall (in) Report Date: 2026-09-21 14:01"
+      "Rainfall (in) Report Date: 2026-09-21 17:31"
     ],
     "fiveDayRows": 246,
-    "intradayRows": 246,
+    "intradayRows": 241,
     "datedColumns": [
       "09/20/2026",
       "09/19/2026",
