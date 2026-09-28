@@ -1,10 +1,10 @@
 {
-  "generated": "2026-09-28T01:53:11.719Z",
+  "generated": "2026-09-28T08:18:55.965Z",
   "source": "https://hydromet.lcra.org/",
   "window": "48h = today so far plus the whole of the previous calendar day",
   "columns": {
     "today": "today",
-    "yesterday": "09/26/2026",
+    "yesterday": "09/27/2026",
     "h24": "24 hour",
     "h1": "1 hour",
     "midnight": "since midnight"
@@ -87,15 +87,15 @@
       "label": "Fredericksburg",
       "county": "Gillespie Co.",
       "total48": 0.05,
-      "today": 0.05,
-      "yesterday": 0,
+      "today": 0,
+      "yesterday": 0.05,
       "h24": 0.05,
       "h1": 0,
-      "midnight": 0.05,
+      "midnight": 0,
       "gauges": [
         {
           "name": "Fredericksburg 12 NW",
-          "today": 0.28
+          "today": 0
         },
         {
           "name": "Fredericksburg 10 NNE",
@@ -103,7 +103,7 @@
         },
         {
           "name": "Fredericksburg 10 WSW",
-          "today": 0.07
+          "today": 0
         },
         {
           "name": "Fredericksburg 9 SW",
@@ -129,11 +129,11 @@
       "label": "Johnson City",
       "county": "Blanco Co.",
       "total48": 0.01,
-      "today": 0.01,
-      "yesterday": 0,
+      "today": 0,
+      "yesterday": 0.01,
       "h24": 0.01,
       "h1": 0,
-      "midnight": 0.01,
+      "midnight": 0,
       "gauges": [
         {
           "name": "North Grape Creek near Johnson City",
@@ -153,7 +153,7 @@
         },
         {
           "name": "Pedernales River near Johnson City",
-          "today": 0.09
+          "today": 0.01
         },
         {
           "name": "Miller Creek near Johnson City",
@@ -200,12 +200,12 @@
       "Basin",
       "Today",
       "Last24",
+      "09/27/2026",
       "09/26/2026",
       "09/25/2026",
       "09/24/2026",
-      "09/23/2026",
-      "Since 09/23/2026",
-      "Five Day Rain (in) Report Date: 2026-09-27 20:46"
+      "Since 09/24/2026",
+      "Five Day Rain (in) Report Date: 2026-09-28 03:16"
     ],
     "intradayHeaders": [
       "Site",
@@ -216,15 +216,15 @@
       "6 Hour",
       "24 Hour",
       "Since Midnight",
-      "Rainfall (in) Report Date: 2026-09-27 20:46"
+      "Rainfall (in) Report Date: 2026-09-28 03:16"
     ],
     "fiveDayRows": 246,
     "intradayRows": 245,
     "datedColumns": [
+      "09/27/2026",
       "09/26/2026",
       "09/25/2026",
-      "09/24/2026",
-      "09/23/2026"
+      "09/24/2026"
     ]
   }
 }
