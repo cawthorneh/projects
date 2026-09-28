@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-28T05:19:58+00:00",
+  "generated_at": "2026-09-28T13:49:28+00:00",
   "window_days": 45,
   "categories": [
     {
@@ -21,21 +21,21 @@
       "label": "Policy & Codes",
       "short": "Policy",
       "blurb": "Rainwater law, plumbing codes, rebates, and water regulation.",
-      "count": 6
+      "count": 8
     },
     {
       "id": "positive",
       "label": "Good Climate News",
       "short": "Good News",
       "blurb": "Restoration, breakthroughs, and progress worth reading about.",
-      "count": 16
+      "count": 18
     }
   ],
   "counts": {
     "local": 29,
     "research": 17,
-    "policy": 6,
-    "positive": 16
+    "policy": 8,
+    "positive": 18
   },
   "items": [
     {
@@ -43,7 +43,7 @@
       "title": "A Cedar Park teen s work keeps 45,000 gallons of runoff out of Hill Country waterways",
       "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQNVR5UXFuYnpiZUdBUTc1dzdaaGlFeVNiS0xYRjZXUlN4ODJVakNLcG9pSktWTllhNE8yOUZIYzBwUWR0Sk1fNWxMdzZ0VUxJSFFUdjBQNlQxcW5DWVE2VWtKbEgzV2I1RVV2ems1dWNvSmxwVGpCekM1S25oeGpyTGE3TjBmSjZyQ3cxWUJqVFFNcDJSaG9hRk9ZZmk2Rk9IRURxZ3VNM0VveGRnMXQyU0pKb05uVm8?oc=5",
       "canonical": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQNVR5UXFuYnpiZUdBUTc1dzdaaGlFeVNiS0xYRjZXUlN4ODJVakNLcG9pSktWTllhNE8yOUZIYzBwUWR0Sk1fNWxMdzZ0VUxJSFFUdjBQNlQxcW5DWVE2VWtKbEgzV2I1RVV2ems1dWNvSmxwVGpCekM1S25oeGpyTGE3TjBmSjZyQ3cxWUJqVFFNcDJSaG9hRk9ZZmk2Rk9IRURxZ3VNM0VveGRnMXQyU0pKb05uVm8?oc=5",
-      "source": "cbsaustin.com",
+      "source": "KEYE",
       "source_id": "gn_hill_country_water",
       "source_site": "https://news.google.com/",
       "category": "local",
@@ -57,7 +57,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 21.47,
+      "score": 20.95,
       "raw_score": 25.8,
       "matched": {
         "water": [
@@ -87,7 +87,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 21.45,
+      "score": 20.93,
       "raw_score": 25.5,
       "matched": {
         "water": [
@@ -117,7 +117,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 21.18,
+      "score": 20.67,
       "raw_score": 25.6,
       "matched": {
         "water": [
@@ -147,7 +147,7 @@
       "tags": [
         "rainwater"
       ],
-      "score": 20.79,
+      "score": 20.28,
       "raw_score": 30.9,
       "matched": {
         "rainwater": [
@@ -182,7 +182,7 @@
         "rainwater",
         "hill-country"
       ],
-      "score": 20.46,
+      "score": 19.97,
       "raw_score": 29.2,
       "matched": {
         "rainwater": [
@@ -210,7 +210,7 @@
       "published_ts": 1790184840,
       "local": false,
       "tags": [],
-      "score": 20.36,
+      "score": 19.87,
       "raw_score": 27.8,
       "matched": {
         "water": [
@@ -222,6 +222,39 @@
         ],
         "region": [
           "tceq"
+        ]
+      }
+    },
+    {
+      "id": "gn_epa_water:e9684adc00",
+      "title": "EPA Study Puts New Focus on Microplastics in Drinking Water",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOSjNEa2dJRllxcVd2Ml9Zb2MwOF9RcmtVNFFtM0JGbm8wRFVTWlh0bmE2bzZsZDk4VUdNNVhoNm1XN3FGUllHMDVFa09jalYyeTRqQldnS3dXcmU2RWVJdEZRaGNueHFsYXVmZF9xNWZLaGVxN3NySEttbWozTDBhLXI0YndvZ0c0MkxHSjRpVG9ZNV9xa3c?oc=5",
+      "canonical": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOSjNEa2dJRllxcVd2Ml9Zb2MwOF9RcmtVNFFtM0JGbm8wRFVTWlh0bmE2bzZsZDk4VUdNNVhoNm1XN3FGUllHMDVFa09jalYyeTRqQldnS3dXcmU2RWVJdEZRaGNueHFsYXVmZF9xNWZLaGVxN3NySEttbWozTDBhLXI0YndvZ0c0MkxHSjRpVG9ZNV9xa3c?oc=5",
+      "source": "EHSLeaders",
+      "source_id": "gn_epa_water",
+      "source_site": "https://www.epa.gov/newsreleases",
+      "category": "policy",
+      "scope": "national",
+      "summary": "",
+      "author": "",
+      "image": "",
+      "published": "2026-09-28T11:25:54+00:00",
+      "published_ts": 1790594754,
+      "local": false,
+      "tags": [
+        "research"
+      ],
+      "score": 19.17,
+      "raw_score": 19.3,
+      "matched": {
+        "water": [
+          "drinking water"
+        ],
+        "policy": [
+          "epa"
+        ],
+        "research": [
+          "study"
         ]
       }
     },
@@ -244,7 +277,7 @@
       "tags": [
         "rainwater"
       ],
-      "score": 18.43,
+      "score": 17.98,
       "raw_score": 35.9,
       "matched": {
         "rainwater": [
@@ -272,7 +305,7 @@
       "published_ts": 1790353020,
       "local": false,
       "tags": [],
-      "score": 18.02,
+      "score": 17.59,
       "raw_score": 21.5,
       "matched": {
         "water": [
@@ -302,7 +335,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 17.7,
+      "score": 17.27,
       "raw_score": 25.2,
       "matched": {
         "water": [
@@ -330,7 +363,7 @@
       "published_ts": 1790369585,
       "local": false,
       "tags": [],
-      "score": 16.48,
+      "score": 16.08,
       "raw_score": 19.4,
       "matched": {
         "water": [
@@ -358,7 +391,7 @@
       "published_ts": 1790363111,
       "local": false,
       "tags": [],
-      "score": 16.4,
+      "score": 16.0,
       "raw_score": 19.4,
       "matched": {
         "water": [
@@ -369,34 +402,6 @@
         ],
         "positive": [
           "saved"
-        ]
-      }
-    },
-    {
-      "id": "gn_water_quality_research:25be61b585",
-      "title": "When it rains, it drains: Unified Green project expands uptown campus stormwater management",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOUm15S1U1b241T3dDNVhzaUNfTTB6TVp1MlNJWktXbFdZY1gyRTVvN3IwWjljYkpZY0FJNlFuOTNSaDlVMUNyc2pMLTJ2REg4cHF3YjhZT3RnUnVmaEF3WWF5WjJoRVVUMjVqV0QyVXcxTVJSeHRWNHBHQjZyVS1ZNk13SldMWjJGMUE4WXFPSmczSGxnS1RVclZqWlhWTk1iLUNNU1BGdklua3BRZExxa3MySjdjSnItOVE?oc=5",
-      "canonical": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOUm15S1U1b241T3dDNVhzaUNfTTB6TVp1MlNJWktXbFdZY1gyRTVvN3IwWjljYkpZY0FJNlFuOTNSaDlVMUNyc2pMLTJ2REg4cHF3YjhZT3RnUnVmaEF3WWF5WjJoRVVUMjVqV0QyVXcxTVJSeHRWNHBHQjZyVS1ZNk13SldMWjJGMUE4WXFPSmczSGxnS1RVclZqWlhWTk1iLUNNU1BGdklua3BRZExxa3MySjdjSnItOVE?oc=5",
-      "source": "Tulane University News",
-      "source_id": "gn_water_quality_research",
-      "source_site": "https://news.google.com/",
-      "category": "research",
-      "scope": "global",
-      "summary": "",
-      "author": "",
-      "image": "",
-      "published": "2026-09-25T14:00:00+00:00",
-      "published_ts": 1790344800,
-      "local": false,
-      "tags": [],
-      "score": 16.16,
-      "raw_score": 19.4,
-      "matched": {
-        "water": [
-          "stormwater"
-        ],
-        "research": [
-          "university"
         ]
       }
     },
@@ -417,7 +422,7 @@
       "published_ts": 1790367520,
       "local": false,
       "tags": [],
-      "score": 15.1,
+      "score": 14.73,
       "raw_score": 17.8,
       "matched": {
         "water": [
@@ -447,7 +452,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 14.87,
+      "score": 14.51,
       "raw_score": 29.6,
       "matched": {
         "water": [
@@ -458,6 +463,37 @@
         ],
         "region": [
           "texas"
+        ]
+      }
+    },
+    {
+      "id": "gn_water_quality_research:62a07396fb",
+      "title": "India Is Pulling Arsenic Out Of Its Groundwater. Nobody Is Saying Where It Goes",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQdnNiVGlKcVVBUEFGRnYwTkdlZ3lXa3cwUWYyMnFxUEo2bFlIalNkT3NsLXVzT05kajItUXd4RVpmRzVKSU1JUkNtUlhxZEYxNU5mMy1JenhBTjY4RGM4ekdocXBHR0hnalhKR3NrZmJDbGVYWHQ1WkluUGxpRUVyYUVmQmluVlFJcGt0SUh1S0FNQlJtODdnM09hdVExX1ZqLTZfLTVjdkVoUEM2bS1z?oc=5",
+      "canonical": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQdnNiVGlKcVVBUEFGRnYwTkdlZ3lXa3cwUWYyMnFxUEo2bFlIalNkT3NsLXVzT05kajItUXd4RVpmRzVKSU1JUkNtUlhxZEYxNU5mMy1JenhBTjY4RGM4ekdocXBHR0hnalhKR3NrZmJDbGVYWHQ1WkluUGxpRUVyYUVmQmluVlFJcGt0SUh1S0FNQlJtODdnM09hdVExX1ZqLTZfLTVjdkVoUEM2bS1z?oc=5",
+      "source": "Research Matters",
+      "source_id": "gn_water_quality_research",
+      "source_site": "https://news.google.com/",
+      "category": "research",
+      "scope": "global",
+      "summary": "",
+      "author": "",
+      "image": "",
+      "published": "2026-09-28T12:32:47+00:00",
+      "published_ts": 1790598767,
+      "local": false,
+      "tags": [],
+      "score": 14.35,
+      "raw_score": 14.4,
+      "matched": {
+        "water": [
+          "groundwater"
+        ],
+        "research": [
+          "research"
+        ],
+        "non_us": [
+          "india"
         ]
       }
     },
@@ -482,7 +518,7 @@
         "policy",
         "research"
       ],
-      "score": 14.51,
+      "score": 14.16,
       "raw_score": 31.9,
       "matched": {
         "water": [
@@ -519,7 +555,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 14.22,
+      "score": 13.87,
       "raw_score": 25.8,
       "matched": {
         "water": [
@@ -549,7 +585,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 13.96,
+      "score": 13.62,
       "raw_score": 17.8,
       "matched": {
         "water": [
@@ -578,7 +614,7 @@
       "published_ts": 1790142927,
       "local": false,
       "tags": [],
-      "score": 13.74,
+      "score": 13.41,
       "raw_score": 19.4,
       "matched": {
         "water": [
@@ -586,6 +622,31 @@
         ],
         "research": [
           "research"
+        ]
+      }
+    },
+    {
+      "id": "gn_good_environment_news:741ac5f3b7",
+      "title": "Yani National Wetland Park restoration brings back wildlife in Xizang",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBVMGZtTG1zbHFJNkY1T3g4enVSTm9CVk8wTlhxSnhzYVNzTGdRTDJ3MklWMmdjUlIydWtrUHZCWlhoWDB2YTBZeGN6bG9wUEF2N09mcTZkNFRKRzNxNG8wWGNtVzk0ZEF4c21KNzVzOGZYQWV2WWlpU212NWRzZw?oc=5",
+      "canonical": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBVMGZtTG1zbHFJNkY1T3g4enVSTm9CVk8wTlhxSnhzYVNzTGdRTDJ3MklWMmdjUlIydWtrUHZCWlhoWDB2YTBZeGN6bG9wUEF2N09mcTZkNFRKRzNxNG8wWGNtVzk0ZEF4c21KNzVzOGZYQWV2WWlpU212NWRzZw?oc=5",
+      "source": "China Daily",
+      "source_id": "gn_good_environment_news",
+      "source_site": "https://news.google.com/",
+      "category": "positive",
+      "scope": "global",
+      "summary": "",
+      "author": "",
+      "image": "",
+      "published": "2026-09-28T06:27:26+00:00",
+      "published_ts": 1790576846,
+      "local": false,
+      "tags": [],
+      "score": 13.22,
+      "raw_score": 13.5,
+      "matched": {
+        "positive": [
+          "restoration"
         ]
       }
     },
@@ -606,7 +667,7 @@
       "published_ts": 1790121525,
       "local": false,
       "tags": [],
-      "score": 13.51,
+      "score": 13.18,
       "raw_score": 19.4,
       "matched": {
         "water": [
@@ -614,6 +675,35 @@
         ],
         "research": [
           "study"
+        ]
+      }
+    },
+    {
+      "id": "gn_water_quality_research:1407532630",
+      "title": "Professor Alan MacDonald presented with Presidents’ Award at 2026 World Groundwater Congress - BGS",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPRWFKRHFZb0pZcmVlNzJlRWpPSEYyNmQzUFBEQVlDZjJnckYyaERJT0dJel81bjhMaW9FZk5rR2QyNEpyUHp1SHcyY2VXQnhpaXhHRm5oa2VUWG1yVzYyYUJsZ1ZZamZUdUlXa0lzeVBPd2hlZWR1aGlhUmNCNTJ0RmlVTlFfcVg0QzNOa3VObk9CanlLVThRYW9BU05DOWQ5Y1FkcElYWllHWDNFemdLQ3JTRTgtQ1NkTHVv?oc=5",
+      "canonical": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPRWFKRHFZb0pZcmVlNzJlRWpPSEYyNmQzUFBEQVlDZjJnckYyaERJT0dJel81bjhMaW9FZk5rR2QyNEpyUHp1SHcyY2VXQnhpaXhHRm5oa2VUWG1yVzYyYUJsZ1ZZamZUdUlXa0lzeVBPd2hlZWR1aGlhUmNCNTJ0RmlVTlFfcVg0QzNOa3VObk9CanlLVThRYW9BU05DOWQ5Y1FkcElYWllHWDNFemdLQ3JTRTgtQ1NkTHVv?oc=5",
+      "source": "British Geological Survey",
+      "source_id": "gn_water_quality_research",
+      "source_site": "https://news.google.com/",
+      "category": "research",
+      "scope": "global",
+      "summary": "Professor Alan MacDonald presented with Presidents’ Award at 2026 World Groundwater Congress BGS - British Geological Survey",
+      "author": "",
+      "image": "",
+      "published": "2026-09-21T13:50:42+00:00",
+      "published_ts": 1789998642,
+      "local": false,
+      "tags": [],
+      "score": 13.17,
+      "raw_score": 21.4,
+      "matched": {
+        "water": [
+          "groundwater"
+        ],
+        "research": [
+          "professor",
+          "survey"
         ]
       }
     },
@@ -634,7 +724,7 @@
       "published_ts": 1790565058,
       "local": false,
       "tags": [],
-      "score": 13.42,
+      "score": 13.09,
       "raw_score": 13.5,
       "matched": {
         "positive": [
@@ -643,39 +733,11 @@
       }
     },
     {
-      "id": "gn_water_quality_research:d83a5f8b54",
-      "title": "Commissioners deny Horseshoe Lake resident's request to waive groundwater study",
-      "url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxPN0F1b1FySEtFWWVMRWhUemZUU1hSYzBWZGIwcERzdGdXOFdNT19lazNmcmVDdHlfM0pFRkdvdkgtaEFCT2FMbGFaMXVaWHV1TF9seUdKLVp5SF9aSVR6cElXSlFFYjFkVEpCM3F2YUhkYTFxMXNhWG16dzQ3VXY3a0JCb0hyeHpsb0VISjZVOGZFbTNPdlpYMWZnLXNHN0dZUGVOSDlmUWxseVprSFJxOTZWb0p1X2d1bW9oR3RiamVSTFJ2QnAwQlhWMm1DV3U1T3RqWTc0MXVXazJ5am9RQ3YzSVc0TkF5NlJSLXBqWnM3dw?oc=5",
-      "canonical": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxPN0F1b1FySEtFWWVMRWhUemZUU1hSYzBWZGIwcERzdGdXOFdNT19lazNmcmVDdHlfM0pFRkdvdkgtaEFCT2FMbGFaMXVaWHV1TF9seUdKLVp5SF9aSVR6cElXSlFFYjFkVEpCM3F2YUhkYTFxMXNhWG16dzQ3VXY3a0JCb0hyeHpsb0VISjZVOGZFbTNPdlpYMWZnLXNHN0dZUGVOSDlmUWxseVprSFJxOTZWb0p1X2d1bW9oR3RiamVSTFJ2QnAwQlhWMm1DV3U1T3RqWTc0MXVXazJ5am9RQ3YzSVc0TkF5NlJSLXBqWnM3dw?oc=5",
-      "source": "itemonline.com",
-      "source_id": "gn_water_quality_research",
-      "source_site": "https://news.google.com/",
-      "category": "research",
-      "scope": "global",
-      "summary": "",
-      "author": "",
-      "image": "",
-      "published": "2026-09-22T19:30:00+00:00",
-      "published_ts": 1790105400,
-      "local": false,
-      "tags": [],
-      "score": 13.33,
-      "raw_score": 19.4,
-      "matched": {
-        "water": [
-          "groundwater"
-        ],
-        "research": [
-          "study"
-        ]
-      }
-    },
-    {
       "id": "gn_good_environment_news:6ef857f7db",
       "title": "United Recovery in the Park returns takes over Forest Park for its fourth year.",
       "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPd0tMVVpkRHJiZFdLckc3aEMydXotWGlZcG5JZmUtSFNPb253TXNKUEhxNkM2S1g3bC13Q2lhcEUzc3F2X3ZlNUNpOHdERjVfbWUyNUttQjV4RGZKenM3M192cGRHdjVuRTYyZmpHSXhHS1dsSl9oOHBfVTB4UTNGbTBya1VNWnZBcnpVNkpRQUthTGZyYXVmSVZ3a19zaDFzYmRSZVVqYzVyRDZ1ZHdZcXFhLVc1Qmtka19Ob0NNeXl0SmxIeEJ4RWVwNXVDTElmbHVmUEtVTUZIUnZteG16eWJuTlRib3M?oc=5",
       "canonical": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPd0tMVVpkRHJiZFdLckc3aEMydXotWGlZcG5JZmUtSFNPb253TXNKUEhxNkM2S1g3bC13Q2lhcEUzc3F2X3ZlNUNpOHdERjVfbWUyNUttQjV4RGZKenM3M192cGRHdjVuRTYyZmpHSXhHS1dsSl9oOHBfVTB4UTNGbTBya1VNWnZBcnpVNkpRQUthTGZyYXVmSVZ3a19zaDFzYmRSZVVqYzVyRDZ1ZHdZcXFhLVc1Qmtka19Ob0NNeXl0SmxIeEJ4RWVwNXVDTElmbHVmUEtVTUZIUnZteG16eWJuTlRib3M?oc=5",
-      "source": "KTEN",
+      "source": "kten.com",
       "source_id": "gn_good_environment_news",
       "source_site": "https://news.google.com/",
       "category": "positive",
@@ -687,11 +749,39 @@
       "published_ts": 1790473200,
       "local": false,
       "tags": [],
-      "score": 12.46,
+      "score": 12.16,
       "raw_score": 13.5,
       "matched": {
         "positive": [
           "recovery"
+        ]
+      }
+    },
+    {
+      "id": "gn_water_rebates:e6c6666860",
+      "title": "EPA awards $251M WIFIA loan for California water reuse project",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPbU9EbWVvX05RTTY0a3ByaUhzdDYzMzBWQWVDTzJqYWtjZnFPSGJFREFHSWFZbU5aLU92TWZaZGItQUc3b05wY2ZIdWV2QW9uMF83MF9vT1VJNU9hM3RfODdXc1ZTN1B4TEFsX2NGS3F4YXV4WURaYTducWF6UElDWUlJYkdGYU1MOXV3Z2hqUXBZellUR0thVklyblB0UE50bDlHa0JpWXhKN0h5eThja0FxWjE?oc=5",
+      "canonical": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPbU9EbWVvX05RTTY0a3ByaUhzdDYzMzBWQWVDTzJqYWtjZnFPSGJFREFHSWFZbU5aLU92TWZaZGItQUc3b05wY2ZIdWV2QW9uMF83MF9vT1VJNU9hM3RfODdXc1ZTN1B4TEFsX2NGS3F4YXV4WURaYTducWF6UElDWUlJYkdGYU1MOXV3Z2hqUXBZellUR0thVklyblB0UE50bDlHa0JpWXhKN0h5eThja0FxWjE?oc=5",
+      "source": "waterworld.com",
+      "source_id": "gn_water_rebates",
+      "source_site": "https://news.google.com/",
+      "category": "policy",
+      "scope": "national",
+      "summary": "",
+      "author": "",
+      "image": "",
+      "published": "2026-09-21T15:08:09+00:00",
+      "published_ts": 1790003289,
+      "local": false,
+      "tags": [],
+      "score": 12.05,
+      "raw_score": 19.5,
+      "matched": {
+        "water": [
+          "water reuse"
+        ],
+        "policy": [
+          "epa"
         ]
       }
     },
@@ -714,7 +804,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 11.92,
+      "score": 11.63,
       "raw_score": 29.2,
       "matched": {
         "water": [
@@ -749,7 +839,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 11.81,
+      "score": 11.53,
       "raw_score": 25.2,
       "matched": {
         "water": [
@@ -781,7 +871,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 11.44,
+      "score": 11.16,
       "raw_score": 17.8,
       "matched": {
         "water": [
@@ -811,7 +901,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 11.41,
+      "score": 11.13,
       "raw_score": 13.2,
       "matched": {
         "water": [
@@ -838,7 +928,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 11.12,
+      "score": 10.85,
       "raw_score": 29.2,
       "matched": {
         "water": [
@@ -869,7 +959,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 11.11,
+      "score": 10.84,
       "raw_score": 17.7,
       "matched": {
         "water": [
@@ -895,7 +985,7 @@
       "published_ts": 1790329411,
       "local": false,
       "tags": [],
-      "score": 11.11,
+      "score": 10.84,
       "raw_score": 13.5,
       "matched": {
         "positive": [
@@ -920,7 +1010,7 @@
       "published_ts": 1790286605,
       "local": false,
       "tags": [],
-      "score": 10.89,
+      "score": 10.63,
       "raw_score": 13.7,
       "matched": {
         "water": [
@@ -948,7 +1038,7 @@
       "published_ts": 1790174940,
       "local": false,
       "tags": [],
-      "score": 10.83,
+      "score": 10.57,
       "raw_score": 14.9,
       "matched": {
         "water": [
@@ -982,7 +1072,7 @@
       "published_ts": 1790165124,
       "local": false,
       "tags": [],
-      "score": 10.74,
+      "score": 10.48,
       "raw_score": 14.9,
       "matched": {
         "water": [
@@ -994,27 +1084,31 @@
       }
     },
     {
-      "id": "gn_good_environment_news:a1ad4712ab",
-      "title": "Forest Service, Unicoi Co. discuss Helene recreation recovery",
-      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNTi1RN2VjdU9VT09qb3hMWUswNTJNVVgzMUlWWjF5U1d5SHBoYVJ1S013ZE5xcGRfRXU3SXhwVkdKdzBMcjhOU2JmVG4xbEhnX0hha3pQdkx4MW10UThkQ2l4RERlalRjS3VjY2FxZFdva2ZXcjI4aFpCUEMtQWU3OTk5ODZfZHB5WktvVEw1alpKU3J5WGFDZ2g1b3g?oc=5",
-      "canonical": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNTi1RN2VjdU9VT09qb3hMWUswNTJNVVgzMUlWWjF5U1d5SHBoYVJ1S013ZE5xcGRfRXU3SXhwVkdKdzBMcjhOU2JmVG4xbEhnX0hha3pQdkx4MW10UThkQ2l4RERlalRjS3VjY2FxZFdva2ZXcjI4aFpCUEMtQWU3OTk5ODZfZHB5WktvVEw1alpKU3J5WGFDZ2g1b3g?oc=5",
-      "source": "WJHL",
+      "id": "gn_good_environment_news:5bca24f7e7",
+      "title": "Kenya launches new Mountain Bongo recovery plan as IUCN SSC meets in Africa for the first time",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPVUU1OS1QSWk5OWZCMmpMdEdvM1RwQzM1WnFxRTlyNXVHQy1hT2ljSnp2eUhtSkFXUDlDMUJrWFJzb3owTm9fcFRRNWJjb2c0WHc2eF9yck9uY1hCdnU3dUtKa3RmZDlQNFI1RThtcWY2eF9nODRUcFJqWDlLd1pzdnpLT2lGOHktZW8tWHlUM2hCR3hzN1RqUGZBR2hkR2FQOFpwaUY1N0RIUVBMWkE?oc=5",
+      "canonical": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPVUU1OS1QSWk5OWZCMmpMdEdvM1RwQzM1WnFxRTlyNXVHQy1hT2ljSnp2eUhtSkFXUDlDMUJrWFJzb3owTm9fcFRRNWJjb2c0WHc2eF9yck9uY1hCdnU3dUtKa3RmZDlQNFI1RThtcWY2eF9nODRUcFJqWDlLd1pzdnpLT2lGOHktZW8tWHlUM2hCR3hzN1RqUGZBR2hkR2FQOFpwaUY1N0RIUVBMWkE?oc=5",
+      "source": "International Union for Conservation of Nature",
       "source_id": "gn_good_environment_news",
       "source_site": "https://news.google.com/",
       "category": "positive",
       "scope": "global",
-      "summary": "",
+      "summary": "Kenya launches new Mountain Bongo recovery plan as IUCN SSC meets in Africa for the first time International Union for Conservation of Nature",
       "author": "",
       "image": "",
-      "published": "2026-09-24T02:35:46+00:00",
-      "published_ts": 1790217346,
+      "published": "2026-09-28T13:08:16+00:00",
+      "published_ts": 1790600896,
       "local": false,
       "tags": [],
-      "score": 10.15,
-      "raw_score": 13.5,
+      "score": 10.48,
+      "raw_score": 10.5,
       "matched": {
         "positive": [
+          "launches",
           "recovery"
+        ],
+        "non_us": [
+          "kenya"
         ]
       }
     },
@@ -1037,36 +1131,11 @@
       "tags": [
         "hill-country"
       ],
-      "score": 10.02,
+      "score": 9.78,
       "raw_score": 13.6,
       "matched": {
         "water": [
           "drought"
-        ]
-      }
-    },
-    {
-      "id": "gn_good_environment_news:d98e2a457d",
-      "title": "Bay to bayou: URI biologist to lead $4 million NSF EPSCoR grant to advance wetland restoration in Rhode Island and Louisiana",
-      "url": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxNWmVWYmtOajhVU1FoZFFmX1V5S20yQzRtaVMtaXRCbU93dDVLdFlyYzJyeXctWmxEdlJsWHE0aVBGb2EzZ1RqdTk2T2FMNkdKR0lzYU5yWmNBa2poV013dUtKaFR6b2dzM2VOVlR3X0JQMmZUODh1WlphZnc4OTd1eFF2UUFmRzZnTGRnRTJUVTZudDk5Si05ZVBKRlVtNjBUQ2VxUG1meWZIVzN1NUhBWDJGZXlzb3FEcTBVMFM5Tl82c2RQZlJfcFVxX1I0OG1ERXZCdWJRQVlOMlRKWjl1ZzRULWhDalQ0NWJPckVuWjloclNQWi0xRHF3?oc=5",
-      "canonical": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxNWmVWYmtOajhVU1FoZFFmX1V5S20yQzRtaVMtaXRCbU93dDVLdFlyYzJyeXctWmxEdlJsWHE0aVBGb2EzZ1RqdTk2T2FMNkdKR0lzYU5yWmNBa2poV013dUtKaFR6b2dzM2VOVlR3X0JQMmZUODh1WlphZnc4OTd1eFF2UUFmRzZnTGRnRTJUVTZudDk5Si05ZVBKRlVtNjBUQ2VxUG1meWZIVzN1NUhBWDJGZXlzb3FEcTBVMFM5Tl82c2RQZlJfcFVxX1I0OG1ERXZCdWJRQVlOMlRKWjl1ZzRULWhDalQ0NWJPckVuWjloclNQWi0xRHF3?oc=5",
-      "source": "uri.edu",
-      "source_id": "gn_good_environment_news",
-      "source_site": "https://news.google.com/",
-      "category": "positive",
-      "scope": "global",
-      "summary": "Bay to bayou: URI biologist to lead $4 million NSF EPSCoR grant to advance wetland restoration in Rhode Island and Louisiana uri.edu",
-      "author": "",
-      "image": "",
-      "published": "2026-09-23T07:00:00+00:00",
-      "published_ts": 1790146800,
-      "local": false,
-      "tags": [],
-      "score": 9.59,
-      "raw_score": 13.5,
-      "matched": {
-        "positive": [
-          "restoration"
         ]
       }
     },
@@ -1087,7 +1156,7 @@
       "published_ts": 1790140169,
       "local": false,
       "tags": [],
-      "score": 9.54,
+      "score": 9.31,
       "raw_score": 13.5,
       "matched": {
         "water": [
@@ -1117,7 +1186,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 8.54,
+      "score": 8.33,
       "raw_score": 17.6,
       "matched": {
         "water": [
@@ -1133,7 +1202,7 @@
       "title": "Large parts of Texas upgraded to extreme drought. Here's where it's worst.",
       "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQR3Q1S0dMeVhFU3B5ZzJMMHcyZVRzbldiQTZEc2d6QVV4UzUza0g1VXl3Qmp0ZlozaHZQUTVFQUctTTBVYjZFV3hhSkZodDBmRkdOWFY4dTNFdnRKNllwcVgtQTU4anVFWFVHa0wyWWUzSUpVUENxRHd0VjkzOUQ4X1NJSm5RM3hZX1VrWGhibHBzaWw3SG5JcF9PWlJPY2M?oc=5",
       "canonical": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQR3Q1S0dMeVhFU3B5ZzJMMHcyZVRzbldiQTZEc2d6QVV4UzUza0g1VXl3Qmp0ZlozaHZQUTVFQUctTTBVYjZFV3hhSkZodDBmRkdOWFY4dTNFdnRKNllwcVgtQTU4anVFWFVHa0wyWWUzSUpVUENxRHd0VjkzOUQ4X1NJSm5RM3hZX1VrWGhibHBzaWw3SG5JcF9PWlJPY2M?oc=5",
-      "source": "yahoo.com",
+      "source": "Yahoo",
       "source_id": "gn_ctx_drought",
       "source_site": "https://news.google.com/",
       "category": "local",
@@ -1147,7 +1216,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 8.25,
+      "score": 8.05,
       "raw_score": 17.6,
       "matched": {
         "water": [
@@ -1178,7 +1247,7 @@
         "hill-country",
         "research"
       ],
-      "score": 8.21,
+      "score": 8.02,
       "raw_score": 32.7,
       "matched": {
         "water": [
@@ -1215,7 +1284,7 @@
       "published_ts": 1790284801,
       "local": false,
       "tags": [],
-      "score": 7.3,
+      "score": 7.13,
       "raw_score": 9.2,
       "matched": {
         "water": [
@@ -1246,7 +1315,7 @@
       "published_ts": 1789558457,
       "local": false,
       "tags": [],
-      "score": 6.65,
+      "score": 6.49,
       "raw_score": 15.0,
       "matched": {
         "water": [
@@ -1277,7 +1346,7 @@
         "hill-country",
         "research"
       ],
-      "score": 6.08,
+      "score": 5.94,
       "raw_score": 36.7,
       "matched": {
         "water": [
@@ -1315,7 +1384,7 @@
       "published_ts": 1789569890,
       "local": false,
       "tags": [],
-      "score": 6.04,
+      "score": 5.89,
       "raw_score": 13.5,
       "matched": {
         "water": [
@@ -1323,6 +1392,36 @@
         ],
         "research": [
           "scientists"
+        ]
+      }
+    },
+    {
+      "id": "yale_e360:66795ebb4e",
+      "title": "Alaska's ‘Rusting’ Waters More Acidic Than Mining Wastewater",
+      "url": "https://e360.yale.edu/digest/alaska-rusting-rivers",
+      "canonical": "https://e360.yale.edu/digest/alaska-rusting-rivers",
+      "source": "Yale Environment 360",
+      "source_id": "yale_e360",
+      "source_site": "https://e360.yale.edu/",
+      "category": "positive",
+      "scope": "global",
+      "summary": "As the Arctic warms and tundra thaws, minerals long trapped in frozen soil are leaching into rivers, turning them orange and acidic. A study from northern Alaska found “rusting” waters to be more metallic and acidic than drainage from metal mines. Read more on E360 →",
+      "author": "",
+      "image": "",
+      "published": "2026-09-25T08:20:00-04:00",
+      "published_ts": 1790338800,
+      "local": false,
+      "tags": [
+        "research"
+      ],
+      "score": 5.82,
+      "raw_score": 7.2,
+      "matched": {
+        "water": [
+          "wastewater"
+        ],
+        "research": [
+          "study"
         ]
       }
     },
@@ -1343,7 +1442,7 @@
       "published_ts": 1790152200,
       "local": false,
       "tags": [],
-      "score": 5.07,
+      "score": 4.94,
       "raw_score": 7.1,
       "matched": {
         "positive": [
@@ -1370,7 +1469,7 @@
       "tags": [
         "research"
       ],
-      "score": 4.92,
+      "score": 4.8,
       "raw_score": 7.3,
       "matched": {
         "water": [
@@ -1402,7 +1501,7 @@
         "hill-country",
         "policy"
       ],
-      "score": 4.07,
+      "score": 3.97,
       "raw_score": 20.7,
       "matched": {
         "water": [
@@ -1422,7 +1521,7 @@
       "title": "Drought, high temps drive wildfires across state, prescribed burns mitigate effects at Fort Hood",
       "url": "https://news.google.com/rss/articles/CBMijAJBVV95cUxOWkJkdjZ5TmRZSkItREM5Xzd1aFkxQXZsMXNyYnp0T0x5M3FJd1VNVnNiWERUbTZ4eVVxQmY3VU5HNlNaU3VtVEp5QTBpbEtsRWhFY2tXaVlmVmdTTk9oQmxQempFMjRuUVVLcnhBQ1dfek1yZmJMMFRYMWMxZjBQNkU2dGFaUWtWdlVuVkRzODlnU0R4bmFuM01vY0xxWUd4VVUzd3FfUVpPVXZVY09UTGN6OW8wVmJVODZZdjBRV3NlQ3FTd2J5anZaQzUteGpEV1BnbVdjZUtDckplSkRpb2dlTHlzWVhzS0VMenc5VXFXNW1zVkRCOFZlZ21vcEV0WS1PUExvd2lHa2FL?oc=5",
       "canonical": "https://news.google.com/rss/articles/CBMijAJBVV95cUxOWkJkdjZ5TmRZSkItREM5Xzd1aFkxQXZsMXNyYnp0T0x5M3FJd1VNVnNiWERUbTZ4eVVxQmY3VU5HNlNaU3VtVEp5QTBpbEtsRWhFY2tXaVlmVmdTTk9oQmxQempFMjRuUVVLcnhBQ1dfek1yZmJMMFRYMWMxZjBQNkU2dGFaUWtWdlVuVkRzODlnU0R4bmFuM01vY0xxWUd4VVUzd3FfUVpPVXZVY09UTGN6OW8wVmJVODZZdjBRV3NlQ3FTd2J5anZaQzUteGpEV1BnbVdjZUtDckplSkRpb2dlTHlzWVhzS0VMenc5VXFXNW1zVkRCOFZlZ21vcEV0WS1PUExvd2lHa2FL?oc=5",
-      "source": "forthoodsentinel.com",
+      "source": "Fort Hood Sentinel",
       "source_id": "gn_ctx_drought",
       "source_site": "https://news.google.com/",
       "category": "local",
@@ -1436,7 +1535,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 3.92,
+      "score": 3.83,
       "raw_score": 13.6,
       "matched": {
         "water": [
@@ -1445,29 +1544,27 @@
       }
     },
     {
-      "id": "gn_hill_country_water:353b4fd180",
-      "title": "The US Cities That Run Entirely On Groundwater",
-      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNaVhNQUxibWlqSXVCc1FyaFVTcWxUSmhkWUpHZk44VG9VWC1qRm16RVk3SzRhQ3IxMkhCRUhXR2RPVVBLN0JZQTdRYlhlNF9XQWVPS2FXRXp6M2gzREsybDYzb0xMLXlBcFZudnZuZXZrZWpIbkdpak9TdTgwUlBEeXNZRFRMMS16bjFKUk5B?oc=5",
-      "canonical": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNaVhNQUxibWlqSXVCc1FyaFVTcWxUSmhkWUpHZk44VG9VWC1qRm16RVk3SzRhQ3IxMkhCRUhXR2RPVVBLN0JZQTdRYlhlNF9XQWVPS2FXRXp6M2gzREsybDYzb0xMLXlBcFZudnZuZXZrZWpIbkdpak9TdTgwUlBEeXNZRFRMMS16bjFKUk5B?oc=5",
-      "source": "WorldAtlas",
-      "source_id": "gn_hill_country_water",
-      "source_site": "https://news.google.com/",
-      "category": "local",
-      "scope": "local",
-      "summary": "",
-      "author": "",
-      "image": "",
-      "published": "2026-09-08T07:00:00+00:00",
-      "published_ts": 1788850800,
-      "local": true,
-      "tags": [
-        "hill-country"
-      ],
-      "score": 3.47,
-      "raw_score": 13.8,
+      "id": "reasons_to_be_cheerful:d177d83b1d",
+      "title": "Forget Recycling. What If We Could Compost or Reuse Everything?",
+      "url": "https://reasonstobecheerful.world/forget-recycling-what-if-we-could-compost-or-reuse-everything/",
+      "canonical": "https://reasonstobecheerful.world/forget-recycling-what-if-we-could-compost-or-reuse-everything",
+      "source": "Reasons to be Cheerful",
+      "source_id": "reasons_to_be_cheerful",
+      "source_site": "https://reasonstobecheerful.world/",
+      "category": "positive",
+      "scope": "global",
+      "summary": "Nora Griefahn’s office showcases her work better than words: The interior walls at the C2C LAB on a busy street in Berlin, Germany, are alive with lush, air-purifying plants; lamp shades have been grown from mycelium; in the kitchen, visitors can choose between tea cultivated via regenerative agriculture and beer... The post Forget…",
+      "author": "Michaela Haas",
+      "image": "https://reasonstobecheerful.world/wp-content/uploads/2026/09/33515_3-scaled.jpg",
+      "published": "2026-09-28T08:00:46+00:00",
+      "published_ts": 1790582446,
+      "local": false,
+      "tags": [],
+      "score": 3.44,
+      "raw_score": 3.5,
       "matched": {
-        "water": [
-          "groundwater"
+        "positive": [
+          "regenerat"
         ]
       }
     },
@@ -1490,7 +1587,7 @@
       "tags": [
         "research"
       ],
-      "score": 3.47,
+      "score": 3.39,
       "raw_score": 7.3,
       "matched": {
         "water": [
@@ -1498,6 +1595,33 @@
         ],
         "research": [
           "scientists"
+        ]
+      }
+    },
+    {
+      "id": "gn_hill_country_water:353b4fd180",
+      "title": "The US Cities That Run Entirely On Groundwater",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNaVhNQUxibWlqSXVCc1FyaFVTcWxUSmhkWUpHZk44VG9VWC1qRm16RVk3SzRhQ3IxMkhCRUhXR2RPVVBLN0JZQTdRYlhlNF9XQWVPS2FXRXp6M2gzREsybDYzb0xMLXlBcFZudnZuZXZrZWpIbkdpak9TdTgwUlBEeXNZRFRMMS16bjFKUk5B?oc=5",
+      "canonical": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNaVhNQUxibWlqSXVCc1FyaFVTcWxUSmhkWUpHZk44VG9VWC1qRm16RVk3SzRhQ3IxMkhCRUhXR2RPVVBLN0JZQTdRYlhlNF9XQWVPS2FXRXp6M2gzREsybDYzb0xMLXlBcFZudnZuZXZrZWpIbkdpak9TdTgwUlBEeXNZRFRMMS16bjFKUk5B?oc=5",
+      "source": "WorldAtlas",
+      "source_id": "gn_hill_country_water",
+      "source_site": "https://news.google.com/",
+      "category": "local",
+      "scope": "local",
+      "summary": "",
+      "author": "",
+      "image": "",
+      "published": "2026-09-08T07:00:00+00:00",
+      "published_ts": 1788850800,
+      "local": true,
+      "tags": [
+        "hill-country"
+      ],
+      "score": 3.38,
+      "raw_score": 13.8,
+      "matched": {
+        "water": [
+          "groundwater"
         ]
       }
     },
@@ -1518,7 +1642,7 @@
       "published_ts": 1788418800,
       "local": false,
       "tags": [],
-      "score": 3.43,
+      "score": 3.35,
       "raw_score": 19.3,
       "matched": {
         "water": [
@@ -1526,6 +1650,36 @@
         ],
         "policy": [
           "epa"
+        ]
+      }
+    },
+    {
+      "id": "grist:6811f8b586",
+      "title": "Illinois passed the nation’s first climate migration law. The effort has languished since.",
+      "url": "https://grist.org/migration/illinois-passed-the-nations-first-climate-migration-law-the-effort-has-languished-since/",
+      "canonical": "https://grist.org/migration/illinois-passed-the-nations-first-climate-migration-law-the-effort-has-languished-since",
+      "source": "Grist",
+      "source_id": "grist",
+      "source_site": "https://grist.org/",
+      "category": "positive",
+      "scope": "national",
+      "summary": "More than a year after the law was signed, the state has made little progress and appears poised to miss a December deadline for a required report.",
+      "author": "Juanpablo Ramirez-Franco",
+      "image": "https://grist.org/wp-content/uploads/2026/09/GettyImages-1345139225-1.jpg",
+      "published": "2026-09-28T08:30:00+00:00",
+      "published_ts": 1790584200,
+      "local": false,
+      "tags": [
+        "policy"
+      ],
+      "score": 3.05,
+      "raw_score": 3.1,
+      "matched": {
+        "policy": [
+          "law"
+        ],
+        "positive": [
+          "progress"
         ]
       }
     },
@@ -1548,7 +1702,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 3.04,
+      "score": 2.96,
       "raw_score": 25.9,
       "matched": {
         "water": [
@@ -1576,7 +1730,7 @@
       "published_ts": 1788246000,
       "local": false,
       "tags": [],
-      "score": 2.75,
+      "score": 2.69,
       "raw_score": 17.8,
       "matched": {
         "water": [
@@ -1604,7 +1758,7 @@
       "published_ts": 1788159600,
       "local": false,
       "tags": [],
-      "score": 2.57,
+      "score": 2.51,
       "raw_score": 17.8,
       "matched": {
         "water": [
@@ -1634,7 +1788,7 @@
       "tags": [
         "research"
       ],
-      "score": 2.38,
+      "score": 2.32,
       "raw_score": 3.3,
       "matched": {
         "research": [
@@ -1662,7 +1816,7 @@
       "published_ts": 1788418800,
       "local": false,
       "tags": [],
-      "score": 2.36,
+      "score": 2.31,
       "raw_score": 13.3,
       "matched": {
         "water": [
@@ -1689,7 +1843,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 2.29,
+      "score": 2.24,
       "raw_score": 25.8,
       "matched": {
         "water": [
@@ -1697,36 +1851,6 @@
         ],
         "local": [
           "hill country"
-        ]
-      }
-    },
-    {
-      "id": "sciencedaily_water:c59a135c42",
-      "title": "Scientists find a huge hidden ice reservoir beneath Utah’s mountains",
-      "url": "https://www.sciencedaily.com/releases/2026/08/260827010459.htm",
-      "canonical": "https://www.sciencedaily.com/releases/2026/08/260827010459.htm",
-      "source": "ScienceDaily",
-      "source_id": "sciencedaily_water",
-      "source_site": "https://www.sciencedaily.com/",
-      "category": "research",
-      "scope": "global",
-      "summary": "Beneath the rocky slopes of Mount Timpanogos lies far more ice than anyone walking across the surface might suspect. Researchers used gravity measurements to map the buried glacier in 3D and found it is about 83% ice, with enough frozen water to fill 600 Olympic swimming pools. Their findings suggest rock glaciers form as falling…",
-      "author": "",
-      "image": "",
-      "published": "2026-08-27T23:48:29-04:00",
-      "published_ts": 1787888909,
-      "local": false,
-      "tags": [],
-      "score": 2.21,
-      "raw_score": 19.0,
-      "matched": {
-        "water": [
-          "reservoir"
-        ],
-        "research": [
-          "findings",
-          "researchers",
-          "scientists"
         ]
       }
     },
@@ -1747,11 +1871,41 @@
       "published_ts": 1790153100,
       "local": false,
       "tags": [],
-      "score": 2.21,
+      "score": 2.16,
       "raw_score": 3.1,
       "matched": {
         "water": [
           "drought"
+        ]
+      }
+    },
+    {
+      "id": "sciencedaily_water:c59a135c42",
+      "title": "Scientists find a huge hidden ice reservoir beneath Utah’s mountains",
+      "url": "https://www.sciencedaily.com/releases/2026/08/260827010459.htm",
+      "canonical": "https://www.sciencedaily.com/releases/2026/08/260827010459.htm",
+      "source": "ScienceDaily",
+      "source_id": "sciencedaily_water",
+      "source_site": "https://www.sciencedaily.com/",
+      "category": "research",
+      "scope": "global",
+      "summary": "Beneath the rocky slopes of Mount Timpanogos lies far more ice than anyone walking across the surface might suspect. Researchers used gravity measurements to map the buried glacier in 3D and found it is about 83% ice, with enough frozen water to fill 600 Olympic swimming pools. Their findings suggest rock glaciers form as falling…",
+      "author": "",
+      "image": "",
+      "published": "2026-08-27T23:48:29-04:00",
+      "published_ts": 1787888909,
+      "local": false,
+      "tags": [],
+      "score": 2.15,
+      "raw_score": 19.0,
+      "matched": {
+        "water": [
+          "reservoir"
+        ],
+        "research": [
+          "findings",
+          "researchers",
+          "scientists"
         ]
       }
     },
@@ -1772,7 +1926,7 @@
       "published_ts": 1787839200,
       "local": false,
       "tags": [],
-      "score": 1.94,
+      "score": 1.89,
       "raw_score": 17.4,
       "matched": {
         "water": [
@@ -1787,11 +1941,11 @@
       }
     },
     {
-      "id": "gn_aquifers:a55b834976",
+      "id": "gn_aquifers:456bf4676c",
       "title": "'They're coming after our water': Texas counties push for groundwater protections amid commercial use",
-      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOUFpFZVNoUzl5TDUxOFZqRWZYWjJ5R05iaHZXQkxwTFNLeWVHSl9UU1hveFVoeFhXcWV1UUxqYWppTnBuZFFVWnRjQ3d6OHpBQ19peFE2ZTR5MUZXX3piTEU1VHkxWEpmRzdiQTNPSzVoRjJ3MFBWNDU5OEZsQTBka2VCbi0ySDY2VV9SaXQwNmYyMXc?oc=5",
-      "canonical": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOUFpFZVNoUzl5TDUxOFZqRWZYWjJ5R05iaHZXQkxwTFNLeWVHSl9UU1hveFVoeFhXcWV1UUxqYWppTnBuZFFVWnRjQ3d6OHpBQ19peFE2ZTR5MUZXX3piTEU1VHkxWEpmRzdiQTNPSzVoRjJ3MFBWNDU5OEZsQTBka2VCbi0ySDY2VV9SaXQwNmYyMXc?oc=5",
-      "source": "The Cool Down",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOV2ppaFdqX3hEeUpXQ1Z3U2l2eVBXdm1WWW5LMS1SYTl6dE5zUTdTMS1RcU9qb3h6LWZJZlFZbEpLM1FaTGc5UVk1cTdDdzNrQWNoTklYM2k0WTFBNnZJUDdxNWIxV1NxWUxhMDRITjZKTjU1UXMwM3pYLWNBbE5saU9Id0dSNTBNUTZyZFM5ejZ4dw?oc=5",
+      "canonical": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOV2ppaFdqX3hEeUpXQ1Z3U2l2eVBXdm1WWW5LMS1SYTl6dE5zUTdTMS1RcU9qb3h6LWZJZlFZbEpLM1FaTGc5UVk1cTdDdzNrQWNoTklYM2k0WTFBNnZJUDdxNWIxV1NxWUxhMDRITjZKTjU1UXMwM3pYLWNBbE5saU9Id0dSNTBNUTZyZFM5ejZ4dw?oc=5",
+      "source": "Yahoo",
       "source_id": "gn_aquifers",
       "source_site": "https://news.google.com/",
       "category": "local",
@@ -1805,7 +1959,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 1.81,
+      "score": 1.76,
       "raw_score": 17.7,
       "matched": {
         "water": [
@@ -1833,7 +1987,7 @@
       "published_ts": 1789476420,
       "local": false,
       "tags": [],
-      "score": 1.33,
+      "score": 1.3,
       "raw_score": 3.2,
       "matched": {
         "positive": [
@@ -1861,7 +2015,7 @@
         "hill-country",
         "policy"
       ],
-      "score": 1.3,
+      "score": 1.27,
       "raw_score": 20.7,
       "matched": {
         "water": [
@@ -1892,7 +2046,7 @@
       "published_ts": 1788426360,
       "local": false,
       "tags": [],
-      "score": 1.29,
+      "score": 1.26,
       "raw_score": 7.2,
       "matched": {
         "positive": [
@@ -1917,7 +2071,7 @@
       "published_ts": 1787217661,
       "local": false,
       "tags": [],
-      "score": 1.02,
+      "score": 0.99,
       "raw_score": 15.0,
       "matched": {
         "water": [
@@ -1945,7 +2099,7 @@
       "published_ts": 1788872436,
       "local": false,
       "tags": [],
-      "score": 0.84,
+      "score": 0.82,
       "raw_score": 3.3,
       "matched": {
         "positive": [
@@ -1970,7 +2124,7 @@
       "published_ts": 1787227620,
       "local": false,
       "tags": [],
-      "score": 0.51,
+      "score": 0.49,
       "raw_score": 7.4,
       "matched": {
         "water": [
@@ -1997,7 +2151,7 @@
       "tags": [
         "research"
       ],
-      "score": 0.46,
+      "score": 0.44,
       "raw_score": 7.2,
       "matched": {
         "research": [
@@ -2005,37 +2159,6 @@
         ],
         "positive": [
           "restored"
-        ]
-      }
-    },
-    {
-      "id": "anthropocene:fd6c099e88",
-      "title": "Scientists make a seaweed coating that beats the fridge for cutting food waste",
-      "url": "https://www.anthropocenemagazine.org/2026/08/scientists-make-a-seaweed-coating-that-beats-the-fridge-for-cutting-food-waste/?utm_source=rss&utm_medium=rss&utm_campaign=scientists-make-a-seaweed-coating-that-beats-the-fridge-for-cutting-food-waste",
-      "canonical": "https://www.anthropocenemagazine.org/2026/08/scientists-make-a-seaweed-coating-that-beats-the-fridge-for-cutting-food-waste",
-      "source": "Anthropocene Magazine",
-      "source_id": "anthropocene",
-      "source_site": "https://www.anthropocenemagazine.org/",
-      "category": "positive",
-      "scope": "global",
-      "summary": "Canadian researchers found a cheaper, lower-carbon way to keep strawberries fresh, cutting into a $58 billion waste problem.",
-      "author": "Emma Bryce",
-      "image": "https://www.anthropocenemagazine.org/wp-content/uploads/2026/08/unnamed-1.jpg",
-      "published": "2026-08-14T12:00:00+00:00",
-      "published_ts": 1786708800,
-      "local": false,
-      "tags": [
-        "research"
-      ],
-      "score": 0.15,
-      "raw_score": 3.3,
-      "matched": {
-        "research": [
-          "researchers",
-          "scientists"
-        ],
-        "positive": [
-          "cheaper"
         ]
       }
     }
@@ -2050,9 +2173,9 @@
       "scope": "local",
       "status": "ok",
       "http_status": 200,
-      "item_count": 69,
+      "item_count": 70,
       "error": null,
-      "ms": 485
+      "ms": 616
     },
     {
       "id": "gn_hays_blanco",
@@ -2063,9 +2186,9 @@
       "scope": "local",
       "status": "ok",
       "http_status": 200,
-      "item_count": 71,
+      "item_count": 72,
       "error": null,
-      "ms": 547
+      "ms": 611
     },
     {
       "id": "gn_aquifers",
@@ -2078,7 +2201,7 @@
       "http_status": 200,
       "item_count": 28,
       "error": null,
-      "ms": 443
+      "ms": 503
     },
     {
       "id": "gn_ctx_drought",
@@ -2089,9 +2212,9 @@
       "scope": "local",
       "status": "ok",
       "http_status": 200,
-      "item_count": 61,
+      "item_count": 62,
       "error": null,
-      "ms": 541
+      "ms": 638
     },
     {
       "id": "gn_texas_tribune_water",
@@ -2102,9 +2225,9 @@
       "scope": "state",
       "status": "ok",
       "http_status": 200,
-      "item_count": 85,
+      "item_count": 82,
       "error": null,
-      "ms": 586
+      "ms": 523
     },
     {
       "id": "austin_monitor",
@@ -2117,7 +2240,7 @@
       "http_status": 200,
       "item_count": 12,
       "error": null,
-      "ms": 321
+      "ms": 519
     },
     {
       "id": "san_antonio_report",
@@ -2130,7 +2253,7 @@
       "http_status": 200,
       "item_count": 10,
       "error": null,
-      "ms": 378
+      "ms": 239
     },
     {
       "id": "gn_community_impact",
@@ -2143,7 +2266,7 @@
       "http_status": 200,
       "item_count": 100,
       "error": null,
-      "ms": 726
+      "ms": 686
     },
     {
       "id": "gn_rainwater_research",
@@ -2154,9 +2277,9 @@
       "scope": "global",
       "status": "ok",
       "http_status": 200,
-      "item_count": 58,
+      "item_count": 55,
       "error": null,
-      "ms": 580
+      "ms": 496
     },
     {
       "id": "gn_water_quality_research",
@@ -2169,7 +2292,7 @@
       "http_status": 200,
       "item_count": 100,
       "error": null,
-      "ms": 542
+      "ms": 623
     },
     {
       "id": "sciencedaily_water",
@@ -2182,7 +2305,7 @@
       "http_status": 200,
       "item_count": 60,
       "error": null,
-      "ms": 295
+      "ms": 239
     },
     {
       "id": "sciencedaily_drought",
@@ -2195,7 +2318,7 @@
       "http_status": 200,
       "item_count": 60,
       "error": null,
-      "ms": 238
+      "ms": 362
     },
     {
       "id": "phys_org_environment",
@@ -2208,7 +2331,7 @@
       "http_status": 200,
       "item_count": 30,
       "error": null,
-      "ms": 181
+      "ms": 337
     },
     {
       "id": "gn_rainwater_policy",
@@ -2219,9 +2342,9 @@
       "scope": "national",
       "status": "ok",
       "http_status": 200,
-      "item_count": 50,
+      "item_count": 52,
       "error": null,
-      "ms": 523
+      "ms": 624
     },
     {
       "id": "gn_texas_water_policy",
@@ -2232,9 +2355,9 @@
       "scope": "state",
       "status": "ok",
       "http_status": 200,
-      "item_count": 59,
+      "item_count": 60,
       "error": null,
-      "ms": 480
+      "ms": 643
     },
     {
       "id": "gn_water_rebates",
@@ -2245,9 +2368,9 @@
       "scope": "national",
       "status": "ok",
       "http_status": 200,
-      "item_count": 10,
+      "item_count": 12,
       "error": null,
-      "ms": 375
+      "ms": 400
     },
     {
       "id": "gn_epa_water",
@@ -2258,9 +2381,9 @@
       "scope": "national",
       "status": "ok",
       "http_status": 200,
-      "item_count": 32,
+      "item_count": 33,
       "error": null,
-      "ms": 441
+      "ms": 475
     },
     {
       "id": "circle_of_blue",
@@ -2273,7 +2396,7 @@
       "http_status": 200,
       "item_count": 12,
       "error": null,
-      "ms": 391
+      "ms": 156
     },
     {
       "id": "gn_good_environment_news",
@@ -2286,7 +2409,7 @@
       "http_status": 200,
       "item_count": 100,
       "error": null,
-      "ms": 774
+      "ms": 712
     },
     {
       "id": "reasons_to_be_cheerful",
@@ -2299,7 +2422,7 @@
       "http_status": 200,
       "item_count": 10,
       "error": null,
-      "ms": 174
+      "ms": 142
     },
     {
       "id": "anthropocene",
@@ -2312,7 +2435,7 @@
       "http_status": 200,
       "item_count": 30,
       "error": null,
-      "ms": 277
+      "ms": 10138
     },
     {
       "id": "yale_e360",
@@ -2325,7 +2448,7 @@
       "http_status": 200,
       "item_count": 100,
       "error": null,
-      "ms": 747
+      "ms": 312
     },
     {
       "id": "grist",
@@ -2338,22 +2461,22 @@
       "http_status": 200,
       "item_count": 20,
       "error": null,
-      "ms": 339
+      "ms": 179
     }
   ],
   "stats": {
     "feeds_total": 23,
     "feeds_ok": 23,
     "feeds_failed": 0,
-    "entries_seen": 1167,
-    "candidates": 167,
-    "after_dedupe": 149,
-    "published": 68,
+    "entries_seen": 1170,
+    "candidates": 171,
+    "after_dedupe": 154,
+    "published": 72,
     "rejected": {
       "score": 38,
-      "stale": 255,
+      "stale": 256,
       "blocked": 22,
-      "off_topic": 685
+      "off_topic": 683
     }
   }
 }
