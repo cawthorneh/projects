@@ -1,10 +1,10 @@
 {
-  "generated": "2026-09-29T20:08:19.549Z",
+  "generated": "2026-09-30T10:39:29.399Z",
   "source": "https://hydromet.lcra.org/",
   "window": "48h = today so far plus the whole of the previous calendar day",
   "columns": {
     "today": "today",
-    "yesterday": "09/28/2026",
+    "yesterday": "09/29/2026",
     "h24": "24 hour",
     "h1": "1 hour",
     "midnight": "since midnight"
@@ -14,12 +14,12 @@
       "id": "dripping_springs",
       "label": "Dripping Springs",
       "county": "Hays Co.",
-      "total48": 0,
-      "today": 0,
+      "total48": 0.12,
+      "today": 0.12,
       "yesterday": 0,
-      "h24": 0,
+      "h24": 0.12,
       "h1": 0,
-      "midnight": 0,
+      "midnight": 0.12,
       "gauges": [
         {
           "name": "Dripping Springs 8 W",
@@ -31,7 +31,7 @@
         },
         {
           "name": "Dripping Springs 5 SSW",
-          "today": 0
+          "today": 0.37
         }
       ],
       "matched": 3
@@ -40,12 +40,12 @@
       "id": "austin",
       "label": "Austin",
       "county": "Travis Co.",
-      "total48": 0,
-      "today": 0,
+      "total48": 0.03,
+      "today": 0.03,
       "yesterday": 0,
-      "h24": 0,
-      "h1": 0,
-      "midnight": 0,
+      "h24": 0.03,
+      "h1": 0.02,
+      "midnight": 0.03,
       "gauges": [
         {
           "name": "Lake Austin at Quinlan Park",
@@ -69,15 +69,15 @@
         },
         {
           "name": "Colorado River at Austin",
-          "today": 0
+          "today": 0.1
         },
         {
           "name": "Walnut Creek at Webberville Road, Austin",
-          "today": 0
+          "today": 0.01
         },
         {
           "name": "Onion Creek at Hwy 183, Austin",
-          "today": 0
+          "today": 0.09
         }
       ],
       "matched": 8
@@ -86,12 +86,12 @@
       "id": "fredericksburg",
       "label": "Fredericksburg",
       "county": "Gillespie Co.",
-      "total48": 0,
-      "today": 0,
+      "total48": 0.01,
+      "today": 0.01,
       "yesterday": 0,
-      "h24": 0,
-      "h1": 0,
-      "midnight": 0,
+      "h24": 0.01,
+      "h1": 0.01,
+      "midnight": 0.01,
       "gauges": [
         {
           "name": "Fredericksburg 12 NW",
@@ -99,11 +99,11 @@
         },
         {
           "name": "Fredericksburg 10 NNE",
-          "today": 0
+          "today": 0.04
         },
         {
           "name": "Fredericksburg 10 WSW",
-          "today": 0
+          "today": 0.02
         },
         {
           "name": "Fredericksburg 9 SW",
@@ -111,7 +111,7 @@
         },
         {
           "name": "Pedernales River near Fredericksburg",
-          "today": 0
+          "today": 0.03
         },
         {
           "name": "Fredericksburg 5 N",
@@ -149,7 +149,7 @@
         },
         {
           "name": "Johnson City 5 SSW",
-          "today": 0
+          "today": 0.02
         },
         {
           "name": "Pedernales River near Johnson City",
@@ -174,9 +174,9 @@
       "id": "blanco",
       "label": "Blanco",
       "county": "Blanco Co.",
-      "total48": 0.01,
+      "total48": 0,
       "today": 0,
-      "yesterday": 0.01,
+      "yesterday": 0,
       "h24": 0,
       "h1": 0,
       "midnight": 0,
@@ -200,12 +200,12 @@
       "Basin",
       "Today",
       "Last24",
+      "09/29/2026",
       "09/28/2026",
       "09/27/2026",
       "09/26/2026",
-      "09/25/2026",
-      "Since 09/25/2026",
-      "Five Day Rain (in) Report Date: 2026-09-29 15:01"
+      "Since 09/26/2026",
+      "Five Day Rain (in) Report Date: 2026-09-30 05:31"
     ],
     "intradayHeaders": [
       "Site",
@@ -216,15 +216,15 @@
       "6 Hour",
       "24 Hour",
       "Since Midnight",
-      "Rainfall (in) Report Date: 2026-09-29 15:01"
+      "Rainfall (in) Report Date: 2026-09-30 05:31"
     ],
     "fiveDayRows": 246,
-    "intradayRows": 246,
+    "intradayRows": 241,
     "datedColumns": [
+      "09/29/2026",
       "09/28/2026",
       "09/27/2026",
-      "09/26/2026",
-      "09/25/2026"
+      "09/26/2026"
     ]
   }
 }
