@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-01T06:55:05.713Z",
+  "generated": "2026-10-01T14:15:52.656Z",
   "source": "https://hydromet.lcra.org/",
   "window": "48h = today so far plus the whole of the previous calendar day",
   "columns": {
@@ -17,13 +17,13 @@
       "total48": 0.14,
       "today": 0,
       "yesterday": 0.14,
-      "h24": 0.14,
+      "h24": 0.01,
       "h1": 0,
       "midnight": 0,
       "gauges": [
         {
           "name": "Dripping Springs 8 W",
-          "today": 0
+          "today": 0.01
         },
         {
           "name": "Dripping Springs 4 NNE",
@@ -40,12 +40,12 @@
       "id": "austin",
       "label": "Austin",
       "county": "Travis Co.",
-      "total48": 0.03,
-      "today": 0,
+      "total48": 0.1,
+      "today": 0.07,
       "yesterday": 0.03,
-      "h24": 0.03,
+      "h24": 0.07,
       "h1": 0,
-      "midnight": 0,
+      "midnight": 0.07,
       "gauges": [
         {
           "name": "Lake Austin at Quinlan Park",
@@ -53,19 +53,19 @@
         },
         {
           "name": "Lake Austin at Cortana Shores",
-          "today": 0
+          "today": 0.06
         },
         {
           "name": "Lake Austin at Bunny Run Farm",
-          "today": 0
+          "today": 0.03
         },
         {
           "name": "Bull Creek at Loop 360, Austin",
-          "today": 0
+          "today": 0.36
         },
         {
           "name": "Barton Creek at Loop 360, Austin",
-          "today": 0
+          "today": 0.05
         },
         {
           "name": "Colorado River at Austin",
@@ -73,11 +73,11 @@
         },
         {
           "name": "Walnut Creek at Webberville Road, Austin",
-          "today": 0
+          "today": 0.05
         },
         {
           "name": "Onion Creek at Hwy 183, Austin",
-          "today": 0
+          "today": 0.01
         }
       ],
       "matched": 8
@@ -86,40 +86,40 @@
       "id": "fredericksburg",
       "label": "Fredericksburg",
       "county": "Gillespie Co.",
-      "total48": 0.02,
-      "today": 0,
+      "total48": 0.64,
+      "today": 0.62,
       "yesterday": 0.02,
-      "h24": 0.02,
-      "h1": 0,
-      "midnight": 0,
+      "h24": 0.63,
+      "h1": 0.04,
+      "midnight": 0.62,
       "gauges": [
         {
           "name": "Fredericksburg 12 NW",
-          "today": 0
+          "today": 0.85
         },
         {
           "name": "Fredericksburg 10 NNE",
-          "today": 0
+          "today": 0.73
         },
         {
           "name": "Fredericksburg 10 WSW",
-          "today": 0
+          "today": 0.7
         },
         {
           "name": "Fredericksburg 9 SW",
-          "today": 0
+          "today": 0.35
         },
         {
           "name": "Pedernales River near Fredericksburg",
-          "today": 0
+          "today": 0.48
         },
         {
           "name": "Fredericksburg 5 N",
-          "today": 0
+          "today": 0.84
         },
         {
           "name": "Fredericksburg 10 SSE",
-          "today": 0
+          "today": 0.4
         }
       ],
       "matched": 7
@@ -128,36 +128,36 @@
       "id": "johnson_city",
       "label": "Johnson City",
       "county": "Blanco Co.",
-      "total48": 0.08,
-      "today": 0,
+      "total48": 0.14,
+      "today": 0.07,
       "yesterday": 0.08,
-      "h24": 0.08,
-      "h1": 0,
-      "midnight": 0,
+      "h24": 0.13,
+      "h1": 0.01,
+      "midnight": 0.07,
       "gauges": [
         {
           "name": "North Grape Creek near Johnson City",
-          "today": 0
+          "today": 0.06
         },
         {
           "name": "Johnson City 10 NNW",
-          "today": 0
+          "today": 0.08
         },
         {
           "name": "Johnson City 4 NNW",
-          "today": 0
+          "today": 0.09
         },
         {
           "name": "Johnson City 5 SSW",
-          "today": 0
+          "today": 0.19
         },
         {
           "name": "Pedernales River near Johnson City",
-          "today": 0
+          "today": 0.04
         },
         {
           "name": "Miller Creek near Johnson City",
-          "today": 0
+          "today": 0.04
         },
         {
           "name": "Johnson City 10 E",
@@ -165,7 +165,7 @@
         },
         {
           "name": "Johnson City 9 NNE",
-          "today": 0
+          "today": 0.03
         }
       ],
       "matched": 8
@@ -174,16 +174,16 @@
       "id": "blanco",
       "label": "Blanco",
       "county": "Blanco Co.",
-      "total48": 0.11,
-      "today": 0,
+      "total48": 0.13,
+      "today": 0.02,
       "yesterday": 0.11,
-      "h24": 0.11,
+      "h24": 0.12,
       "h1": 0,
-      "midnight": 0,
+      "midnight": 0.02,
       "gauges": [
         {
           "name": "Blanco 13 WNW",
-          "today": 0
+          "today": 0.03
         },
         {
           "name": "Blanco 5 NNE",
@@ -205,7 +205,7 @@
       "09/28/2026",
       "09/27/2026",
       "Since 09/27/2026",
-      "Five Day Rain (in) Report Date: 2026-10-01 01:46"
+      "Five Day Rain (in) Report Date: 2026-10-01 09:01"
     ],
     "intradayHeaders": [
       "Site",
@@ -216,7 +216,7 @@
       "6 Hour",
       "24 Hour",
       "Since Midnight",
-      "Rainfall (in) Report Date: 2026-10-01 01:46"
+      "Rainfall (in) Report Date: 2026-10-01 09:01"
     ],
     "fiveDayRows": 246,
     "intradayRows": 246,
