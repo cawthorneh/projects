@@ -1,13 +1,13 @@
 {
-  "generated": "2026-10-09T19:17:36.416Z",
+  "generated": "2026-10-09T23:24:32.938Z",
   "source": "https://hydromet.lcra.org/",
   "window": "48h = today so far plus the whole of the previous calendar day",
   "columns": {
     "today": "today",
-    "yesterday": "10/06/2026",
-    "h24": "24 hour",
-    "h1": "1 hour",
-    "midnight": "since midnight"
+    "yesterday": "10/08/2026",
+    "h24": null,
+    "h1": null,
+    "midnight": null
   },
   "locations": [
     {
@@ -17,9 +17,9 @@
       "total48": 0,
       "today": 0,
       "yesterday": 0,
-      "h24": 0,
-      "h1": 0,
-      "midnight": 0,
+      "h24": null,
+      "h1": null,
+      "midnight": null,
       "gauges": [
         {
           "name": "Dripping Springs 8 W",
@@ -43,9 +43,9 @@
       "total48": 0,
       "today": 0,
       "yesterday": 0,
-      "h24": 0,
-      "h1": 0,
-      "midnight": 0,
+      "h24": null,
+      "h1": null,
+      "midnight": null,
       "gauges": [
         {
           "name": "Lake Austin at Quinlan Park",
@@ -89,9 +89,9 @@
       "total48": 0,
       "today": 0,
       "yesterday": 0,
-      "h24": 0,
-      "h1": 0,
-      "midnight": 0,
+      "h24": null,
+      "h1": null,
+      "midnight": null,
       "gauges": [
         {
           "name": "Fredericksburg 12 NW",
@@ -131,9 +131,9 @@
       "total48": 0,
       "today": 0,
       "yesterday": 0,
-      "h24": 0,
-      "h1": 0,
-      "midnight": 0,
+      "h24": null,
+      "h1": null,
+      "midnight": null,
       "gauges": [
         {
           "name": "North Grape Creek near Johnson City",
@@ -177,9 +177,9 @@
       "total48": 0,
       "today": 0,
       "yesterday": 0,
-      "h24": 0,
-      "h1": 0,
-      "midnight": 0,
+      "h24": null,
+      "h1": null,
+      "midnight": null,
       "gauges": [
         {
           "name": "Blanco 13 WNW",
@@ -200,31 +200,21 @@
       "Basin",
       "Today",
       "Last24",
+      "10/08/2026",
+      "10/07/2026",
       "10/06/2026",
       "10/05/2026",
-      "10/04/2026",
-      "10/03/2026",
-      "Since 10/03/2026",
-      "Five Day Rain (in) Report Date: 2026-10-07 18:16"
+      "Since 10/05/2026",
+      "Five Day Rain (in) Report Date: 2026-10-09 18:16"
     ],
-    "intradayHeaders": [
-      "Site",
-      "Location",
-      "Date Time",
-      "1 Hour",
-      "3 Hour",
-      "6 Hour",
-      "24 Hour",
-      "Since Midnight",
-      "Rainfall (in) Report Date: 2026-10-09 14:16"
-    ],
+    "intradayHeaders": [],
     "fiveDayRows": 246,
-    "intradayRows": 246,
+    "intradayRows": 0,
     "datedColumns": [
+      "10/08/2026",
+      "10/07/2026",
       "10/06/2026",
-      "10/05/2026",
-      "10/04/2026",
-      "10/03/2026"
+      "10/05/2026"
     ]
   }
 }
