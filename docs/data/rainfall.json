@@ -1,10 +1,10 @@
 {
-  "generated": "2026-10-15T04:59:48.616Z",
+  "generated": "2026-10-15T09:46:26.586Z",
   "source": "https://hydromet.lcra.org/",
   "window": "48h = today so far plus the whole of the previous calendar day",
   "columns": {
     "today": "today",
-    "yesterday": "10/13/2026",
+    "yesterday": "10/14/2026",
     "h24": "24 hour",
     "h1": "1 hour",
     "midnight": "since midnight"
@@ -15,11 +15,11 @@
       "label": "Dripping Springs",
       "county": "Hays Co.",
       "total48": 0.05,
-      "today": 0.05,
-      "yesterday": 0,
+      "today": 0,
+      "yesterday": 0.05,
       "h24": 0.05,
       "h1": 0,
-      "midnight": 0.05,
+      "midnight": 0,
       "gauges": [
         {
           "name": "Dripping Springs 8 W",
@@ -31,7 +31,7 @@
         },
         {
           "name": "Dripping Springs 5 SSW",
-          "today": 0.16
+          "today": 0
         }
       ],
       "matched": 3
@@ -41,11 +41,11 @@
       "label": "Austin",
       "county": "Travis Co.",
       "total48": 0.13,
-      "today": 0.13,
-      "yesterday": 0,
+      "today": 0,
+      "yesterday": 0.13,
       "h24": 0.13,
       "h1": 0,
-      "midnight": 0.13,
+      "midnight": 0,
       "gauges": [
         {
           "name": "Lake Austin at Quinlan Park",
@@ -57,15 +57,15 @@
         },
         {
           "name": "Lake Austin at Bunny Run Farm",
-          "today": 0.21
+          "today": 0
         },
         {
           "name": "Bull Creek at Loop 360, Austin",
-          "today": 0.48
+          "today": 0
         },
         {
           "name": "Barton Creek at Loop 360, Austin",
-          "today": 0.38
+          "today": 0
         },
         {
           "name": "Colorado River at Austin",
@@ -200,12 +200,12 @@
       "Basin",
       "Today",
       "Last24",
+      "10/14/2026",
       "10/13/2026",
       "10/12/2026",
       "10/11/2026",
-      "10/10/2026",
-      "Since 10/10/2026",
-      "Five Day Rain (in) Report Date: 2026-10-14 23:46"
+      "Since 10/11/2026",
+      "Five Day Rain (in) Report Date: 2026-10-15 04:31"
     ],
     "intradayHeaders": [
       "Site",
@@ -216,15 +216,15 @@
       "6 Hour",
       "24 Hour",
       "Since Midnight",
-      "Rainfall (in) Report Date: 2026-10-14 23:46"
+      "Rainfall (in) Report Date: 2026-10-15 04:31"
     ],
     "fiveDayRows": 246,
-    "intradayRows": 246,
+    "intradayRows": 241,
     "datedColumns": [
+      "10/14/2026",
       "10/13/2026",
       "10/12/2026",
-      "10/11/2026",
-      "10/10/2026"
+      "10/11/2026"
     ]
   }
 }
