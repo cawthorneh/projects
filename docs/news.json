@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-18T15:49:40+00:00",
+  "generated_at": "2026-10-18T20:38:36+00:00",
   "window_days": 45,
   "categories": [
     {
@@ -21,7 +21,7 @@
       "label": "Policy & Codes",
       "short": "Policy",
       "blurb": "Rainwater law, plumbing codes, rebates, and water regulation.",
-      "count": 13
+      "count": 14
     },
     {
       "id": "positive",
@@ -34,7 +34,7 @@
   "counts": {
     "local": 31,
     "research": 17,
-    "policy": 13,
+    "policy": 14,
     "positive": 10
   },
   "items": [
@@ -58,7 +58,7 @@
         "rainwater",
         "hill-country"
       ],
-      "score": 44.53,
+      "score": 43.91,
       "raw_score": 52.0,
       "matched": {
         "rainwater": [
@@ -95,7 +95,7 @@
         "rainwater",
         "hill-country"
       ],
-      "score": 37.12,
+      "score": 36.61,
       "raw_score": 45.9,
       "matched": {
         "rainwater": [
@@ -129,7 +129,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 26.09,
+      "score": 25.73,
       "raw_score": 29.7,
       "matched": {
         "water": [
@@ -163,7 +163,7 @@
         "rainwater",
         "hill-country"
       ],
-      "score": 22.99,
+      "score": 22.68,
       "raw_score": 29.9,
       "matched": {
         "rainwater": [
@@ -188,7 +188,7 @@
       "published_ts": 1792189778,
       "local": false,
       "tags": [],
-      "score": 20.77,
+      "score": 20.48,
       "raw_score": 23.4,
       "matched": {
         "water": [
@@ -217,7 +217,7 @@
       "published_ts": 1792317960,
       "local": false,
       "tags": [],
-      "score": 19.08,
+      "score": 18.82,
       "raw_score": 19.4,
       "matched": {
         "water": [
@@ -245,7 +245,7 @@
       "published_ts": 1792054800,
       "local": false,
       "tags": [],
-      "score": 18.64,
+      "score": 18.38,
       "raw_score": 23.4,
       "matched": {
         "water": [
@@ -256,6 +256,37 @@
         ],
         "region": [
           "colorado river"
+        ]
+      }
+    },
+    {
+      "id": "gn_texas_water_policy:0b6da27e70",
+      "title": "Mont Belvieu’s first mandatory water conservation plan submitted to TCEQ",
+      "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOVU5PbWc3NVR6NlFKMXd4emZOZklRVW9Jck9zT0Nrd25lYnpQd3ZheXRCQmVkTmlremkzSnYyNmlRU1Fwd1ZLZmw2bXRidHF0a1FUc3pOazhveTJUTjhDWWhOVkFWcUJCaUZyX1B2Mngyai1RYWlSck9NRWFaOFBNREZRQ1dJMTBXZG9ndnBSVFFKc1c1cUFWWURUcVNOUG5jRmYydXpyaXZtbTBVYkVTZXRnYktkSXRZVmtaRm1pX2xvOG9MODUxTkJfMjhFUDE5SnNOZWxFOEppNzJuN0xPZVNhamtjdw?oc=5",
+      "canonical": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOVU5PbWc3NVR6NlFKMXd4emZOZklRVW9Jck9zT0Nrd25lYnpQd3ZheXRCQmVkTmlremkzSnYyNmlRU1Fwd1ZLZmw2bXRidHF0a1FUc3pOazhveTJUTjhDWWhOVkFWcUJCaUZyX1B2Mngyai1RYWlSck9NRWFaOFBNREZRQ1dJMTBXZG9ndnBSVFFKc1c1cUFWWURUcVNOUG5jRmYydXpyaXZtbTBVYkVTZXRnYktkSXRZVmtaRm1pX2xvOG9MODUxTkJfMjhFUDE5SnNOZWxFOEppNzJuN0xPZVNhamtjdw?oc=5",
+      "source": "Baytown Sun",
+      "source_id": "gn_texas_water_policy",
+      "source_site": "https://news.google.com/",
+      "category": "policy",
+      "scope": "state",
+      "summary": "",
+      "author": "",
+      "image": "",
+      "published": "2026-10-14T23:25:00+00:00",
+      "published_ts": 1792020300,
+      "local": false,
+      "tags": [],
+      "score": 18.18,
+      "raw_score": 23.8,
+      "matched": {
+        "water": [
+          "water conservation"
+        ],
+        "policy": [
+          "tceq"
+        ],
+        "region": [
+          "tceq"
         ]
       }
     },
@@ -276,7 +307,7 @@
       "published_ts": 1791984240,
       "local": false,
       "tags": [],
-      "score": 17.91,
+      "score": 17.66,
       "raw_score": 23.8,
       "matched": {
         "water": [
@@ -309,7 +340,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 17.79,
+      "score": 17.54,
       "raw_score": 21.6,
       "matched": {
         "water": [
@@ -341,7 +372,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 17.14,
+      "score": 16.9,
       "raw_score": 25.8,
       "matched": {
         "water": [
@@ -372,7 +403,7 @@
       "tags": [
         "research"
       ],
-      "score": 16.85,
+      "score": 16.61,
       "raw_score": 19.3,
       "matched": {
         "water": [
@@ -403,7 +434,7 @@
       "published_ts": 1792161092,
       "local": false,
       "tags": [],
-      "score": 16.83,
+      "score": 16.59,
       "raw_score": 19.4,
       "matched": {
         "water": [
@@ -434,7 +465,7 @@
       "published_ts": 1792154064,
       "local": false,
       "tags": [],
-      "score": 16.73,
+      "score": 16.5,
       "raw_score": 19.4,
       "matched": {
         "water": [
@@ -442,37 +473,6 @@
         ],
         "research": [
           "research"
-        ]
-      }
-    },
-    {
-      "id": "gn_aquifers:0b9c5406dd",
-      "title": "Water District Seeks To Protect Aquifer From Oncor’s 765-kV Transmission Line",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPaTRoQVpoZ2NkZTFJRXUtcl9FUHBIamgyV3hVT0MzY2FmZ0VTUC1weHNmSEVhNzBkN3JxQ09ZenZoam1id1pCZ3NyME1iSDlmRnJ1SDVscWF4cGptVjMydkpWSTdGVEJVZzc1Sk1mWk1uUjlkaU15QVNlU3A3Rk5PQTZGcGtBclFSZEZNUm5rWEpmeERsNWYzRk4zV2hPWGRUdkVjdDA2Q0VNNVdHQXNz?oc=5",
-      "canonical": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPaTRoQVpoZ2NkZTFJRXUtcl9FUHBIamgyV3hVT0MzY2FmZ0VTUC1weHNmSEVhNzBkN3JxQ09ZenZoam1id1pCZ3NyME1iSDlmRnJ1SDVscWF4cGptVjMydkpWSTdGVEJVZzc1Sk1mWk1uUjlkaU15QVNlU3A3Rk5PQTZGcGtBclFSZEZNUm5rWEpmeERsNWYzRk4zV2hPWGRUdkVjdDA2Q0VNNVdHQXNz?oc=5",
-      "source": "Texas Scorecard",
-      "source_id": "gn_aquifers",
-      "source_site": "https://news.google.com/",
-      "category": "local",
-      "scope": "local",
-      "summary": "",
-      "author": "",
-      "image": "",
-      "published": "2026-10-14T20:05:07+00:00",
-      "published_ts": 1792008307,
-      "local": true,
-      "tags": [
-        "hill-country"
-      ],
-      "score": 16.65,
-      "raw_score": 21.7,
-      "matched": {
-        "water": [
-          "aquifer",
-          "water district"
-        ],
-        "region": [
-          "texas"
         ]
       }
     },
@@ -493,7 +493,7 @@
       "published_ts": 1792138528,
       "local": false,
       "tags": [],
-      "score": 16.52,
+      "score": 16.3,
       "raw_score": 19.4,
       "matched": {
         "water": [
@@ -521,7 +521,7 @@
       "published_ts": 1792087200,
       "local": false,
       "tags": [],
-      "score": 16.27,
+      "score": 16.04,
       "raw_score": 19.9,
       "matched": {
         "water": [
@@ -551,7 +551,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 15.85,
+      "score": 15.63,
       "raw_score": 17.7,
       "matched": {
         "water": [
@@ -581,7 +581,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 15.62,
+      "score": 15.41,
       "raw_score": 17.7,
       "matched": {
         "water": [
@@ -611,7 +611,7 @@
       "tags": [
         "rainwater"
       ],
-      "score": 15.41,
+      "score": 15.2,
       "raw_score": 29.5,
       "matched": {
         "rainwater": [
@@ -639,7 +639,7 @@
         "hill-country",
         "policy"
       ],
-      "score": 14.63,
+      "score": 14.43,
       "raw_score": 20.7,
       "matched": {
         "water": [
@@ -673,7 +673,7 @@
         "hill-country",
         "policy"
       ],
-      "score": 14.53,
+      "score": 14.33,
       "raw_score": 16.7,
       "matched": {
         "water": [
@@ -703,7 +703,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 14.2,
+      "score": 14.0,
       "raw_score": 17.6,
       "matched": {
         "water": [
@@ -729,7 +729,7 @@
       "published_ts": 1792236828,
       "local": false,
       "tags": [],
-      "score": 13.82,
+      "score": 13.63,
       "raw_score": 15.0,
       "matched": {
         "water": [
@@ -758,7 +758,7 @@
       "published_ts": 1792249482,
       "local": false,
       "tags": [],
-      "score": 12.57,
+      "score": 12.4,
       "raw_score": 13.5,
       "matched": {
         "positive": [
@@ -783,7 +783,7 @@
       "published_ts": 1792054920,
       "local": false,
       "tags": [],
-      "score": 12.35,
+      "score": 12.17,
       "raw_score": 15.5,
       "matched": {
         "positive": [
@@ -811,7 +811,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 12.28,
+      "score": 12.11,
       "raw_score": 25.2,
       "matched": {
         "water": [
@@ -839,7 +839,7 @@
       "published_ts": 1792041544,
       "local": false,
       "tags": [],
-      "score": 11.74,
+      "score": 11.58,
       "raw_score": 14.9,
       "matched": {
         "water": [
@@ -870,7 +870,7 @@
       "published_ts": 1792159359,
       "local": false,
       "tags": [],
-      "score": 11.69,
+      "score": 11.53,
       "raw_score": 13.5,
       "matched": {
         "positive": [
@@ -895,7 +895,7 @@
       "published_ts": 1792150092,
       "local": false,
       "tags": [],
-      "score": 11.61,
+      "score": 11.45,
       "raw_score": 13.5,
       "matched": {
         "positive": [
@@ -920,7 +920,7 @@
       "published_ts": 1791543127,
       "local": false,
       "tags": [],
-      "score": 11.36,
+      "score": 11.2,
       "raw_score": 21.5,
       "matched": {
         "water": [
@@ -948,7 +948,7 @@
       "published_ts": 1792097094,
       "local": false,
       "tags": [],
-      "score": 11.12,
+      "score": 10.97,
       "raw_score": 13.5,
       "matched": {
         "positive": [
@@ -975,7 +975,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 10.97,
+      "score": 10.82,
       "raw_score": 13.6,
       "matched": {
         "water": [
@@ -1003,7 +1003,7 @@
         "rainwater",
         "hill-country"
       ],
-      "score": 10.91,
+      "score": 10.76,
       "raw_score": 48.0,
       "matched": {
         "rainwater": [
@@ -1035,7 +1035,7 @@
       "published_ts": 1791529200,
       "local": false,
       "tags": [],
-      "score": 10.4,
+      "score": 10.25,
       "raw_score": 19.9,
       "matched": {
         "water": [
@@ -1065,7 +1065,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 10.33,
+      "score": 10.19,
       "raw_score": 13.2,
       "matched": {
         "water": [
@@ -1090,7 +1090,7 @@
       "published_ts": 1792038780,
       "local": false,
       "tags": [],
-      "score": 10.06,
+      "score": 9.92,
       "raw_score": 12.8,
       "matched": {
         "water": [
@@ -1123,7 +1123,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 8.98,
+      "score": 8.86,
       "raw_score": 13.2,
       "matched": {
         "water": [
@@ -1150,7 +1150,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 8.94,
+      "score": 8.81,
       "raw_score": 21.6,
       "matched": {
         "water": [
@@ -1160,6 +1160,37 @@
         "region": [
           "central texas",
           "texas"
+        ]
+      }
+    },
+    {
+      "id": "gn_ctx_drought:be3daee8bb",
+      "title": "Drought news October 8, 2026: Widespread heavy precipitation abetted robust improvement across eastern #Colorado, central and western #Kansas, and parts of southern Nebraska, 2-category improvements in portions",
+      "url": "https://news.google.com/rss/articles/CBMizAJBVV95cUxOUkE1MlJ2WjJ6TUNSVFZvc3RMVkdXQmN1UVBya2dxYUVlZlVSa1Y3MmI5SmlNbzQzRWFHOGNLb2RFc196WGZTOXlDSzhjR2pZSUllU0RxV1ZyMU9NZzVZenJEb0dqMjVtb1ZUZlhqOWZFNFhjbjZtVmxHUHBSS1ZpLWU3di03MEZKMVJsT3U3RWpKTFZaa0RkSGNNMTI5bkI5Q2VpV3hOUEVmeHRKOEpscUpaUVNoUFp5SzFpdTNUaDVyUWZ5N1g2OV9iUTloM2MzSEVNbjhrSm5qNUVpM0VJVjBYLVoxYmpLVlB6VHVseTJnbUNtZjJQbU4xRGwxN2c3cDlFVVdwZ0FyY3hfUWhRNkJ2bFFjZjR4dG9MaFpmOFFzRU1aY3ZBSjlrTDhJaGJad3ZMR1VvWXMxbjdoTG41OTM1NUhfcVcwTEU0UA?oc=5",
+      "canonical": "https://news.google.com/rss/articles/CBMizAJBVV95cUxOUkE1MlJ2WjJ6TUNSVFZvc3RMVkdXQmN1UVBya2dxYUVlZlVSa1Y3MmI5SmlNbzQzRWFHOGNLb2RFc196WGZTOXlDSzhjR2pZSUllU0RxV1ZyMU9NZzVZenJEb0dqMjVtb1ZUZlhqOWZFNFhjbjZtVmxHUHBSS1ZpLWU3di03MEZKMVJsT3U3RWpKTFZaa0RkSGNNMTI5bkI5Q2VpV3hOUEVmeHRKOEpscUpaUVNoUFp5SzFpdTNUaDVyUWZ5N1g2OV9iUTloM2MzSEVNbjhrSm5qNUVpM0VJVjBYLVoxYmpLVlB6VHVseTJnbUNtZjJQbU4xRGwxN2c3cDlFVVdwZ0FyY3hfUWhRNkJ2bFFjZjR4dG9MaFpmOFFzRU1aY3ZBSjlrTDhJaGJad3ZMR1VvWXMxbjdoTG41OTM1NUhfcVcwTEU0UA?oc=5",
+      "source": "coyotegulch.blog",
+      "source_id": "gn_ctx_drought",
+      "source_site": "https://news.google.com/",
+      "category": "local",
+      "scope": "local",
+      "summary": "Drought news October 8, 2026: Widespread heavy precipitation abetted robust improvement across eastern #Colorado, central and western #Kansas, and parts of southern Nebraska, 2-category improvements in portions coyotegulch.blog",
+      "author": "",
+      "image": "",
+      "published": "2026-10-08T15:52:19+00:00",
+      "published_ts": 1791474739,
+      "local": true,
+      "tags": [
+        "hill-country"
+      ],
+      "score": 8.68,
+      "raw_score": 17.6,
+      "matched": {
+        "water": [
+          "drought",
+          "precipitation"
+        ],
+        "positive": [
+          "improvement"
         ]
       }
     },
@@ -1182,7 +1213,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 8.34,
+      "score": 8.23,
       "raw_score": 29.8,
       "matched": {
         "water": [
@@ -1216,7 +1247,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 8.3,
+      "score": 8.18,
       "raw_score": 25.8,
       "matched": {
         "water": [
@@ -1250,7 +1281,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 7.78,
+      "score": 7.68,
       "raw_score": 29.8,
       "matched": {
         "water": [
@@ -1281,7 +1312,7 @@
       "published_ts": 1791714720,
       "local": false,
       "tags": [],
-      "score": 7.76,
+      "score": 7.65,
       "raw_score": 12.8,
       "matched": {
         "water": [
@@ -1314,7 +1345,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 7.74,
+      "score": 7.63,
       "raw_score": 25.8,
       "matched": {
         "water": [
@@ -1344,7 +1375,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 7.74,
+      "score": 7.63,
       "raw_score": 25.8,
       "matched": {
         "water": [
@@ -1375,7 +1406,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 7.68,
+      "score": 7.57,
       "raw_score": 25.6,
       "matched": {
         "water": [
@@ -1403,7 +1434,7 @@
       "published_ts": 1791479333,
       "local": false,
       "tags": [],
-      "score": 6.68,
+      "score": 6.58,
       "raw_score": 13.3,
       "matched": {
         "water": [
@@ -1412,29 +1443,29 @@
       }
     },
     {
-      "id": "gn_ctx_drought:8c43591479",
-      "title": "California and National Drought Summary for October 6, 2026, 10 Day Weather Outlook, and California Drought Statistics: 72% of State Abnormally Dry, A 0% Increase Week-Over-Week",
-      "url": "https://news.google.com/rss/articles/CBMi3gJBVV95cUxOY095XzJaWmtpdGIyRVY5TS02SkdTa2llUHhQcWFfLUtGOW1uMmktNmlSSXo2NFJmZ1MyaWhEMDQyTExxUlg4VjVBNFZQTUZlS3N1alZ5TDJJQjZQeFFUVmFVRnZpRjRVa3B5WUxQRlhqNGtON3E4a1QwWXNJUXpxNkI5WUc4VHg0d1N4ZURpSTlCdDdpenM5TkxHd05iOHlvT0hJOWw0S1p4dHBTNWRuSzFmbEQ1LURhaFdWNDJOcVg1ZTZFUENSSnYxNjBlaUNtbDk5aEx3VlVmb0k0SjFDSEdfT1ozV0NOR1hERDZEMml0WFRxOElzcDRuUEdrQUNRWmlTSGxjNzNwRXdFWUloUFpIYlRFMEFMYnNFOUtkZHROS0g1NUJWR1lkcnp3X0YtRHlIdXBZNWdHaERnaGtXYnNvWk5WVllSV255algxQ0t6dVRlanExVGpGcldNZw?oc=5",
-      "canonical": "https://news.google.com/rss/articles/CBMi3gJBVV95cUxOY095XzJaWmtpdGIyRVY5TS02SkdTa2llUHhQcWFfLUtGOW1uMmktNmlSSXo2NFJmZ1MyaWhEMDQyTExxUlg4VjVBNFZQTUZlS3N1alZ5TDJJQjZQeFFUVmFVRnZpRjRVa3B5WUxQRlhqNGtON3E4a1QwWXNJUXpxNkI5WUc4VHg0d1N4ZURpSTlCdDdpenM5TkxHd05iOHlvT0hJOWw0S1p4dHBTNWRuSzFmbEQ1LURhaFdWNDJOcVg1ZTZFUENSSnYxNjBlaUNtbDk5aEx3VlVmb0k0SjFDSEdfT1ozV0NOR1hERDZEMml0WFRxOElzcDRuUEdrQUNRWmlTSGxjNzNwRXdFWUloUFpIYlRFMEFMYnNFOUtkZHROS0g1NUJWR1lkcnp3X0YtRHlIdXBZNWdHaERnaGtXYnNvWk5WVllSV255algxQ0t6dVRlanExVGpGcldNZw?oc=5",
-      "source": "Sierra Sun Times",
-      "source_id": "gn_ctx_drought",
+      "id": "gn_aquifers:9d25d5587c",
+      "title": "Celina officials refine park plans with eye toward water conservation",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNU2tOMURJYnBCQkZNRm5sNkhBQ0F5TzlZVmZtQk9RLVRoTFdGaVlfMkpwRmtNZ0hGZ09fMjE3WkFnUTVWMDdLbzNTdnphM000NXA4OUEzR2NBRnVJUnZqYmNZYW5HMmxFbXhkbVVPano3dDc0a2FtbzNOcnJsRWZDbWdKeGt4c1BzTEF5UUx2cDRnLVlNYXJ0cDFIR3YyRTMxVkhyUy1nTG8wamVINXp2QXhlRXZSeU00dWFGQW11VXg5UQ?oc=5",
+      "canonical": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNU2tOMURJYnBCQkZNRm5sNkhBQ0F5TzlZVmZtQk9RLVRoTFdGaVlfMkpwRmtNZ0hGZ09fMjE3WkFnUTVWMDdLbzNTdnphM000NXA4OUEzR2NBRnVJUnZqYmNZYW5HMmxFbXhkbVVPano3dDc0a2FtbzNOcnJsRWZDbWdKeGt4c1BzTEF5UUx2cDRnLVlNYXJ0cDFIR3YyRTMxVkhyUy1nTG8wamVINXp2QXhlRXZSeU00dWFGQW11VXg5UQ?oc=5",
+      "source": "Community Impact Newspaper",
+      "source_id": "gn_aquifers",
       "source_site": "https://news.google.com/",
       "category": "local",
       "scope": "local",
-      "summary": "California and National Drought Summary for October 6, 2026, 10 Day Weather Outlook, and California Drought Statistics: 72% of State Abnormally Dry, A 0% Increase Week-Over-Week Sierra Sun Times",
+      "summary": "",
       "author": "",
       "image": "",
-      "published": "2026-10-08T07:00:00+00:00",
-      "published_ts": 1791442800,
+      "published": "2026-10-06T07:00:00+00:00",
+      "published_ts": 1791270000,
       "local": true,
       "tags": [
         "hill-country"
       ],
-      "score": 6.63,
-      "raw_score": 13.6,
+      "score": 5.73,
+      "raw_score": 13.7,
       "matched": {
         "water": [
-          "drought"
+          "water conservation"
         ]
       }
     },
@@ -1455,7 +1486,7 @@
       "published_ts": 1791716400,
       "local": false,
       "tags": [],
-      "score": 5.4,
+      "score": 5.33,
       "raw_score": 8.9,
       "matched": {
         "water": [
@@ -1485,7 +1516,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 4.79,
+      "score": 4.72,
       "raw_score": 13.9,
       "matched": {
         "water": [
@@ -1510,7 +1541,7 @@
       "published_ts": 1790319600,
       "local": false,
       "tags": [],
-      "score": 4.71,
+      "score": 4.65,
       "raw_score": 23.8,
       "matched": {
         "water": [
@@ -1544,7 +1575,7 @@
         "rainwater",
         "hill-country"
       ],
-      "score": 4.69,
+      "score": 4.63,
       "raw_score": 29.2,
       "matched": {
         "rainwater": [
@@ -1574,7 +1605,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 4.49,
+      "score": 4.43,
       "raw_score": 29.9,
       "matched": {
         "water": [
@@ -1607,7 +1638,7 @@
       "tags": [
         "rainwater"
       ],
-      "score": 4.37,
+      "score": 4.31,
       "raw_score": 35.9,
       "matched": {
         "rainwater": [
@@ -1637,7 +1668,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 4.05,
+      "score": 4.0,
       "raw_score": 25.2,
       "matched": {
         "water": [
@@ -1667,7 +1698,7 @@
       "tags": [
         "policy"
       ],
-      "score": 3.95,
+      "score": 3.9,
       "raw_score": 4.7,
       "matched": {
         "water": [
@@ -1698,7 +1729,7 @@
       "published_ts": 1790319600,
       "local": false,
       "tags": [],
-      "score": 3.52,
+      "score": 3.47,
       "raw_score": 17.8,
       "matched": {
         "water": [
@@ -1730,7 +1761,7 @@
         "policy",
         "research"
       ],
-      "score": 3.38,
+      "score": 3.34,
       "raw_score": 31.9,
       "matched": {
         "water": [
@@ -1761,11 +1792,11 @@
       "summary": "",
       "author": "",
       "image": "",
-      "published": "2026-09-21T15:08:09+00:00",
-      "published_ts": 1790003289,
+      "published": "2026-09-21T07:00:00+00:00",
+      "published_ts": 1789974000,
       "local": false,
       "tags": [],
-      "score": 2.99,
+      "score": 2.88,
       "raw_score": 19.5,
       "matched": {
         "water": [
@@ -1793,7 +1824,7 @@
       "published_ts": 1791637200,
       "local": false,
       "tags": [],
-      "score": 2.91,
+      "score": 2.87,
       "raw_score": 5.1,
       "matched": {
         "water": [
@@ -1803,37 +1834,34 @@
       }
     },
     {
-      "id": "gn_community_impact:3be358e908",
-      "title": "Texas State to improve Lake Kyle water quality with floating wetlands | San Marcos - Buda - Kyle",
-      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPNXZVMXpyeWE4ek5uVFQycUd0aGlaUkRCNm9nTHhXc1hHTHVmNDd4dklOVS1mdHBDTWNQLTJ3bks4dlFSbW5CWUhCY2R2bEllZmpGVEJ4YnV4T3R6WjUtYTZ6U0pfUkVKRUVIaXZxc3ppV3dmODVuY3BQa1NvQkNlX0lCT3htR18zdWlrVHJIU2JGSkNscDJCbUVGenFGcWtnTnBZcVBvTFBvWjl2VEJ4WlBiMzNReXhSaUxSRFY2UllWNkFsUzVJZ0Fn?oc=5",
-      "canonical": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPNXZVMXpyeWE4ek5uVFQycUd0aGlaUkRCNm9nTHhXc1hHTHVmNDd4dklOVS1mdHBDTWNQLTJ3bks4dlFSbW5CWUhCY2R2bEllZmpGVEJ4YnV4T3R6WjUtYTZ6U0pfUkVKRUVIaXZxc3ppV3dmODVuY3BQa1NvQkNlX0lCT3htR18zdWlrVHJIU2JGSkNscDJCbUVGenFGcWtnTnBZcVBvTFBvWjl2VEJ4WlBiMzNReXhSaUxSRFY2UllWNkFsUzVJZ0Fn?oc=5",
+      "id": "gn_community_impact:c9c3cf7ae5",
+      "title": "Kyle council approves decrease in water utility rates for 6 Creeks residents | San Marcos - Buda - Kyle",
+      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOeDgwTTF6OUplLS05X2d0M3I2czlva1F6bkRnT1M0ekVyZzItNkNyRkMwTzd0U2l2NXdwLWdYOVpLWFNNakh0bDY0QWJ2TkR0SmJ3SnR3SG9NMVEySGlfNGpTUmgzQTZESUtYaFdjdnl0SXlOa3pma3Fpc08xTzFwN0t1bFJEVkJCNENJNWVpcWlka2lzVGJxQ0RjMnFib3pqWERSVWJsWnExSno5TVJqMGhIWFYzV0FLRGVTWFFtN1pBWUFIX2JLcnRNVVl0MUZzVGdN?oc=5",
+      "canonical": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOeDgwTTF6OUplLS05X2d0M3I2czlva1F6bkRnT1M0ekVyZzItNkNyRkMwTzd0U2l2NXdwLWdYOVpLWFNNakh0bDY0QWJ2TkR0SmJ3SnR3SG9NMVEySGlfNGpTUmgzQTZESUtYaFdjdnl0SXlOa3pma3Fpc08xTzFwN0t1bFJEVkJCNENJNWVpcWlka2lzVGJxQ0RjMnFib3pqWERSVWJsWnExSno5TVJqMGhIWFYzV0FLRGVTWFFtN1pBWUFIX2JLcnRNVVl0MUZzVGdN?oc=5",
       "source": "Community Impact Newspaper",
       "source_id": "gn_community_impact",
       "source_site": "https://communityimpact.com/",
       "category": "local",
       "scope": "local",
-      "summary": "Texas State to improve Lake Kyle water quality with floating wetlands | San Marcos - Buda - Kyle Community Impact Newspaper",
+      "summary": "Kyle council approves decrease in water utility rates for 6 Creeks residents | San Marcos - Buda - Kyle Community Impact Newspaper",
       "author": "",
       "image": "",
-      "published": "2026-09-15T07:00:00+00:00",
-      "published_ts": 1789455600,
+      "published": "2026-09-17T07:00:00+00:00",
+      "published_ts": 1789628400,
       "local": true,
       "tags": [
         "hill-country"
       ],
-      "score": 2.89,
-      "raw_score": 29.2,
+      "score": 2.83,
+      "raw_score": 25.2,
       "matched": {
         "water": [
-          "water quality"
+          "water utility"
         ],
         "local": [
           "buda",
           "kyle",
           "san marcos"
-        ],
-        "region": [
-          "texas"
         ]
       }
     },
@@ -1854,7 +1882,7 @@
       "published_ts": 1790165124,
       "local": false,
       "tags": [],
-      "score": 2.61,
+      "score": 2.57,
       "raw_score": 14.9,
       "matched": {
         "water": [
@@ -1882,7 +1910,7 @@
       "published_ts": 1790146800,
       "local": false,
       "tags": [],
-      "score": 2.57,
+      "score": 2.53,
       "raw_score": 14.9,
       "matched": {
         "water": [
@@ -1916,7 +1944,7 @@
       "published_ts": 1790140169,
       "local": false,
       "tags": [],
-      "score": 2.31,
+      "score": 2.28,
       "raw_score": 13.5,
       "matched": {
         "water": [
@@ -1946,7 +1974,7 @@
       "tags": [
         "research"
       ],
-      "score": 2.09,
+      "score": 2.07,
       "raw_score": 3.2,
       "matched": {
         "water": [
@@ -1974,7 +2002,7 @@
       "published_ts": 1789110000,
       "local": false,
       "tags": [],
-      "score": 1.75,
+      "score": 1.72,
       "raw_score": 23.3,
       "matched": {
         "water": [
@@ -2003,7 +2031,7 @@
       "published_ts": 1789558457,
       "local": false,
       "tags": [],
-      "score": 1.61,
+      "score": 1.59,
       "raw_score": 15.0,
       "matched": {
         "water": [
@@ -2031,7 +2059,7 @@
       "published_ts": 1789569890,
       "local": false,
       "tags": [],
-      "score": 1.46,
+      "score": 1.44,
       "raw_score": 13.5,
       "matched": {
         "water": [
@@ -2061,7 +2089,7 @@
       "tags": [
         "research"
       ],
-      "score": 1.45,
+      "score": 1.43,
       "raw_score": 19.3,
       "matched": {
         "water": [
@@ -2097,7 +2125,7 @@
       "tags": [
         "research"
       ],
-      "score": 1.45,
+      "score": 1.43,
       "raw_score": 7.2,
       "matched": {
         "water": [
@@ -2127,7 +2155,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 1.01,
+      "score": 1.0,
       "raw_score": 13.9,
       "matched": {
         "water": [
@@ -2173,7 +2201,7 @@
       "http_status": 200,
       "item_count": 69,
       "error": null,
-      "ms": 722
+      "ms": 624
     },
     {
       "id": "gn_hays_blanco",
@@ -2186,7 +2214,7 @@
       "http_status": 200,
       "item_count": 68,
       "error": null,
-      "ms": 573
+      "ms": 589
     },
     {
       "id": "gn_aquifers",
@@ -2199,7 +2227,7 @@
       "http_status": 200,
       "item_count": 43,
       "error": null,
-      "ms": 464
+      "ms": 449
     },
     {
       "id": "gn_ctx_drought",
@@ -2210,9 +2238,9 @@
       "scope": "local",
       "status": "ok",
       "http_status": 200,
-      "item_count": 63,
+      "item_count": 60,
       "error": null,
-      "ms": 554
+      "ms": 531
     },
     {
       "id": "gn_texas_tribune_water",
@@ -2223,9 +2251,9 @@
       "scope": "state",
       "status": "ok",
       "http_status": 200,
-      "item_count": 75,
+      "item_count": 74,
       "error": null,
-      "ms": 441
+      "ms": 391
     },
     {
       "id": "austin_monitor",
@@ -2238,7 +2266,7 @@
       "http_status": 200,
       "item_count": 12,
       "error": null,
-      "ms": 240
+      "ms": 414
     },
     {
       "id": "san_antonio_report",
@@ -2251,7 +2279,7 @@
       "http_status": 200,
       "item_count": 10,
       "error": null,
-      "ms": 293
+      "ms": 312
     },
     {
       "id": "gn_community_impact",
@@ -2264,7 +2292,7 @@
       "http_status": 200,
       "item_count": 100,
       "error": null,
-      "ms": 525
+      "ms": 625
     },
     {
       "id": "gn_rainwater_research",
@@ -2275,9 +2303,9 @@
       "scope": "global",
       "status": "ok",
       "http_status": 200,
-      "item_count": 58,
+      "item_count": 56,
       "error": null,
-      "ms": 386
+      "ms": 414
     },
     {
       "id": "gn_water_quality_research",
@@ -2290,7 +2318,7 @@
       "http_status": 200,
       "item_count": 100,
       "error": null,
-      "ms": 482
+      "ms": 501
     },
     {
       "id": "sciencedaily_water",
@@ -2303,7 +2331,7 @@
       "http_status": 200,
       "item_count": 60,
       "error": null,
-      "ms": 200
+      "ms": 233
     },
     {
       "id": "sciencedaily_drought",
@@ -2316,7 +2344,7 @@
       "http_status": 200,
       "item_count": 60,
       "error": null,
-      "ms": 186
+      "ms": 223
     },
     {
       "id": "phys_org_environment",
@@ -2329,7 +2357,7 @@
       "http_status": 200,
       "item_count": 30,
       "error": null,
-      "ms": 218
+      "ms": 290
     },
     {
       "id": "gn_rainwater_policy",
@@ -2342,7 +2370,7 @@
       "http_status": 200,
       "item_count": 53,
       "error": null,
-      "ms": 583
+      "ms": 544
     },
     {
       "id": "gn_texas_water_policy",
@@ -2353,9 +2381,9 @@
       "scope": "state",
       "status": "ok",
       "http_status": 200,
-      "item_count": 65,
+      "item_count": 66,
       "error": null,
-      "ms": 576
+      "ms": 625
     },
     {
       "id": "gn_water_rebates",
@@ -2366,9 +2394,9 @@
       "scope": "national",
       "status": "ok",
       "http_status": 200,
-      "item_count": 16,
+      "item_count": 18,
       "error": null,
-      "ms": 462
+      "ms": 504
     },
     {
       "id": "gn_epa_water",
@@ -2379,9 +2407,9 @@
       "scope": "national",
       "status": "ok",
       "http_status": 200,
-      "item_count": 42,
+      "item_count": 43,
       "error": null,
-      "ms": 494
+      "ms": 505
     },
     {
       "id": "circle_of_blue",
@@ -2394,7 +2422,7 @@
       "http_status": 200,
       "item_count": 12,
       "error": null,
-      "ms": 231
+      "ms": 361
     },
     {
       "id": "gn_good_environment_news",
@@ -2407,7 +2435,7 @@
       "http_status": 200,
       "item_count": 100,
       "error": null,
-      "ms": 547
+      "ms": 579
     },
     {
       "id": "reasons_to_be_cheerful",
@@ -2420,7 +2448,7 @@
       "http_status": 200,
       "item_count": 10,
       "error": null,
-      "ms": 186
+      "ms": 314
     },
     {
       "id": "anthropocene",
@@ -2430,10 +2458,10 @@
       "category": "positive",
       "scope": "global",
       "status": "error",
-      "http_status": 202,
+      "http_status": null,
       "item_count": 0,
-      "error": "not valid XML: not well-formed (invalid token): line 1, column 119",
-      "ms": 187
+      "error": "RemoteDisconnected: Remote end closed connection without response",
+      "ms": 5370
     },
     {
       "id": "yale_e360",
@@ -2446,7 +2474,7 @@
       "http_status": 200,
       "item_count": 100,
       "error": null,
-      "ms": 150
+      "ms": 250
     },
     {
       "id": "grist",
@@ -2459,22 +2487,22 @@
       "http_status": 200,
       "item_count": 20,
       "error": null,
-      "ms": 265
+      "ms": 325
     }
   ],
   "stats": {
     "feeds_total": 23,
     "feeds_ok": 22,
     "feeds_failed": 1,
-    "entries_seen": 1166,
-    "candidates": 193,
-    "after_dedupe": 176,
-    "published": 71,
+    "entries_seen": 1164,
+    "candidates": 194,
+    "after_dedupe": 177,
+    "published": 72,
     "rejected": {
       "score": 23,
-      "stale": 246,
-      "blocked": 20,
-      "off_topic": 684
+      "stale": 247,
+      "blocked": 19,
+      "off_topic": 681
     }
   }
 }
