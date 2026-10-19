@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-19T04:36:20+00:00",
+  "generated_at": "2026-10-19T13:07:57+00:00",
   "window_days": 45,
   "categories": [
     {
@@ -14,14 +14,14 @@
       "label": "Research",
       "short": "Research",
       "blurb": "New science on rainwater harvesting, water quality, and catchment.",
-      "count": 17
+      "count": 18
     },
     {
       "id": "policy",
       "label": "Policy & Codes",
       "short": "Policy",
       "blurb": "Rainwater law, plumbing codes, rebates, and water regulation.",
-      "count": 14
+      "count": 16
     },
     {
       "id": "positive",
@@ -33,8 +33,8 @@
   ],
   "counts": {
     "local": 31,
-    "research": 17,
-    "policy": 14,
+    "research": 18,
+    "policy": 16,
     "positive": 10
   },
   "items": [
@@ -58,7 +58,7 @@
         "rainwater",
         "hill-country"
       ],
-      "score": 42.92,
+      "score": 41.87,
       "raw_score": 52.0,
       "matched": {
         "rainwater": [
@@ -95,7 +95,7 @@
         "rainwater",
         "hill-country"
       ],
-      "score": 35.78,
+      "score": 34.91,
       "raw_score": 45.9,
       "matched": {
         "rainwater": [
@@ -129,7 +129,7 @@
       "tags": [
         "rainwater"
       ],
-      "score": 29.14,
+      "score": 28.43,
       "raw_score": 30.9,
       "matched": {
         "rainwater": [
@@ -163,7 +163,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 25.15,
+      "score": 24.54,
       "raw_score": 29.7,
       "matched": {
         "water": [
@@ -174,6 +174,35 @@
         ],
         "region": [
           "texas"
+        ]
+      }
+    },
+    {
+      "id": "gn_water_quality_research:9c77266883",
+      "title": "Researchers advance aquifer mapping using remote sensing and statistical models to improve groundwater management",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQQUFxTGdLV0UwcVNJemdxMm1UbHdFTmg4ek15S3RWM0E4WlQ3SmloQjdCUzlGNTNwOFpsQzdsNFdHSEowc001SUdVVWJXOUp2QTNmYjlUb3NMV1JvWWhtcEI3UU02ZHR1SUVGaTFGZlpJWElBWEVacFItSGlUY180YmFsUG8yQkVf?oc=5",
+      "canonical": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQQUFxTGdLV0UwcVNJemdxMm1UbHdFTmg4ek15S3RWM0E4WlQ3SmloQjdCUzlGNTNwOFpsQzdsNFdHSEowc001SUdVVWJXOUp2QTNmYjlUb3NMV1JvWWhtcEI3UU02ZHR1SUVGaTFGZlpJWElBWEVacFItSGlUY180YmFsUG8yQkVf?oc=5",
+      "source": "Phys.org",
+      "source_id": "gn_water_quality_research",
+      "source_site": "https://news.google.com/",
+      "category": "research",
+      "scope": "global",
+      "summary": "Researchers advance aquifer mapping using remote sensing and statistical models to improve groundwater management Phys.org",
+      "author": "",
+      "image": "",
+      "published": "2026-10-19T11:00:02+00:00",
+      "published_ts": 1792407602,
+      "local": false,
+      "tags": [],
+      "score": 23.26,
+      "raw_score": 23.4,
+      "matched": {
+        "water": [
+          "aquifer",
+          "groundwater"
+        ],
+        "research": [
+          "researchers"
         ]
       }
     },
@@ -197,40 +226,11 @@
         "rainwater",
         "hill-country"
       ],
-      "score": 22.16,
+      "score": 21.62,
       "raw_score": 29.9,
       "matched": {
         "rainwater": [
           "atmospheric water"
-        ]
-      }
-    },
-    {
-      "id": "gn_water_quality_research:f0ce32a2f9",
-      "title": "Researchers advance aquifer mapping using remote sensing and statistical models to improve groundwater management - EurekAlert!",
-      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5uZEp3bmowcnRsdzJPczBpTndoaTFVVkQ1ai03S1JXQmVydFVEa3VBUEJuWXZzV1MtSFJ5MWJvMEVvMjZGSUQ2OVJhbUxJQTNxaHBUUTg2ZXFQQlRf?oc=5",
-      "canonical": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5uZEp3bmowcnRsdzJPczBpTndoaTFVVkQ1ai03S1JXQmVydFVEa3VBUEJuWXZzV1MtSFJ5MWJvMEVvMjZGSUQ2OVJhbUxJQTNxaHBUUTg2ZXFQQlRf?oc=5",
-      "source": "news.google.com",
-      "source_id": "gn_water_quality_research",
-      "source_site": "https://news.google.com/",
-      "category": "research",
-      "scope": "global",
-      "summary": "Researchers advance aquifer mapping using remote sensing and statistical models to improve groundwater management EurekAlert!",
-      "author": "",
-      "image": "",
-      "published": "2026-10-16T22:29:38+00:00",
-      "published_ts": 1792189778,
-      "local": false,
-      "tags": [],
-      "score": 20.01,
-      "raw_score": 23.4,
-      "matched": {
-        "water": [
-          "aquifer",
-          "groundwater"
-        ],
-        "research": [
-          "researchers"
         ]
       }
     },
@@ -251,7 +251,7 @@
       "published_ts": 1792317960,
       "local": false,
       "tags": [],
-      "score": 18.39,
+      "score": 17.94,
       "raw_score": 19.4,
       "matched": {
         "water": [
@@ -279,7 +279,7 @@
       "published_ts": 1792054800,
       "local": false,
       "tags": [],
-      "score": 17.96,
+      "score": 17.52,
       "raw_score": 23.4,
       "matched": {
         "water": [
@@ -310,7 +310,7 @@
       "published_ts": 1792020300,
       "local": false,
       "tags": [],
-      "score": 17.77,
+      "score": 17.34,
       "raw_score": 23.8,
       "matched": {
         "water": [
@@ -337,13 +337,13 @@
       "summary": "",
       "author": "",
       "image": "",
-      "published": "2026-10-19T01:41:40+00:00",
-      "published_ts": 1792374100,
+      "published": "2026-10-19T02:36:21+00:00",
+      "published_ts": 1792377381,
       "local": true,
       "tags": [
         "hill-country"
       ],
-      "score": 17.55,
+      "score": 17.17,
       "raw_score": 17.7,
       "matched": {
         "water": [
@@ -371,7 +371,7 @@
       "published_ts": 1791984240,
       "local": false,
       "tags": [],
-      "score": 17.26,
+      "score": 16.84,
       "raw_score": 23.8,
       "matched": {
         "water": [
@@ -404,7 +404,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 17.14,
+      "score": 16.73,
       "raw_score": 21.6,
       "matched": {
         "water": [
@@ -436,7 +436,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 16.52,
+      "score": 16.12,
       "raw_score": 25.8,
       "matched": {
         "water": [
@@ -467,7 +467,7 @@
       "tags": [
         "research"
       ],
-      "score": 16.24,
+      "score": 15.84,
       "raw_score": 19.3,
       "matched": {
         "water": [
@@ -498,7 +498,7 @@
       "published_ts": 1792161092,
       "local": false,
       "tags": [],
-      "score": 16.22,
+      "score": 15.82,
       "raw_score": 19.4,
       "matched": {
         "water": [
@@ -509,6 +509,34 @@
         ],
         "positive": [
           "wins"
+        ]
+      }
+    },
+    {
+      "id": "gn_epa_water:e14498b31d",
+      "title": "Michigan engineer who helped expose Flint Water Crisis files for injunction to block EPA policy",
+      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOVFJhRzFab3RnbTQxRTN5dG9xX3lHcDVhelNLaDdwV3M5WlE1N3Z0RGllWGFzYW92UTVkb2F4bC1VcWx3V0R2MXdyMklCRzQwVHltUm9qNVFYbk9FM3QyNHlXSzF6T3Y3MVpzMzdMYkJqUk05V3NZWmJQbUg3T18tcEdrcGZ2LVlzZWpOQnpmQlFBb1RQWVYwbWZzVHVUODFtSkt3M3ZXMGtFbDY1bnEyckllZ3JWWmNYZDhzRENQbU1XdkRRMTJqbnhVbjlIZlZt?oc=5",
+      "canonical": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOVFJhRzFab3RnbTQxRTN5dG9xX3lHcDVhelNLaDdwV3M5WlE1N3Z0RGllWGFzYW92UTVkb2F4bC1VcWx3V0R2MXdyMklCRzQwVHltUm9qNVFYbk9FM3QyNHlXSzF6T3Y3MVpzMzdMYkJqUk05V3NZWmJQbUg3T18tcEdrcGZ2LVlzZWpOQnpmQlFBb1RQWVYwbWZzVHVUODFtSkt3M3ZXMGtFbDY1bnEyckllZ3JWWmNYZDhzRENQbU1XdkRRMTJqbnhVbjlIZlZt?oc=5",
+      "source": "Michigan Advance",
+      "source_id": "gn_epa_water",
+      "source_site": "https://www.epa.gov/newsreleases",
+      "category": "policy",
+      "scope": "national",
+      "summary": "",
+      "author": "",
+      "image": "",
+      "published": "2026-10-16T15:53:37+00:00",
+      "published_ts": 1792166017,
+      "local": false,
+      "tags": [],
+      "score": 15.8,
+      "raw_score": 19.3,
+      "matched": {
+        "water": [
+          "water crisis"
+        ],
+        "policy": [
+          "epa"
         ]
       }
     },
@@ -529,7 +557,7 @@
       "published_ts": 1792154064,
       "local": false,
       "tags": [],
-      "score": 16.12,
+      "score": 15.73,
       "raw_score": 19.4,
       "matched": {
         "water": [
@@ -559,7 +587,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 16.05,
+      "score": 15.66,
       "raw_score": 21.7,
       "matched": {
         "water": [
@@ -588,7 +616,7 @@
       "published_ts": 1792138528,
       "local": false,
       "tags": [],
-      "score": 15.92,
+      "score": 15.54,
       "raw_score": 19.4,
       "matched": {
         "water": [
@@ -616,7 +644,7 @@
       "published_ts": 1792087200,
       "local": false,
       "tags": [],
-      "score": 15.68,
+      "score": 15.29,
       "raw_score": 19.9,
       "matched": {
         "water": [
@@ -646,7 +674,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 15.28,
+      "score": 14.91,
       "raw_score": 17.7,
       "matched": {
         "water": [
@@ -676,7 +704,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 15.06,
+      "score": 14.69,
       "raw_score": 17.7,
       "matched": {
         "water": [
@@ -706,7 +734,7 @@
       "tags": [
         "rainwater"
       ],
-      "score": 14.85,
+      "score": 14.49,
       "raw_score": 29.5,
       "matched": {
         "rainwater": [
@@ -734,7 +762,7 @@
         "hill-country",
         "policy"
       ],
-      "score": 14.1,
+      "score": 13.76,
       "raw_score": 20.7,
       "matched": {
         "water": [
@@ -745,34 +773,6 @@
         ],
         "region": [
           "groundwater conservation district"
-        ]
-      }
-    },
-    {
-      "id": "gn_ctx_drought:e7c22aa9a7",
-      "title": "Drought Monitor: Oklahoma Drought Conditions Persist as Rainfall Chances Increase",
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQQmZ2QUMxdEkyZG5pWGVNcUpORHFzQkhJN1VsUzZPODQ2bklXTDhmYzE4NVZFM3pnZDloTmZDN3RIdTNFcHNpRXdCeWdVVUtQY2luYVlFZTZPNU93VFU4cUhBX0V6SzZWd0hFUDZCSmtpMmZNTzJ1RGZIekF6TTg5VjlDODJqQm50ajlVcml4SEIxaDRMOUtxamk3TnE0b0lScXFxOEZsWHRLZlJHY2tLRURIWXhxY3Npelc2UzdYam5SLVlJZHc?oc=5",
-      "canonical": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQQmZ2QUMxdEkyZG5pWGVNcUpORHFzQkhJN1VsUzZPODQ2bklXTDhmYzE4NVZFM3pnZDloTmZDN3RIdTNFcHNpRXdCeWdVVUtQY2luYVlFZTZPNU93VFU4cUhBX0V6SzZWd0hFUDZCSmtpMmZNTzJ1RGZIekF6TTg5VjlDODJqQm50ajlVcml4SEIxaDRMOUtxamk3TnE0b0lScXFxOEZsWHRLZlJHY2tLRURIWXhxY3Npelc2UzdYam5SLVlJZHc?oc=5",
-      "source": "Oklahoma Farm Report",
-      "source_id": "gn_ctx_drought",
-      "source_site": "https://news.google.com/",
-      "category": "local",
-      "scope": "local",
-      "summary": "",
-      "author": "",
-      "image": "",
-      "published": "2026-10-15T13:29:07+00:00",
-      "published_ts": 1792070947,
-      "local": true,
-      "tags": [
-        "hill-country"
-      ],
-      "score": 13.68,
-      "raw_score": 17.6,
-      "matched": {
-        "water": [
-          "drought",
-          "rainfall"
         ]
       }
     },
@@ -793,7 +793,7 @@
       "published_ts": 1792236828,
       "local": false,
       "tags": [],
-      "score": 13.32,
+      "score": 13.0,
       "raw_score": 15.0,
       "matched": {
         "water": [
@@ -822,7 +822,7 @@
       "published_ts": 1792362964,
       "local": false,
       "tags": [],
-      "score": 13.27,
+      "score": 12.95,
       "raw_score": 13.5,
       "matched": {
         "positive": [
@@ -847,7 +847,7 @@
       "published_ts": 1792249482,
       "local": false,
       "tags": [],
-      "score": 12.11,
+      "score": 11.82,
       "raw_score": 13.5,
       "matched": {
         "positive": [
@@ -872,7 +872,7 @@
       "published_ts": 1792054920,
       "local": false,
       "tags": [],
-      "score": 11.9,
+      "score": 11.61,
       "raw_score": 15.5,
       "matched": {
         "positive": [
@@ -900,7 +900,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 11.84,
+      "score": 11.55,
       "raw_score": 25.2,
       "matched": {
         "water": [
@@ -928,7 +928,7 @@
       "published_ts": 1792041544,
       "local": false,
       "tags": [],
-      "score": 11.32,
+      "score": 11.04,
       "raw_score": 14.9,
       "matched": {
         "water": [
@@ -959,7 +959,7 @@
       "published_ts": 1792159359,
       "local": false,
       "tags": [],
-      "score": 11.27,
+      "score": 10.99,
       "raw_score": 13.5,
       "matched": {
         "positive": [
@@ -984,7 +984,7 @@
       "published_ts": 1792150092,
       "local": false,
       "tags": [],
-      "score": 11.18,
+      "score": 10.91,
       "raw_score": 13.5,
       "matched": {
         "positive": [
@@ -1009,7 +1009,7 @@
       "published_ts": 1791543127,
       "local": false,
       "tags": [],
-      "score": 10.95,
+      "score": 10.68,
       "raw_score": 21.5,
       "matched": {
         "water": [
@@ -1039,7 +1039,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 10.58,
+      "score": 10.32,
       "raw_score": 13.6,
       "matched": {
         "water": [
@@ -1067,7 +1067,7 @@
         "rainwater",
         "hill-country"
       ],
-      "score": 10.52,
+      "score": 10.26,
       "raw_score": 48.0,
       "matched": {
         "rainwater": [
@@ -1079,6 +1079,34 @@
         ],
         "local": [
           "dripping springs"
+        ]
+      }
+    },
+    {
+      "id": "gn_rainwater_research:d780db59c5",
+      "title": "Workshop on “Innovations in Soil & Water Conservation” held at Maya Devi University",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQYTJWWDBLR1hNV21za1VIeENDNU5PT1hNaC1WeXFwSGJfNU5WY2pDUDVWSUE1b19EYUduV2x4YklwSmZFbHRTajhUb3huZW43NWJpS09Gc2pQNWZjOUl2WFFoeDZVUnB3dzgtTWR0Zkx2WTFtNUFhUWVoMFBZOUNVYkJ0bzVTSnU3R0h5WFBPeHRUOHZLOF9IQ0Y2VE1IZjBORlhQTi13?oc=5",
+      "canonical": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQYTJWWDBLR1hNV21za1VIeENDNU5PT1hNaC1WeXFwSGJfNU5WY2pDUDVWSUE1b19EYUduV2x4YklwSmZFbHRTajhUb3huZW43NWJpS09Gc2pQNWZjOUl2WFFoeDZVUnB3dzgtTWR0Zkx2WTFtNUFhUWVoMFBZOUNVYkJ0bzVTSnU3R0h5WFBPeHRUOHZLOF9IQ0Y2VE1IZjBORlhQTi13?oc=5",
+      "source": "Garhwal Post",
+      "source_id": "gn_rainwater_research",
+      "source_site": "https://news.google.com/",
+      "category": "research",
+      "scope": "global",
+      "summary": "",
+      "author": "",
+      "image": "",
+      "published": "2026-10-09T07:00:00+00:00",
+      "published_ts": 1791529200,
+      "local": false,
+      "tags": [],
+      "score": 9.78,
+      "raw_score": 19.9,
+      "matched": {
+        "water": [
+          "water conservation"
+        ],
+        "research": [
+          "university"
         ]
       }
     },
@@ -1101,7 +1129,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 9.96,
+      "score": 9.72,
       "raw_score": 13.2,
       "matched": {
         "water": [
@@ -1126,7 +1154,7 @@
       "published_ts": 1792038780,
       "local": false,
       "tags": [],
-      "score": 9.7,
+      "score": 9.46,
       "raw_score": 12.8,
       "matched": {
         "water": [
@@ -1159,7 +1187,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 9.61,
+      "score": 9.38,
       "raw_score": 17.6,
       "matched": {
         "water": [
@@ -1189,7 +1217,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 8.65,
+      "score": 8.44,
       "raw_score": 13.2,
       "matched": {
         "water": [
@@ -1216,7 +1244,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 8.61,
+      "score": 8.4,
       "raw_score": 21.6,
       "matched": {
         "water": [
@@ -1248,7 +1276,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 8.49,
+      "score": 8.28,
       "raw_score": 17.6,
       "matched": {
         "water": [
@@ -1257,6 +1285,37 @@
         ],
         "positive": [
           "improves"
+        ]
+      }
+    },
+    {
+      "id": "gn_ctx_drought:be3daee8bb",
+      "title": "Drought news October 8, 2026: Widespread heavy precipitation abetted robust improvement across eastern #Colorado, central and western #Kansas, and parts of southern Nebraska, 2-category improvements in portions",
+      "url": "https://news.google.com/rss/articles/CBMizAJBVV95cUxOUkE1MlJ2WjJ6TUNSVFZvc3RMVkdXQmN1UVBya2dxYUVlZlVSa1Y3MmI5SmlNbzQzRWFHOGNLb2RFc196WGZTOXlDSzhjR2pZSUllU0RxV1ZyMU9NZzVZenJEb0dqMjVtb1ZUZlhqOWZFNFhjbjZtVmxHUHBSS1ZpLWU3di03MEZKMVJsT3U3RWpKTFZaa0RkSGNNMTI5bkI5Q2VpV3hOUEVmeHRKOEpscUpaUVNoUFp5SzFpdTNUaDVyUWZ5N1g2OV9iUTloM2MzSEVNbjhrSm5qNUVpM0VJVjBYLVoxYmpLVlB6VHVseTJnbUNtZjJQbU4xRGwxN2c3cDlFVVdwZ0FyY3hfUWhRNkJ2bFFjZjR4dG9MaFpmOFFzRU1aY3ZBSjlrTDhJaGJad3ZMR1VvWXMxbjdoTG41OTM1NUhfcVcwTEU0UA?oc=5",
+      "canonical": "https://news.google.com/rss/articles/CBMizAJBVV95cUxOUkE1MlJ2WjJ6TUNSVFZvc3RMVkdXQmN1UVBya2dxYUVlZlVSa1Y3MmI5SmlNbzQzRWFHOGNLb2RFc196WGZTOXlDSzhjR2pZSUllU0RxV1ZyMU9NZzVZenJEb0dqMjVtb1ZUZlhqOWZFNFhjbjZtVmxHUHBSS1ZpLWU3di03MEZKMVJsT3U3RWpKTFZaa0RkSGNNMTI5bkI5Q2VpV3hOUEVmeHRKOEpscUpaUVNoUFp5SzFpdTNUaDVyUWZ5N1g2OV9iUTloM2MzSEVNbjhrSm5qNUVpM0VJVjBYLVoxYmpLVlB6VHVseTJnbUNtZjJQbU4xRGwxN2c3cDlFVVdwZ0FyY3hfUWhRNkJ2bFFjZjR4dG9MaFpmOFFzRU1aY3ZBSjlrTDhJaGJad3ZMR1VvWXMxbjdoTG41OTM1NUhfcVcwTEU0UA?oc=5",
+      "source": "coyotegulch.blog",
+      "source_id": "gn_ctx_drought",
+      "source_site": "https://news.google.com/",
+      "category": "local",
+      "scope": "local",
+      "summary": "Drought news October 8, 2026: Widespread heavy precipitation abetted robust improvement across eastern #Colorado, central and western #Kansas, and parts of southern Nebraska, 2-category improvements in portions coyotegulch.blog",
+      "author": "",
+      "image": "",
+      "published": "2026-10-08T07:00:00+00:00",
+      "published_ts": 1791442800,
+      "local": true,
+      "tags": [
+        "hill-country"
+      ],
+      "score": 8.07,
+      "raw_score": 17.6,
+      "matched": {
+        "water": [
+          "drought",
+          "precipitation"
+        ],
+        "positive": [
+          "improvement"
         ]
       }
     },
@@ -1279,7 +1338,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 8.04,
+      "score": 7.84,
       "raw_score": 29.8,
       "matched": {
         "water": [
@@ -1291,36 +1350,6 @@
         "region": [
           "texas",
           "texas hill country"
-        ]
-      }
-    },
-    {
-      "id": "gn_hill_country_water:a07d661806",
-      "title": "Hill Country schools monitor flooding as heavy rain moves in",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQME9FanRIZ1E2Mk80a1dXeFZCT0VndUVDTVNIaVpGamFOdFVaNEtuQm5qV28xelFhRVlEbWRLUTVzbnNISGYwVTNZRTJSaTI1NXJjcUNieFVmWjdJV3BqbG5LYjVOWGlBUGYxeU9KMEZGTDR0Sk53X3o0ZDk1LXQ1TVQ2Qy1PSEhNcHo1RElWU3UzTEFkV29TbDBMMEZpUQ?oc=5",
-      "canonical": "https://news.google.com/rss/articles/CBMingFBVV95cUxQME9FanRIZ1E2Mk80a1dXeFZCT0VndUVDTVNIaVpGamFOdFVaNEtuQm5qV28xelFhRVlEbWRLUTVzbnNISGYwVTNZRTJSaTI1NXJjcUNieFVmWjdJV3BqbG5LYjVOWGlBUGYxeU9KMEZGTDR0Sk53X3o0ZDk1LXQ1TVQ2Qy1PSEhNcHo1RElWU3UzTEFkV29TbDBMMEZpUQ?oc=5",
-      "source": "MySA",
-      "source_id": "gn_hill_country_water",
-      "source_site": "https://news.google.com/",
-      "category": "local",
-      "scope": "local",
-      "summary": "",
-      "author": "",
-      "image": "",
-      "published": "2026-10-02T07:00:00+00:00",
-      "published_ts": 1790924400,
-      "local": true,
-      "tags": [
-        "hill-country"
-      ],
-      "score": 8.0,
-      "raw_score": 25.8,
-      "matched": {
-        "water": [
-          "flooding"
-        ],
-        "local": [
-          "hill country"
         ]
       }
     },
@@ -1343,7 +1372,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 8.0,
+      "score": 7.8,
       "raw_score": 25.8,
       "matched": {
         "water": [
@@ -1377,7 +1406,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 7.5,
+      "score": 7.32,
       "raw_score": 29.8,
       "matched": {
         "water": [
@@ -1408,7 +1437,7 @@
       "published_ts": 1791714720,
       "local": false,
       "tags": [],
-      "score": 7.48,
+      "score": 7.3,
       "raw_score": 12.8,
       "matched": {
         "water": [
@@ -1441,7 +1470,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 7.46,
+      "score": 7.28,
       "raw_score": 25.8,
       "matched": {
         "water": [
@@ -1449,6 +1478,37 @@
         ],
         "local": [
           "hill country"
+        ]
+      }
+    },
+    {
+      "id": "gn_hill_country_water:c8084e9415",
+      "title": "LIVE UPDATES: Heavy rain and flooding affecting roads in Hill Country and San Antonio areas",
+      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNZ3YxQ0hTdE5YY2hKbVZoVEQxTjNQSlBwVDdIdF9JN28zSDFMSFVJbWlOYUlib0wxTU9mSXpvT0dxN3BwMENCckkzZDNqeVNCYk9FYl9zUUZ4NUhMSlQzV0tDMkpYRzlLVWpFRWUxTFNHS0k3UFFNeVQxb0o4eWJqc3dPUkhZNmdTdzZFU0ZTcTdPLUZ6dzBRRWRMaWFWLW9ScHBZZWNVeXhYRXhtcHVYaVJmbTJLMW9COW5hZmhkTVlEbXk2TDc5V3FMVDZxMEg1Mk5sSzlFSkQzWDZy?oc=5",
+      "canonical": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNZ3YxQ0hTdE5YY2hKbVZoVEQxTjNQSlBwVDdIdF9JN28zSDFMSFVJbWlOYUlib0wxTU9mSXpvT0dxN3BwMENCckkzZDNqeVNCYk9FYl9zUUZ4NUhMSlQzV0tDMkpYRzlLVWpFRWUxTFNHS0k3UFFNeVQxb0o4eWJqc3dPUkhZNmdTdzZFU0ZTcTdPLUZ6dzBRRWRMaWFWLW9ScHBZZWNVeXhYRXhtcHVYaVJmbTJLMW9COW5hZmhkTVlEbXk2TDc5V3FMVDZxMEg1Mk5sSzlFSkQzWDZy?oc=5",
+      "source": "kens5.com",
+      "source_id": "gn_hill_country_water",
+      "source_site": "https://news.google.com/",
+      "category": "local",
+      "scope": "local",
+      "summary": "",
+      "author": "",
+      "image": "",
+      "published": "2026-10-01T07:00:00+00:00",
+      "published_ts": 1790838000,
+      "local": true,
+      "tags": [
+        "hill-country"
+      ],
+      "score": 7.28,
+      "raw_score": 25.8,
+      "matched": {
+        "water": [
+          "flooding"
+        ],
+        "local": [
+          "hill country",
+          "san antonio"
         ]
       }
     },
@@ -1469,7 +1529,7 @@
       "published_ts": 1791479333,
       "local": false,
       "tags": [],
-      "score": 6.43,
+      "score": 6.28,
       "raw_score": 13.3,
       "matched": {
         "water": [
@@ -1494,7 +1554,7 @@
       "published_ts": 1791716400,
       "local": false,
       "tags": [],
-      "score": 5.21,
+      "score": 5.08,
       "raw_score": 8.9,
       "matched": {
         "water": [
@@ -1524,11 +1584,44 @@
       "tags": [
         "hill-country"
       ],
-      "score": 4.62,
+      "score": 4.5,
       "raw_score": 13.9,
       "matched": {
         "water": [
           "watershed"
+        ]
+      }
+    },
+    {
+      "id": "gn_epa_water:e9684adc00",
+      "title": "EPA Study Puts New Focus on Microplastics in Drinking Water",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOSjNEa2dJRllxcVd2Ml9Zb2MwOF9RcmtVNFFtM0JGbm8wRFVTWlh0bmE2bzZsZDk4VUdNNVhoNm1XN3FGUllHMDVFa09jalYyeTRqQldnS3dXcmU2RWVJdEZRaGNueHFsYXVmZF9xNWZLaGVxN3NySEttbWozTDBhLXI0YndvZ0c0MkxHSjRpVG9ZNV9xa3c?oc=5",
+      "canonical": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOSjNEa2dJRllxcVd2Ml9Zb2MwOF9RcmtVNFFtM0JGbm8wRFVTWlh0bmE2bzZsZDk4VUdNNVhoNm1XN3FGUllHMDVFa09jalYyeTRqQldnS3dXcmU2RWVJdEZRaGNueHFsYXVmZF9xNWZLaGVxN3NySEttbWozTDBhLXI0YndvZ0c0MkxHSjRpVG9ZNV9xa3c?oc=5",
+      "source": "EHSLeaders",
+      "source_id": "gn_epa_water",
+      "source_site": "https://www.epa.gov/newsreleases",
+      "category": "policy",
+      "scope": "national",
+      "summary": "",
+      "author": "",
+      "image": "",
+      "published": "2026-09-28T11:25:54+00:00",
+      "published_ts": 1790594754,
+      "local": false,
+      "tags": [
+        "research"
+      ],
+      "score": 4.48,
+      "raw_score": 19.3,
+      "matched": {
+        "water": [
+          "drinking water"
+        ],
+        "policy": [
+          "epa"
+        ],
+        "research": [
+          "study"
         ]
       }
     },
@@ -1549,7 +1642,7 @@
       "published_ts": 1790319600,
       "local": false,
       "tags": [],
-      "score": 4.54,
+      "score": 4.43,
       "raw_score": 23.8,
       "matched": {
         "water": [
@@ -1583,7 +1676,7 @@
         "rainwater",
         "hill-country"
       ],
-      "score": 4.52,
+      "score": 4.41,
       "raw_score": 29.2,
       "matched": {
         "rainwater": [
@@ -1613,7 +1706,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 4.32,
+      "score": 4.22,
       "raw_score": 29.9,
       "matched": {
         "water": [
@@ -1646,7 +1739,7 @@
       "tags": [
         "rainwater"
       ],
-      "score": 4.22,
+      "score": 4.11,
       "raw_score": 35.9,
       "matched": {
         "rainwater": [
@@ -1676,7 +1769,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 3.91,
+      "score": 3.81,
       "raw_score": 25.2,
       "matched": {
         "water": [
@@ -1706,7 +1799,7 @@
       "tags": [
         "policy"
       ],
-      "score": 3.81,
+      "score": 3.71,
       "raw_score": 4.7,
       "matched": {
         "water": [
@@ -1737,7 +1830,7 @@
       "published_ts": 1790319600,
       "local": false,
       "tags": [],
-      "score": 3.4,
+      "score": 3.31,
       "raw_score": 17.8,
       "matched": {
         "water": [
@@ -1769,7 +1862,7 @@
         "policy",
         "research"
       ],
-      "score": 3.26,
+      "score": 3.18,
       "raw_score": 31.9,
       "matched": {
         "water": [
@@ -1784,6 +1877,39 @@
         "local": [
           "barton springs",
           "edwards aquifer"
+        ]
+      }
+    },
+    {
+      "id": "gn_epa_water:20a85148da",
+      "title": "New EPA Drinking Water Study Screens for PFAS, Pharmaceuticals, and 1,000+ Chemicals",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE81b3lhektDU3JVcV9oc05rYjFTR3dlUWZEelNGVlBDaFVnclJaTHR4Tm9yRHJ1bmM2UXQwVEU1MGJoM01JdkY3M0hjOENCeUs2OUdCZ0VxakNNQk9PME5MSlRn?oc=5",
+      "canonical": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE81b3lhektDU3JVcV9oc05rYjFTR3dlUWZEelNGVlBDaFVnclJaTHR4Tm9yRHJ1bmM2UXQwVEU1MGJoM01JdkY3M0hjOENCeUs2OUdCZ0VxakNNQk9PME5MSlRn?oc=5",
+      "source": "Lynnwood Times",
+      "source_id": "gn_epa_water",
+      "source_site": "https://www.epa.gov/newsreleases",
+      "category": "policy",
+      "scope": "national",
+      "summary": "",
+      "author": "",
+      "image": "",
+      "published": "2026-09-22T07:00:00+00:00",
+      "published_ts": 1790060400,
+      "local": false,
+      "tags": [
+        "research"
+      ],
+      "score": 2.92,
+      "raw_score": 19.3,
+      "matched": {
+        "water": [
+          "drinking water"
+        ],
+        "policy": [
+          "epa"
+        ],
+        "research": [
+          "study"
         ]
       }
     },
@@ -1804,7 +1930,7 @@
       "published_ts": 1789974000,
       "local": false,
       "tags": [],
-      "score": 2.82,
+      "score": 2.75,
       "raw_score": 19.5,
       "matched": {
         "water": [
@@ -1832,7 +1958,7 @@
       "published_ts": 1791637200,
       "local": false,
       "tags": [],
-      "score": 2.8,
+      "score": 2.73,
       "raw_score": 5.1,
       "matched": {
         "water": [
@@ -1860,7 +1986,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 2.79,
+      "score": 2.72,
       "raw_score": 29.2,
       "matched": {
         "water": [
@@ -1893,7 +2019,7 @@
       "published_ts": 1790165124,
       "local": false,
       "tags": [],
-      "score": 2.51,
+      "score": 2.45,
       "raw_score": 14.9,
       "matched": {
         "water": [
@@ -1921,7 +2047,7 @@
       "published_ts": 1790146800,
       "local": false,
       "tags": [],
-      "score": 2.47,
+      "score": 2.41,
       "raw_score": 14.9,
       "matched": {
         "water": [
@@ -1955,7 +2081,7 @@
       "published_ts": 1790140169,
       "local": false,
       "tags": [],
-      "score": 2.23,
+      "score": 2.18,
       "raw_score": 13.5,
       "matched": {
         "water": [
@@ -1963,6 +2089,37 @@
         ],
         "research": [
           "scientists"
+        ]
+      }
+    },
+    {
+      "id": "gn_epa_water:475663fbfd",
+      "title": "EPA launches G20 initiative to advance safe water reuse",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPcU5HNXZmSS1NWVh5ZHNOSzlXbTI5TE5nMXFoRWFkRlR0M0FWV184NXM0bHBuaWRqbVE4RzZyQXdVcXpYcGtHSmVOM0otTjNDSzg2YjBZS3ZPSWYtYmFSbXlES0pNcWN0UjAzSzBJUWFodUlGaWU0V2lYQlNPNVE1YUQxQjZma1IwY0hwOWZUdWRQXzNVbWhGUkYzamt4RWU5Rnc?oc=5",
+      "canonical": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPcU5HNXZmSS1NWVh5ZHNOSzlXbTI5TE5nMXFoRWFkRlR0M0FWV184NXM0bHBuaWRqbVE4RzZyQXdVcXpYcGtHSmVOM0otTjNDSzg2YjBZS3ZPSWYtYmFSbXlES0pNcWN0UjAzSzBJUWFodUlGaWU0V2lYQlNPNVE1YUQxQjZma1IwY0hwOWZUdWRQXzNVbWhGUkYzamt4RWU5Rnc?oc=5",
+      "source": "Smart Water Magazine",
+      "source_id": "gn_epa_water",
+      "source_site": "https://www.epa.gov/newsreleases",
+      "category": "policy",
+      "scope": "national",
+      "summary": "",
+      "author": "",
+      "image": "",
+      "published": "2026-09-17T07:00:00+00:00",
+      "published_ts": 1789628400,
+      "local": false,
+      "tags": [],
+      "score": 2.06,
+      "raw_score": 19.3,
+      "matched": {
+        "water": [
+          "water reuse"
+        ],
+        "policy": [
+          "epa"
+        ],
+        "positive": [
+          "launches"
         ]
       }
     },
@@ -1985,7 +2142,7 @@
       "tags": [
         "research"
       ],
-      "score": 2.02,
+      "score": 1.97,
       "raw_score": 3.2,
       "matched": {
         "water": [
@@ -1993,35 +2150,6 @@
         ],
         "research": [
           "scientists"
-        ]
-      }
-    },
-    {
-      "id": "gn_epa_water:4a1ed9e398",
-      "title": "EPA warns Ireland’s water quality continues to decline as wastewater challenges persist",
-      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQWUREdVhJUUtWcFFjSFBRMHNHRlpBc0pESFRDNmtfMTUyOWVOMzNGR3VNWnBjSmdfN19yMk1OcWZKSUVvS0pwU0VtTElkbTlXTDdGNzMybkwwOUp1OUVQNFdldTNFV081V1F5ZVdiSnhqeUYyVHhjQ293b25iWHFpNU1jM1p1R3BmQ2JTOEVCWVNXdjlSVi15dW1RaElyNUxmMHJ5RG5mRWV4cUQ0cGdWRk9jSm5ZLUp2cnZFb3dVbFNQejJVTmlfQTh3?oc=5",
-      "canonical": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQWUREdVhJUUtWcFFjSFBRMHNHRlpBc0pESFRDNmtfMTUyOWVOMzNGR3VNWnBjSmdfN19yMk1OcWZKSUVvS0pwU0VtTElkbTlXTDdGNzMybkwwOUp1OUVQNFdldTNFV081V1F5ZVdiSnhqeUYyVHhjQ293b25iWHFpNU1jM1p1R3BmQ2JTOEVCWVNXdjlSVi15dW1RaElyNUxmMHJ5RG5mRWV4cUQ0cGdWRk9jSm5ZLUp2cnZFb3dVbFNQejJVTmlfQTh3?oc=5",
-      "source": "Water Magazine",
-      "source_id": "gn_epa_water",
-      "source_site": "https://www.epa.gov/newsreleases",
-      "category": "policy",
-      "scope": "national",
-      "summary": "",
-      "author": "",
-      "image": "",
-      "published": "2026-09-11T07:00:00+00:00",
-      "published_ts": 1789110000,
-      "local": false,
-      "tags": [],
-      "score": 1.68,
-      "raw_score": 23.3,
-      "matched": {
-        "water": [
-          "wastewater",
-          "water quality"
-        ],
-        "policy": [
-          "epa"
         ]
       }
     },
@@ -2042,7 +2170,7 @@
       "published_ts": 1789558457,
       "local": false,
       "tags": [],
-      "score": 1.55,
+      "score": 1.52,
       "raw_score": 15.0,
       "matched": {
         "water": [
@@ -2070,7 +2198,7 @@
       "published_ts": 1789569890,
       "local": false,
       "tags": [],
-      "score": 1.41,
+      "score": 1.38,
       "raw_score": 13.5,
       "matched": {
         "water": [
@@ -2078,42 +2206,6 @@
         ],
         "research": [
           "scientists"
-        ]
-      }
-    },
-    {
-      "id": "gn_epa_water:d8259872c2",
-      "title": "EPA launches broad study of potential contaminants in drinking water",
-      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPX2tJTVcwVDFvQ0ptV1Ffc2Foem5aSDcwY2tEemczdDlnblRDUmZSak5HNEZPVm5BU2Z2d3gwTWtlV19ralJPZG14VkFEb2JBRGJtYy1lQ3RocVVmUVppUDczVmxLNzJyQl8tcVBMdkp5QW1KS2E3cmNHVmUxbnhycGJ4OUFpV3JVdGU3M0VNQ0ZhNnJtSHItME5kdDBxSGd6ejJPYkcwX0dXT3ZPMGtDcHRfLWV6eV9XOWhUbnlkOXBuZEVXc1FOaHBDaW1tdGM?oc=5",
-      "canonical": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPX2tJTVcwVDFvQ0ptV1Ffc2Foem5aSDcwY2tEemczdDlnblRDUmZSak5HNEZPVm5BU2Z2d3gwTWtlV19ralJPZG14VkFEb2JBRGJtYy1lQ3RocVVmUVppUDczVmxLNzJyQl8tcVBMdkp5QW1KS2E3cmNHVmUxbnhycGJ4OUFpV3JVdGU3M0VNQ0ZhNnJtSHItME5kdDBxSGd6ejJPYkcwX0dXT3ZPMGtDcHRfLWV6eV9XOWhUbnlkOXBuZEVXc1FOaHBDaW1tdGM?oc=5",
-      "source": "WaterWorld",
-      "source_id": "gn_epa_water",
-      "source_site": "https://www.epa.gov/newsreleases",
-      "category": "policy",
-      "scope": "national",
-      "summary": "",
-      "author": "",
-      "image": "",
-      "published": "2026-09-11T07:00:00+00:00",
-      "published_ts": 1789110000,
-      "local": false,
-      "tags": [
-        "research"
-      ],
-      "score": 1.4,
-      "raw_score": 19.3,
-      "matched": {
-        "water": [
-          "drinking water"
-        ],
-        "policy": [
-          "epa"
-        ],
-        "research": [
-          "study"
-        ],
-        "positive": [
-          "launches"
         ]
       }
     },
@@ -2136,7 +2228,7 @@
       "tags": [
         "research"
       ],
-      "score": 1.39,
+      "score": 1.36,
       "raw_score": 7.2,
       "matched": {
         "water": [
@@ -2166,7 +2258,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 0.98,
+      "score": 0.95,
       "raw_score": 13.9,
       "matched": {
         "water": [
@@ -2191,7 +2283,7 @@
       "published_ts": 1789476420,
       "local": false,
       "tags": [],
-      "score": 0.31,
+      "score": 0.3,
       "raw_score": 3.2,
       "matched": {
         "positive": [
@@ -2210,9 +2302,9 @@
       "scope": "local",
       "status": "ok",
       "http_status": 200,
-      "item_count": 70,
+      "item_count": 69,
       "error": null,
-      "ms": 582
+      "ms": 663
     },
     {
       "id": "gn_hays_blanco",
@@ -2223,9 +2315,9 @@
       "scope": "local",
       "status": "ok",
       "http_status": 200,
-      "item_count": 70,
+      "item_count": 69,
       "error": null,
-      "ms": 551
+      "ms": 496
     },
     {
       "id": "gn_aquifers",
@@ -2238,7 +2330,7 @@
       "http_status": 200,
       "item_count": 45,
       "error": null,
-      "ms": 467
+      "ms": 472
     },
     {
       "id": "gn_ctx_drought",
@@ -2249,9 +2341,9 @@
       "scope": "local",
       "status": "ok",
       "http_status": 200,
-      "item_count": 60,
+      "item_count": 59,
       "error": null,
-      "ms": 556
+      "ms": 527
     },
     {
       "id": "gn_texas_tribune_water",
@@ -2262,9 +2354,9 @@
       "scope": "state",
       "status": "ok",
       "http_status": 200,
-      "item_count": 73,
+      "item_count": 75,
       "error": null,
-      "ms": 393
+      "ms": 364
     },
     {
       "id": "austin_monitor",
@@ -2277,7 +2369,7 @@
       "http_status": 200,
       "item_count": 12,
       "error": null,
-      "ms": 432
+      "ms": 165
     },
     {
       "id": "san_antonio_report",
@@ -2290,7 +2382,7 @@
       "http_status": 200,
       "item_count": 10,
       "error": null,
-      "ms": 170
+      "ms": 94
     },
     {
       "id": "gn_community_impact",
@@ -2303,7 +2395,7 @@
       "http_status": 200,
       "item_count": 100,
       "error": null,
-      "ms": 575
+      "ms": 530
     },
     {
       "id": "gn_rainwater_research",
@@ -2314,9 +2406,9 @@
       "scope": "global",
       "status": "ok",
       "http_status": 200,
-      "item_count": 54,
+      "item_count": 57,
       "error": null,
-      "ms": 488
+      "ms": 402
     },
     {
       "id": "gn_water_quality_research",
@@ -2329,7 +2421,7 @@
       "http_status": 200,
       "item_count": 100,
       "error": null,
-      "ms": 520
+      "ms": 484
     },
     {
       "id": "sciencedaily_water",
@@ -2342,7 +2434,7 @@
       "http_status": 200,
       "item_count": 60,
       "error": null,
-      "ms": 196
+      "ms": 242
     },
     {
       "id": "sciencedaily_drought",
@@ -2355,7 +2447,7 @@
       "http_status": 200,
       "item_count": 60,
       "error": null,
-      "ms": 194
+      "ms": 165
     },
     {
       "id": "phys_org_environment",
@@ -2368,7 +2460,7 @@
       "http_status": 200,
       "item_count": 30,
       "error": null,
-      "ms": 690
+      "ms": 295
     },
     {
       "id": "gn_rainwater_policy",
@@ -2379,9 +2471,9 @@
       "scope": "national",
       "status": "ok",
       "http_status": 200,
-      "item_count": 52,
+      "item_count": 53,
       "error": null,
-      "ms": 494
+      "ms": 480
     },
     {
       "id": "gn_texas_water_policy",
@@ -2394,7 +2486,7 @@
       "http_status": 200,
       "item_count": 66,
       "error": null,
-      "ms": 454
+      "ms": 412
     },
     {
       "id": "gn_water_rebates",
@@ -2405,9 +2497,9 @@
       "scope": "national",
       "status": "ok",
       "http_status": 200,
-      "item_count": 18,
+      "item_count": 17,
       "error": null,
-      "ms": 399
+      "ms": 415
     },
     {
       "id": "gn_epa_water",
@@ -2418,9 +2510,9 @@
       "scope": "national",
       "status": "ok",
       "http_status": 200,
-      "item_count": 43,
+      "item_count": 69,
       "error": null,
-      "ms": 571
+      "ms": 454
     },
     {
       "id": "circle_of_blue",
@@ -2433,7 +2525,7 @@
       "http_status": 200,
       "item_count": 12,
       "error": null,
-      "ms": 180
+      "ms": 219
     },
     {
       "id": "gn_good_environment_news",
@@ -2446,7 +2538,7 @@
       "http_status": 200,
       "item_count": 100,
       "error": null,
-      "ms": 713
+      "ms": 696
     },
     {
       "id": "reasons_to_be_cheerful",
@@ -2459,7 +2551,7 @@
       "http_status": 200,
       "item_count": 10,
       "error": null,
-      "ms": 148
+      "ms": 198
     },
     {
       "id": "anthropocene",
@@ -2472,7 +2564,7 @@
       "http_status": null,
       "item_count": 0,
       "error": "RemoteDisconnected: Remote end closed connection without response",
-      "ms": 5386
+      "ms": 4869
     },
     {
       "id": "yale_e360",
@@ -2485,7 +2577,7 @@
       "http_status": 200,
       "item_count": 100,
       "error": null,
-      "ms": 351
+      "ms": 150
     },
     {
       "id": "grist",
@@ -2498,22 +2590,22 @@
       "http_status": 200,
       "item_count": 20,
       "error": null,
-      "ms": 261
+      "ms": 142
     }
   ],
   "stats": {
     "feeds_total": 23,
     "feeds_ok": 22,
     "feeds_failed": 1,
-    "entries_seen": 1165,
-    "candidates": 193,
-    "after_dedupe": 175,
-    "published": 72,
+    "entries_seen": 1193,
+    "candidates": 200,
+    "after_dedupe": 178,
+    "published": 75,
     "rejected": {
-      "score": 24,
-      "stale": 246,
-      "blocked": 19,
-      "off_topic": 683
+      "score": 22,
+      "stale": 251,
+      "blocked": 20,
+      "off_topic": 700
     }
   }
 }
