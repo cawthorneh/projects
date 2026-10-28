@@ -1,10 +1,10 @@
 {
-  "generated": "2026-10-27T14:48:56.431Z",
+  "generated": "2026-10-28T10:44:28.751Z",
   "source": "https://hydromet.lcra.org/",
   "window": "48h = today so far plus the whole of the previous calendar day",
   "columns": {
     "today": "today",
-    "yesterday": "10/26/2026",
+    "yesterday": "10/27/2026",
     "h24": "24 hour",
     "h1": "1 hour",
     "midnight": "since midnight"
@@ -87,11 +87,11 @@
       "label": "Fredericksburg",
       "county": "Gillespie Co.",
       "total48": 0.01,
-      "today": 0.01,
-      "yesterday": 0,
-      "h24": 0.01,
+      "today": 0,
+      "yesterday": 0.01,
+      "h24": 0,
       "h1": 0,
-      "midnight": 0.01,
+      "midnight": 0,
       "gauges": [
         {
           "name": "Fredericksburg 12 NW",
@@ -107,15 +107,15 @@
         },
         {
           "name": "Fredericksburg 9 SW",
-          "today": 0.01
+          "today": 0
         },
         {
           "name": "Pedernales River near Fredericksburg",
-          "today": 0.01
+          "today": 0
         },
         {
           "name": "Fredericksburg 5 N",
-          "today": 0.02
+          "today": 0
         },
         {
           "name": "Fredericksburg 10 SSE",
@@ -137,11 +137,11 @@
       "gauges": [
         {
           "name": "North Grape Creek near Johnson City",
-          "today": 0.02
+          "today": 0
         },
         {
           "name": "Johnson City 10 NNW",
-          "today": 0.01
+          "today": 0
         },
         {
           "name": "Johnson City 4 NNW",
@@ -200,12 +200,12 @@
       "Basin",
       "Today",
       "Last24",
+      "10/27/2026",
       "10/26/2026",
       "10/25/2026",
       "10/24/2026",
-      "10/23/2026",
-      "Since 10/23/2026",
-      "Five Day Rain (in) Report Date: 2026-10-27 09:46"
+      "Since 10/24/2026",
+      "Five Day Rain (in) Report Date: 2026-10-28 05:31"
     ],
     "intradayHeaders": [
       "Site",
@@ -216,15 +216,15 @@
       "6 Hour",
       "24 Hour",
       "Since Midnight",
-      "Rainfall (in) Report Date: 2026-10-27 09:46"
+      "Rainfall (in) Report Date: 2026-10-28 05:31"
     ],
     "fiveDayRows": 245,
-    "intradayRows": 246,
+    "intradayRows": 240,
     "datedColumns": [
+      "10/27/2026",
       "10/26/2026",
       "10/25/2026",
-      "10/24/2026",
-      "10/23/2026"
+      "10/24/2026"
     ]
   }
 }
