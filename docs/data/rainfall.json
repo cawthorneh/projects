@@ -1,10 +1,10 @@
 {
-  "generated": "2026-10-28T21:49:17.547Z",
+  "generated": "2026-10-29T08:06:57.379Z",
   "source": "https://hydromet.lcra.org/",
   "window": "48h = today so far plus the whole of the previous calendar day",
   "columns": {
     "today": "today",
-    "yesterday": "10/27/2026",
+    "yesterday": "10/28/2026",
     "h24": "24 hour",
     "h1": "1 hour",
     "midnight": "since midnight"
@@ -86,9 +86,9 @@
       "id": "fredericksburg",
       "label": "Fredericksburg",
       "county": "Gillespie Co.",
-      "total48": 0.01,
+      "total48": 0,
       "today": 0,
-      "yesterday": 0.01,
+      "yesterday": 0,
       "h24": 0,
       "h1": 0,
       "midnight": 0,
@@ -175,15 +175,15 @@
       "label": "Blanco",
       "county": "Blanco Co.",
       "total48": 0.02,
-      "today": 0.02,
-      "yesterday": 0,
+      "today": 0,
+      "yesterday": 0.02,
       "h24": 0.02,
       "h1": 0,
-      "midnight": 0.02,
+      "midnight": 0,
       "gauges": [
         {
           "name": "Blanco 13 WNW",
-          "today": 0.03
+          "today": 0
         },
         {
           "name": "Blanco 5 NNE",
@@ -200,12 +200,12 @@
       "Basin",
       "Today",
       "Last24",
+      "10/28/2026",
       "10/27/2026",
       "10/26/2026",
       "10/25/2026",
-      "10/24/2026",
-      "Since 10/24/2026",
-      "Five Day Rain (in) Report Date: 2026-10-28 16:46"
+      "Since 10/25/2026",
+      "Five Day Rain (in) Report Date: 2026-10-29 03:01"
     ],
     "intradayHeaders": [
       "Site",
@@ -216,15 +216,15 @@
       "6 Hour",
       "24 Hour",
       "Since Midnight",
-      "Rainfall (in) Report Date: 2026-10-28 16:46"
+      "Rainfall (in) Report Date: 2026-10-29 03:01"
     ],
     "fiveDayRows": 245,
     "intradayRows": 246,
     "datedColumns": [
+      "10/28/2026",
       "10/27/2026",
       "10/26/2026",
-      "10/25/2026",
-      "10/24/2026"
+      "10/25/2026"
     ]
   }
 }
