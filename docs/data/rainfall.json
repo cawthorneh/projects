@@ -1,10 +1,10 @@
 {
-  "generated": "2026-11-05T09:02:16.229Z",
+  "generated": "2026-11-08T00:50:44.411Z",
   "source": "https://hydromet.lcra.org/",
   "window": "48h = today so far plus the whole of the previous calendar day",
   "columns": {
     "today": "today",
-    "yesterday": "11/04/2026",
+    "yesterday": "11/06/2026",
     "h24": "24 hour",
     "h1": "1 hour",
     "midnight": "since midnight"
@@ -86,16 +86,16 @@
       "id": "fredericksburg",
       "label": "Fredericksburg",
       "county": "Gillespie Co.",
-      "total48": 0,
-      "today": 0,
+      "total48": 0.05,
+      "today": 0.05,
       "yesterday": 0,
-      "h24": 0,
-      "h1": 0,
-      "midnight": 0,
+      "h24": 0.05,
+      "h1": 0.05,
+      "midnight": 0.05,
       "gauges": [
         {
           "name": "Fredericksburg 12 NW",
-          "today": 0
+          "today": 0.01
         },
         {
           "name": "Fredericksburg 10 NNE",
@@ -107,11 +107,11 @@
         },
         {
           "name": "Fredericksburg 9 SW",
-          "today": 0
+          "today": 0.28
         },
         {
           "name": "Pedernales River near Fredericksburg",
-          "today": 0
+          "today": 0.06
         },
         {
           "name": "Fredericksburg 5 N",
@@ -200,12 +200,12 @@
       "Basin",
       "Today",
       "Last24",
+      "11/06/2026",
+      "11/05/2026",
       "11/04/2026",
       "11/03/2026",
-      "11/02/2026",
-      "11/01/2026",
-      "Since 11/01/2026",
-      "Five Day Rain (in) Report Date: 2026-11-05 02:46"
+      "Since 11/03/2026",
+      "Five Day Rain (in) Report Date: 2026-11-07 18:46"
     ],
     "intradayHeaders": [
       "Site",
@@ -216,15 +216,15 @@
       "6 Hour",
       "24 Hour",
       "Since Midnight",
-      "Rainfall (in) Report Date: 2026-11-05 02:46"
+      "Rainfall (in) Report Date: 2026-11-07 18:46"
     ],
     "fiveDayRows": 246,
-    "intradayRows": 246,
+    "intradayRows": 245,
     "datedColumns": [
+      "11/06/2026",
+      "11/05/2026",
       "11/04/2026",
-      "11/03/2026",
-      "11/02/2026",
-      "11/01/2026"
+      "11/03/2026"
     ]
   }
 }
