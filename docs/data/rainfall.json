@@ -1,10 +1,10 @@
 {
-  "generated": "2026-11-18T23:56:58.601Z",
+  "generated": "2026-11-19T06:50:40.564Z",
   "source": "https://hydromet.lcra.org/",
   "window": "48h = today so far plus the whole of the previous calendar day",
   "columns": {
     "today": "today",
-    "yesterday": "11/17/2026",
+    "yesterday": "11/18/2026",
     "h24": "24 hour",
     "h1": "1 hour",
     "midnight": "since midnight"
@@ -14,9 +14,9 @@
       "id": "dripping_springs",
       "label": "Dripping Springs",
       "county": "Hays Co.",
-      "total48": 0.01,
+      "total48": 0,
       "today": 0,
-      "yesterday": 0.01,
+      "yesterday": 0,
       "h24": 0,
       "h1": 0,
       "midnight": 0,
@@ -86,9 +86,9 @@
       "id": "fredericksburg",
       "label": "Fredericksburg",
       "county": "Gillespie Co.",
-      "total48": 0.01,
+      "total48": 0,
       "today": 0,
-      "yesterday": 0.01,
+      "yesterday": 0,
       "h24": 0,
       "h1": 0,
       "midnight": 0,
@@ -115,7 +115,7 @@
         },
         {
           "name": "Fredericksburg 5 N",
-          "today": 0.01
+          "today": 0
         },
         {
           "name": "Fredericksburg 10 SSE",
@@ -128,9 +128,9 @@
       "id": "johnson_city",
       "label": "Johnson City",
       "county": "Blanco Co.",
-      "total48": 0.01,
+      "total48": 0,
       "today": 0,
-      "yesterday": 0.01,
+      "yesterday": 0,
       "h24": 0,
       "h1": 0,
       "midnight": 0,
@@ -153,7 +153,7 @@
         },
         {
           "name": "Pedernales River near Johnson City",
-          "today": 0.01
+          "today": 0
         },
         {
           "name": "Miller Creek near Johnson City",
@@ -174,9 +174,9 @@
       "id": "blanco",
       "label": "Blanco",
       "county": "Blanco Co.",
-      "total48": 0.01,
+      "total48": 0,
       "today": 0,
-      "yesterday": 0.01,
+      "yesterday": 0,
       "h24": 0,
       "h1": 0,
       "midnight": 0,
@@ -200,12 +200,12 @@
       "Basin",
       "Today",
       "Last24",
+      "11/18/2026",
       "11/17/2026",
       "11/16/2026",
       "11/15/2026",
-      "11/14/2026",
-      "Since 11/14/2026",
-      "Five Day Rain (in) Report Date: 2026-11-18 17:46"
+      "Since 11/15/2026",
+      "Five Day Rain (in) Report Date: 2026-11-19 00:46"
     ],
     "intradayHeaders": [
       "Site",
@@ -216,15 +216,15 @@
       "6 Hour",
       "24 Hour",
       "Since Midnight",
-      "Rainfall (in) Report Date: 2026-11-18 17:46"
+      "Rainfall (in) Report Date: 2026-11-19 00:46"
     ],
     "fiveDayRows": 246,
     "intradayRows": 246,
     "datedColumns": [
+      "11/18/2026",
       "11/17/2026",
       "11/16/2026",
-      "11/15/2026",
-      "11/14/2026"
+      "11/15/2026"
     ]
   }
 }
