@@ -1,10 +1,10 @@
 {
-  "generated": "2026-11-19T16:21:46.067Z",
+  "generated": "2026-11-20T13:26:17.332Z",
   "source": "https://hydromet.lcra.org/",
   "window": "48h = today so far plus the whole of the previous calendar day",
   "columns": {
     "today": "today",
-    "yesterday": "11/18/2026",
+    "yesterday": "11/19/2026",
     "h24": "24 hour",
     "h1": "1 hour",
     "midnight": "since midnight"
@@ -95,7 +95,7 @@
       "gauges": [
         {
           "name": "Fredericksburg 12 NW",
-          "today": 0
+          "today": 0.01
         },
         {
           "name": "Fredericksburg 10 NNE",
@@ -111,7 +111,7 @@
         },
         {
           "name": "Pedernales River near Fredericksburg",
-          "today": 0.01
+          "today": 0
         },
         {
           "name": "Fredericksburg 5 N",
@@ -137,7 +137,7 @@
       "gauges": [
         {
           "name": "North Grape Creek near Johnson City",
-          "today": 0
+          "today": 0.01
         },
         {
           "name": "Johnson City 10 NNW",
@@ -200,12 +200,12 @@
       "Basin",
       "Today",
       "Last24",
+      "11/19/2026",
       "11/18/2026",
       "11/17/2026",
       "11/16/2026",
-      "11/15/2026",
-      "Since 11/15/2026",
-      "Five Day Rain (in) Report Date: 2026-11-19 10:16"
+      "Since 11/16/2026",
+      "Five Day Rain (in) Report Date: 2026-11-20 07:16"
     ],
     "intradayHeaders": [
       "Site",
@@ -216,15 +216,15 @@
       "6 Hour",
       "24 Hour",
       "Since Midnight",
-      "Rainfall (in) Report Date: 2026-11-19 10:16"
+      "Rainfall (in) Report Date: 2026-11-20 07:16"
     ],
     "fiveDayRows": 246,
-    "intradayRows": 245,
+    "intradayRows": 246,
     "datedColumns": [
+      "11/19/2026",
       "11/18/2026",
       "11/17/2026",
-      "11/16/2026",
-      "11/15/2026"
+      "11/16/2026"
     ]
   }
 }
