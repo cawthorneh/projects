@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T09:49:39+00:00",
+  "generated_at": "2026-11-24T22:22:26+00:00",
   "window_days": 45,
   "categories": [
     {
@@ -14,14 +14,14 @@
       "label": "Research",
       "short": "Research",
       "blurb": "New science on rainwater harvesting, water quality, and catchment.",
-      "count": 14
+      "count": 15
     },
     {
       "id": "policy",
       "label": "Policy & Codes",
       "short": "Policy",
       "blurb": "Rainwater law, plumbing codes, rebates, and water regulation.",
-      "count": 15
+      "count": 14
     },
     {
       "id": "positive",
@@ -33,8 +33,8 @@
   ],
   "counts": {
     "local": 19,
-    "research": 14,
-    "policy": 15,
+    "research": 15,
+    "policy": 14,
     "positive": 13
   },
   "items": [
@@ -57,7 +57,7 @@
       "tags": [
         "rainwater"
       ],
-      "score": 30.96,
+      "score": 29.86,
       "raw_score": 35.9,
       "matched": {
         "rainwater": [
@@ -88,7 +88,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 24.89,
+      "score": 24.0,
       "raw_score": 29.8,
       "matched": {
         "water": [
@@ -103,6 +103,35 @@
         "region": [
           "texas",
           "texas hill country"
+        ]
+      }
+    },
+    {
+      "id": "gn_good_environment_news:de44ee53f3",
+      "title": "East Winter Haven Aquifer Recharge and Wetlands Restoration Project — Local Government & Politics",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPbko2RG5USDkzTGw2Qldyc0JTSm5EUGpSMXlLZ1dBd2xzanpDVzVWbVVocHFoeGxkczlQRlZLVEQ4dnNRTHFJbUN3TXQ5SS1Pc3JpbGRUTldEb3pRcUdiZm0xcU51MTNvbmlqblYxNHBKUlo2M0I5TkQzMm1DOWlKdlZpNTRLVXVOeEF5anE3Zl95dGJSZ29POGdGWWMtbjRqdjcyRw?oc=5",
+      "canonical": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPbko2RG5USDkzTGw2Qldyc0JTSm5EUGpSMXlLZ1dBd2xzanpDVzVWbVVocHFoeGxkczlQRlZLVEQ4dnNRTHFJbUN3TXQ5SS1Pc3JpbGRUTldEb3pRcUdiZm0xcU51MTNvbmlqblYxNHBKUlo2M0I5TkQzMm1DOWlKdlZpNTRLVXVOeEF5anE3Zl95dGJSZ29POGdGWWMtbjRqdjcyRw?oc=5",
+      "source": "Daily Ridge",
+      "source_id": "gn_good_environment_news",
+      "source_site": "https://news.google.com/",
+      "category": "positive",
+      "scope": "global",
+      "summary": "",
+      "author": "",
+      "image": "",
+      "published": "2026-11-24T15:42:16+00:00",
+      "published_ts": 1795534936,
+      "local": false,
+      "tags": [],
+      "score": 23.05,
+      "raw_score": 23.5,
+      "matched": {
+        "water": [
+          "aquifer"
+        ],
+        "positive": [
+          "recharge",
+          "restoration"
         ]
       }
     },
@@ -123,7 +152,7 @@
       "published_ts": 1795489200,
       "local": false,
       "tags": [],
-      "score": 23.34,
+      "score": 22.5,
       "raw_score": 23.8,
       "matched": {
         "water": [
@@ -134,43 +163,6 @@
         ],
         "region": [
           "groundwater conservation district"
-        ]
-      }
-    },
-    {
-      "id": "gn_texas_water_policy:66884f8b77",
-      "title": "TCEQ to Weigh Petition for Canyon Lake Wastewater Discharge Ban Nov. 18",
-      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxObnNOR0FKR1NQVXJoREhKTVl1Yldwa1A1UFVudm5OSmRPRGpET3R5SmMxVTNhR2FuQ18yVzJhaGJyR3lxV0NneExHdlFSWWFERWhDd21GMXZLUGtINTlSSVdDTGFpYVdteHZVb1ZadkVMT3BpWEE1Y3U5dG40OFBVNjZfeklac3UzblpTNDhHbFFDeWdsUk1uZg?oc=5",
-      "canonical": "https://news.google.com/rss/articles/CBMimAFBVV95cUxObnNOR0FKR1NQVXJoREhKTVl1Yldwa1A1UFVudm5OSmRPRGpET3R5SmMxVTNhR2FuQ18yVzJhaGJyR3lxV0NneExHdlFSWWFERWhDd21GMXZLUGtINTlSSVdDTGFpYVdteHZVb1ZadkVMT3BpWEE1Y3U5dG40OFBVNjZfeklac3UzblpTNDhHbFFDeWdsUk1uZg?oc=5",
-      "source": "The Texas Dispatch",
-      "source_id": "gn_texas_water_policy",
-      "source_site": "https://news.google.com/",
-      "category": "policy",
-      "scope": "state",
-      "summary": "",
-      "author": "",
-      "image": "",
-      "published": "2026-11-17T14:03:53+00:00",
-      "published_ts": 1794924233,
-      "local": true,
-      "tags": [
-        "hill-country"
-      ],
-      "score": 22.31,
-      "raw_score": 35.8,
-      "matched": {
-        "water": [
-          "wastewater"
-        ],
-        "policy": [
-          "tceq"
-        ],
-        "local": [
-          "canyon lake"
-        ],
-        "region": [
-          "tceq",
-          "texas"
         ]
       }
     },
@@ -191,7 +183,7 @@
       "published_ts": 1795484986,
       "local": false,
       "tags": [],
-      "score": 20.91,
+      "score": 20.17,
       "raw_score": 21.4,
       "matched": {
         "water": [
@@ -220,7 +212,7 @@
       "published_ts": 1795453312,
       "local": false,
       "tags": [],
-      "score": 20.39,
+      "score": 19.66,
       "raw_score": 21.4,
       "matched": {
         "water": [
@@ -254,7 +246,7 @@
       "tags": [
         "rainwater"
       ],
-      "score": 20.37,
+      "score": 19.64,
       "raw_score": 37.9,
       "matched": {
         "rainwater": [
@@ -264,6 +256,62 @@
         "research": [
           "research",
           "university"
+        ]
+      }
+    },
+    {
+      "id": "gn_water_quality_research:b759919d49",
+      "title": "TGI Group Publishes Research Report on Global Water Bankruptcy and Groundwater Contamination in Mexico's Yucatán Peninsula",
+      "url": "https://news.google.com/rss/articles/CBMivAJBVV95cUxNcUVia1pyTTMxWk8wRkJVcVJmQXRWeHRrTWVzV3BYVkdPblBISHIxb21vZ3I0S2pHcWc1QW5SbkVZVUcteThsaXhHc0pRbzRUem5BVVFnc3BfbkJXUkt0WF9MWGVfVUhQRUY3R3ZLRkVuWFNzREJZSmtJWGFmWWhLSE5iTDR0aE93UW9ka1lwWWVQaFpVWDVITFBIUW0xcXJPY0hMWjRTcC1CUnNqT1NQZklFMll2UGc3UFU4WDRRUXJKSVkteXlidHd1aGZhdDhPRHlKaVNuQ0JyTEJFeFpPNjJWbVpma2x0ZXdrTTJjQjFleTJSblk4QzZqbFFvNzhsMUMwUVg4MHg0NVZOQ3FzTThmMGNXdTV0UlA1V1hGdTNTNkVkR1ZOcktCUWFhY0c2ZmNPTkh4X1J0ekdl?oc=5",
+      "canonical": "https://news.google.com/rss/articles/CBMivAJBVV95cUxNcUVia1pyTTMxWk8wRkJVcVJmQXRWeHRrTWVzV3BYVkdPblBISHIxb21vZ3I0S2pHcWc1QW5SbkVZVUcteThsaXhHc0pRbzRUem5BVVFnc3BfbkJXUkt0WF9MWGVfVUhQRUY3R3ZLRkVuWFNzREJZSmtJWGFmWWhLSE5iTDR0aE93UW9ka1lwWWVQaFpVWDVITFBIUW0xcXJPY0hMWjRTcC1CUnNqT1NQZklFMll2UGc3UFU4WDRRUXJKSVkteXlidHd1aGZhdDhPRHlKaVNuQ0JyTEJFeFpPNjJWbVpma2x0ZXdrTTJjQjFleTJSblk4QzZqbFFvNzhsMUMwUVg4MHg0NVZOQ3FzTThmMGNXdTV0UlA1V1hGdTNTNkVkR1ZOcktCUWFhY0c2ZmNPTkh4X1J0ekdl?oc=5",
+      "source": "News-Press NOW",
+      "source_id": "gn_water_quality_research",
+      "source_site": "https://news.google.com/",
+      "category": "research",
+      "scope": "global",
+      "summary": "TGI Group Publishes Research Report on Global Water Bankruptcy and Groundwater Contamination in Mexico's Yucatán Peninsula News-Press NOW",
+      "author": "",
+      "image": "",
+      "published": "2026-11-24T19:06:30+00:00",
+      "published_ts": 1795547190,
+      "local": false,
+      "tags": [],
+      "score": 19.22,
+      "raw_score": 19.4,
+      "matched": {
+        "water": [
+          "groundwater"
+        ],
+        "research": [
+          "research"
+        ]
+      }
+    },
+    {
+      "id": "gn_water_quality_research:9bbf1a04a6",
+      "title": "Rising seas could trap stormwater inland as Singapore adds $135 million for flood research",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNOURObHFudC1wZzF4T2c4aDd5SmQ2Zzg5SkRIdjdMR2twYUM3VDJnRnVvSjhGRXBrTXp1VmxKbm5ZcE9WUzdQcmlmeE40bUJkMkIwM2otTEtxN1MwTVlHRmc3cDBlQU5zNUlkYTBRZTNFS3RHNkY2eXZQMVptLWtMRHpPUlB5LUtkbjV0cXdrRmpjOUxkcVNkUA?oc=5",
+      "canonical": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNOURObHFudC1wZzF4T2c4aDd5SmQ2Zzg5SkRIdjdMR2twYUM3VDJnRnVvSjhGRXBrTXp1VmxKbm5ZcE9WUzdQcmlmeE40bUJkMkIwM2otTEtxN1MwTVlHRmc3cDBlQU5zNUlkYTBRZTNFS3RHNkY2eXZQMVptLWtMRHpPUlB5LUtkbjV0cXdrRmpjOUxkcVNkUA?oc=5",
+      "source": "The Cool Down",
+      "source_id": "gn_water_quality_research",
+      "source_site": "https://news.google.com/",
+      "category": "research",
+      "scope": "global",
+      "summary": "",
+      "author": "",
+      "image": "",
+      "published": "2026-11-24T17:30:00+00:00",
+      "published_ts": 1795541400,
+      "local": false,
+      "tags": [],
+      "score": 19.13,
+      "raw_score": 19.4,
+      "matched": {
+        "water": [
+          "stormwater"
+        ],
+        "research": [
+          "research"
         ]
       }
     },
@@ -284,7 +332,7 @@
       "published_ts": 1795493915,
       "local": false,
       "tags": [],
-      "score": 19.09,
+      "score": 18.41,
       "raw_score": 19.4,
       "matched": {
         "water": [
@@ -308,13 +356,13 @@
       "summary": "",
       "author": "",
       "image": "",
-      "published": "2026-11-14T14:32:19+00:00",
-      "published_ts": 1794666739,
+      "published": "2026-11-14T08:00:00+00:00",
+      "published_ts": 1794643200,
       "local": false,
       "tags": [
         "rainwater"
       ],
-      "score": 18.2,
+      "score": 17.22,
       "raw_score": 35.9,
       "matched": {
         "rainwater": [
@@ -327,32 +375,35 @@
       }
     },
     {
-      "id": "gn_texas_water_policy:eac5c390f4",
-      "title": "Residents demand water quality protections for Canyon Lake",
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQN0I0TmZqVDJZVEZFWFhNVHFVbWNnM2FoVzlTaW5fTjhETFJfM0h5dkdHNHdqclpoN2lkSzhhdEoxMUNuUDhJc0txNXZqblpoREVQUTl1RVFGQXNnbVZ5cWdVOERrODNGZVZmVFJuYl9qckhxZF9yQ2J0MDFDSVRjcjUwMmxTUmI2a1NLTllnTjdJTW90c1lIUndZRVJGTk9melAzZXpFTFk5bmVnajBWaEx1dV9jX0ZuZFRCYQ?oc=5",
-      "canonical": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQN0I0TmZqVDJZVEZFWFhNVHFVbWNnM2FoVzlTaW5fTjhETFJfM0h5dkdHNHdqclpoN2lkSzhhdEoxMUNuUDhJc0txNXZqblpoREVQUTl1RVFGQXNnbVZ5cWdVOERrODNGZVZmVFJuYl9qckhxZF9yQ2J0MDFDSVRjcjUwMmxTUmI2a1NLTllnTjdJTW90c1lIUndZRVJGTk9melAzZXpFTFk5bmVnajBWaEx1dV9jX0ZuZFRCYQ?oc=5",
-      "source": "KVUE",
-      "source_id": "gn_texas_water_policy",
+      "id": "gn_ctx_drought:478f37b81f",
+      "title": "Drought decimates cotton yields on the Texas Plains",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNeHdxdndqQ2FOb0VHZy1veU9YMmVMcFJEV1kyckxKM1JteDN5NHVJd3c5alZNbFhXMDFTSnhBR3pTWG9pN2NXQXdjNWQxUW1FVWYtb1d0YzdwM1RlRzdNMmdCeHotR2JPSHY0b3lqbzR1djNwTExyQkVCUzZ2cElLQmFvQmVrb25CamQwc1Y2QnhmQ1E?oc=5",
+      "canonical": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNeHdxdndqQ2FOb0VHZy1veU9YMmVMcFJEV1kyckxKM1JteDN5NHVJd3c5alZNbFhXMDFTSnhBR3pTWG9pN2NXQXdjNWQxUW1FVWYtb1d0YzdwM1RlRzdNMmdCeHotR2JPSHY0b3lqbzR1djNwTExyQkVCUzZ2cElLQmFvQmVrb25CamQwc1Y2QnhmQ1E?oc=5",
+      "source": "Farm Progress",
+      "source_id": "gn_ctx_drought",
       "source_site": "https://news.google.com/",
-      "category": "policy",
-      "scope": "state",
+      "category": "local",
+      "scope": "local",
       "summary": "",
       "author": "",
       "image": "",
-      "published": "2026-11-18T22:30:52+00:00",
-      "published_ts": 1795041052,
+      "published": "2026-11-24T07:41:19+00:00",
+      "published_ts": 1795506079,
       "local": true,
       "tags": [
         "hill-country"
       ],
-      "score": 17.66,
-      "raw_score": 25.8,
+      "score": 16.87,
+      "raw_score": 17.6,
       "matched": {
         "water": [
-          "water quality"
+          "drought"
         ],
-        "local": [
-          "canyon lake"
+        "positive": [
+          "progress"
+        ],
+        "region": [
+          "texas"
         ]
       }
     },
@@ -373,7 +424,7 @@
       "published_ts": 1795363562,
       "local": false,
       "tags": [],
-      "score": 17.11,
+      "score": 16.5,
       "raw_score": 19.3,
       "matched": {
         "water": [
@@ -403,7 +454,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 16.85,
+      "score": 16.25,
       "raw_score": 17.6,
       "matched": {
         "water": [
@@ -431,7 +482,7 @@
       "published_ts": 1795438245,
       "local": false,
       "tags": [],
-      "score": 16.75,
+      "score": 16.16,
       "raw_score": 17.8,
       "matched": {
         "water": [
@@ -459,7 +510,7 @@
       "published_ts": 1795329009,
       "local": false,
       "tags": [],
-      "score": 16.73,
+      "score": 16.13,
       "raw_score": 19.4,
       "matched": {
         "water": [
@@ -487,7 +538,7 @@
       "published_ts": 1795449001,
       "local": false,
       "tags": [],
-      "score": 16.33,
+      "score": 15.75,
       "raw_score": 17.2,
       "matched": {
         "water": [
@@ -522,7 +573,7 @@
         "rainwater",
         "hill-country"
       ],
-      "score": 16.17,
+      "score": 15.59,
       "raw_score": 29.2,
       "matched": {
         "rainwater": [
@@ -550,7 +601,7 @@
         "hill-country",
         "research"
       ],
-      "score": 15.89,
+      "score": 15.33,
       "raw_score": 16.2,
       "matched": {
         "water": [
@@ -562,57 +613,28 @@
       }
     },
     {
-      "id": "gn_water_quality_research:517fb3c1f8",
-      "title": "Beneath the Surface: How Groundwater Research Connects Lagos to America’s Water Infrastructure",
-      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPMUpsV1ZMeDNmZGE1c0Jpb2lzeG5qYkNyXzdGOEU0MGNjNUlTVHI5LVhIVFpZWU5jbVZpTXYyTXdZbXlMREF5NXI1dk5kT3dLcFBSQkVrQm1QamtiY2UxM3psT21TN3BWdmtpYUtqLXdqSW9uektPdjZFMnpvQlBqNVlGX1FsaDJtWEY2Szhzb1pnTkg2M0xndkUtZkNfLUJhRnNDSEZGT3pxWmJoSEdFajQ3dWpuc2pOdkxGWDc2NHBodUt4NVpMONIBzgFBVV95cUxOSlhrRDYyakhMT2tQWXhrb3BURXp3WTVGWGoyamozc0duM3p1UTBRTGJBVkdscjhYY0I2dXVQd0hVekxQNEwzWGtQLXNJRmtDWWIzZFlmNG1RYmxUNUZocUxKSlk1OG9MVzZmeTg3UXdKX1ZZNTF2OU1UWXZEQkNtMUVwZWdBLU5MTkpCelJEQkthSUhnOElTd2RiLVdCeDFZc3dBNnFLdjJhNlVMbHk2Q1FocHpfRVJQVFZVd1ZNc2x2QkNVN2o2dHlIbk94Zw?oc=5",
-      "canonical": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPMUpsV1ZMeDNmZGE1c0Jpb2lzeG5qYkNyXzdGOEU0MGNjNUlTVHI5LVhIVFpZWU5jbVZpTXYyTXdZbXlMREF5NXI1dk5kT3dLcFBSQkVrQm1QamtiY2UxM3psT21TN3BWdmtpYUtqLXdqSW9uektPdjZFMnpvQlBqNVlGX1FsaDJtWEY2Szhzb1pnTkg2M0xndkUtZkNfLUJhRnNDSEZGT3pxWmJoSEdFajQ3dWpuc2pOdkxGWDc2NHBodUt4NVpMONIBzgFBVV95cUxOSlhrRDYyakhMT2tQWXhrb3BURXp3WTVGWGoyamozc0duM3p1UTBRTGJBVkdscjhYY0I2dXVQd0hVekxQNEwzWGtQLXNJRmtDWWIzZFlmNG1RYmxUNUZocUxKSlk1OG9MVzZmeTg3UXdKX1ZZNTF2OU1UWXZEQkNtMUVwZWdBLU5MTkpCelJEQkthSUhnOElTd2RiLVdCeDFZc3dBNnFLdjJhNlVMbHk2Q1FocHpfRVJQVFZVd1ZNc2x2QkNVN2o2dHlIbk94Zw?oc=5",
-      "source": "Vanguard News",
-      "source_id": "gn_water_quality_research",
-      "source_site": "https://news.google.com/",
-      "category": "research",
-      "scope": "global",
-      "summary": "",
-      "author": "",
-      "image": "",
-      "published": "2026-11-18T11:31:15+00:00",
-      "published_ts": 1795001475,
-      "local": false,
-      "tags": [],
-      "score": 15.51,
-      "raw_score": 23.4,
-      "matched": {
-        "water": [
-          "groundwater",
-          "water infrastructure"
-        ],
-        "research": [
-          "research"
-        ]
-      }
-    },
-    {
-      "id": "gn_good_environment_news:17e39cee3c",
-      "title": "Youth Housing Promoting Recovery Through Forest Tending Wins Grand Prize at LH Architecture Competition",
-      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9kRGY3TDFncUU0MGJZbUtjbktiVDE3NnNjajNNOGhJdkJZUURoUnZYUmxLbkdqZFdyTDYxckpHc2otQUthOUI5WWpJd0VNVmJ6bjFyVkY3UzQ?oc=5",
-      "canonical": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9kRGY3TDFncUU0MGJZbUtjbktiVDE3NnNjajNNOGhJdkJZUURoUnZYUmxLbkdqZFdyTDYxckpHc2otQUthOUI5WWpJd0VNVmJ6bjFyVkY3UzQ?oc=5",
-      "source": "파이낸셜뉴스",
+      "id": "gn_good_environment_news:ec7d591adb",
+      "title": "Bergman Urges Congressional Leadership to Replenish Emergency Forest Restoration Funding",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE81Z1BmUEpiT2tHM0NiemJTVFlVVkJ5aW9tVFhXbjV1cUxsZl9jSHM4V3RmODVGN2JKMVJYbWFCM3gtck95eGs1al9UejlpUjdpMlFIM0pKTS1HR0xnR3QyR1ZnRlVCRzVFUXhWN01QeUd4Uy01?oc=5",
+      "canonical": "https://news.google.com/rss/articles/CBMidEFVX3lxTE81Z1BmUEpiT2tHM0NiemJTVFlVVkJ5aW9tVFhXbjV1cUxsZl9jSHM4V3RmODVGN2JKMVJYbWFCM3gtck95eGs1al9UejlpUjdpMlFIM0pKTS1HR0xnR3QyR1ZnRlVCRzVFUXhWN01QeUd4Uy01?oc=5",
+      "source": "U.S. Representative Jack Bergman (.gov)",
       "source_id": "gn_good_environment_news",
       "source_site": "https://news.google.com/",
       "category": "positive",
       "scope": "global",
-      "summary": "",
+      "summary": "Bergman Urges Congressional Leadership to Replenish Emergency Forest Restoration Funding U.S. Representative Jack Bergman (.gov)",
       "author": "",
       "image": "",
-      "published": "2026-11-24T00:01:25+00:00",
-      "published_ts": 1795478485,
+      "published": "2026-11-24T15:17:31+00:00",
+      "published_ts": 1795533451,
       "local": false,
       "tags": [],
-      "score": 15.07,
+      "score": 15.19,
       "raw_score": 15.5,
       "matched": {
         "positive": [
-          "recovery",
-          "wins"
+          "replenish",
+          "restoration"
         ]
       }
     },
@@ -635,7 +657,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 14.72,
+      "score": 14.2,
       "raw_score": 29.6,
       "matched": {
         "water": [
@@ -650,55 +672,81 @@
       }
     },
     {
-      "id": "gn_water_quality_research:e454d531cb",
-      "title": "Study finds Knoxville needs $850M in stormwater improvements",
-      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPQmJULUJzSVlfNl9lY1NTcEVfcjlUVm9PNTFkeDZHeWtYX21pRzU0eDNwWFdnUVpDQU5TdG43OWlWM3FmSC10Q0czdEsyY05FcGR6QWtuZGNqMV82cHdjcUViNVdKazBpVE5IMDhMSlNMeHM2cy1wNFc2RHBuR19vM1BiTlY1a2JYZ01rOXk5YWJqVTJzc0NXWDVJeWNxaF8yVVRGUm5IOElZY1dKQ05MNHU5bEtxdmRMeDdfQlYyYlluUTFnSV96cjFRSlo0SzRz?oc=5",
-      "canonical": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPQmJULUJzSVlfNl9lY1NTcEVfcjlUVm9PNTFkeDZHeWtYX21pRzU0eDNwWFdnUVpDQU5TdG43OWlWM3FmSC10Q0czdEsyY05FcGR6QWtuZGNqMV82cHdjcUViNVdKazBpVE5IMDhMSlNMeHM2cy1wNFc2RHBuR19vM1BiTlY1a2JYZ01rOXk5YWJqVTJzc0NXWDVJeWNxaF8yVVRGUm5IOElZY1dKQ05MNHU5bEtxdmRMeDdfQlYyYlluUTFnSV96cjFRSlo0SzRz?oc=5",
-      "source": "Knoxville News Sentinel",
-      "source_id": "gn_water_quality_research",
+      "id": "gn_rainwater_policy:4a0eb65e25",
+      "title": "Is it legal to collect rainwater in Georgia? Here's what to know",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNSERmOVAteWFSZk9uc0IzNmRpcVFGNTdIVGNjRzVuWFVmNUQwMDA4UHVHRWMtU0ZUNm05UDJuQVZadEZ3T3dreld1QUtza01OLWtDVC1uNE5YN0pmMDZhTnNZeUF5aGxiNGppREFDaU9CbGRuekRfaDhXS1lPUjRWb1EtM05pcmdzWlNDTU1YY1BJcWpBNEgwbFdhNzQxSlJ1ZW1nNklfejRFbDl4Y2hwelNYOFRHY0J0MjJ0TWRIcUlXSy1Ha2Z3bEV3?oc=5",
+      "canonical": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNSERmOVAteWFSZk9uc0IzNmRpcVFGNTdIVGNjRzVuWFVmNUQwMDA4UHVHRWMtU0ZUNm05UDJuQVZadEZ3T3dreld1QUtza01OLWtDVC1uNE5YN0pmMDZhTnNZeUF5aGxiNGppREFDaU9CbGRuekRfaDhXS1lPUjRWb1EtM05pcmdzWlNDTU1YY1BJcWpBNEgwbFdhNzQxSlJ1ZW1nNklfejRFbDl4Y2hwelNYOFRHY0J0MjJ0TWRIcUlXSy1Ha2Z3bEV3?oc=5",
+      "source": "Savannah Morning News",
+      "source_id": "gn_rainwater_policy",
       "source_site": "https://news.google.com/",
-      "category": "research",
-      "scope": "global",
+      "category": "policy",
+      "scope": "national",
       "summary": "",
       "author": "",
       "image": "",
-      "published": "2026-11-20T10:07:00+00:00",
-      "published_ts": 1795169220,
+      "published": "2026-11-13T12:51:00+00:00",
+      "published_ts": 1794574260,
       "local": false,
-      "tags": [],
-      "score": 14.71,
-      "raw_score": 19.4,
+      "tags": [
+        "rainwater"
+      ],
+      "score": 13.62,
+      "raw_score": 30.0,
       "matched": {
-        "water": [
-          "stormwater"
-        ],
-        "research": [
-          "study"
+        "rainwater": [
+          "rainwater"
         ]
       }
     },
     {
-      "id": "gn_good_environment_news:df97daa0f9",
-      "title": "Provincial funding supports wetland restoration, habitat projects in St. Clair region",
-      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQSlNheV9JYy0wOWFuQW16LURteEZwNHNpR3FXbDZhNU5Bc21rb0NBajBnR1c4SHRGaFBodnZYemtrVWM4aUZsaDFpc21Ib1BkR21scXgwdHBHMERrM01COHBQd2V3SU12UWhnbm1ITTBXdE0xY3R4SHYyUHo5bnh0Unl2dWwzUUowY1gzdkFaZV9pcFc5b2ViVlFqTnVSOVBnbV9reW5IR2ZkUDB5YWhucXFLVGVrMDlTQVItSmVMbw?oc=5",
-      "canonical": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQSlNheV9JYy0wOWFuQW16LURteEZwNHNpR3FXbDZhNU5Bc21rb0NBajBnR1c4SHRGaFBodnZYemtrVWM4aUZsaDFpc21Ib1BkR21scXgwdHBHMERrM01COHBQd2V3SU12UWhnbm1ITTBXdE0xY3R4SHYyUHo5bnh0Unl2dWwzUUowY1gzdkFaZV9pcFc5b2ViVlFqTnVSOVBnbV9reW5IR2ZkUDB5YWhucXFLVGVrMDlTQVItSmVMbw?oc=5",
-      "source": "The Sydenham Current",
+      "id": "gn_good_environment_news:9c47e1a4d8",
+      "title": "Africa’s richest king’s Al Mada funds 1,000-hectare argan forest restoration as Morocco steps up efforts to protect its prized natural resource",
+      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPbDFjZUpWTDdwNFNyTDR4WU5MWlAtRGRvYnphc3o1T2pjbGNnaFFRZl9lUnNkTE9Ed183WXAxOG1yQ3JFeU8xUlJkTEJfUEFGbW5EaVNjSEVSMUs2MTRjWkJBQ0RCY3BwMjh5OURkNU1zb3dLZ05ab0p4QnZ0NTdYRzNsN2ZyeVZnTklwbzVxUm8wSlJRRkNyZGd5ZThHNFUxWUpYSHlLVkM0VkJRaTgwekJrMlprZzBoNk9TM1I0dWRNd2dGc21jdS1nWFhyanJsNEtFSnRRUlE?oc=5",
+      "canonical": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPbDFjZUpWTDdwNFNyTDR4WU5MWlAtRGRvYnphc3o1T2pjbGNnaFFRZl9lUnNkTE9Ed183WXAxOG1yQ3JFeU8xUlJkTEJfUEFGbW5EaVNjSEVSMUs2MTRjWkJBQ0RCY3BwMjh5OURkNU1zb3dLZ05ab0p4QnZ0NTdYRzNsN2ZyeVZnTklwbzVxUm8wSlJRRkNyZGd5ZThHNFUxWUpYSHlLVkM0VkJRaTgwekJrMlprZzBoNk9TM1I0dWRNd2dGc21jdS1nWFhyanJsNEtFSnRRUlE?oc=5",
+      "source": "Business Insider Africa",
       "source_id": "gn_good_environment_news",
       "source_site": "https://news.google.com/",
       "category": "positive",
       "scope": "global",
-      "summary": "",
+      "summary": "Africa’s richest king’s Al Mada funds 1,000-hectare argan forest restoration as Morocco steps up efforts to protect its prized natural resource Business Insider Africa",
       "author": "",
       "image": "",
-      "published": "2026-11-24T07:01:00+00:00",
-      "published_ts": 1795503660,
+      "published": "2026-11-24T17:17:38+00:00",
+      "published_ts": 1795540658,
       "local": false,
       "tags": [],
-      "score": 13.39,
+      "score": 13.3,
       "raw_score": 13.5,
       "matched": {
         "positive": [
           "restoration"
+        ]
+      }
+    },
+    {
+      "id": "gn_community_impact:dfde91606a",
+      "title": "Southlake officials look to modernize and streamline stormwater policies",
+      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQLV9EU1p5QlpqX2NLTDVpS1hHeURGSXBuTlpERHhyVm1IdGFyaTZQeEtRakh6d0llbUdHMFR4Q3NCQy1OZTE5R05RNWlZMjlRRWVlRnc1STJYUkZxNTU3QXYtQmRQRFhxalpvbVpxWFdIN1RfT1hWWU84eEQ3NkstcnliODBDWk1xdkxNRHlMQy04c1dULXlXX0wtVWVOa0NReEptZEcxQklsMVlpUGZ0Y2VIdXYzQlNnMGlnNGoxMjBxak95X29DUHdQdEtxYW5kZUs3T2dfWUw1ai0t?oc=5",
+      "canonical": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQLV9EU1p5QlpqX2NLTDVpS1hHeURGSXBuTlpERHhyVm1IdGFyaTZQeEtRakh6d0llbUdHMFR4Q3NCQy1OZTE5R05RNWlZMjlRRWVlRnc1STJYUkZxNTU3QXYtQmRQRFhxalpvbVpxWFdIN1RfT1hWWU84eEQ3NkstcnliODBDWk1xdkxNRHlMQy04c1dULXlXX0wtVWVOa0NReEptZEcxQklsMVlpUGZ0Y2VIdXYzQlNnMGlnNGoxMjBxak95X29DUHdQdEtxYW5kZUs3T2dfWUw1ai0t?oc=5",
+      "source": "Community Impact Newspaper",
+      "source_id": "gn_community_impact",
+      "source_site": "https://communityimpact.com/",
+      "category": "local",
+      "scope": "local",
+      "summary": "",
+      "author": "",
+      "image": "",
+      "published": "2026-11-24T01:00:00+00:00",
+      "published_ts": 1795482000,
+      "local": true,
+      "tags": [
+        "hill-country"
+      ],
+      "score": 12.41,
+      "raw_score": 13.2,
+      "matched": {
+        "water": [
+          "stormwater"
         ]
       }
     },
@@ -719,7 +767,32 @@
       "published_ts": 1795412940,
       "local": false,
       "tags": [],
-      "score": 12.45,
+      "score": 12.01,
+      "raw_score": 13.5,
+      "matched": {
+        "positive": [
+          "restoration"
+        ]
+      }
+    },
+    {
+      "id": "gn_good_environment_news:1a7b7fe4f0",
+      "title": "How to fund forest and landscape restoration for the long term",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNVkpZN1V3NTlRc2ZjaVJrMDlpbWgzc19CTUhiRmNaODNUWnl1UGtaRnJwbVFPSXoybVBxdmJyT1ZPM2FaNnhkYU9FZThxZjlPdUhHdGk4Tm5CaWNqNjVvUVV1NWkyZkFJNTZHQUxRaG1EbHZYX2JfYm9LQVdfWnhZMHZsQlRiYTRFNl9zbw?oc=5",
+      "canonical": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNVkpZN1V3NTlRc2ZjaVJrMDlpbWgzc19CTUhiRmNaODNUWnl1UGtaRnJwbVFPSXoybVBxdmJyT1ZPM2FaNnhkYU9FZThxZjlPdUhHdGk4Tm5CaWNqNjVvUVV1NWkyZkFJNTZHQUxRaG1EbHZYX2JfYm9LQVdfWnhZMHZsQlRiYTRFNl9zbw?oc=5",
+      "source": "Stockholm International Water Institute",
+      "source_id": "gn_good_environment_news",
+      "source_site": "https://news.google.com/",
+      "category": "positive",
+      "scope": "global",
+      "summary": "",
+      "author": "",
+      "image": "",
+      "published": "2026-11-23T04:50:59+00:00",
+      "published_ts": 1795409459,
+      "local": false,
+      "tags": [],
+      "score": 11.97,
       "raw_score": 13.5,
       "matched": {
         "positive": [
@@ -744,7 +817,7 @@
       "published_ts": 1795022698,
       "local": false,
       "tags": [],
-      "score": 12.0,
+      "score": 11.58,
       "raw_score": 17.8,
       "matched": {
         "water": [
@@ -772,7 +845,7 @@
       "published_ts": 1794851648,
       "local": false,
       "tags": [],
-      "score": 11.35,
+      "score": 10.94,
       "raw_score": 19.3,
       "matched": {
         "water": [
@@ -800,7 +873,7 @@
       "published_ts": 1795458916,
       "local": false,
       "tags": [],
-      "score": 10.91,
+      "score": 10.52,
       "raw_score": 11.4,
       "matched": {
         "water": [
@@ -830,11 +903,40 @@
       "tags": [
         "hill-country"
       ],
-      "score": 10.48,
+      "score": 10.11,
       "raw_score": 13.2,
       "matched": {
         "water": [
           "water utility"
+        ]
+      }
+    },
+    {
+      "id": "phys_org_environment:a150cc7fe2",
+      "title": "Roads store microplastics before they join rain runoff to waterways",
+      "url": "https://phys.org/news/2026-11-roads-microplastics-runoff-waterways.html",
+      "canonical": "https://phys.org/news/2026-11-roads-microplastics-runoff-waterways.html",
+      "source": "Phys.org",
+      "source_id": "phys_org_environment",
+      "source_site": "https://phys.org/",
+      "category": "research",
+      "scope": "global",
+      "summary": "QUT researchers have developed a modeling framework to quantify microplastic inputs from urban surfaces to ecologically sensitive water environments such as Moreton Bay.",
+      "author": "",
+      "image": "https://scx1.b-cdn.net/csz/news/tmb/2026/roads-store-microplast.jpg",
+      "published": "2026-11-24T10:00:13-05:00",
+      "published_ts": 1795532413,
+      "local": false,
+      "tags": [],
+      "score": 9.99,
+      "raw_score": 10.2,
+      "matched": {
+        "water": [
+          "runoff"
+        ],
+        "research": [
+          "modeling",
+          "researchers"
         ]
       }
     },
@@ -857,7 +959,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 10.32,
+      "score": 9.95,
       "raw_score": 13.2,
       "matched": {
         "water": [
@@ -882,7 +984,7 @@
       "published_ts": 1794470400,
       "local": false,
       "tags": [],
-      "score": 10.18,
+      "score": 9.81,
       "raw_score": 23.5,
       "matched": {
         "water": [
@@ -891,56 +993,6 @@
         "positive": [
           "restoration",
           "restored"
-        ]
-      }
-    },
-    {
-      "id": "gn_good_environment_news:3f4e9d01e7",
-      "title": "No. 5 Louisville Volleyball looks to rebound against Wake Forest after first two ACC losses",
-      "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxOOHZhd1FzQnFtNlNtcTZQWm1tSGxhakRxNzlXRlVEVS16UW94QnUxR1kxeVNZb2FKUGdSeDYwTklkOFFxSmlMeGhJT1dfclM1bndzcWM2XzZqNG1mMGpHZzJVdjdqZ1FOYWZXSEJUNkdJUjRfUi1FZnkwT2hkaHpka2pBT2JUWHY1dmgyS2dxVnpBTzNOT01VX1QyQTlPVFlYQ3dEMTZpem95WjhaSW84TERDamFSQ2hXdUVYWHNtX2ZjZWg1NnB4eGZIbGZSVVlzampQaldJT2JYRkhkS2lUZlJQSTk?oc=5",
-      "canonical": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxOOHZhd1FzQnFtNlNtcTZQWm1tSGxhakRxNzlXRlVEVS16UW94QnUxR1kxeVNZb2FKUGdSeDYwTklkOFFxSmlMeGhJT1dfclM1bndzcWM2XzZqNG1mMGpHZzJVdjdqZ1FOYWZXSEJUNkdJUjRfUi1FZnkwT2hkaHpka2pBT2JUWHY1dmgyS2dxVnpBTzNOT01VX1QyQTlPVFlYQ3dEMTZpem95WjhaSW84TERDamFSQ2hXdUVYWHNtX2ZjZWg1NnB4eGZIbGZSVVlzampQaldJT2JYRkhkS2lUZlJQSTk?oc=5",
-      "source": "247Sports",
-      "source_id": "gn_good_environment_news",
-      "source_site": "https://news.google.com/",
-      "category": "positive",
-      "scope": "global",
-      "summary": "",
-      "author": "",
-      "image": "",
-      "published": "2026-11-19T19:13:00+00:00",
-      "published_ts": 1795115580,
-      "local": false,
-      "tags": [],
-      "score": 9.81,
-      "raw_score": 13.5,
-      "matched": {
-        "positive": [
-          "rebound"
-        ]
-      }
-    },
-    {
-      "id": "gn_good_environment_news:fe01b2f66d",
-      "title": "Introduction of forest and landscape restoration",
-      "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxQN1FQMlllNUdvOHI1UWM1SGRPcGVUNlM2SFVrc1FDbEZ2aDVfN2F5R0g0S3VaNnlFS21nUk9adTkyYnBueG9FMDVmQWthSHBuM0dtb1Exc0FCeVNsa0RJZmE2OFAzS3JaODNWNlRERTZPMVFPZS1oV20xa1ZtMkozMnNtbms5WWpka2FzZ0dIQ0tQbVBKY0UwYjhpd0NKNDI3bzBnV3RSdE1IX0V3OXMyendlSlJfZnBGc3FjbVVoOFhIWS1GZE16dExldmoxc2d2bm5ydC1qeU9fNVdIZW5leDF6VW1VWHhCWVE?oc=5",
-      "canonical": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxQN1FQMlllNUdvOHI1UWM1SGRPcGVUNlM2SFVrc1FDbEZ2aDVfN2F5R0g0S3VaNnlFS21nUk9adTkyYnBueG9FMDVmQWthSHBuM0dtb1Exc0FCeVNsa0RJZmE2OFAzS3JaODNWNlRERTZPMVFPZS1oV20xa1ZtMkozMnNtbms5WWpka2FzZ0dIQ0tQbVBKY0UwYjhpd0NKNDI3bzBnV3RSdE1IX0V3OXMyendlSlJfZnBGc3FjbVVoOFhIWS1GZE16dExldmoxc2d2bm5ydC1qeU9fNVdIZW5leDF6VW1VWHhCWVE?oc=5",
-      "source": "Skogsstyrelsen",
-      "source_id": "gn_good_environment_news",
-      "source_site": "https://news.google.com/",
-      "category": "positive",
-      "scope": "global",
-      "summary": "",
-      "author": "",
-      "image": "",
-      "published": "2026-11-18T08:00:00+00:00",
-      "published_ts": 1794988800,
-      "local": false,
-      "tags": [],
-      "score": 8.86,
-      "raw_score": 13.5,
-      "matched": {
-        "positive": [
-          "restoration"
         ]
       }
     },
@@ -963,7 +1015,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 8.55,
+      "score": 8.24,
       "raw_score": 17.6,
       "matched": {
         "water": [
@@ -994,34 +1046,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 8.32,
-      "raw_score": 13.2,
-      "matched": {
-        "water": [
-          "wastewater"
-        ]
-      }
-    },
-    {
-      "id": "gn_community_impact:137596a051",
-      "title": "Pflugerville begins winter wastewater averaging period for residents",
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOR3ZKZldOYTZqT3g4OGwwbzdvaE91TzF0Vkd2Y3ZITWk0Y0kwSXEzLUhPQVlZNkRraXp0cDgtV3pob2hKc08zaFpKdTNVN2RBcHU2UGdvbG1oN2l2ZTdyYUVpSmQtOHdCR1FFZGJoekV4Ni1hTWk3MloyVUdtVmk5U1czbGlYSWpJMDNPOC1IdlA0eE00TkpzUjVWZ3JVVmhWcU1HUVRJRVEwQkFlbldKSDNIWVNnS0tYaEhnTUhfTDVkc29sak44?oc=5",
-      "canonical": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOR3ZKZldOYTZqT3g4OGwwbzdvaE91TzF0Vkd2Y3ZITWk0Y0kwSXEzLUhPQVlZNkRraXp0cDgtV3pob2hKc08zaFpKdTNVN2RBcHU2UGdvbG1oN2l2ZTdyYUVpSmQtOHdCR1FFZGJoekV4Ni1hTWk3MloyVUdtVmk5U1czbGlYSWpJMDNPOC1IdlA0eE00TkpzUjVWZ3JVVmhWcU1HUVRJRVEwQkFlbldKSDNIWVNnS0tYaEhnTUhfTDVkc29sak44?oc=5",
-      "source": "Community Impact Newspaper",
-      "source_id": "gn_community_impact",
-      "source_site": "https://communityimpact.com/",
-      "category": "local",
-      "scope": "local",
-      "summary": "",
-      "author": "",
-      "image": "",
-      "published": "2026-11-17T04:51:25+00:00",
-      "published_ts": 1794891085,
-      "local": true,
-      "tags": [
-        "hill-country"
-      ],
-      "score": 8.01,
+      "score": 8.02,
       "raw_score": 13.2,
       "matched": {
         "water": [
@@ -1048,7 +1073,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 6.63,
+      "score": 6.4,
       "raw_score": 17.6,
       "matched": {
         "water": [
@@ -1076,7 +1101,7 @@
       "published_ts": 1794750805,
       "local": false,
       "tags": [],
-      "score": 5.96,
+      "score": 5.75,
       "raw_score": 11.0,
       "matched": {
         "water": [
@@ -1105,7 +1130,7 @@
       "published_ts": 1794470400,
       "local": false,
       "tags": [],
-      "score": 5.85,
+      "score": 5.64,
       "raw_score": 13.5,
       "matched": {
         "water": [
@@ -1130,7 +1155,7 @@
       "published_ts": 1795214402,
       "local": false,
       "tags": [],
-      "score": 5.27,
+      "score": 5.08,
       "raw_score": 6.7,
       "matched": {
         "water": [
@@ -1159,12 +1184,40 @@
       "published_ts": 1794482820,
       "local": false,
       "tags": [],
-      "score": 4.9,
+      "score": 4.72,
       "raw_score": 11.2,
       "matched": {
         "positive": [
           "progress",
           "wins"
+        ]
+      }
+    },
+    {
+      "id": "gn_ctx_drought:238fe1b83c",
+      "title": "Drought news November 5, 2026: Widespread precipitation (0.5 to 2 inches, locally more) resulted in 1-category improvements to the western third of #Colorado along with parts of the Northern to Central Great Plains",
+      "url": "https://news.google.com/rss/articles/CBMizwJBVV95cUxNUWRZZjRkUEVOQ3A0S3Z6eHZKLTdKRERiTGluekthczVkbzhCV2Rudkc0S1JkM19nQTB6dEc0bW8yREwyS01SVmdkbDRIbWo4Zzh6bWJpUXVhR2R0aVBaSmJCTTFFbE9qVVVWRVd6ZjA2THpGVkRNc0Q2N1VmY2I4MG9HbVVwTlQyQXMydDhfaUNtbXJGUFgxQ2pJRHNMbnJzVm05SFpTeFFGR1loUFFrQm5IN2EyNk1fbDVScWNHazdlY2VwdU5OUHFTc1JGZzZjWEE5XzJlV0J0WW1iZURrRnBQcGx5cy1Lb04xY1dUX1h5QkVTaS1ITFZFcERPRmJTUGliT1BjTDZfOGF3dzhuUEJYbGc2RUhqcEpoNTl0eEJMQXlBQmFyaTFXWHVLN2MyT1Z2TU45OWZKSE1Raks1Zm4zMDZYRzhKRE91ZnVjOA?oc=5",
+      "canonical": "https://news.google.com/rss/articles/CBMizwJBVV95cUxNUWRZZjRkUEVOQ3A0S3Z6eHZKLTdKRERiTGluekthczVkbzhCV2Rudkc0S1JkM19nQTB6dEc0bW8yREwyS01SVmdkbDRIbWo4Zzh6bWJpUXVhR2R0aVBaSmJCTTFFbE9qVVVWRVd6ZjA2THpGVkRNc0Q2N1VmY2I4MG9HbVVwTlQyQXMydDhfaUNtbXJGUFgxQ2pJRHNMbnJzVm05SFpTeFFGR1loUFFrQm5IN2EyNk1fbDVScWNHazdlY2VwdU5OUHFTc1JGZzZjWEE5XzJlV0J0WW1iZURrRnBQcGx5cy1Lb04xY1dUX1h5QkVTaS1ITFZFcERPRmJTUGliT1BjTDZfOGF3dzhuUEJYbGc2RUhqcEpoNTl0eEJMQXlBQmFyaTFXWHVLN2MyT1Z2TU45OWZKSE1Raks1Zm4zMDZYRzhKRE91ZnVjOA?oc=5",
+      "source": "coyotegulch.blog",
+      "source_id": "gn_ctx_drought",
+      "source_site": "https://news.google.com/",
+      "category": "local",
+      "scope": "local",
+      "summary": "Drought news November 5, 2026: Widespread precipitation (0.5 to 2 inches, locally more) resulted in 1-category improvements to the western third of #Colorado along with parts of the Northern to Central Great Plains coyotegulch.blog",
+      "author": "",
+      "image": "",
+      "published": "2026-11-05T08:00:00+00:00",
+      "published_ts": 1793865600,
+      "local": true,
+      "tags": [
+        "hill-country"
+      ],
+      "score": 4.52,
+      "raw_score": 17.6,
+      "matched": {
+        "water": [
+          "drought",
+          "precipitation"
         ]
       }
     },
@@ -1187,7 +1240,7 @@
       "tags": [
         "research"
       ],
-      "score": 4.51,
+      "score": 4.35,
       "raw_score": 9.4,
       "matched": {
         "water": [
@@ -1216,7 +1269,7 @@
       "published_ts": 1794556812,
       "local": false,
       "tags": [],
-      "score": 4.41,
+      "score": 4.25,
       "raw_score": 9.5,
       "matched": {
         "positive": [
@@ -1243,7 +1296,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 4.23,
+      "score": 4.08,
       "raw_score": 29.7,
       "matched": {
         "water": [
@@ -1274,7 +1327,7 @@
       "published_ts": 1794822300,
       "local": false,
       "tags": [],
-      "score": 4.08,
+      "score": 3.93,
       "raw_score": 7.1,
       "matched": {
         "positive": [
@@ -1301,7 +1354,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 3.69,
+      "score": 3.56,
       "raw_score": 25.9,
       "matched": {
         "water": [
@@ -1309,33 +1362,6 @@
         ],
         "local": [
           "dripping springs"
-        ]
-      }
-    },
-    {
-      "id": "gn_ctx_drought:8a10eff405",
-      "title": "Warm afternoon, drought remains with cooler temps and rain possible this weekend",
-      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQXzFvUjU0QnpVS3JFT2diQW1tTmtDTXBsVFJlYURXZDhQbm9SZkdFRWdVU21XQ0FaeEtqLU14RXJ6SGNmZVdRZDZNMFBVUjRZazBjcGJEM0F2Zkd0WlVUa0dHalBfSUxJck1pZ2tfOE5WelJmeHhEelNHYi1YSG1hdHlFUUI4R2NETTNobkliaUplbDJzN05jdw?oc=5",
-      "canonical": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQXzFvUjU0QnpVS3JFT2diQW1tTmtDTXBsVFJlYURXZDhQbm9SZkdFRWdVU21XQ0FaeEtqLU14RXJ6SGNmZVdRZDZNMFBVUjRZazBjcGJEM0F2Zkd0WlVUa0dHalBfSUxJck1pZ2tfOE5WelJmeHhEelNHYi1YSG1hdHlFUUI4R2NETTNobkliaUplbDJzN05jdw?oc=5",
-      "source": "KXXV",
-      "source_id": "gn_ctx_drought",
-      "source_site": "https://news.google.com/",
-      "category": "local",
-      "scope": "local",
-      "summary": "",
-      "author": "",
-      "image": "",
-      "published": "2026-11-05T08:00:00+00:00",
-      "published_ts": 1793865600,
-      "local": true,
-      "tags": [
-        "hill-country"
-      ],
-      "score": 3.62,
-      "raw_score": 13.6,
-      "matched": {
-        "water": [
-          "drought"
         ]
       }
     },
@@ -1359,7 +1385,7 @@
         "rainwater",
         "hill-country"
       ],
-      "score": 3.45,
+      "score": 3.33,
       "raw_score": 52.0,
       "matched": {
         "rainwater": [
@@ -1372,37 +1398,6 @@
           "austin"
         ],
         "region": [
-          "texas"
-        ]
-      }
-    },
-    {
-      "id": "gn_ctx_drought:bb11372ae4",
-      "title": "Flash flood watch in effect as rain, cooler temperatures move into drought ridden Central Texas",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQN1hBVV96QXZyRzV4OHNBMUNkV1FzdU96SUplN3pucjNLOC1TTjdnU0J6WF9EbWNLcWpFOUNPdTQyVS00QXMxVk1vQmlOLTBaUWs0d2UtN2VUaHYtYkZsOGNTZlJiWG5VX29DWmQtakZHOFdtNXMtaXRROVBoQlN6ZGIxa2F5N3llZHlQd3FpcWwxYkFVbWZWYVVFRWdxQQ?oc=5",
-      "canonical": "https://news.google.com/rss/articles/CBMingFBVV95cUxQN1hBVV96QXZyRzV4OHNBMUNkV1FzdU96SUplN3pucjNLOC1TTjdnU0J6WF9EbWNLcWpFOUNPdTQyVS00QXMxVk1vQmlOLTBaUWs0d2UtN2VUaHYtYkZsOGNTZlJiWG5VX29DWmQtakZHOFdtNXMtaXRROVBoQlN6ZGIxa2F5N3llZHlQd3FpcWwxYkFVbWZWYVVFRWdxQQ?oc=5",
-      "source": "Temple Daily Telegram",
-      "source_id": "gn_ctx_drought",
-      "source_site": "https://news.google.com/",
-      "category": "local",
-      "scope": "local",
-      "summary": "",
-      "author": "",
-      "image": "",
-      "published": "2026-10-31T07:00:00+00:00",
-      "published_ts": 1793430000,
-      "local": true,
-      "tags": [
-        "hill-country"
-      ],
-      "score": 3.31,
-      "raw_score": 17.6,
-      "matched": {
-        "water": [
-          "drought"
-        ],
-        "region": [
-          "central texas",
           "texas"
         ]
       }
@@ -1424,7 +1419,7 @@
       "published_ts": 1794751200,
       "local": false,
       "tags": [],
-      "score": 2.77,
+      "score": 2.67,
       "raw_score": 5.1,
       "matched": {
         "region": [
@@ -1451,7 +1446,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 2.61,
+      "score": 2.52,
       "raw_score": 25.9,
       "matched": {
         "water": [
@@ -1481,7 +1476,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 2.43,
+      "score": 2.35,
       "raw_score": 25.9,
       "matched": {
         "water": [
@@ -1489,65 +1484,6 @@
         ],
         "local": [
           "driftwood"
-        ]
-      }
-    },
-    {
-      "id": "gn_texas_water_policy:00ec81a279",
-      "title": "TCEQ Responds to Public Concerns about Using Treated Oil and Gas Wastewater on Land",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQLUNyRjJsTVpKeVJCNUppYnZoSEZLRTVSUVduVUUwRFVvOWpMVGxfU3U0U0VaUkIycmJDOEZsSFpmOWVLUGRIT2Q5alV5Z1kzUUVKZm5kdVJTbUhadGNxNEdVb2tNMHB6VjNXYnpQYm5nUEMzNS1PTWcyUVFZd2I0dWlsaU9PWmFsVDF6ai1jT0xHRUpReDZDWjRIVldfbWtkR0RjWFh3Tm16YXBVa0NVbHJ1Rnh2QzlldDNvN1JHOV8?oc=5",
-      "canonical": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQLUNyRjJsTVpKeVJCNUppYnZoSEZLRTVSUVduVUUwRFVvOWpMVGxfU3U0U0VaUkIycmJDOEZsSFpmOWVLUGRIT2Q5alV5Z1kzUUVKZm5kdVJTbUhadGNxNEdVb2tNMHB6VjNXYnpQYm5nUEMzNS1PTWcyUVFZd2I0dWlsaU9PWmFsVDF6ai1jT0xHRUpReDZDWjRIVldfbWtkR0RjWFh3Tm16YXBVa0NVbHJ1Rnh2QzlldDNvN1JHOV8?oc=5",
-      "source": "Sierra Club",
-      "source_id": "gn_texas_water_policy",
-      "source_site": "https://news.google.com/",
-      "category": "policy",
-      "scope": "state",
-      "summary": "",
-      "author": "",
-      "image": "",
-      "published": "2026-10-22T07:00:00+00:00",
-      "published_ts": 1792652400,
-      "local": false,
-      "tags": [],
-      "score": 2.4,
-      "raw_score": 23.8,
-      "matched": {
-        "water": [
-          "wastewater"
-        ],
-        "policy": [
-          "tceq"
-        ],
-        "region": [
-          "tceq"
-        ]
-      }
-    },
-    {
-      "id": "gn_epa_water:4dd76e1e73",
-      "title": "Amid Iowa’s Water Crisis, Factory Farms Get a Pass on Environmental Permitting",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNbzB1Vkx2NnFjSmpyelRIekRZLVZSclZZemJzb2tEUGVWNUpXSXdxb05wWE1zZ2FKSnpjTE56MjZGcEtlT1lYdDYxVTBDdGZ1UFZ3aGF6cnNUVDYtem5qVGViLTY3eGNXbXBHMDdXOVd5STdnc2VjMEFoVWE4dFI5blp5d0VOc1ZjUS1oV3BDYw?oc=5",
-      "canonical": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNbzB1Vkx2NnFjSmpyelRIekRZLVZSclZZemJzb2tEUGVWNUpXSXdxb05wWE1zZ2FKSnpjTE56MjZGcEtlT1lYdDYxVTBDdGZ1UFZ3aGF6cnNUVDYtem5qVGViLTY3eGNXbXBHMDdXOVd5STdnc2VjMEFoVWE4dFI5blp5d0VOc1ZjUS1oV3BDYw?oc=5",
-      "source": "Inside Climate News",
-      "source_id": "gn_epa_water",
-      "source_site": "https://www.epa.gov/newsreleases",
-      "category": "policy",
-      "scope": "national",
-      "summary": "",
-      "author": "",
-      "image": "",
-      "published": "2026-10-25T07:00:00+00:00",
-      "published_ts": 1792911600,
-      "local": false,
-      "tags": [],
-      "score": 2.39,
-      "raw_score": 19.3,
-      "matched": {
-        "water": [
-          "water crisis"
-        ],
-        "policy": [
-          "permitting"
         ]
       }
     },
@@ -1568,7 +1504,7 @@
       "published_ts": 1794052800,
       "local": false,
       "tags": [],
-      "score": 2.29,
+      "score": 2.21,
       "raw_score": 7.4,
       "matched": {
         "water": [
@@ -1596,7 +1532,7 @@
       "published_ts": 1793084400,
       "local": false,
       "tags": [],
-      "score": 1.89,
+      "score": 1.83,
       "raw_score": 13.3,
       "matched": {
         "water": [
@@ -1623,7 +1559,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 1.38,
+      "score": 1.33,
       "raw_score": 13.7,
       "matched": {
         "water": [
@@ -1631,6 +1567,37 @@
         ],
         "positive": [
           "surge"
+        ]
+      }
+    },
+    {
+      "id": "gn_texas_water_policy:77c23bfbe3",
+      "title": "Judge Overturns Permit for $560 Million Lake Ringgold Reservoir in North Texas",
+      "url": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxNak5IbzMzXzdfTVl2b2M1TlV1djF3emwzNW5sdGNOOC1pSDREcGR0QTh3NWUzQVotSnZfenJWUk9WQnozWi1KSHluTEFKXzBDNFN4MGtOS3Y0dmtOdGJJVktGV3hRdHQ4bGxjUE1maFNLektxQTEzYVFFZEdJaVRBeExKR3VYeXM5SnJRWlpoZGdBT1dTaVFrclQ2WXVHT0RFaVA0YjlRdDBXSkZfeENzY2t5VDJaV3B4ME9wUjZPaVVLVUhObHVJdjNESTJhbHlWT1REQnotbEhnTUJRc0VvdWkyajN2SE9vUExWdWk4bUNQajhnYTZodTB4MFdMOWh0eDltVko1MWw?oc=5",
+      "canonical": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxNak5IbzMzXzdfTVl2b2M1TlV1djF3emwzNW5sdGNOOC1pSDREcGR0QTh3NWUzQVotSnZfenJWUk9WQnozWi1KSHluTEFKXzBDNFN4MGtOS3Y0dmtOdGJJVktGV3hRdHQ4bGxjUE1maFNLektxQTEzYVFFZEdJaVRBeExKR3VYeXM5SnJRWlpoZGdBT1dTaVFrclQ2WXVHT0RFaVA0YjlRdDBXSkZfeENzY2t5VDJaV3B4ME9wUjZPaVVLVUhObHVJdjNESTJhbHlWT1REQnotbEhnTUJRc0VvdWkyajN2SE9vUExWdWk4bUNQajhnYTZodTB4MFdMOWh0eDltVko1MWw?oc=5",
+      "source": "The Texan",
+      "source_id": "gn_texas_water_policy",
+      "source_site": "https://news.google.com/",
+      "category": "policy",
+      "scope": "state",
+      "summary": "",
+      "author": "",
+      "image": "",
+      "published": "2026-10-14T07:00:00+00:00",
+      "published_ts": 1791961200,
+      "local": false,
+      "tags": [],
+      "score": 1.33,
+      "raw_score": 23.8,
+      "matched": {
+        "water": [
+          "reservoir"
+        ],
+        "policy": [
+          "permit"
+        ],
+        "region": [
+          "texas"
         ]
       }
     },
@@ -1653,7 +1620,7 @@
       "tags": [
         "hill-country"
       ],
-      "score": 1.26,
+      "score": 1.21,
       "raw_score": 21.7,
       "matched": {
         "water": [
@@ -1682,7 +1649,7 @@
       "published_ts": 1793271720,
       "local": false,
       "tags": [],
-      "score": 1.19,
+      "score": 1.15,
       "raw_score": 7.2,
       "matched": {
         "water": [
@@ -1710,7 +1677,7 @@
       "published_ts": 1792236828,
       "local": false,
       "tags": [],
-      "score": 1.08,
+      "score": 1.04,
       "raw_score": 15.0,
       "matched": {
         "water": [
@@ -1739,7 +1706,7 @@
       "published_ts": 1793871660,
       "local": false,
       "tags": [],
-      "score": 0.86,
+      "score": 0.83,
       "raw_score": 3.2,
       "matched": {
         "water": [
@@ -1764,7 +1731,7 @@
       "published_ts": 1792415358,
       "local": false,
       "tags": [],
-      "score": 0.75,
+      "score": 0.72,
       "raw_score": 9.0,
       "matched": {
         "water": [
@@ -1772,6 +1739,37 @@
         ],
         "research": [
           "scientists"
+        ]
+      }
+    },
+    {
+      "id": "gn_texas_water_policy:a45109fec6",
+      "title": "In 1958, Texas voters rejected a $15 million reservoir plan; 68 years later, a judge overturned a new per",
+      "url": "https://news.google.com/rss/articles/CBMiiANBVV95cUxQTkx3eXNFREVwOW9vc3hFOEplSHZjUzItdGw1SzFKUEVsblRwVzlTanMwWk9GUUJuaVNoQm5CbDIzcUt5YzFpa1JJQ1dCanhqc1N3XzVvT093YVZWZlhMcFJvRENFeFZ2LWlBTWFVcVQ1QTAyWlpsQkh3S3NRY2NnMk5QZXhBNWRrSTNXZGdxUmp4bXhOX19vdXpYczRhTkRBa1B3TVZpX1MtbGhTMUt5ZXo4NzJ0SUNEd25YdmJlVHRXUWU3aGNFVndJSXJGVHlfWkFHeWJZSDJRUzl2RkVfQVl2d2N2TU5pSF9XMUloWDE3a1BBUnlELXc2M3pTek45ZE1SdV9ZaXQ0YVdvRDd0VzhCY1pSNzlCZjBmazFteHJ6dERqQ3ZFVWQwM3lJeUZqV0xHV2wtQ2dmSHNtOEFtaGloTzlhV04yUzJ4b3dSWFl6RVY1YWFoUldRcXNkZVM2bnlVcm8tMkVUR3pIVWdRWWdrRTJKTmlkaFFsNDJYblBDbkNLTVlSX9IBjgNBVV95cUxQWm5xUl9ncG1GYkRXbnpMVWtjV1RDa2pIdVZENmN5dGhWMldiUDNoX3Vsam5GWnRFTjNJV09DVEl5aG1iR29pMkpBdzBGVXdTQktIZ0FmdHJROUh5UFZFalNvMTBVU0lwX04yQnRMLW94SnRpX0p5cTlYcTJwLTVXSVdlVFp4SG1KdXBXVnRNUzNhVVEwMmFWWmJzSTh1TDVjLXFfOTFISjVGRW9Pc1FBMTBpYzY1bzdqOVdYaGpPQ3FDVWJ0SmpkaldKNkloVnhsTlpGZWVrTGtvMHQyTF9vM2V0SU9CRm9FQ2Qyb1BOUUoyYTl0ZVgxZV9nNFJqdl9tT2RrRlllSHZZQnI2QjlxcDBtM3RTdXZpam1LSkhJUnNySmRHUHc5dmNuOVhYWGdvRlpWMEU5RlJNcGFJbjBZNUNwcmxOa1hkRFZJb2xpWGZGcXZUUXFleTMyYWV1OFpKUzVoSUhzYkc0ektpNnVzMnltZXFvS0pOaTVNcjU4OXJXNDNUa21veHlQd3J3dw?oc=5",
+      "canonical": "https://news.google.com/rss/articles/CBMiiANBVV95cUxQTkx3eXNFREVwOW9vc3hFOEplSHZjUzItdGw1SzFKUEVsblRwVzlTanMwWk9GUUJuaVNoQm5CbDIzcUt5YzFpa1JJQ1dCanhqc1N3XzVvT093YVZWZlhMcFJvRENFeFZ2LWlBTWFVcVQ1QTAyWlpsQkh3S3NRY2NnMk5QZXhBNWRrSTNXZGdxUmp4bXhOX19vdXpYczRhTkRBa1B3TVZpX1MtbGhTMUt5ZXo4NzJ0SUNEd25YdmJlVHRXUWU3aGNFVndJSXJGVHlfWkFHeWJZSDJRUzl2RkVfQVl2d2N2TU5pSF9XMUloWDE3a1BBUnlELXc2M3pTek45ZE1SdV9ZaXQ0YVdvRDd0VzhCY1pSNzlCZjBmazFteHJ6dERqQ3ZFVWQwM3lJeUZqV0xHV2wtQ2dmSHNtOEFtaGloTzlhV04yUzJ4b3dSWFl6RVY1YWFoUldRcXNkZVM2bnlVcm8tMkVUR3pIVWdRWWdrRTJKTmlkaFFsNDJYblBDbkNLTVlSX9IBjgNBVV95cUxQWm5xUl9ncG1GYkRXbnpMVWtjV1RDa2pIdVZENmN5dGhWMldiUDNoX3Vsam5GWnRFTjNJV09DVEl5aG1iR29pMkpBdzBGVXdTQktIZ0FmdHJROUh5UFZFalNvMTBVU0lwX04yQnRMLW94SnRpX0p5cTlYcTJwLTVXSVdlVFp4SG1KdXBXVnRNUzNhVVEwMmFWWmJzSTh1TDVjLXFfOTFISjVGRW9Pc1FBMTBpYzY1bzdqOVdYaGpPQ3FDVWJ0SmpkaldKNkloVnhsTlpGZWVrTGtvMHQyTF9vM2V0SU9CRm9FQ2Qyb1BOUUoyYTl0ZVgxZV9nNFJqdl9tT2RrRlllSHZZQnI2QjlxcDBtM3RTdXZpam1LSkhJUnNySmRHUHc5dmNuOVhYWGdvRlpWMEU5RlJNcGFJbjBZNUNwcmxOa1hkRFZJb2xpWGZGcXZUUXFleTMyYWV1OFpKUzVoSUhzYkc0ektpNnVzMnltZXFvS0pOaTVNcjU4OXJXNDNUa21veHlQd3J3dw?oc=5",
+      "source": "The Times of India",
+      "source_id": "gn_texas_water_policy",
+      "source_site": "https://news.google.com/",
+      "category": "policy",
+      "scope": "state",
+      "summary": "In 1958, Texas voters rejected a $15 million reservoir plan; 68 years later, a judge overturned a new per The Times of India",
+      "author": "",
+      "image": "",
+      "published": "2026-10-12T07:00:00+00:00",
+      "published_ts": 1791788400,
+      "local": false,
+      "tags": [],
+      "score": 0.62,
+      "raw_score": 12.8,
+      "matched": {
+        "water": [
+          "reservoir"
+        ],
+        "region": [
+          "texas"
+        ],
+        "non_us": [
+          "india"
         ]
       }
     },
@@ -1818,7 +1816,7 @@
       "http_status": 200,
       "item_count": 32,
       "error": null,
-      "ms": 318
+      "ms": 365
     },
     {
       "id": "gn_hays_blanco",
@@ -1831,7 +1829,7 @@
       "http_status": 200,
       "item_count": 34,
       "error": null,
-      "ms": 321
+      "ms": 396
     },
     {
       "id": "gn_aquifers",
@@ -1844,7 +1842,7 @@
       "http_status": 200,
       "item_count": 10,
       "error": null,
-      "ms": 238
+      "ms": 285
     },
     {
       "id": "gn_ctx_drought",
@@ -1855,9 +1853,9 @@
       "scope": "local",
       "status": "ok",
       "http_status": 200,
-      "item_count": 28,
+      "item_count": 61,
       "error": null,
-      "ms": 302
+      "ms": 428
     },
     {
       "id": "gn_texas_tribune_water",
@@ -1868,9 +1866,9 @@
       "scope": "state",
       "status": "ok",
       "http_status": 200,
-      "item_count": 100,
+      "item_count": 84,
       "error": null,
-      "ms": 343
+      "ms": 388
     },
     {
       "id": "austin_monitor",
@@ -1883,7 +1881,7 @@
       "http_status": 200,
       "item_count": 12,
       "error": null,
-      "ms": 224
+      "ms": 222
     },
     {
       "id": "san_antonio_report",
@@ -1896,7 +1894,7 @@
       "http_status": 200,
       "item_count": 10,
       "error": null,
-      "ms": 70
+      "ms": 72
     },
     {
       "id": "gn_community_impact",
@@ -1909,7 +1907,7 @@
       "http_status": 200,
       "item_count": 100,
       "error": null,
-      "ms": 498
+      "ms": 409
     },
     {
       "id": "gn_rainwater_research",
@@ -1920,9 +1918,9 @@
       "scope": "global",
       "status": "ok",
       "http_status": 200,
-      "item_count": 30,
+      "item_count": 28,
       "error": null,
-      "ms": 287
+      "ms": 316
     },
     {
       "id": "gn_water_quality_research",
@@ -1933,9 +1931,9 @@
       "scope": "global",
       "status": "ok",
       "http_status": 200,
-      "item_count": 47,
+      "item_count": 49,
       "error": null,
-      "ms": 291
+      "ms": 341
     },
     {
       "id": "sciencedaily_water",
@@ -1948,7 +1946,7 @@
       "http_status": 200,
       "item_count": 60,
       "error": null,
-      "ms": 177
+      "ms": 155
     },
     {
       "id": "sciencedaily_drought",
@@ -1961,7 +1959,7 @@
       "http_status": 200,
       "item_count": 60,
       "error": null,
-      "ms": 48
+      "ms": 190
     },
     {
       "id": "phys_org_environment",
@@ -1974,7 +1972,7 @@
       "http_status": 200,
       "item_count": 30,
       "error": null,
-      "ms": 162
+      "ms": 191
     },
     {
       "id": "gn_rainwater_policy",
@@ -1985,9 +1983,9 @@
       "scope": "national",
       "status": "ok",
       "http_status": 200,
-      "item_count": 26,
+      "item_count": 54,
       "error": null,
-      "ms": 344
+      "ms": 640
     },
     {
       "id": "gn_texas_water_policy",
@@ -1998,9 +1996,9 @@
       "scope": "state",
       "status": "ok",
       "http_status": 200,
-      "item_count": 73,
+      "item_count": 32,
       "error": null,
-      "ms": 366
+      "ms": 316
     },
     {
       "id": "gn_water_rebates",
@@ -2013,7 +2011,7 @@
       "http_status": 200,
       "item_count": 17,
       "error": null,
-      "ms": 455
+      "ms": 302
     },
     {
       "id": "gn_epa_water",
@@ -2024,9 +2022,9 @@
       "scope": "national",
       "status": "ok",
       "http_status": 200,
-      "item_count": 20,
+      "item_count": 22,
       "error": null,
-      "ms": 262
+      "ms": 297
     },
     {
       "id": "circle_of_blue",
@@ -2039,7 +2037,7 @@
       "http_status": 200,
       "item_count": 12,
       "error": null,
-      "ms": 78
+      "ms": 289
     },
     {
       "id": "gn_good_environment_news",
@@ -2050,9 +2048,9 @@
       "scope": "global",
       "status": "ok",
       "http_status": 200,
-      "item_count": 64,
+      "item_count": 100,
       "error": null,
-      "ms": 399
+      "ms": 676
     },
     {
       "id": "reasons_to_be_cheerful",
@@ -2065,7 +2063,7 @@
       "http_status": 200,
       "item_count": 10,
       "error": null,
-      "ms": 824
+      "ms": 124
     },
     {
       "id": "anthropocene",
@@ -2078,7 +2076,7 @@
       "http_status": null,
       "item_count": 0,
       "error": "RemoteDisconnected: Remote end closed connection without response",
-      "ms": 4911
+      "ms": 4840
     },
     {
       "id": "yale_e360",
@@ -2091,7 +2089,7 @@
       "http_status": 200,
       "item_count": 100,
       "error": null,
-      "ms": 222
+      "ms": 451
     },
     {
       "id": "grist",
@@ -2104,22 +2102,22 @@
       "http_status": 200,
       "item_count": 20,
       "error": null,
-      "ms": 111
+      "ms": 168
     }
   ],
   "stats": {
     "feeds_total": 23,
     "feeds_ok": 22,
     "feeds_failed": 1,
-    "entries_seen": 895,
-    "candidates": 142,
-    "after_dedupe": 130,
+    "entries_seen": 937,
+    "candidates": 160,
+    "after_dedupe": 143,
     "published": 61,
     "rejected": {
       "score": 21,
-      "stale": 212,
-      "blocked": 7,
-      "off_topic": 513
+      "stale": 234,
+      "blocked": 20,
+      "off_topic": 502
     }
   }
 }
