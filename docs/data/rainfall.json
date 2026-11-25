@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-25T08:14:47.188Z",
+  "generated": "2026-11-25T18:46:00.898Z",
   "source": "https://hydromet.lcra.org/",
   "window": "48h = today so far plus the whole of the previous calendar day",
   "columns": {
@@ -17,13 +17,13 @@
       "total48": 0.05,
       "today": 0,
       "yesterday": 0.05,
-      "h24": 0.05,
+      "h24": 0.03,
       "h1": 0,
       "midnight": 0,
       "gauges": [
         {
           "name": "Dripping Springs 8 W",
-          "today": 0
+          "today": 0.01
         },
         {
           "name": "Dripping Springs 4 NNE",
@@ -43,7 +43,7 @@
       "total48": 0.05,
       "today": 0,
       "yesterday": 0.05,
-      "h24": 0.05,
+      "h24": 0.03,
       "h1": 0,
       "midnight": 0,
       "gauges": [
@@ -86,20 +86,20 @@
       "id": "fredericksburg",
       "label": "Fredericksburg",
       "county": "Gillespie Co.",
-      "total48": 0.08,
+      "total48": 0.09,
       "today": 0,
       "yesterday": 0.08,
-      "h24": 0.08,
+      "h24": 0.03,
       "h1": 0,
       "midnight": 0,
       "gauges": [
         {
           "name": "Fredericksburg 12 NW",
-          "today": 0
+          "today": 0.01
         },
         {
           "name": "Fredericksburg 10 NNE",
-          "today": 0
+          "today": 0.01
         },
         {
           "name": "Fredericksburg 10 WSW",
@@ -119,7 +119,7 @@
         },
         {
           "name": "Fredericksburg 10 SSE",
-          "today": 0
+          "today": 0.01
         }
       ],
       "matched": 7
@@ -131,13 +131,13 @@
       "total48": 0.1,
       "today": 0,
       "yesterday": 0.1,
-      "h24": 0.1,
+      "h24": 0.05,
       "h1": 0,
       "midnight": 0,
       "gauges": [
         {
           "name": "North Grape Creek near Johnson City",
-          "today": 0
+          "today": 0.01
         },
         {
           "name": "Johnson City 10 NNW",
@@ -165,7 +165,7 @@
         },
         {
           "name": "Johnson City 9 NNE",
-          "today": 0
+          "today": 0.01
         }
       ],
       "matched": 8
@@ -175,15 +175,15 @@
       "label": "Blanco",
       "county": "Blanco Co.",
       "total48": 0.11,
-      "today": 0,
+      "today": 0.01,
       "yesterday": 0.11,
-      "h24": 0.11,
+      "h24": 0.05,
       "h1": 0,
-      "midnight": 0,
+      "midnight": 0.01,
       "gauges": [
         {
           "name": "Blanco 13 WNW",
-          "today": 0
+          "today": 0.01
         },
         {
           "name": "Blanco 5 NNE",
@@ -205,7 +205,7 @@
       "11/22/2026",
       "11/21/2026",
       "Since 11/21/2026",
-      "Five Day Rain (in) Report Date: 2026-11-25 02:01"
+      "Five Day Rain (in) Report Date: 2026-11-25 12:31"
     ],
     "intradayHeaders": [
       "Site",
@@ -216,10 +216,10 @@
       "6 Hour",
       "24 Hour",
       "Since Midnight",
-      "Rainfall (in) Report Date: 2026-11-25 02:01"
+      "Rainfall (in) Report Date: 2026-11-25 12:31"
     ],
     "fiveDayRows": 246,
-    "intradayRows": 246,
+    "intradayRows": 241,
     "datedColumns": [
       "11/24/2026",
       "11/23/2026",
