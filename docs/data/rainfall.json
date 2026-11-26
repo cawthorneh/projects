@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-25T18:46:00.898Z",
+  "generated": "2026-11-26T02:03:04.934Z",
   "source": "https://hydromet.lcra.org/",
   "window": "48h = today so far plus the whole of the previous calendar day",
   "columns": {
@@ -17,7 +17,7 @@
       "total48": 0.05,
       "today": 0,
       "yesterday": 0.05,
-      "h24": 0.03,
+      "h24": 0,
       "h1": 0,
       "midnight": 0,
       "gauges": [
@@ -43,7 +43,7 @@
       "total48": 0.05,
       "today": 0,
       "yesterday": 0.05,
-      "h24": 0.03,
+      "h24": 0,
       "h1": 0,
       "midnight": 0,
       "gauges": [
@@ -69,11 +69,11 @@
         },
         {
           "name": "Colorado River at Austin",
-          "today": 0
+          "today": 0.01
         },
         {
           "name": "Walnut Creek at Webberville Road, Austin",
-          "today": 0
+          "today": 0.01
         },
         {
           "name": "Onion Creek at Hwy 183, Austin",
@@ -87,11 +87,11 @@
       "label": "Fredericksburg",
       "county": "Gillespie Co.",
       "total48": 0.09,
-      "today": 0,
+      "today": 0.01,
       "yesterday": 0.08,
-      "h24": 0.03,
+      "h24": 0.01,
       "h1": 0,
-      "midnight": 0,
+      "midnight": 0.01,
       "gauges": [
         {
           "name": "Fredericksburg 12 NW",
@@ -103,7 +103,7 @@
         },
         {
           "name": "Fredericksburg 10 WSW",
-          "today": 0
+          "today": 0.01
         },
         {
           "name": "Fredericksburg 9 SW",
@@ -131,7 +131,7 @@
       "total48": 0.1,
       "today": 0,
       "yesterday": 0.1,
-      "h24": 0.05,
+      "h24": 0,
       "h1": 0,
       "midnight": 0,
       "gauges": [
@@ -174,10 +174,10 @@
       "id": "blanco",
       "label": "Blanco",
       "county": "Blanco Co.",
-      "total48": 0.11,
+      "total48": 0.12,
       "today": 0.01,
       "yesterday": 0.11,
-      "h24": 0.05,
+      "h24": 0.01,
       "h1": 0,
       "midnight": 0.01,
       "gauges": [
@@ -187,7 +187,7 @@
         },
         {
           "name": "Blanco 5 NNE",
-          "today": 0
+          "today": 0.01
         }
       ],
       "matched": 2
@@ -205,7 +205,7 @@
       "11/22/2026",
       "11/21/2026",
       "Since 11/21/2026",
-      "Five Day Rain (in) Report Date: 2026-11-25 12:31"
+      "Five Day Rain (in) Report Date: 2026-11-25 20:01"
     ],
     "intradayHeaders": [
       "Site",
@@ -216,10 +216,10 @@
       "6 Hour",
       "24 Hour",
       "Since Midnight",
-      "Rainfall (in) Report Date: 2026-11-25 12:31"
+      "Rainfall (in) Report Date: 2026-11-25 20:01"
     ],
     "fiveDayRows": 246,
-    "intradayRows": 241,
+    "intradayRows": 246,
     "datedColumns": [
       "11/24/2026",
       "11/23/2026",
