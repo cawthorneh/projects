@@ -1,10 +1,10 @@
 {
-  "generated": "2026-11-26T20:23:53.137Z",
+  "generated": "2026-11-27T12:56:55.777Z",
   "source": "https://hydromet.lcra.org/",
   "window": "48h = today so far plus the whole of the previous calendar day",
   "columns": {
     "today": "today",
-    "yesterday": "11/25/2026",
+    "yesterday": "11/26/2026",
     "h24": "24 hour",
     "h1": "1 hour",
     "midnight": "since midnight"
@@ -86,9 +86,9 @@
       "id": "fredericksburg",
       "label": "Fredericksburg",
       "county": "Gillespie Co.",
-      "total48": 0.01,
+      "total48": 0,
       "today": 0,
-      "yesterday": 0.01,
+      "yesterday": 0,
       "h24": 0,
       "h1": 0,
       "midnight": 0,
@@ -111,7 +111,7 @@
         },
         {
           "name": "Pedernales River near Fredericksburg",
-          "today": 0.01
+          "today": 0
         },
         {
           "name": "Fredericksburg 5 N",
@@ -174,9 +174,9 @@
       "id": "blanco",
       "label": "Blanco",
       "county": "Blanco Co.",
-      "total48": 0.01,
+      "total48": 0,
       "today": 0,
-      "yesterday": 0.01,
+      "yesterday": 0,
       "h24": 0,
       "h1": 0,
       "midnight": 0,
@@ -200,12 +200,12 @@
       "Basin",
       "Today",
       "Last24",
+      "11/26/2026",
       "11/25/2026",
       "11/24/2026",
       "11/23/2026",
-      "11/22/2026",
-      "Since 11/22/2026",
-      "Five Day Rain (in) Report Date: 2026-11-26 14:16"
+      "Since 11/23/2026",
+      "Five Day Rain (in) Report Date: 2026-11-27 06:46"
     ],
     "intradayHeaders": [
       "Site",
@@ -216,15 +216,15 @@
       "6 Hour",
       "24 Hour",
       "Since Midnight",
-      "Rainfall (in) Report Date: 2026-11-26 14:16"
+      "Rainfall (in) Report Date: 2026-11-27 06:46"
     ],
     "fiveDayRows": 246,
     "intradayRows": 246,
     "datedColumns": [
+      "11/26/2026",
       "11/25/2026",
       "11/24/2026",
-      "11/23/2026",
-      "11/22/2026"
+      "11/23/2026"
     ]
   }
 }
